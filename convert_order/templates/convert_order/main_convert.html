@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>File Upload</title>
+    <title>Загрузка файлов</title>
     <style>
         body {
             display: flex;
@@ -22,7 +22,8 @@
     </style>
 </head>
 <body>
-    <form method="post" enctype="multipart/form-data">
+    <h1> {{ message|default:"Загрузка файлов" }} </h1>
+    <form id="upload-form" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="file-input">
             <input type="file" name="file1">
@@ -30,7 +31,16 @@
         <div class="file-input">
             <input type="file" name="file2">
         </div>
-        <button type="submit">Convert</button>
+        <button type="submit">Конвертировать</button>
     </form>
+
+    <script>
+        document.getElementById('upload-form').addEventListener('submit', function() {
+            // Сброс формы после отправки
+            setTimeout(function() {
+                document.getElementById('upload-form').reset();
+            }, 0);
+        });
+    </script>
 </body>
 </html>

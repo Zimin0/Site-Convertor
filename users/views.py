@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, HttpResponse
 
-# Create your views here.
+def phone(request, order_id):
+    context = {}
+
+    if request.method == 'POST':
+        phone = request.POST['phone']
+        return redirect('convert_order:download_file', order_id=order_id)
+    return render(request, 'users/phone.html', context)

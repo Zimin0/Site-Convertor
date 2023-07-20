@@ -1,6 +1,7 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, redirect, HttpResponse
 from convert_order.models import ConvertOrder
 from django.http import HttpResponse
+from files.models import File
 
 
 def orders(request):
@@ -17,13 +18,28 @@ def converter(request):
     context = {}
     
     if request.method == 'POST':
+        if len(request.FILES) < 2: # если загружено меньше, чем 2 файла
+            context['message'] = 'Загрузите оба файла!'
+            return render(request, 'convert_order/main_convert.html', context)
+        
         file1 = request.FILES['file1']
         file2 = request.FILES['file2']
+        print(file1, file2)
 
         context['message'] = f'Файлы {file1.name} и {file2.name} загружены!'
 
-        # Создаем новый заказ на конвертацию
         order = ConvertOrder(user=request.user)
         order.save()
 
-    return render(request, 'main_convert.html', context)
+        # Создаем новый заказ на конвертацию и добавляем файлы
+        File.objects.create(order=order , file=file1, file_type='1').save()
+        File.objects.create(order=order, file=file2, file_type='2').save()
+        # request.session['order_id'] = order.id
+        return redirect('users:phone', order_id=order.id)
+    
+    return render(request, 'convert_order/main_convert.html', context)
+
+
+def download_file(request, order_id):
+    """ Страница для скачивания сконвертированного файла. Получает на вход id заказа конвертации."""
+    return HttpResponse('done!!!')
