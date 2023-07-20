@@ -1,7 +1,8 @@
 from django.contrib import admin
 from django.urls import path, include
-from convert_order.views import show_order
+from convert_order.views import show_order, converter
 
 urlpatterns = [
-    path('', show_order),
+    path('', converter, ),
+    path('orders/', show_order, ),
 ]
