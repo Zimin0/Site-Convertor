@@ -48,8 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'convert_order',
     'files',
-    'mainpage',
-    'users'
+    'users',
 ]
 
 

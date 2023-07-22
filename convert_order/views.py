@@ -16,6 +16,7 @@ def orders(request):
 def converter(request):
     """ Отображает страницу для загрузки файлов. """
     context = {}
+    print(request.POST)
     
     if request.method == 'POST':
         if len(request.FILES) < 2: # если загружено меньше, чем 2 файла
