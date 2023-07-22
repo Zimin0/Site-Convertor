@@ -36,7 +36,8 @@ def converter(request):
         ########################################################
 
         encrypted_id = ConvertOrder.crypt_id(order.id)
-        return redirect('users:phone', order_id=encrypted_id)
+        return redirect('convert_order:download_file_page', order_id=encrypted_id)
+        #return redirect('users:phone', order_id=encrypted_id)
     
     return render(request, 'convert_order/main_convert.html', context)
 
@@ -45,10 +46,8 @@ def download_file_page(request, order_id):
     """ Страница для скачивания сконвертированного файла. Получает на вход id заказа конвертации."""
 
     context = {}
-    decrypted_id = ConvertOrder.decrypt_id(order_id)
-    order = get_object_or_404(ConvertOrder, id=decrypted_id) 
-    context["order_id"] = order.id
-    return render(request, 'convert_order/download.html', context)
+    context["order_id"] = order_id
+    return render(request, 'convert_order/main_with_download.html', context)
 
 def download_file(request, order_id):
     """ При переходе сразу начинается скачивание файла. """
