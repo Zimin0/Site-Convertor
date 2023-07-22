@@ -5,5 +5,5 @@ def phone(request, order_id):
 
     if request.method == 'POST':
         phone = request.POST['phone']
-        return redirect('convert_order:download_file', order_id=order_id)
+        return redirect('convert_order:download_file_page', order_id=order_id)
     return render(request, 'users/phone.html', context)

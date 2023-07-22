@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, HttpResponse
+from django.shortcuts import render, redirect, get_object_or_404, HttpResponse
 from convert_order.models import ConvertOrder
 from django.http import HttpResponse
 from files.models import File
@@ -40,6 +40,25 @@ def converter(request):
     return render(request, 'convert_order/main_convert.html', context)
 
 
-def download_file(request, order_id):
+def download_file_page(request, order_id):
     """ Страница для скачивания сконвертированного файла. Получает на вход id заказа конвертации."""
-    return HttpResponse('done!!!')
+    context = {}
+    
+    order = get_object_or_404(ConvertOrder, id=order_id) 
+    context["order_id"] = order.id
+
+    return render(request, 'convert_order/download.html', context)
+
+def download_file(request, order_id):
+    """ При переходе сразу начинается скачивание файла. """
+    context = {}
+
+    order = get_object_or_404(ConvertOrder, id=order_id) # Оптимизировать запрос
+    file3 = get_object_or_404(File, order=order, file_type='3') # конвертированный файл. Проверка на тип - для надежности
+
+    context['file3'] = file3
+    filename = file3.file.name.split('/')[-1]
+    response = HttpResponse(file3.file, content_type='text/plain')
+    response['Content-Disposition'] = 'attachment; filename=%s' % filename
+
+    return response

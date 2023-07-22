@@ -8,9 +8,9 @@ class FileAdminStacked(admin.StackedInline):
 class ConvertOrderAdmin(admin.ModelAdmin):
     class Meta:
         model = ConvertOrder
-    list_display = ('get_pretty_str', 'user', 'current_status', 'need_to_pay', 'paid', 'creation_date')
+    list_display = ('get_pretty_str', 'user', 'slug', 'current_status', 'need_to_pay', 'paid', 'creation_date')
     list_filter = [ 'user', 'creation_date', 'current_status', 'need_to_pay', 'paid']
-    ordering = ['creation_date',]
+    ordering = ['-creation_date',]
     search_fields = ['pk', 'user', 'creation_date']
     inlines = [FileAdminStacked]
 
