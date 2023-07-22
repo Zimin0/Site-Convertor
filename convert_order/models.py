@@ -35,7 +35,9 @@ class ConvertOrder(models.Model):
         """ Возвращает отформатированную дату создания в виде: 13_07_13_15:53 """
         return datetime.strftime(self.creation_date, "%d_%m_%Y_%H:%M")
     
-    def crypt_id(self, id):
+    @staticmethod
+    def crypt_id(id):
+        """ Переводит id заказа в строку для url (что-то типо хэша, но только можно расшифровать обратно)"""
         id_new_str = str(id)
         letters = 'abcdefghijklmnopqrstuvwxyz'
 
@@ -44,6 +46,18 @@ class ConvertOrder(models.Model):
             random_index = random.randint(0, len(str(id_new_str))-1)
             id_new_str = id_new_str[:random_index] + random.choice(letters) + id_new_str[random_index:]
         return id_new_str
+    
+    @staticmethod
+    def decrypt_id(crypted_id):
+        """ Расшифровывает id заказа, зашифрованный функцией crypt_id() """
+
+        letters = 'abcdefghijklmnopqrstuvwxyz'
+        decrypted_id = ''
+        for letter in crypted_id:
+            if letter not in letters:
+                decrypted_id += letter
+
+        return decrypted_id
 
     def __str__(self) -> str:
         return f'Конвертация №{self.id}'

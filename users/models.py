@@ -4,7 +4,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.core.validators import MinValueValidator
 
-# Create your models here.
+
 class Profile(models.Model):
     class Meta:
         verbose_name = 'Профиль'

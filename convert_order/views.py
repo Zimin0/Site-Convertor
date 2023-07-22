@@ -25,35 +25,38 @@ def converter(request):
         file1 = request.FILES['file1']
         file2 = request.FILES['file2']
         print(file1, file2)
-
         context['message'] = f'Файлы {file1.name} и {file2.name} загружены!'
-
+        
+        # Создаем новый заказ на конвертацию и добавляем файлы #
         order = ConvertOrder(user=request.user)
         order.save()
-
-        # Создаем новый заказ на конвертацию и добавляем файлы
         File.objects.create(order=order , file=file1, file_type='1').save()
         File.objects.create(order=order, file=file2, file_type='2').save()
-        # request.session['order_id'] = order.id
-        return redirect('users:phone', order_id=order.id)
+        ########################################################
+
+        encrypted_id = ConvertOrder.crypt_id(order.id)
+        return redirect('users:phone', order_id=encrypted_id)
     
     return render(request, 'convert_order/main_convert.html', context)
 
 
 def download_file_page(request, order_id):
     """ Страница для скачивания сконвертированного файла. Получает на вход id заказа конвертации."""
-    context = {}
-    
-    order = get_object_or_404(ConvertOrder, id=order_id) 
-    context["order_id"] = order.id
 
+    context = {}
+    decrypted_id = ConvertOrder.decrypt_id(order_id)
+    order = get_object_or_404(ConvertOrder, id=decrypted_id) 
+    context["order_id"] = order.id
     return render(request, 'convert_order/download.html', context)
 
 def download_file(request, order_id):
     """ При переходе сразу начинается скачивание файла. """
+
     context = {}
 
-    order = get_object_or_404(ConvertOrder, id=order_id) # Оптимизировать запрос
+    decrypted_id = ConvertOrder.decrypt_id(order_id)
+
+    order = get_object_or_404(ConvertOrder, id=decrypted_id) # Оптимизировать запрос
     file3 = get_object_or_404(File, order=order, file_type='3') # конвертированный файл. Проверка на тип - для надежности
 
     context['file3'] = file3
