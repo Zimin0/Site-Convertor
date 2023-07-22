@@ -12,5 +12,5 @@ def phone(request, order_id):
         #     redirect('payment:payment')
         decrypted_id = ConvertOrder.decrypt_id(order_id)
         order = get_object_or_404(ConvertOrder, id=decrypted_id) 
-        return redirect('convert_order:download_file', order_id=order.id)
+        return redirect('convert_order:download_file_page', order_id=order.id) 
     return render(request, 'users/phone.html', context)

@@ -17,6 +17,15 @@ def converter(request):
     """ Отображает страницу для загрузки файлов. """
     context = {}
     print(request.POST)
+
+    template = ''
+    try:
+        print(request.session['phone'])
+        context['is_phone_confirmed'] = True
+        template = 'convert_order/main_with_download.html'
+    except Exception as e:
+        context['is_phone_confirmed'] = False
+        template = 'convert_order/main_convert.html' 
     
     if request.method == 'POST':
         if len(request.FILES) < 2: # если загружено меньше, чем 2 файла
@@ -38,15 +47,26 @@ def converter(request):
         encrypted_id = ConvertOrder.crypt_id(order.id)
         return redirect('convert_order:download_file_page', order_id=encrypted_id)
         #return redirect('users:phone', order_id=encrypted_id)
-    
-    return render(request, 'convert_order/main_convert.html', context)
+    else:
+        request.session.clear()
+    return render(request, template, context)
 
 
 def download_file_page(request, order_id):
     """ Страница для скачивания сконвертированного файла. Получает на вход id заказа конвертации."""
 
     context = {}
+
+    try:
+        print(request.session['phone'])
+        context['is_phone_confirmed'] = True
+        template = 'convert_order/main_with_download.html.html'
+    except Exception as e:
+        context['is_phone_confirmed'] = False
+        template = 'convert_order/main_convert.html' 
+        
     context["order_id"] = order_id
+
     return render(request, 'convert_order/main_with_download.html', context)
 
 def download_file(request, order_id):
