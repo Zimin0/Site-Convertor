@@ -73,7 +73,7 @@
     </form>
     <br>
 
-    {% if is_phone_confirmed %}
+    {% if phone_confirmed %}
         <a href="{% url 'convert_order:download_file' order_id %}">Скачать файл</a>
     {% else %}
         <a href="{% url 'users:phone' order_id %}">Скачать файл</a>

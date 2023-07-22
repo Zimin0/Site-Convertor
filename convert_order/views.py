@@ -13,19 +13,19 @@ def orders(request):
         return HttpResponse("Заказов нет!")
 
 
-def converter(request):
+def clear_main(request):
     """ Отображает страницу для загрузки файлов. """
     context = {}
     print(request.POST)
 
-    template = ''
-    try:
-        print(request.session['phone'])
-        context['is_phone_confirmed'] = True
-        template = 'convert_order/main_with_download.html'
-    except Exception as e:
-        context['is_phone_confirmed'] = False
-        template = 'convert_order/main_convert.html' 
+    # template = ''
+    # try:
+    #     print(request.session['phone'])
+    #     context['is_phone_confirmed'] = True
+    #     template = 'convert_order/main_with_download.html'
+    # except Exception as e:
+    #     context['is_phone_confirmed'] = False
+    #     template = 'convert_order/main_convert.html' 
     
     if request.method == 'POST':
         if len(request.FILES) < 2: # если загружено меньше, чем 2 файла
@@ -38,18 +38,29 @@ def converter(request):
         context['message'] = f'Файлы {file1.name} и {file2.name} загружены!'
         
         # Создаем новый заказ на конвертацию и добавляем файлы #
-        order = ConvertOrder(user=request.user)
-        order.save()
+        order = ConvertOrder() 
+        order.save() 
         File.objects.create(order=order , file=file1, file_type='1').save()
         File.objects.create(order=order, file=file2, file_type='2').save()
         ########################################################
 
         encrypted_id = ConvertOrder.crypt_id(order.id)
-        return redirect('convert_order:download_file_page', order_id=encrypted_id)
-        #return redirect('users:phone', order_id=encrypted_id)
+        return redirect('convert_order:phone_main', order_id=encrypted_id, phone_confirmed=0)
     else:
         request.session.clear()
-    return render(request, template, context)
+    return render(request, 'convert_order/main_convert.html', context)
+
+def phone_main(request, order_id, phone_confirmed):
+    context = {}
+
+    context['phone_confirmed'] = bool(phone_confirmed)
+    context['order_id'] = order_id
+    if phone_confirmed:
+        decrypted_id = ConvertOrder.decrypt_id(order_id)
+        context['order_id'] = decrypted_id
+
+
+    return render(request, 'convert_order/main_with_download.html', context) 
 
 
 def download_file_page(request, order_id):
@@ -64,7 +75,7 @@ def download_file_page(request, order_id):
     except Exception as e:
         context['is_phone_confirmed'] = False
         template = 'convert_order/main_convert.html' 
-        
+
     context["order_id"] = order_id
 
     return render(request, 'convert_order/main_with_download.html', context)

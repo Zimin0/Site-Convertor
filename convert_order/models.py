@@ -20,7 +20,7 @@ class ConvertOrder(models.Model):
         ('FD', 'Файл скачан'),
     )
 
-    user = models.ForeignKey(User, verbose_name="Пользователь", null=True, related_name='convert_orders', on_delete=models.SET_NULL)
+    user = models.ForeignKey(User, verbose_name="Пользователь", null=True, blank=True, related_name='convert_orders', on_delete=models.SET_NULL)
     creation_date = models.DateTimeField(auto_now_add=True, verbose_name="Создан")
     slug = models.CharField(max_length=100, verbose_name="Слаг для url", default='0')
     current_status = models.CharField(max_length=2, choices=STATUS, verbose_name='Статус', default='OC')
