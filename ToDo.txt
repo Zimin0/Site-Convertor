@@ -9,13 +9,6 @@
 9. Проверять на неверное расширение файла 
 10.
 
-Convertation
-
-user
-date
-status - succeed or failed
-file1 
-file2 
-result_file
-need_to_pay True of False
-paid - True of False
+1. Переместить главную страницу в приложение mainpage
+2. Сделать перевод сайта
+3. Настроить юрл через хэш

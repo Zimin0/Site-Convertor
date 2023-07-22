@@ -6,7 +6,7 @@ app_name = 'convert_order'
 urlpatterns = [
     
     path('', converter, name='converter'),
-    path('download/<order_id>/', download_file_page, name='download_file_page'),  
-    path('file/<order_id>/', download_file, name='download_file'),  
+    path('download/<str:order_id>/', download_file_page, name='download_file_page'),  
+    path('file/<str:order_id>/', download_file, name='download_file'),  
     path('orders/', orders, name='orders'),
 ]
