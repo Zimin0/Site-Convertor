@@ -4,15 +4,6 @@ from django.http import HttpResponse
 from files.models import File
 
 
-def orders(request):
-    """ Отображает все сделанные заказы на конвертацию. """
-    order = ConvertOrder.objects.first()
-    if order is not None:
-        return HttpResponse(order.get_formatted_creation_date())
-    else:
-        return HttpResponse("Заказов нет!")
-
-
 def clear_main(request):
     """ Отображает страницу для загрузки файлов. """
     context = {}
@@ -21,7 +12,7 @@ def clear_main(request):
     if request.method == 'POST':
         if len(request.FILES) < 2: # если загружено меньше, чем 2 файла
             context['message'] = 'Загрузите оба файла!'
-            return render(request, 'convert_order/main_convert.html', context)
+            return render(request, 'convert_order/main.html', context)
         
         file1 = request.FILES['file1']
         file2 = request.FILES['file2']
@@ -39,7 +30,7 @@ def clear_main(request):
         request.session['phone_confirmed'] = False
         return redirect('convert_order:phone_main', order_id=encrypted_id)
 
-    return render(request, 'convert_order/main_convert.html', context)
+    return render(request, 'convert_order/main.html', context)
 
 def phone_main(request, order_id):
     context = {}
@@ -52,9 +43,9 @@ def phone_main(request, order_id):
         context['order_id'] = decrypted_id
 
 
-    return render(request, 'convert_order/main_with_download.html', context) 
+    return render(request, 'convert_order/main.html', context) 
 
-def download_file(request, order_id):
+def load_file(request, order_id):
     """ При переходе сразу начинается скачивание файла. """
 
     context = {}

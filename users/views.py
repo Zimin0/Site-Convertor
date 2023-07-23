@@ -5,11 +5,11 @@ from convert_order.models import ConvertOrder
 from files.models import File
 from django.views import View
 
-
 class PhoneView(View):
+    """ Отображение страницы ввода номера телефона. """
+
     def get(self, request, order_id):
-        context = {}
-        return render(request, 'users/phone.html', context)
+        return render(request, 'users/phone.html')
 
     def post(self, request, order_id):
         decrypted_id = ConvertOrder.decrypt_id(order_id) # расшифровываем order_id в int
@@ -23,7 +23,7 @@ class PhoneView(View):
 
             ### Если уже делал конвертацию ###
             if cur_user.profile.convert_already: 
-                return HttpResponse("Плоти, сука!")
+                return redirect('payment:payment_form')
 
         ### Искомого юзера не существует ###
         else: 

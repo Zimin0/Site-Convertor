@@ -73,10 +73,12 @@
     </form>
     <br>
 
-    {% if phone_confirmed %}
-        <a href="{% url 'convert_order:download_file' order_id %}" onclick="setTimeout(function(){window.location.href='/';}, 5000);">Скачать файл</a>
-    {% else %}
-        <a href="{% url 'users:phone' order_id %}">Скачать файл</a>
+    {% if order_id %} <!-- Если был передан order_id в url -->
+        {% if phone_confirmed %}
+            <a href="{% url 'convert_order:file' order_id %}" onclick="setTimeout(function(){window.location.href='/';}, 5000);">Скачать файл</a>
+        {% else %}
+            <a href="{% url 'users:phone' order_id %}">Скачать файл</a>
+        {% endif %}
     {% endif %}
     <br>
 

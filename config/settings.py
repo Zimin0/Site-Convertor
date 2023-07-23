@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'convert_order',
     'files',
     'users',
+    'payment',
 ]
 
 

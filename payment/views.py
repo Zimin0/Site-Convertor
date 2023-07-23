@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
 
-def payment(request):
-    return HttpResponse('<h1>Payment</h1>')
+def payment_form(request):
+    return render(request, 'payment/payment_form.html')

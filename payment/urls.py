@@ -1,8 +1,8 @@
-from django.urls import path, include
-from payment.views import payment
+from django.urls import path
+from payment.views import payment_form
 
 app_name = 'payment'
 
 urlpatterns = [
-    path('', payment, name='payment'),
+    path('', payment_form, name='payment_form'),
 ]
