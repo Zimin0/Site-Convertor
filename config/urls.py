@@ -8,6 +8,3 @@ urlpatterns = [
     path('users/', include('users.urls')),
 ]
 
-""" 
-URL MAP
-"""

@@ -17,15 +17,6 @@ def clear_main(request):
     """ Отображает страницу для загрузки файлов. """
     context = {}
     print(request.POST)
-
-    # template = ''
-    # try:
-    #     print(request.session['phone'])
-    #     context['is_phone_confirmed'] = True
-    #     template = 'convert_order/main_with_download.html'
-    # except Exception as e:
-    #     context['is_phone_confirmed'] = False
-    #     template = 'convert_order/main_convert.html' 
     
     if request.method == 'POST':
         if len(request.FILES) < 2: # если загружено меньше, чем 2 файла
@@ -47,8 +38,7 @@ def clear_main(request):
         encrypted_id = ConvertOrder.crypt_id(order.id)
         request.session['phone_confirmed'] = False
         return redirect('convert_order:phone_main', order_id=encrypted_id)
-    else:
-        request.session.clear()
+
     return render(request, 'convert_order/main_convert.html', context)
 
 def phone_main(request, order_id):
@@ -69,7 +59,7 @@ def download_file(request, order_id):
 
     context = {}
 
-    if not request.session['phone_confirmed']: # если вдрук юзер добрался до этой страницы, а телефон не подтврежден
+    if not request.session['phone_confirmed']: # если вдруг юзер добрался до этой страницы, а телефон не подтвержден
         return redirect('convert_order:phone_main', order_id)
 
     decrypted_id = ConvertOrder.decrypt_id(order_id)
@@ -82,4 +72,8 @@ def download_file(request, order_id):
     response = HttpResponse(file3.file, content_type='text/plain')
     response['Content-Disposition'] = 'attachment; filename=%s' % filename
 
+    # Добавляем JavaScript для перенаправления
+    response.write('<script>window.setTimeout(function(){ window.location = "/"; }, 5000);</script>')
+
     return response
+
