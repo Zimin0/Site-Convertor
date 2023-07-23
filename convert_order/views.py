@@ -27,15 +27,18 @@ def clear_main(request):
 
         encrypted_id = ConvertOrder.crypt_id(order.id)
         request.session['phone_confirmed'] = False
+        request.session['phone'] = ''
         return redirect('convert_order:phone_main', order_id=encrypted_id)
 
     return render(request, 'convert_order/main.html', context)
 
 def phone_main(request, order_id):
+    """ Главная страница с переданным order_id"""
     context = {}
 
     phone_confirmed = request.session['phone_confirmed']
     context['phone_confirmed'] = phone_confirmed
+    context['phone'] = request.session['phone']
     context['order_id'] = order_id
     if phone_confirmed:
         decrypted_id = ConvertOrder.decrypt_id(order_id)
