@@ -69,13 +69,15 @@
         <div class="file-input">
             <input type="file" name="file2">
         </div>
-        <button type="submit">Конвертировать</button>
+        {% if not phone_confirmed and not order_id %}
+            <button type="submit">Конвертировать</button>
+        {% endif %}
     </form>
     <br>
 
     {% if order_id %} <!-- Если был передан order_id в url -->
         {% if phone_confirmed %}
-            <a href="{% url 'convert_order:file' order_id %}" onclick="setTimeout(function(){window.location.href='/';}, 5000);">Скачать файл</a>
+            <a href="{% url 'files:load_file' order_id %}" onclick="setTimeout(function(){window.location.href='/';}, 500);">Скачать файл</a>
         {% else %}
             <a href="{% url 'users:phone' order_id %}">Скачать файл</a>
         {% endif %}
