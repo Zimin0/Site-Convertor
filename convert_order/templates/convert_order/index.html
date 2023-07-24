@@ -6,7 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-    <title>Converter</title>
+    <title>Конвертер</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'convert_order/img/favicon.png' %}"/> 
     <link rel="stylesheet" href="{% static 'convert_order/css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'convert_order/css/media.css' %}"> 
 </head>
@@ -14,8 +15,8 @@
 <body>
     <header class="header">
         <div class="container wrapper">
-            <a href="#!" class="logo">ЛОГО</a>
-            <a href="#!" class="sign_in-btn">Регистрация</a>
+            <a href="{% url 'convert_order:clear_main' %}" class="logo">ЛОГО</a>
+            <a class="sign_in-btn">Регистрация</a>
         </div>
         <!---------- Форма НОМЕР ТЕЛЕФОНА ---------->
         <div id="sign_in-form">

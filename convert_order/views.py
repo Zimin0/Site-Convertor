@@ -6,9 +6,11 @@ from files.models import File
 def clear_main(request):
     """ Отображает страницу для загрузки файлов. """
     context = {}
+    print('вызван clear_main')
     print(request.POST)
     
     if request.method == 'POST':
+        print('вызван clear_main POST')
         if len(request.FILES) < 2: # если загружено меньше, чем 2 файла
             context['message'] = 'Загрузите оба файла!'
             return render(request, 'convert_order/index.html', context)
@@ -35,6 +37,9 @@ def clear_main(request):
 def phone_main(request, order_id):
     """ Главная страница с переданным order_id"""
     context = {}
+    print('вызван phone_main')
+    print(request.POST)
+    print(f'order_id = {order_id}')
 
     phone_confirmed = request.session['phone_confirmed']
     context['phone_confirmed'] = phone_confirmed

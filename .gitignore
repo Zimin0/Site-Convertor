@@ -2,7 +2,8 @@ ToDo.txt
 *.log
 *.pot
 *.pyc
-__pycache__
+*cpython*
+__pycache__/
 db.sqlite3
 media
 migrations

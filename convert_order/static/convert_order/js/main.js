@@ -5,7 +5,11 @@ function openSignIn() {
 
     const signInForm = document.getElementById('sign_in-form');
 
+    
+
     const body = document.getElementsByTagName('body')[0];
+
+
 
     if(signInBtn.innerText == 'Регистрация'){
         signInForm.style.display = 'flex';
@@ -22,6 +26,7 @@ function openSignIn() {
 }
 
 function sendCode() {
+    // Выводить форму подтверждения номера телефона 
     phoneForm.style.display = 'none';
     codeForm.style.display = 'block';
 }
@@ -132,3 +137,27 @@ if (dropFile_2) {
         addFile2(file_2[0].name);
     })
 }
+
+
+
+
+const phoneInput = document.getElementById('phone');
+const subtitle = document.querySelector('.subtitle');
+const sendCodeButton = document.getElementById('send-code');
+
+phoneInput.addEventListener('input', function() {
+    const phoneRegex = /^\+\d{11}$/;
+    if (!phoneRegex.test(this.value)) {
+        subtitle.textContent = "Номер телефона должен содержать 12 символов и начинаться с '+'";
+        sendCodeButton.setAttribute('disabled', '');
+        sendCodeButton.style.color = '#4f4db1';
+        sendCodeButton.style.backgroundColor = 'white'; // измените цвет фона на желаемый 
+    } else {    
+        subtitle.textContent = "Укажите номер телефона для регистрации";
+        sendCodeButton.removeAttribute('disabled');
+        sendCodeButton.style.color = ''; // сбросить цвет текста
+        sendCodeButton.style.backgroundColor = ''; // сбросить цвет фона
+    }
+});
+
+
