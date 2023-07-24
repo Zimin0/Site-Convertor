@@ -21,7 +21,7 @@
         <!---------- Форма НОМЕР ТЕЛЕФОНА ---------->
         <div id="sign_in-form">
             <form method="POST" id="phone-field" onsubmit="return false">
-                <p class="subtitle">Укажите номер телефона для регистрации</p>
+                <p class="subtitle" id="phone_subs">Укажите номер телефона для регистрации</p>
                 <input type="phone" name="phone" id="phone" placeholder="Номер телефона">
                 <input type="submit" class="code-btn" id="send-code" value="Отправить код">
             </form>
@@ -31,7 +31,7 @@
                 <p class="subtitle" id="subtitle-field">Код отправлен!</p>
                 <input type="text" id="code" placeholder="Код из смс">
                 <!-- <input type="button" class="code-btn" id="repeat-code" value="Отправить код повторно"> -->
-                <input type="submit" class="confirm-btn" value="Подтвердить">
+                <input type="submit" class="confirm-btn" id="conf-code-but" value="Подтвердить"> 
             </form>
             
             <!-- Форма подтверждения -->
