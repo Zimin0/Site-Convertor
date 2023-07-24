@@ -24,6 +24,21 @@ function sendCode() {
     const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
     const phoneInput = document.getElementById('phone');
     const phone = phoneInput.value;
+    const phoneRegex = /^\+\d{11}$/;
+
+    if (!phoneRegex.test(phoneInput.value)) {
+        subtitle.textContent = "Номер телефона должен содержать 12 символов и начинаться с '+'";
+        this.setAttribute('disabled', '');
+        this.style.color = '#4f4db1';
+        this.style.backgroundColor = 'white';
+        return; // Если номер телефона не прошел валидацию, прекратить выполнение функции
+    } else {
+        subtitle.textContent = "Укажите номер телефона для регистрации";
+        this.removeAttribute('disabled');
+        this.style.color = '';
+        this.style.backgroundColor = '';
+    }
+    
 
     // Выводить форму подтверждения номера телефона 
     phoneForm.style.display = 'none';
@@ -181,9 +196,10 @@ if (dropFile_2) {
 }
 
 
-const phoneInput = document.getElementById('phone');
+
 const subtitle = document.querySelector('.subtitle');
 const sendCodeButton = document.getElementById('send-code');
+const phoneInput = document.getElementById('phone');
 
 // Валидация номера телефона
 phoneInput.addEventListener('input', function() {
