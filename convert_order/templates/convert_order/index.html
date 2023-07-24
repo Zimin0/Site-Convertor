@@ -40,28 +40,36 @@
 
         <div class="container">
             <h1 class="converter-title">Конвертер файлов</h1>
-            <p class="subtitle">Загрузите 2 файла, либо перетащите их в соответствующие окна</p>
-
-            <form method="POST" id="file-form" onsubmit="return false">
+            <p class="subtitle">{{ message|default:"Загрузите 2 файла, либо перетащите их в соответствующие окна" }} </p>
+            
+            <form method="POST" id="file-form" enctype="multipart/form-data">
+                {% csrf_token %}
                 <div class="dropfile-area">
                     <label class="file-field" id="file-field-1">
-                        <input type="file" name="file_1" id="file_1">
+                        <input type="file" name="file1" id="file_1">
                         <div id="file1">
                             <img id="add-file-1" src="{% static 'convert_order/img/icons8-плюс.svg' %}" alt="Add file"> 
                             <p id="add-file-title-1">Добавить файл</p>
-
                         </div>
                     </label>
 
                     <label class="file-field" id="file-field-2">
-                        <input type="file" name="file_2" id="file_2">
+                        <input type="file" name="file2" id="file_2">
                         <div id="file2">
                             <img id="add-file-2" src="{% static 'convert_order/img/icons8-плюс.svg' %}" alt="Add file">
                             <p id="add-file-title-2">Добавить файл</p>
-
                         </div>
                     </label>
                 </div>
+
+                
+
+                {% if not phone_confirmed and not order_id %}
+                <script>
+                    const converterBtn = document.getElementById('converter-btn');
+                    converterBtn.removeAttribute('disabled');
+                </script>
+                {% endif %}
 
                 <div class="converter-container">
                     <img id="up-arrow" src="{% static 'convert_order/img/converter-arrow.svg' %}" alt=""> 
@@ -69,10 +77,29 @@
                     <img id="down-arrow" src="{% static 'convert_order/img/converter-arrow.svg' %}" alt="">
                 </div>
 
+            
+                
+                
                 <div class="download-container">
                     <img id="right-arrow" src="{% static 'convert_order/img/download-arrow.svg' %}" alt=""> 
-                    <input type="button" id="download-btn" value="Скачать" disabled>
+                    {% if order_id %} <!-- Если был передан order_id в url -->
+                        <script>
+                            const downloadBtn = document.getElementById('download-btn');
+                            downloadBtn.removeAttribute('disabled');
+                        </script>
+                        {% if phone_confirmed %}
+                            <input type="submit" id="download-btn" value="Скачать" onclick="location.href='{% url 'files:load_file' order_id %}'; setTimeout(function(){window.location.href='/';}, 500);" disabled>
+                        {% else %}
+                            <input type="submit" id="download-btn" value="Скачать" onclick="location.href='{% url 'users:phone' order_id %}';" disabled>
+                        {% endif %}
+                    {% else %}
+                        <input type="submit" id="download-btn" value="Скачать" disabled>
+                    {% endif %}
                 </div>
+
+
+
+
             </form>
         </div>
 

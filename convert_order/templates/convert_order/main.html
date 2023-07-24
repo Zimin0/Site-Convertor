@@ -61,7 +61,7 @@
 </head>
 <body>
     <h1> {{ message|default:"Загрузка файлов" }} </h1>
-    <form id="upload-form" method="post" enctype="multipart/form-data" `>
+    <form id="upload-form" method="post" enctype="multipart/form-data" >
         {% csrf_token %}
         <div class="file-input">
             <input type="file" name="file1">
