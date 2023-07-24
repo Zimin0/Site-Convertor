@@ -31,10 +31,10 @@ MEDIA_URL = '/media/'
 STATIC_URL = 'static/'
 STATIC_ROOT = 'static/'
 
-SENDSMS_BACKEND = 'myapp.mysmsbackend.SmsBackend' #(defaults to 'sendsms.backends.console.SmsBackend')
-SENDSMS_FROM_NUMBER = "+XXxxxxxxxxxx"
-SENDSMS_ACCOUNT_SID = 'ACXXXXXXXXXXXXXX'
-SENDSMS_AUTH_TOKEN = 'xxxxxxxx'
+# SENDSMS_BACKEND = 'myapp.mysmsbackend.SmsBackend' #(defaults to 'sendsms.backends.console.SmsBackend')
+# SENDSMS_FROM_NUMBER = "+XXxxxxxxxxxx"
+# SENDSMS_ACCOUNT_SID = 'ACXXXXXXXXXXXXXX'
+# SENDSMS_AUTH_TOKEN = 'xxxxxxxx'
 ##########################
 
 ALLOWED_HOSTS = []

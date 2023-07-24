@@ -20,7 +20,7 @@ class ConvertOrder(models.Model):
         ('FD', 'Файл скачан'),
     )
 
-    user = models.ForeignKey(User, verbose_name="Пользователь", null=True, blank=True, related_name='convert_orders', on_delete=models.SET_NULL)
+    phone = models.CharField(max_length=100, verbose_name="Номер телефона пользователя", null=True, blank=True)
     creation_date = models.DateTimeField(auto_now_add=True, verbose_name="Создан")
     slug = models.CharField(max_length=100, verbose_name="Слаг для url", default='0')
     current_status = models.CharField(max_length=2, choices=STATUS, verbose_name='Статус', default='OC')
@@ -40,7 +40,6 @@ class ConvertOrder(models.Model):
         """ Переводит id заказа в строку для url (что-то типо хэша, но только можно расшифровать обратно)"""
         id_new_str = str(id)
         letters = 'abcdefghijklmnopqrstuvwxyz'
-
         NUM_OF_LETTERS = 7
         for _ in range(NUM_OF_LETTERS):
             random_index = random.randint(0, len(str(id_new_str))-1)
@@ -50,13 +49,11 @@ class ConvertOrder(models.Model):
     @staticmethod
     def decrypt_id(crypted_id):
         """ Расшифровывает id заказа, зашифрованный функцией crypt_id() """
-
         letters = 'abcdefghijklmnopqrstuvwxyz'
         decrypted_id = ''
         for letter in crypted_id:
             if letter not in letters:
                 decrypted_id += letter
-
         return decrypted_id
 
     def __str__(self) -> str:
