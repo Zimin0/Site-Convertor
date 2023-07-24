@@ -11,7 +11,7 @@ def clear_main(request):
     if request.method == 'POST':
         if len(request.FILES) < 2: # если загружено меньше, чем 2 файла
             context['message'] = 'Загрузите оба файла!'
-            return render(request, 'convert_order/main.html', context)
+            return render(request, 'convert_order/index.html', context)
         
         file1 = request.FILES['file1']
         file2 = request.FILES['file2']
@@ -30,7 +30,7 @@ def clear_main(request):
         request.session['phone'] = ''
         return redirect('convert_order:phone_main', order_id=encrypted_id)
 
-    return render(request, 'convert_order/main.html', context)
+    return render(request, 'convert_order/index.html', context)
 
 def phone_main(request, order_id):
     """ Главная страница с переданным order_id"""
@@ -45,7 +45,7 @@ def phone_main(request, order_id):
         context['order_id'] = decrypted_id
 
 
-    return render(request, 'convert_order/main.html', context) 
+    return render(request, 'convert_order/index.html', context) 
 
 
 

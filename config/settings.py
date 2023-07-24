@@ -37,7 +37,7 @@ STATIC_ROOT = 'static/'
 # SENDSMS_AUTH_TOKEN = 'xxxxxxxx'
 ##########################
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*',]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
