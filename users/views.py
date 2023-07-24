@@ -47,3 +47,25 @@ class PhoneView(View):
 
         return redirect('convert_order:phone_main', order_id=order_id)
 
+class PhoneNumberView(View):
+    def post(self, request, phone_number):
+        code = '918385'
+        print(f'Номер = {phone_number}; \nКод подтверждения = {code}')
+        request.session['confirm_phone_code'] = code
+        request.session['phone'] = phone_number
+        return HttpResponse()
+
+
+def code(request, code):
+    if request.method == 'POST':
+        print(f'Введен код:{code}')
+        if request.session['confirm_phone_code']  == code:
+            print("Код совпадает!")
+            request.session['phone_confirmed'] = True
+            # поменять надпись в форме
+            # phone_confirmed в profile
+            # disable кнопку Подтвердить 
+        else:
+            request.session['phone_confirmed'] = False
+            print("Код НЕ совпадает!")
+    return HttpResponse()

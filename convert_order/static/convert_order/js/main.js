@@ -4,12 +4,7 @@ function openSignIn() {
     codeForm.style.display = 'none';
 
     const signInForm = document.getElementById('sign_in-form');
-
-    
-
     const body = document.getElementsByTagName('body')[0];
-
-
 
     if(signInBtn.innerText == 'Регистрация'){
         signInForm.style.display = 'flex';
@@ -26,10 +21,57 @@ function openSignIn() {
 }
 
 function sendCode() {
+    const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+    const phoneInput = document.getElementById('phone');
+    const phone = phoneInput.value;
+
     // Выводить форму подтверждения номера телефона 
     phoneForm.style.display = 'none';
     codeForm.style.display = 'block';
+
+    // Отправить POST-запрос с номером телефона
+    fetch('users/phone/' + phone + '/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': csrfToken,
+        },
+        body: JSON.stringify({ phone: phone })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Success:', data);
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
 }
+
+function sendConfirmationCode() {
+    // Функция отсылает введенный пользователем код 
+    const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+    const codeInput = document.getElementById('code');
+    const code = codeInput.value;
+
+    // Отправить POST-запрос с кодом подтверждения
+    fetch('users/check/' + code + '/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': csrfToken,
+        },
+        body: JSON.stringify({ code: code })
+    });
+}
+
+const confirmBtn = document.querySelector('.confirm-btn');
+confirmBtn.addEventListener('click', sendConfirmationCode);
+
 
 const signInBtn = document.getElementsByClassName('sign_in-btn')[0];
 signInBtn.addEventListener('click', openSignIn);
@@ -139,13 +181,13 @@ if (dropFile_2) {
 }
 
 
-
-
 const phoneInput = document.getElementById('phone');
 const subtitle = document.querySelector('.subtitle');
 const sendCodeButton = document.getElementById('send-code');
 
+// Валидация номера телефона
 phoneInput.addEventListener('input', function() {
+    
     const phoneRegex = /^\+\d{11}$/;
     if (!phoneRegex.test(this.value)) {
         subtitle.textContent = "Номер телефона должен содержать 12 символов и начинаться с '+'";
