@@ -13,38 +13,39 @@
 
 <body>
     <header class="header">
-
         <div class="container wrapper">
             <a href="#!" class="logo">ЛОГО</a>
             <a href="#!" class="sign_in-btn">Регистрация</a>
         </div>
-
+        <!---------- Форма НОМЕР ТЕЛЕФОНА ---------->
         <div id="sign_in-form">
-            <form method="POST" id="phone-field" onsubmit="return false">
+            <form method="POST" id="phone-field">
+                {% csrf_token %}
                 <p class="subtitle">Укажите номер телефона для регистрации</p>
                 <input type="phone" name="phone" id="phone" placeholder="Номер телефона">
                 <input type="submit" class="code-btn" id="send-code" value="Отправить код">
             </form>
 
-            <form method="POST" id="code-field" onsubmit="return false">
+            <form method="POST" id="code-field">
+                {% csrf_token %}
                 <p class="subtitle">Код отправлен!</p>
                 <input type="text" id="code" placeholder="Код из смс">
                 <input type="button" class="code-btn" id="repeat-code" value="Отправить код повторно">
                 <input type="submit" class="confirm-btn" value="Подтвердить">
             </form>
         </div>
+        <!------------------------------------------>
 
     </header>
 
     <section class="converter">
-
         <div class="container">
             <h1 class="converter-title">Конвертер файлов</h1>
             <p class="subtitle">{{ message|default:"Загрузите 2 файла, либо перетащите их в соответствующие окна" }} </p>
-            
             <form method="POST" id="file-form" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="dropfile-area">
+                    <!---------- Поле ФАЙЛ1 ---------->
                     <label class="file-field" id="file-field-1">
                         <input type="file" name="file1" id="file_1">
                         <div id="file1">
@@ -52,7 +53,8 @@
                             <p id="add-file-title-1">Добавить файл</p>
                         </div>
                     </label>
-
+                    <!-------------------------------->
+                    <!---------- Поле ФАЙЛ1 ---------->
                     <label class="file-field" id="file-field-2">
                         <input type="file" name="file2" id="file_2">
                         <div id="file2">
@@ -60,49 +62,41 @@
                             <p id="add-file-title-2">Добавить файл</p>
                         </div>
                     </label>
+                    <!-------------------------------->
                 </div>
 
                 
-
-                {% if not phone_confirmed and not order_id %}
-                <script>
-                    const converterBtn = document.getElementById('converter-btn');
-                    converterBtn.removeAttribute('disabled');
-                </script>
-                {% endif %}
-
+                <!---------- Кнопка КОНВЕРТИРОВАТЬ ---------->
                 <div class="converter-container">
                     <img id="up-arrow" src="{% static 'convert_order/img/converter-arrow.svg' %}" alt=""> 
                     <input type="submit" id="converter-btn" value="Конвертировать" disabled>
                     <img id="down-arrow" src="{% static 'convert_order/img/converter-arrow.svg' %}" alt="">
                 </div>
-
-            
-                
-                
+                {% if not phone_confirmed and not order_id %}
+                <script>
+                    const converterBtn1 = document.getElementById('converter-btn');
+                    converterBtn1.removeAttribute('disabled');
+                </script>
+                {% endif %}
+                <!------------------------------------------->
+                <!---------- Кнопка СКАЧАТЬ ---------->
                 <div class="download-container">
                     <img id="right-arrow" src="{% static 'convert_order/img/download-arrow.svg' %}" alt=""> 
                     {% if order_id %} <!-- Если был передан order_id в url -->
-                        <script>
-                            const downloadBtn = document.getElementById('download-btn');
-                            downloadBtn.removeAttribute('disabled');
-                        </script>
                         {% if phone_confirmed %}
-                            <input type="submit" id="download-btn" value="Скачать" onclick="location.href='{% url 'files:load_file' order_id %}'; setTimeout(function(){window.location.href='/';}, 500);" disabled>
+                            <input type="button" id="download-btn" value="Скачать" onclick="location.href='{% url 'files:load_file' order_id %}'; setTimeout(function(){window.location.href='/';}, 500);">
                         {% else %}
-                            <input type="submit" id="download-btn" value="Скачать" onclick="location.href='{% url 'users:phone' order_id %}';" disabled>
+                            <input type="button" id="download-btn" value="Скачать" onclick="location.href='{% url 'users:phone' order_id %}';">
                         {% endif %}
                     {% else %}
                         <input type="submit" id="download-btn" value="Скачать" disabled>
                     {% endif %}
                 </div>
-
-
-
-
+                <!------------------------------------>
             </form>
         </div>
 
+        <!---------- Поле ИНФОРМАЦИЯ ---------->
         <div class="container wrapper">
             <div class="info">
                 <p></p>ООО "Конвертер Онлайн" <br>
@@ -113,6 +107,7 @@
                 Мы помогаем Вам сделать вашу жизнь чуточку проще!
             </div>
         </div>
+        <!------------------------------------->
 
     </section>
 
@@ -122,5 +117,4 @@
 
     <script src="{% static 'convert_order/js/main.js' %}"></script> 
 </body>
-
 </html>
