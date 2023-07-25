@@ -49,9 +49,7 @@ class PhoneView(View):
 
 class PhoneNumberView(View):
     def post(self, request, phone_number):
-        code = '918385'
-        print(f'Номер = {phone_number}; \nКод подтверждения = {code}')
-        request.session['confirm_phone_code'] = code
+        print(f'Номер = {phone_number}')
         request.session['phone'] = phone_number
         return HttpResponse()
 
@@ -62,9 +60,7 @@ def code(request, code):
         if code in ["830009", "398092", "781964", "861423", "782200", "225356", "824265", "664697", "242403", "518711"]:
             print("Код совпадает!")
             request.session['phone_confirmed'] = True
-            # поменять надпись в форме
-            # phone_confirmed в profile
-            # disable кнопку Подтвердить 
+            # phone_confirmed в profile 
         else:
             request.session['phone_confirmed'] = False
             print("Код НЕ совпадает!")

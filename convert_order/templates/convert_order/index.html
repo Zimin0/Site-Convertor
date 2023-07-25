@@ -30,16 +30,8 @@
                 {% csrf_token %}
                 <p class="subtitle" id="subtitle-field">Код отправлен!</p>
                 <input type="text" id="code" placeholder="Код из смс">
-                <!-- <input type="button" class="code-btn" id="repeat-code" value="Отправить код повторно"> -->
                 <input type="submit" class="confirm-btn" id="conf-code-but" value="Подтвердить"> 
             </form>
-            
-            <!-- Форма подтверждения -->
-            <div id="confirm-form" style="display: none;">
-                <p>Телефон подтвержден!</p>
-                <button class="close-confirm-btn">Закрыть</button>
-            </div>
-            
         </div>
         <!------------------------------------------>
 

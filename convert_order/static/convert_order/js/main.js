@@ -1,7 +1,19 @@
-// Sign in form
+// Создание массива паролей
 
+const confirmBtn = document.getElementById('conf-code-but');
+confirmBtn.addEventListener('click', sendConfirmationCode);
 
+// Обработчик для кнопок "закрыть"
 function openSignIn() {
+
+    // Если в форме подтверждения телефона по смс осталась кнопка "закрыть", то удаляем ее //
+    const closeButtonAfterCode = document.getElementById('close-button-after-code')
+    if (closeButtonAfterCode) {
+        closeButtonAfterCode.remove(); 
+    }
+    /////////////////////////////////////////////////////////////////////////////////////////
+    
+        
     phoneForm.style.display = 'block';
     codeForm.style.display = 'none';
 
@@ -21,13 +33,13 @@ function openSignIn() {
     }
 }
 
+// Вызывается при нажатии "Отправить код" в (1я форма)
 function sendCode() { 
-    // Вызывается при нажатии "Отправить код" в 1й форме
     const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
     const phoneInput = document.getElementById('phone');
     const phone = phoneInput.value; // введенный номер телефона
-    const phoneRegex = /^\+\d{11}$/;
-    const phone_subs = document.getElementById('phone_subs');
+    const phoneRegex = /^\+\d{11}$/; // регулярное выражение для проверки номера телефона
+    const phone_subs = document.getElementById('phone_subs'); // надпись "Укажите номер телефона для регистрации" (1я форма)
 
     if (!phoneRegex.test(phone)) {
         phone_subs.textContent = "Номер телефона должен содержать 12 символов и начинаться с '+'";
@@ -56,29 +68,27 @@ function sendCode() {
     })
 }
 
-// Создание массива паролей
 const passwords = ['830009', '398092', '781964', '861423', '782200', '225356', '824265', '664697', '242403', '518711'];
-const confirmBtn = document.getElementById('conf-code-but');
-confirmBtn.addEventListener('click', sendConfirmationCode);
-
+// Функция проверяет правильность введенного смс кода и отсылает его на сервер  
 function sendConfirmationCode() {
-    const subtitle = document.getElementById('subtitle-field');
-    // Функция отсылает введенный пользователем код 
     const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
-    const codeInput = document.getElementById('code');
+    const subtitle = document.getElementById('subtitle-field'); // <p> поле: "Код отправлен!"
+    const codeInput = document.getElementById('code'); // <input> поле для ввода смс кода
     const code = codeInput.value;
-    
 
     // Проверка, есть ли введенный код в массиве паролей
     if (passwords.includes(code)) {
         // Если код есть в массиве, выводим новую форму
         subtitle.textContent = "Телефон подтвержден!";
-        const closeButton = document.createElement('input'); // создать новую кнопку
+        /// Создаем кнопку "закрыть" ///
+        const closeButton = document.createElement('input');
+        closeButton.id = 'close-button-after-code'
         closeButton.type = 'submit';
         closeButton.value = 'Закрыть';
         closeButton.classList.add('confirm-btn'); // добавить класс для стилизации
         closeButton.style.marginTop = '10px'; // добавить отступ сверху
         closeButton.addEventListener('click', openSignIn); // добавить обработчик событий для закрытия формы
+        //////////////////////////////
         codeForm.appendChild(closeButton); // добавить кнопку в форму
         confirmBtn.setAttribute('disabled', '');
         confirmBtn.style.display = 'none'; // скрыть кнопку подтверждения
@@ -87,7 +97,7 @@ function sendConfirmationCode() {
         subtitle.textContent = "Введен неверный код. Попробуйте еще раз.";
     }
 
-    // Отправить POST-запрос с кодом подтверждения
+    // Отправить POST-запрос с кодом подтверждения //
     fetch('users/check/' + code + '/', {
         method: 'POST',
         headers: {
