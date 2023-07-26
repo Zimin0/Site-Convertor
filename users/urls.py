@@ -1,10 +1,11 @@
 from django.urls import path
-from users.views import PhoneNumberView, PhoneView, code
+from users.views import bad_code, code, register, good_code
 
 app_name = 'users'
 
 urlpatterns = [
-    path('phone/<str:phone_number>/', PhoneNumberView.as_view(), name='PhoneNumberView'),
-    path('check/<str:code>/', code, name='code'),
-    path('phone/<str:order_id>/', PhoneView.as_view(), name='phone'),
+    path('register', register, name='register'), # поле ввода номера телефона
+    path('code/', code, name='code'), # поле ввода смс кода
+    path('bad_code/', bad_code, name='bad_code'), # код введен неправильно 
+    path('good_code/', good_code, name='good_code'), # код введен правильно
 ]
