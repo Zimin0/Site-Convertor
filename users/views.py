@@ -50,8 +50,9 @@ import random
 def register(request):
     """ Страница с полем ввода номера телефона. """
     if request.method == 'POST':
-        request.sesion['phone'] = request.POST['phone']
+        request.session['phone'] = request.POST['phone']
         request.session['code_is_sended'] = False
+        print(f"Введен телефон: {request.session['phone']}")
         return redirect('users:code')
     return render(request, 'users/register.html')
 
@@ -59,23 +60,26 @@ def code(request):
     """ Страница с полем смс кода. """
     def generate_sms_code():
         """ Генерирует смс код """
-        LENGHT_OF_CODE = 6
-        return random.randint(10**LENGHT_OF_CODE, int('9'*LENGHT_OF_CODE))
+        return random.randint(100_000, 999_999+1)
+    
+    print(request.session['confirmation_code'])
 
     code_is_sended = request.session['code_is_sended']
     try: # если не был введен номер телефона
-        request.POST['phone']
+        request.session['phone']
     except KeyError:
         return redirect('users:register')
 
     context = {}
     if request.method == 'POST':
-        request.sesion['phone'] = request.POST['phone']
+        request.session['phone'] = request.session['phone']
         if not code_is_sended:
             return redirect('users:register')
         code = request.POST['sms_code']
-        if code == request.session['confirmation_code']: # если введен правильный смс код
-            cur_user_profile = Profile.objects.filter(phone=request.POST['phone']) 
+        print(code, int(request.session['confirmation_code']))
+        if str(code) == str(request.session['confirmation_code']): # если введен правильный смс код
+            cur_user_profile = Profile.objects.filter(phone=request.session['phone']) 
+            request.session['phone_is_confirmed'] = True
             if cur_user_profile.exists():  # Если такой юзер уже существует 
                 cur_user = cur_user_profile.first().user # Подтягиваем модель юзера
                 cur_user.profile.phone_is_confirmed = True
@@ -94,6 +98,7 @@ def code(request):
             request.session['code_is_sended'] = True
             # оправить код на телефон
             request.session['confirmation_code'] = generate_sms_code()
+            print(f'Код подтверждения: {request.session["confirmation_code"]}')
             return render(request, 'users/code.html')
         else: # если код уже отправлялся
             context['message'] = 'Код уже отправлен!'
@@ -102,14 +107,18 @@ def code(request):
 def good_code(request):
     """ Страница с "код подтврежден" и кнопкой закрыть."""
     try: 
-        request.POST['phone']
+        request.session['phone_is_confirmed']
     except KeyError:
         return redirect('users:register')
     
-    if request.method == 'POST':
-        return redirect('convert_order:clear_main')
+    # if request.method == 'POST': # нажата кнопка "закрыть"
+    #     return redirect('convert_order:clear_main')
     return render(request, 'users/good_code.html')
 
 def need_to_pay(request):
     """ Страница с "Вы уже конвертировали у нас на сайте... Нужно оплатить" """
+    try: 
+        request.session['phone_is_confirmed']
+    except KeyError:
+        return redirect('users:register')
     return render(request, "users/need_to_pay.html")
