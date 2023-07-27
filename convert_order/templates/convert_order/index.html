@@ -64,7 +64,11 @@
                     <img id="right-arrow" src="{% static 'convert_order/img/download-arrow.svg' %}" alt=""> 
                     {% if files_uploaded %} 
                         {% if phone_is_confirmed %}
-                            <input type="button" id="download-btn" value="Скачать" onclick="location.href='{% url 'files:load_file' order_id %}'; setTimeout(function(){window.location.href='/';}, 500);">
+                            {% if convert_already %}
+                                <input type="button" id="download-btn" value="Скачать" onclick="location.href='{% url 'users:need_to_pay' %}';">
+                            {% else %}
+                                <input type="button" id="download-btn" value="Скачать" onclick="location.href='{% url 'files:load_file' order_id %}'; setTimeout(function(){window.location.href='/';}, 500);">
+                            {% endif %}
                         {% else %}
                             <input type="button" id="download-btn" value="Скачать" onclick="location.href='{% url 'users:register' %}';">
                         {% endif %}

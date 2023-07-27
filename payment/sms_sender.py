@@ -26,7 +26,7 @@ def send_confiramtion_code(phone) -> int:
         }
     ]
     }
-    response = requests.post(url, headers=headers, data=json.dumps(data))
-    print(response.text)
+    # response = requests.post(url, headers=headers, data=json.dumps(data))
+    # print(response.text)
     print(f'code = {code}')
     return code

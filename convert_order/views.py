@@ -7,7 +7,8 @@ def clear_main(request):
     context = {}
     context['files_uploaded'] = False
     if not request.session.get('phone_is_confirmed', None):
-        request.session['phone_is_confirmed'] = False
+        request.session['phone_is_confirmed'] = False 
+        request.session['convert_already'] = False
     print(request.session.items())
     if request.method == 'POST':
         if len(request.FILES) < 2: # если загружено меньше, чем 2 файла
@@ -39,9 +40,15 @@ def files_main(request, order_id):
     context['phone_is_confirmed'] = phone_is_confirmed
     context['files_uploaded'] = True
     context['order_id'] = order_id 
+    if phone_is_confirmed:
+        context['convert_already'] = request.session['convert_already']
+    else:
+        context['convert_already'] = False
+
     # if phone_is_confirmed:
     #     decrypted_id = ConvertOrder.decrypt_id(order_id)
     #     context['order_id'] = decrypted_id
+    print(f'context={context}')
     return render(request, 'convert_order/index.html', context) 
 
 

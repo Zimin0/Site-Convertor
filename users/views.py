@@ -60,7 +60,6 @@ def register(request):
 
 def code(request):
     """ Страница с полем смс кода. """
-    
     if request.session.get('phone_is_confirmed', None):
         return redirect('users:good_code')
     if not request.session.get('phone', None): # если в сессии нет номера телефона
@@ -77,14 +76,14 @@ def code(request):
             cur_user_profile = Profile.objects.filter(phone=request.session['phone']) 
             if cur_user_profile.exists():  # Если такой юзер уже существует 
                 cur_user = cur_user_profile.first().user # Подтягиваем модель юзера
-                cur_user.profile.phone_is_confirmed = True
-                cur_user.profile.save()
+                cur_user.profile.convert_already = True
             else: 
                 last_user_pk = User.objects.order_by('pk').last().pk # нужен для пронумеровки следующего юзера
-                new_user = User.objects.create(username=f'user{last_user_pk+1}')
-                new_user.save(update_fields=['username'])
-                new_user.profile.phone_is_confirmed = True
-                new_user.profile.save()
+                cur_user = User.objects.create(username=f'user{last_user_pk+1}')
+                cur_user.save(update_fields=['username'])
+            cur_user.profile.phone_is_confirmed = True
+            cur_user.profile.save()
+            request.session['convert_already'] = cur_user.profile.convert_already # конвертировал ли раннее данный пользователь и нужна ли оплата
             request.session['phone_is_confirmed'] = True
             request.session.pop('confirmation_code')
             request.session.pop('code_is_sended')
