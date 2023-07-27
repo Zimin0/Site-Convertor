@@ -49,6 +49,8 @@ import random
 
 def register(request):
     """ Страница с полем ввода номера телефона. """
+    if request.session.get('phone_is_confirmed', None):
+        return redirect('users:good_code')
     if request.method == 'POST':
         request.session['phone'] = request.POST['phone']
         request.session['code_is_sended'] = False
@@ -62,33 +64,33 @@ def code(request):
         """ Генерирует смс код """
         return random.randint(100_000, 999_999+1)
     
-    print(request.session['confirmation_code'])
-
-    code_is_sended = request.session['code_is_sended']
-    try: # если не был введен номер телефона
-        request.session['phone']
-    except KeyError:
+    if request.session.get('phone_is_confirmed', None):
+        return redirect('users:good_code')
+    if not request.session.get('phone', None): # если в сессии нет номера телефона
         return redirect('users:register')
-
+    print(request.session.items())
+    print(request.session.get('confirmation_code', None))
     context = {}
     if request.method == 'POST':
-        request.session['phone'] = request.session['phone']
-        if not code_is_sended:
+        code_is_sended = request.session.get('code_is_sended', None)
+        if code_is_sended is None:
             return redirect('users:register')
         code = request.POST['sms_code']
-        print(code, int(request.session['confirmation_code']))
         if str(code) == str(request.session['confirmation_code']): # если введен правильный смс код
             cur_user_profile = Profile.objects.filter(phone=request.session['phone']) 
-            request.session['phone_is_confirmed'] = True
             if cur_user_profile.exists():  # Если такой юзер уже существует 
                 cur_user = cur_user_profile.first().user # Подтягиваем модель юзера
                 cur_user.profile.phone_is_confirmed = True
                 cur_user.profile.save()
             else: 
-                new_user = User.objects.create(username=f'user{random.randint(1000000,9999999)}')
+                last_user_pk = User.objects.order_by('pk').last().pk # нужен для пронумеровки следующего юзера
+                new_user = User.objects.create(username=f'user{last_user_pk+1}')
                 new_user.save(update_fields=['username'])
                 new_user.profile.phone_is_confirmed = True
                 new_user.profile.save()
+            request.session['phone_is_confirmed'] = True
+            request.session.pop('confirmation_code')
+            request.session.pop('code_is_sended')
             return redirect('users:good_code')
         else:
             context['message'] = 'Код не совпадает! Попробуйте еще раз!'
@@ -106,19 +108,16 @@ def code(request):
 
 def good_code(request):
     """ Страница с "код подтврежден" и кнопкой закрыть."""
-    try: 
-        request.session['phone_is_confirmed']
-    except KeyError:
+    if not request.session.get('phone_is_confirmed', None):
         return redirect('users:register')
-    
-    # if request.method == 'POST': # нажата кнопка "закрыть"
-    #     return redirect('convert_order:clear_main')
     return render(request, 'users/good_code.html')
 
 def need_to_pay(request):
     """ Страница с "Вы уже конвертировали у нас на сайте... Нужно оплатить" """
-    try: 
-        request.session['phone_is_confirmed']
-    except KeyError:
+    if not request.session.get('phone_is_confirmed', None):
         return redirect('users:register')
     return render(request, "users/need_to_pay.html")
+
+def clear(request):
+    request.session.clear()
+    return HttpResponse("Сессия очищена!")

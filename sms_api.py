@@ -9,15 +9,13 @@ headers = {
     'Content-Type': 'application/json'
 }
 
-text = ''' Код подтверждения: %w
-Интернет-конвертор файлов 
-'''
+text = '''Код подтверждения для входа на сайт SAPXMLVersionUP.ru: %w'''
 text = text.replace('%w', str(random.randint(1000,9999)))
 print(text)
 nikita_phone = '79313661220'
 
 data = {
-  "apiKey": "ELpxOigS8MnuhzF9Io9sJyM8BthMkcR5FMYMlJ7b3eOR0EU41HGo83LvnldH",
+  "apiKey": "LqipzI6SfjigFgVxUjCkXeQFnFLIPkzYjlIfnta3EKgYIwDKkOwEK6WczrQy",
   "webhookUrl": "https://admin.p1sms.ru/apiSms/create",
   "sms": [
     {
@@ -25,7 +23,7 @@ data = {
       "phone": nikita_phone
       ,
       "text": text,
-      "sender": "Зименков Никита Вячеславович"
+      "sender": "VIRTA"
     }
   ]
 }

@@ -23,7 +23,7 @@
     <section class="converter">
         <div class="container">
             <h1 class="converter-title">Конвертер файлов</h1>
-            <p class="subtitle">{{ message|default:"Загрузите 2 файла, либо перетащите их в соответствующие окна" }} </p>
+            <p class="subtitle">{{ message|default:"Загрузите 2 файла, либо перетащите их в соответствующие окна!" }} </p>
             <form method="POST" id="file-form" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="dropfile-area">
@@ -46,8 +46,6 @@
                     </label>
                     <!-------------------------------->
                 </div>
-
-                
                 <!---------- Кнопка КОНВЕРТИРОВАТЬ ---------->
                 <div class="converter-container">
                     <img id="up-arrow" src="{% static 'convert_order/img/converter-arrow.svg' %}" alt=""> 
@@ -65,7 +63,7 @@
                 <div class="download-container">
                     <img id="right-arrow" src="{% static 'convert_order/img/download-arrow.svg' %}" alt=""> 
                     {% if files_uploaded %} 
-                        {% if phone_confirmed %}
+                        {% if phone_is_confirmed %}
                             <input type="button" id="download-btn" value="Скачать" onclick="location.href='{% url 'files:load_file' order_id %}'; setTimeout(function(){window.location.href='/';}, 500);">
                         {% else %}
                             <input type="button" id="download-btn" value="Скачать" onclick="location.href='{% url 'users:register' %}';">
