@@ -4,7 +4,7 @@ from users.models import Profile
 from convert_order.models import ConvertOrder
 from files.models import File
 from django.views import View
-import random
+from payment.sms_sender import send_confiramtion_code
 
 # class PhoneView(View):
 #     """ Отображение страницы ввода номера телефона. """
@@ -60,9 +60,6 @@ def register(request):
 
 def code(request):
     """ Страница с полем смс кода. """
-    def generate_sms_code():
-        """ Генерирует смс код """
-        return random.randint(100_000, 999_999+1)
     
     if request.session.get('phone_is_confirmed', None):
         return redirect('users:good_code')
@@ -98,8 +95,7 @@ def code(request):
     elif request.method == 'GET':
         if not request.session['code_is_sended']: # если код еще не отправлялся
             request.session['code_is_sended'] = True
-            # оправить код на телефон
-            request.session['confirmation_code'] = generate_sms_code()
+            request.session['confirmation_code'] = send_confiramtion_code(request.session['phone'] ) # оправляет код смс на телефон
             print(f'Код подтверждения: {request.session["confirmation_code"]}')
             return render(request, 'users/code.html')
         else: # если код уже отправлялся
