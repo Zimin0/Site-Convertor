@@ -22,6 +22,8 @@ def clear_main(request):
         order.save() 
         File.objects.create(order=order , file=file1, file_type='1').save()
         File.objects.create(order=order, file=file2, file_type='2').save()
+        #### Только для тестирования ####
+        File.objects.create(order=order, file=file2, file_type='3').save()
         ########################################################
         encrypted_id = ConvertOrder.crypt_id(order.id)
         return redirect('convert_order:files_main', order_id=encrypted_id)
@@ -36,7 +38,7 @@ def files_main(request, order_id):
     phone_is_confirmed = request.session.get('phone_is_confirmed', False)
     context['phone_is_confirmed'] = phone_is_confirmed
     context['files_uploaded'] = True
-    context['order_id'] = order_id #ConvertOrder.decrypt_id(order_id)
+    context['order_id'] = order_id 
     # if phone_is_confirmed:
     #     decrypted_id = ConvertOrder.decrypt_id(order_id)
     #     context['order_id'] = decrypted_id
