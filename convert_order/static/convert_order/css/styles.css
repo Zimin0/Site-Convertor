@@ -1,6 +1,4 @@
 @import "./reset.css";
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap');
 
 body {
@@ -10,6 +8,7 @@ body {
 
     overflow-x: hidden;
 }
+
 
 .container {
     width: 100%;
@@ -52,6 +51,12 @@ body {
     line-height: 1;
 }
 
+.logo img {
+    height: 36px;
+
+    margin-right: 10px;
+}
+
 .sign_in-btn {
     padding: 3px 20px;
     font-size: 19px;
@@ -77,21 +82,20 @@ body {
 /* Sign in form */
 
 #sign_in-form {
-    display: none;
-    /* flex */
+    display: flex;
     justify-content: center;
 
-    height: 100vh;
+    min-height: calc(100vh - 70px - 40px);
     width: 100%;
-    padding-top: 17vh;
+    padding: 17vh 0;
 
-    background-color: rgba(173, 173, 173, 0.8);
-    position: fixed;
-    z-index: 10;
+    background-color: #fff;
 }
 
 #phone-field,
-#code-field {
+#code-field,
+#return-block,
+#pay-block {
     box-sizing: border-box;
     height: 230px;
     width: 430px;
@@ -101,12 +105,12 @@ body {
     border-radius: 15px;
 }
 
-#code-field {
-    padding-top: 20px;
+#return-block {
+    padding: 75px 40px;
 }
 
-#code-field {
-    display: none;
+#pay-block {
+    padding: 65px 40px;
 }
 
 #phone,
@@ -122,7 +126,7 @@ body {
     margin-bottom: 15px;
 }
 
-.code-btn {
+.form-btn {
     display: block !important;
     max-width: 250px;
     width: 80%;
@@ -137,14 +141,18 @@ body {
     margin: 0 auto;
 }
 
-.code-btn:hover,
-.code-btn:active {
+.form-btn:enabled:hover,
+.form-btn:enabled:active {
     color: #fff;
     background-color: #4f4db1;
 }
 
 #send-code {
-    margin-top: 11px;
+    margin-top: 6%;
+}
+
+#send-code:disabled {
+    opacity: 0.8;
 }
 
 .confirm-btn {
@@ -156,11 +164,30 @@ body {
     color: rgb(32, 184, 32);
     border: 2px solid rgb(32, 184, 32);
     border-radius: 5px;
+
+    margin-top: 6%;
 }
 
-.confirm-btn:hover {
+.confirm-btn:enabled:hover,
+.confirm-btn:enabled:active,
+#return-back:hover,
+#return-back:active,
+#pay-btn:hover,
+#pay-btn:active {
+    cursor: pointer;
     color: #fff;
     background-color: rgb(32, 184, 32);
+}
+
+.confirm-btn:disabled {
+    opacity: 0.6;
+}
+
+#return-back,
+#pay-btn {
+    text-align: center;
+    width: 50%;
+    margin-top: 10%;
 }
 
 /* Converter */
@@ -168,6 +195,10 @@ body {
 .converter {
     padding: 35px 0 15px;
     min-height: calc(100vh - 70px - 40px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .converter-title {
@@ -230,12 +261,6 @@ body {
 
 .file-field.drop {
     border: 3px dashed #ed6466;
-}
-
-.converter {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
 }
 
 .converter-container {
@@ -303,7 +328,7 @@ body {
 
 .info {
     box-sizing: border-box;
-    width: 30%;
+    width: 35%;
 }
 
 .info:last-child {

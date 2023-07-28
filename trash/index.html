@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-    <title>SAP XML - Конвертор xml файлов</title>
+    <title>Конвертер</title>
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'convert_order/img/icon.png' %}"/> 
     <link rel="stylesheet" href="{% static 'convert_order/css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'convert_order/css/media.css' %}"> 
@@ -14,38 +14,29 @@
 
 <body>
     <header class="header">
-
         <div class="container wrapper">
-            <a href="{% url 'convert_order:clear_main' %}" class="logo">
-                <img src="{% static 'convert_order/img/converter-logo.jpg' %}" alt=""> 
-                <span>SAP XML</span>
-            </a>
-            <a href="{% url 'users:register' %}" class="sign_in-btn close">Регистрация</a>
-                    
-
-
+            <a href="{% url 'convert_order:clear_main' %}" class="logo">ЛОГО</a>
+            <a href="{% url 'users:register' %}" class="sign_in-btn">Регистрация</a>
         </div>
-
     </header>
 
     <section class="converter">
         <div class="container">
             <h1 class="converter-title">Конвертер файлов</h1>
             <p class="subtitle">{{ message|default:"Загрузите 2 файла, либо перетащите их в соответствующие окна!" }}</p>
-
             <form method="POST" id="file-form" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="dropfile-area">
-                    <!---------------- Поле ФАЙЛ1 --------------->
+                    <!---------- Поле ФАЙЛ1 ---------->
                     <label class="file-field" id="file-field-1">
                         <input type="file" name="file1" id="file_1">
                         <div id="file1">
-                            <img id="add-file-1" src="{% static 'convert_order/img/icons8-плюс.svg' %}" alt="Add file">
+                            <img id="add-file-1" src="{% static 'convert_order/img/icons8-плюс.svg' %}" alt="Add file"> 
                             <p id="add-file-title-1">Добавить файл</p>
                         </div>
                     </label>
-                    <!------------------------------------------->
-                    <!---------------- Поле ФАЙЛ1 --------------->
+                    <!-------------------------------->
+                    <!---------- Поле ФАЙЛ1 ---------->
                     <label class="file-field" id="file-field-2">
                         <input type="file" name="file2" id="file_2">
                         <div id="file2">
@@ -53,24 +44,24 @@
                             <p id="add-file-title-2">Добавить файл</p>
                         </div>
                     </label>
-                    <!------------------------------------------->
+                    <!-------------------------------->
                 </div>
                 <!---------- Кнопка КОНВЕРТИРОВАТЬ ---------->
                 <div class="converter-container">
-                    <img id="up-arrow" src="{% static 'convert_order/img/converter-arrow.svg' %}" alt="">
+                    <img id="up-arrow" src="{% static 'convert_order/img/converter-arrow.svg' %}" alt=""> 
                     <input type="submit" id="converter-btn" value="Конвертировать">
                     <img id="down-arrow" src="{% static 'convert_order/img/converter-arrow.svg' %}" alt="">
                 </div>
                 {% if files_uploaded %}
                 <script> // Выключаем кнопку
                     const converterBtn1 = document.getElementById('converter-btn');
-                    converterBtn1.setAttribute('disabled', '');
+                    converterBtn1.setAttribute('disabled');
                 </script>
                 {% endif %}
                 <!------------------------------------------->
-                <!-------------- Кнопка СКАЧАТЬ ------------->
-                <div class="download-contфainer">
-                    <img id="right-arrow" src="{% static 'convert_order/img/download-arrow.svg' %}" alt="">
+                <!---------- Кнопка СКАЧАТЬ ---------->
+                <div class="download-container">
+                    <img id="right-arrow" src="{% static 'convert_order/img/download-arrow.svg' %}" alt=""> 
                     {% if files_uploaded %} 
                         {% if phone_is_confirmed %}
                             {% if convert_already %}
@@ -85,25 +76,28 @@
                         <input type="submit" id="download-btn" value="Скачать" disabled>
                     {% endif %}
                 </div>
-                <!------------------------------------------->
+                <!------------------------------------>
             </form>
         </div>
+        <!---------- Поле ИНФОРМАЦИЯ ---------->
         <div class="container wrapper">
             <div class="info">
-                <p>
-                    ООО "Рога и Копыта" <br>
-                    <phone>+7-931-311-13-52</phone>
+                <p></p>ООО "Конвертер Онлайн" <br>
+                <phone>+7-931-311-13-52</phone>
                 </p>
             </div>
             <div class="info">
-                Мы помогаем Вам сделать жизнь чуточку проще!
+                Мы помогаем Вам сделать вашу жизнь чуточку проще!
             </div>
         </div>
+        <!------------------------------------->
+
     </section>
 
     <footer class="footer">
         <p class="footer-copyright">© Copyright 2023. Все права защищены</p>
     </footer>
-    <script src="{% static 'convert_order/js/file-form.js' %}"></script> 
+
+    <script src="{% static 'convert_order/js/main.js' %}"></script> 
 </body>
 </html>

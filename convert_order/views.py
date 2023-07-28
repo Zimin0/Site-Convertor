@@ -44,10 +44,6 @@ def files_main(request, order_id):
         context['convert_already'] = request.session['convert_already']
     else:
         context['convert_already'] = False
-
-    # if phone_is_confirmed:
-    #     decrypted_id = ConvertOrder.decrypt_id(order_id)
-    #     context['order_id'] = decrypted_id
     print(f'context={context}')
     return render(request, 'convert_order/index.html', context) 
 
