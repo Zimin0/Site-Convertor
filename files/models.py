@@ -18,5 +18,5 @@ class File(models.Model):
         return f'{self.file}'
 
     order = models.ForeignKey(ConvertOrder, null=True, verbose_name="Заказ", on_delete=models.SET_NULL, related_name='files')
-    file = models.FileField(verbose_name="Файл", upload_to="%d/%m/%Y/")
+    file = models.FileField(verbose_name="Файл", upload_to="%Y/%m/%d/")
     file_type = models.CharField(max_length=2, choices=TYPE, default='0', verbose_name="Тип файла (1, 2 или 3)")

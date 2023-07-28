@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <title>Подтверждение</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'convert_order/img/icon.png' %}"/> 
+    <link rel="stylesheet" href="{% static 'convert_order/css/styles.css' %}"> 
+    <link rel="stylesheet" href="{% static 'convert_order/css/media.css' %}"> 
+</head>
+
+<body>
+    <header class="header">
+
+        <div class="container wrapper">
+            <a href="{% url 'convert_order:clear_main' %}" class="logo">
+                <img src="{% static 'convert_order/img/converter-logo.jpg' %}" alt=""> 
+                <span>SAP XML</span>
+            </a>
+            <a href="{% url 'convert_order:clear_main' %}" class="sign_in-btn close">Закрыть</a>
+        </div>
+
+    </header>
+
+    <section id="sign_in-form">
+        <div id="return-block">
+            <p class="subtitle">Телефон подтвержден!</p>
+            <a href="{% url 'convert_order:clear_main' %}" class="confirm-btn" id="return-back">Закрыть</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p class="footer-copyright">© Copyright 2023. Все права защищены</p>
+    </footer>
+
+    <script src="{% static 'convert_order/js/sign-in-form.js' %}"></script> 
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <head>
+        <link rel="shortcut icon" type="image/x-icon" href="{% static 'convert_order/img/favicon.png' %}"/>
+    </head>
+    <title>Номер телефона</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .input-field {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <h2>Введите ваш номер телефона, чтобы мы узнали вас в следующий раз</h2>
+        <div class="input-field">
+            <input type="tel" name="phone" placeholder="Номер телефона" required>
+        </div>
+        <button type="submit">Отправить</button>
+    </form>
+</body>
+</html>

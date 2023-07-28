@@ -1,8 +1,12 @@
 from django.urls import path
-from users.views import PhoneView
+from users.views import code, register, good_code, need_to_pay, clear
 
 app_name = 'users'
 
 urlpatterns = [
-    path('phone/<str:order_id>/', PhoneView.as_view(), name='phone'),
+    path('register/', register, name='register'), # поле ввода номера телефона
+    path('code/', code, name='code'), # поле ввода смс кода
+    path('good_code/', good_code, name='good_code'), # код введен правильно 
+    path('need-to-pay/', need_to_pay, name='need_to_pay'), # нужно оплатить 2ю конвертацию
+    path('clear/', clear) # для дебага - удаляет данные сессии
 ]
