@@ -14,14 +14,17 @@
 
 <body>
     <header class="header">
-
         <div class="container wrapper">
             <a href="{% url 'convert_order:clear_main' %}" class="logo">
                 <img src="{% static 'convert_order/img/converter-logo.jpg' %}" alt=""> 
                 <span>SAP XML</span>
             </a>
-            <a href="{% url 'users:register' %}" class="sign_in-btn close">Регистрация</a>
+            <div class="button-container">
+                <a href="{% url 'users:register' %}" class="sign_in-btn close">Регистрация</a>
+                <button class="lang-btn">RU</button>
+            </div>
         </div>
+        
 
     </header>
 

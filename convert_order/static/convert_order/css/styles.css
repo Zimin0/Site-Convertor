@@ -9,6 +9,25 @@ body {
     overflow-x: hidden;
 }
 
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+.lang-btn {
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    font-size: 19px;
+    padding: 3px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.lang-btn:hover {
+    background-color: rgb(250, 89, 89);
+}
+
 .container {
     width: 100%;
     height: 100%;
@@ -75,7 +94,7 @@ body {
 .sign_in-btn.close:active {
     color: #fff;
     background-color: rgb(250, 89, 89);
-    border-color: rgb(250, 89, 89);
+    border-color: #fff;
 }
 
 /* Sign in form */
