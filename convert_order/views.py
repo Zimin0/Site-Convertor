@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from convert_order.models import ConvertOrder
 from files.models import File
 
@@ -41,6 +41,10 @@ def files_main(request, order_id):
     context['files_uploaded'] = True
     context['order_id'] = order_id 
     if phone_is_confirmed:
+        decrypted_id = ConvertOrder.decrypt_id(order_id)
+        order = get_object_or_404(ConvertOrder, id=decrypted_id)
+        order.phone = request.session['phone']
+        order.save()
         context['convert_already'] = request.session['convert_already']
     else:
         context['convert_already'] = False

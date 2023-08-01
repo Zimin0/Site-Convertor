@@ -4,7 +4,7 @@ import random
 
 def __generate_sms_code() -> int:
     """ Генерирует смс код (int) """
-    return random.randint(100_000, 999_999+1)
+    return random.randint(1_000, 9_999+1)
 
 def send_confiramtion_code(phone) -> int:
     """ Возвращает код подтверждения"""
@@ -30,3 +30,12 @@ def send_confiramtion_code(phone) -> int:
     # print(response.text)
     print(f'code = {code}')
     return code
+
+"""
+мультиязычость 
+появляющиеся стрелки 
+привязывать номер телефона
+куда вставить ролик
+телефон в базе данных 
+поменять названия ( в телеграмме )
+"""
