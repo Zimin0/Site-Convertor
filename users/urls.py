@@ -1,5 +1,6 @@
 from django.urls import path
 from users.views import code, register, good_code, need_to_pay, clear
+from django.conf.urls.i18n import i18n_patterns
 
 app_name = 'users'
 

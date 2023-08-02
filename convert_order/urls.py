@@ -1,5 +1,6 @@
 from django.urls import path, include
 from convert_order.views import clear_main, files_main
+from django.conf.urls.i18n import i18n_patterns
 
 app_name = 'convert_order'
 

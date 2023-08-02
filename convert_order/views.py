@@ -1,8 +1,11 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from convert_order.models import ConvertOrder
 from files.models import File
+from django.utils.translation import gettext as _
+from django.utils.translation import activate
 
 def clear_main(request):
+    activate('en')
     """ Отображает страницу для загрузки файлов. """
     context = {}
     context['files_uploaded'] = False
@@ -12,7 +15,7 @@ def clear_main(request):
     print(request.session.items())
     if request.method == 'POST':
         if len(request.FILES) < 2: # если загружено меньше, чем 2 файла
-            context['message'] = 'Загрузите оба файла!'
+            context['message'] = _('Upload 2 files!')#'Загрузите оба файла!'
             return render(request, 'convert_order/index.html', context)
         file1 = request.FILES['file1']
         file2 = request.FILES['file2']

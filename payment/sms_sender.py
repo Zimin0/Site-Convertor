@@ -13,7 +13,7 @@ def send_confiramtion_code(phone) -> int:
         'Content-Type': 'application/json'
     }
     code = __generate_sms_code()
-    text = f'''Код подтверждения для входа на сайт SAPXMLVersionUP.ru: {code}''' 
+    text = f"""Код подтверждения для входа на сайт SAPXMLVersionUP.ru: {code}""" 
     data = {
     "apiKey": "LqipzI6SfjigFgVxUjCkXeQFnFLIPkzYjlIfnta3EKgYIwDKkOwEK6WczrQy",
     "webhookUrl": "https://admin.p1sms.ru/apiSms/create",

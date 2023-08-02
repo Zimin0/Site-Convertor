@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -26,7 +27,7 @@
 
     <section id="sign_in-form">
         <div id="return-block">
-            <p class="subtitle">Телефон подтвержден!</p>
+            <p class="subtitle">{% trans "Phone is confirmed!" %}</p> 
             <a href="{% url 'convert_order:clear_main' %}" class="confirm-btn" id="return-back">Закрыть</a>
         </div>
     </section>
