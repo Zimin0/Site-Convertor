@@ -8,11 +8,21 @@ def clear_main(request):
     """ Отображает страницу для загрузки файлов. """
     context = {}
     context['files_uploaded'] = False
+    print("Сессия1:",request.session.items())
     if not request.session.get('phone_is_confirmed', None):
+        print("Подтягиваю данные из сессии!")
         request.session['phone_is_confirmed'] = False 
         request.session['convert_already'] = False
-    print(request.session.items())
+    print("Сессия2:",request.session.items())
 
+    if 'phone' in request.COOKIES:
+        print("Подтягиваю телефон из кукисов!")
+        request.session['phone'] = request.COOKIES['phone']
+        request.session['phone_is_confirmed'] = True
+        request.session['convert_already'] = request.COOKIES['convert_already']
+    else:
+        print("Телефона в кукисах нет!")
+    print("Сессия3:",request.session.items())
     if request.method == 'POST':
         if len(request.FILES) < 2: # если загружено меньше, чем 2 файла
             context['message'] = _('Upload 2 files!') 

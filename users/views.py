@@ -51,7 +51,12 @@ def code(request):
             request.session['phone_is_confirmed'] = True
             request.session.pop('confirmation_code')
             request.session.pop('code_is_sended')
-            return redirect('users:good_code')
+            ## Сделать обработку куки, если они отключены ##
+            print("Заношу телефон в кукисы!")
+            response = redirect('users:good_code') 
+            response.set_cookie('phone', request.session['phone']) 
+            response.set_cookie('convert_already', request.session['convert_already']) 
+            return response
         else:
             context['message'] = _('The code doesn`t match.Try again.') 
             return render(request, 'users/code.html', context)
@@ -79,4 +84,7 @@ def need_to_pay(request):
 
 def clear(request):
     request.session.clear()
-    return HttpResponse("<h1>Сессия очищена!</h1>")
+    response = HttpResponse("<h1>Сессия и кукисы очищены!</h1>")
+    # response.delete_cookie('phone')
+    # response.delete_cookie('convert_already')
+    return response
