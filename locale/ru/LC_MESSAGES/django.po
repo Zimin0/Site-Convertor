@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-01 20:57+0300\n"
+"POT-Creation-Date: 2023-08-03 14:06+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,14 +19,42 @@ msgstr ""
 "10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%"
 "100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\convert_order\templates\convert_order\index.html:33
-msgid "File converter"
-msgstr "Конвертор файлов"
-
 #: .\convert_order\views.py:18
 msgid "Upload 2 files!"
-msgstr ""
+msgstr "Загрузите оба файла!"
 
-#: .\users\templates\users\good_code.html:29
+#: .\convert_order\views.py:23
+msgid "Files {} and {} were uploaded!"
+msgstr "Файлы {} и {} были загружены!"
+
+#: .\payment\sms_sender.py:17
+msgid "Confirmation code for logging on SAPXMLVersionUP.ru website: {}"
+msgstr "Код подтверждения для входа на сайт SAPXMLVersionUP.ru: {}"
+
+#: .\users\templates\users\code.html:9
+msgid "Confirmation"
+msgstr "Подтверждение"
+
+#: .\users\templates\users\code.html:23
+msgid "Close"
+msgstr "Закрыть"
+
+#: .\users\templates\users\code.html:31 .\users\views.py:32
+msgid "Code has been sent!"
+msgstr "Код уже отправлен!"
+
+#: .\users\templates\users\code.html:39
+msgid "Â© Copyright 2023. All rights reserved."
+msgstr "Â© Copyright 2023. Все права защищены."
+
+#: .\users\templates\users\good_code.html:30
 msgid "Phone is confirmed!"
 msgstr "Телефон подтвержден!"
+
+#: .\users\views.py:56
+msgid "The code doesn`t match.Try again."
+msgstr "Код не совпадает. Попробуйте еще раз."
+
+#: .\users\views.py:65
+msgid "Code already have sent!"
+msgstr "Код уже отправлен!"

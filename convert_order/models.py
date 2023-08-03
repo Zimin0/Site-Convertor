@@ -37,7 +37,8 @@ class ConvertOrder(models.Model):
     
     @staticmethod
     def crypt_id(id):
-        """ Переводит id заказа в строку для url (что-то типо хэша, но только можно расшифровать обратно)"""
+        """ Переводит id заказа в строку для url ("шифрует").\n
+        Что-то типо хэша, но только можно расшифровать обратно."""
         id_new_str = str(id)
         letters = 'abcdefghijklmnopqrstuvwxyz'
         NUM_OF_LETTERS = 7

@@ -2,10 +2,9 @@ from django.shortcuts import render, redirect, get_object_or_404
 from convert_order.models import ConvertOrder
 from files.models import File
 from django.utils.translation import gettext as _
-from django.utils.translation import activate
+from django.utils.translation import activate # activate('en')
 
 def clear_main(request):
-    activate('en')
     """ Отображает страницу для загрузки файлов. """
     context = {}
     context['files_uploaded'] = False
@@ -13,24 +12,27 @@ def clear_main(request):
         request.session['phone_is_confirmed'] = False 
         request.session['convert_already'] = False
     print(request.session.items())
+
     if request.method == 'POST':
         if len(request.FILES) < 2: # если загружено меньше, чем 2 файла
-            context['message'] = _('Upload 2 files!')#'Загрузите оба файла!'
+            context['message'] = _('Upload 2 files!') 
             return render(request, 'convert_order/index.html', context)
         file1 = request.FILES['file1']
         file2 = request.FILES['file2']
         print(f'Загружены файлы {file1} и {file2}.')
-        context['message'] = f'Файлы {file1.name} и {file2.name} загружены!'
-        # Создаем новый заказ на конвертацию и добавляем файлы #
+        context['message'] = _('Files {} and {} were uploaded!').format(file1.name, file2.name) # можно удалить, т к не отображается на странице
+
+        #### Создаем новый заказ на конвертацию и добавляем файлы ####
         order = ConvertOrder() 
         order.save() 
         File.objects.create(order=order , file=file1, file_type='1').save()
         File.objects.create(order=order, file=file2, file_type='2').save()
         #### Только для тестирования ####
         File.objects.create(order=order, file=file2, file_type='3').save()
-        ########################################################
+        ##############################################################
         encrypted_id = ConvertOrder.crypt_id(order.id)
         return redirect('convert_order:files_main', order_id=encrypted_id)
+    
     return render(request, 'convert_order/index.html', context)
 
 def files_main(request, order_id):

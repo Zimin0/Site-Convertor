@@ -1,11 +1,12 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-    <title>Подтверждение</title>
+    <title>{% trans 'Confirmation' %}</title>
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'convert_order/img/icon.png' %}"/> 
     <link rel="stylesheet" href="{% static 'convert_order/css/styles.css' %}"> 
     <link rel="stylesheet" href="{% static 'convert_order/css/media.css' %}">
@@ -19,7 +20,7 @@
                 <img src="{% static 'convert_order/img/converter-logo.jpg' %}" alt=""> 
                 <span>SAP XML</span>
             </a>
-            <a href="{% url 'convert_order:clear_main' %}" class="sign_in-btn close">Закрыть</a>
+            <a href="{% url 'convert_order:clear_main' %}" class="sign_in-btn close">{% trans 'Close' %}</a> 
         </div>
 
     </header>
@@ -27,15 +28,16 @@
     <section id="sign_in-form">
         <form method="POST" id="code-field">
             {% csrf_token %}
-            <p class="subtitle">{{ message|default:"Код отправлен!" }}</p>
+            {% trans "Code has been sent!" as def_code %}
+            <p class="subtitle">{{ message|default:def_code }}</p>
             <input type="text" id="code" name="sms_code" placeholder="Код из смс">
             <input type="submit" class="confirm-btn" id="conf-code-but" value="Подтверждение">
         </form>
     </section>
 
     <footer class="footer">
-        <p class="footer-copyright">© Copyright 2023. Все права защищены</p>
-    </footer>
+        <p class="footer-copyright">{% trans '© Copyright 2023. All rights reserved.' %}</p>
+    </footer> 
 
     <script src="{% static 'convert_order/js/code-confirm.js' %}"></script> 
 </body>

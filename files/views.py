@@ -7,12 +7,14 @@ from users.models import Profile
 
 def load_file(request, order_id):
     """ При переходе сразу начинается скачивание файла. """
+    
     decrypted_id = ConvertOrder.decrypt_id(order_id)
     order = get_object_or_404(ConvertOrder, id=decrypted_id)
     user_profile = get_object_or_404(Profile, phone=order.phone)
     user_profile.convert_already = True
     request.session['convert_already'] = user_profile.convert_already # переместить куда-то в другое место
     user_profile.save()
+
     # Формирование файла #
     file3 = get_object_or_404(File, order=order, file_type='3') # конвертированный файл
     filename = file3.file.name.split('/')[-1]

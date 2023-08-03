@@ -1,6 +1,7 @@
 import requests
 import json
 import random 
+from django.utils.translation import gettext as _
 
 def __generate_sms_code() -> int:
     """ Генерирует смс код (int) """
@@ -13,7 +14,7 @@ def send_confiramtion_code(phone) -> int:
         'Content-Type': 'application/json'
     }
     code = __generate_sms_code()
-    text = f"""Код подтверждения для входа на сайт SAPXMLVersionUP.ru: {code}""" 
+    text = _("Confirmation code for logging on SAPXMLVersionUP.ru website: {}").format(code)
     data = {
     "apiKey": "LqipzI6SfjigFgVxUjCkXeQFnFLIPkzYjlIfnta3EKgYIwDKkOwEK6WczrQy",
     "webhookUrl": "https://admin.p1sms.ru/apiSms/create",
@@ -30,12 +31,3 @@ def send_confiramtion_code(phone) -> int:
     # print(response.text)
     print(f'code = {code}')
     return code
-
-"""
-мультиязычость 
-появляющиеся стрелки 
-привязывать номер телефона
-куда вставить ролик
-телефон в базе данных 
-поменять названия ( в телеграмме )
-"""

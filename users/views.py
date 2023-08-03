@@ -5,6 +5,8 @@ from convert_order.models import ConvertOrder
 from files.models import File
 from django.views import View
 from payment.sms_sender import send_confiramtion_code
+from django.utils.translation import gettext as _
+from django.utils.translation import activate 
 
 def register(request):
     """ Страница с полем ввода номера телефона. """
@@ -18,6 +20,7 @@ def register(request):
     return render(request, 'users/register.html')
 
 def code(request):
+    activate('en')
     """ Страница с полем смс кода. """
     if request.session.get('phone_is_confirmed', None):
         return redirect('users:good_code')
@@ -26,6 +29,7 @@ def code(request):
     print(request.session.items())
     print(request.session.get('confirmation_code', None))
     context = {}
+    context['message'] = _('Code has been sent!')
     if request.method == 'POST':
         code_is_sended = request.session.get('code_is_sended', None)
         if code_is_sended is None:
@@ -43,13 +47,13 @@ def code(request):
             cur_user.profile.phone_is_confirmed = True
             cur_user.profile.phone = request.session['phone']
             cur_user.profile.save()
-            # request.session['convert_already'] = cur_user.profile.convert_already # конвертировал ли раннее данный пользователь и нужна ли оплата
+            # request.session['convert_already'] = cur_user.profile.convert_already # конвертировал ли раннее данный пользователь и нужна ли оплата # не нужно, т к есть в files
             request.session['phone_is_confirmed'] = True
             request.session.pop('confirmation_code')
             request.session.pop('code_is_sended')
             return redirect('users:good_code')
         else:
-            context['message'] = 'Код не совпадает! Попробуйте еще раз!'
+            context['message'] = _('The code doesn`t match.Try again.') 
             return render(request, 'users/code.html', context)
     elif request.method == 'GET':
         if not request.session['code_is_sended']: # если код еще не отправлялся
@@ -58,7 +62,7 @@ def code(request):
             print(f'Код подтверждения: {request.session["confirmation_code"]}')
             return render(request, 'users/code.html')
         else: # если код уже отправлялся
-            context['message'] = 'Код уже отправлен!'
+            context['message'] = _('Code already have sent!') # Код уже отправлен!
             return render(request, 'users/code.html', context)
 
 def good_code(request):
@@ -75,4 +79,4 @@ def need_to_pay(request):
 
 def clear(request):
     request.session.clear()
-    return HttpResponse("Сессия очищена!")
+    return HttpResponse("<h1>Сессия очищена!</h1>")
