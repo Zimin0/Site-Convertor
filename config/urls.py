@@ -7,8 +7,8 @@ from django.conf.urls.i18n import i18n_patterns
 admin.autodiscover()
 
 i18n_urls  = (
-    path('', include('convert_order.urls')),
     path('admin/', admin.site.urls),
+    path('', include('convert_order.urls')),
     path('payment/', include('payment.urls')),
     path('file/', include('files.urls')),
     path('users/', include('users.urls')),
