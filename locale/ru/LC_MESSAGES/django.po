@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-03 14:06+0300\n"
+"POT-Creation-Date: 2023-08-06 16:20+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,11 +19,27 @@ msgstr ""
 "10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%"
 "100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\convert_order\views.py:18
+#: .\convert_order\templates\convert_order\index.html:33
+msgid "File convertor"
+msgstr "Конвертор файлов"
+
+#: .\convert_order\templates\convert_order\index.html:35
+msgid "Choose language"
+msgstr "Выберите язык"
+
+#: .\convert_order\templates\convert_order\index.html:38
+msgid "Engligh"
+msgstr "Английский"
+
+#: .\convert_order\templates\convert_order\index.html:39
+msgid "Russian"
+msgstr "Русский"
+
+#: .\convert_order\views.py:27
 msgid "Upload 2 files!"
 msgstr "Загрузите оба файла!"
 
-#: .\convert_order\views.py:23
+#: .\convert_order\views.py:32
 msgid "Files {} and {} were uploaded!"
 msgstr "Файлы {} и {} были загружены!"
 
@@ -39,7 +55,7 @@ msgstr "Подтверждение"
 msgid "Close"
 msgstr "Закрыть"
 
-#: .\users\templates\users\code.html:31 .\users\views.py:32
+#: .\users\templates\users\code.html:31 .\users\views.py:30
 msgid "Code has been sent!"
 msgstr "Код уже отправлен!"
 
@@ -51,10 +67,10 @@ msgstr "Â© Copyright 2023. Все права защищены."
 msgid "Phone is confirmed!"
 msgstr "Телефон подтвержден!"
 
-#: .\users\views.py:56
+#: .\users\views.py:57
 msgid "The code doesn`t match.Try again."
 msgstr "Код не совпадает. Попробуйте еще раз."
 
-#: .\users\views.py:65
+#: .\users\views.py:66
 msgid "Code already have sent!"
 msgstr "Код уже отправлен!"

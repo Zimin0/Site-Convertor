@@ -6,7 +6,7 @@ from django.core.validators import MinValueValidator
 from production_settings.models import ProductionSettings
 from django.shortcuts import get_object_or_404
 
-def get_convertation_amount(cls):
+def get_convertation_amount():
     amount_settings = get_object_or_404(ProductionSettings, slug='CONVERT_AMOUNT')
     return amount_settings.value
 

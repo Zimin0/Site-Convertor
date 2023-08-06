@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils.translation import gettext as _
 from django.utils.translation import activate # activate('en')
+from django.core.files import File
 
 from convert_order.models import ConvertOrder
-from files.models import File
+from files.models import File as My_File
 from users.models import Profile
+from .main_convertation_script import convert_2_files_into_new_structure
 
 def clear_main(request):
     """ Отображает страницу для загрузки файлов. """
@@ -33,10 +35,16 @@ def clear_main(request):
         #### Создаем новый заказ на конвертацию и добавляем файлы ####
         order = ConvertOrder() 
         order.save() 
-        File.objects.create(order=order , file=file1, file_type='1').save()
-        File.objects.create(order=order, file=file2, file_type='2').save()
+        file1_dj = My_File.objects.create(order=order , file=file1, file_type='1')
+        file2_dj = My_File.objects.create(order=order, file=file2, file_type='2')
+        file1_dj.save()
+        file2_dj.save()
         #### Только для тестирования ####
-        File.objects.create(order=order, file=file2, file_type='3').save()
+        file3_path = convert_2_files_into_new_structure(file1_dj.file.path, file2_dj.file.path) # получаем путь нового файла
+        file3_open = open(file3_path, encoding="utf-16")
+        file3 = File(file3_open)
+        My_File.objects.create(order=order, file=file3, file_type='3').save()
+        file3_open.close()
         ##############################################################
         encrypted_id = ConvertOrder.crypt_id(order.id)
         return redirect('convert_order:files_main', order_id=encrypted_id)
@@ -56,6 +64,11 @@ def files_main(request, order_id):
     context['order_id'] = order_id 
     if phone_is_confirmed:
         decrypted_id = ConvertOrder.decrypt_id(order_id)
+        try:
+            int(decrypted_id) # плавающий баг
+        except Exception:
+            raise ValueError
+        print(f"order_id={order_id}; decrypted_id={decrypted_id}") 
         order = get_object_or_404(ConvertOrder, id=decrypted_id)
         user_profile = get_object_or_404(Profile, phone=request.session['phone'])
         order.phone = request.session['phone']
@@ -67,5 +80,6 @@ def files_main(request, order_id):
     print(f'context={context}')
     return render(request, 'convert_order/index.html', context) 
 
-
-
+def info(request):
+    """ Страница с описанием работы конвертора. """
+    return render(request, 'convert_order/info.html')

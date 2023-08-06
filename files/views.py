@@ -24,6 +24,7 @@ def load_file(request, order_id):
     # Формирование файла #
     file3 = get_object_or_404(File, order=order, file_type='3') # конвертированный файл
     filename = file3.file.name.split('/')[-1]
+    print(file3.file.open('rb'))
     response = FileResponse(file3.file.open('rb'))
     response['Content-Disposition'] = f'attachment; filename="{filename}"'
     # Заполняем кукисы данными
