@@ -32,30 +32,31 @@ def code(request):
     context['message'] = _('Code has been sent!')
     if request.method == 'POST':
         code_is_sended = request.session.get('code_is_sended', None)
-        if code_is_sended is None:
+        if code_is_sended is None: # Если пользователь попал на данную старницу случайно 
             return redirect('users:register')
         code = request.POST['sms_code']
         if str(code) == str(request.session['confirmation_code']): # если введен правильный смс код
             cur_user_profile = Profile.objects.filter(phone=request.session['phone']) 
             if cur_user_profile.exists():  # Если такой юзер уже существует 
                 cur_user = cur_user_profile.first().user # Подтягиваем модель юзера
-                # cur_user.profile.convert_already = True # не нужно, т к есть в files
-            else: 
+            else: # если искомого юзера не существует - создаем нового 
                 last_user_pk = User.objects.order_by('pk').last().pk # нужен для пронумеровки следующего юзера
                 cur_user = User.objects.create(username=f'user{last_user_pk+1}')
                 cur_user.save(update_fields=['username'])
             cur_user.profile.phone_is_confirmed = True
             cur_user.profile.phone = request.session['phone']
             cur_user.profile.save()
-            # request.session['convert_already'] = cur_user.profile.convert_already # конвертировал ли раннее данный пользователь и нужна ли оплата # не нужно, т к есть в files
             request.session['phone_is_confirmed'] = True
             request.session.pop('confirmation_code')
             request.session.pop('code_is_sended')
-            ## Сделать обработку куки, если они отключены ##
-            print("Заношу телефон в кукисы!")
+            
+            print("Заношу данные в кукисы!")
             response = redirect('users:good_code') 
+            response.set_cookie('amount_of_convertations', request.session['amount_of_convertations'])
             response.set_cookie('phone', request.session['phone']) 
             response.set_cookie('convert_already', request.session['convert_already']) 
+            print('Cookies = ', response.cookies)
+            print('Все кукисы =',request.COOKIES.keys())
             return response
         else:
             context['message'] = _('The code doesn`t match.Try again.') 
@@ -85,6 +86,7 @@ def need_to_pay(request):
 def clear(request):
     request.session.clear()
     response = HttpResponse("<h1>Сессия и кукисы очищены!</h1>")
-    # response.delete_cookie('phone')
-    # response.delete_cookie('convert_already')
+    response.delete_cookie('phone')
+    response.delete_cookie('convert_already')
+    response.delete_cookie('amount_of_converts')
     return response

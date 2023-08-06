@@ -11,15 +11,18 @@ def load_file(request, order_id):
     decrypted_id = ConvertOrder.decrypt_id(order_id)
     order = get_object_or_404(ConvertOrder, id=decrypted_id)
     user_profile = get_object_or_404(Profile, phone=order.phone)
-    user_profile.convert_already = True
-    
-    request.session['convert_already'] = user_profile.convert_already # переместить куда-то в другое место
+    user_profile.convert_already = True 
+    user_profile.amount_of_converts -= 1
     user_profile.save()
 
+    # Заполняем сессию данными
+    request.session['amount_of_converts'] = user_profile.amount_of_converts 
+    request.session['convert_already'] = user_profile.convert_already # переместить куда-то в другое место
     # Формирование файла #
     file3 = get_object_or_404(File, order=order, file_type='3') # конвертированный файл
     filename = file3.file.name.split('/')[-1]
     response = FileResponse(file3.file.open('rb'))
-    response.set_cookie('convert_already', True) # !!!!!!!!!!!!!!!!!!!!!!1
+    response.set_cookie('convert_already', True) 
+    response.set_cookie('amount_of_converts', user_profile.amount_of_converts)
     response['Content-Disposition'] = f'attachment; filename="{filename}"'
     return response

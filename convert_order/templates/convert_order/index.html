@@ -73,7 +73,7 @@
                     <img id="right-arrow" src="{% static 'convert_order/img/download-arrow.svg' %}" alt="">
                     {% if files_uploaded %} 
                         {% if phone_is_confirmed %}
-                            {% if convert_already %}
+                            {% if amount_of_convertations < 1 %}
                                 <input type="button" id="download-btn" value="Скачать" onclick="location.href='{% url 'users:need_to_pay' %}';">
                             {% else %}
                                 <input type="button" id="download-btn" value="Скачать" onclick="location.href='{% url 'files:load_file' order_id %}'; setTimeout(function(){window.location.href='/';}, 500);">
