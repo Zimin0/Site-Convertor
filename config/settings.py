@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'users',
     'payment',
     'production_settings',
+    'support',
 ]
 
 MIDDLEWARE = [
