@@ -1,9 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404, HttpResponse
 from django.contrib.auth.models import User
 from users.models import Profile
-from convert_order.models import ConvertOrder
-from files.models import File
-from django.views import View
+from production_settings.models import ProductionSettings
 from payment.sms_sender import send_confiramtion_code
 from django.utils.translation import gettext as _
 from django.utils.translation import activate 
@@ -20,13 +18,13 @@ def register(request):
     return render(request, 'users/register.html')
 
 def code(request):
-    activate('en')
+    # activate('en')
     """ Страница с полем смс кода. """
     if request.session.get('phone_is_confirmed', None):
         return redirect('users:good_code')
     if not request.session.get('phone', None): # если в сессии нет номера телефона
         return redirect('users:register')
-    print(request.session.items())
+    print("Сессия:" ,request.session.items())
     print(request.session.get('confirmation_code', None))
     context = {}
     context['message'] = _('Code has been sent!')
@@ -35,8 +33,8 @@ def code(request):
         if code_is_sended is None: # Если пользователь попал на данную старницу случайно 
             return redirect('users:register')
         code = request.POST['sms_code']
-        if str(code) == str(request.session['confirmation_code']): # если введен правильный смс код
-            cur_user_profile = Profile.objects.filter(phone=request.session['phone']) 
+        if str(code) == str(request.session.get('confirmation_code', 'No code found!')): # если введен правильный смс код
+            cur_user_profile = Profile.objects.filter(phone=request.session.get('phone', 'No phone found!')) 
             if cur_user_profile.exists():  # Если такой юзер уже существует 
                 cur_user = cur_user_profile.first().user # Подтягиваем модель юзера
             else: # если искомого юзера не существует - создаем нового 
@@ -44,19 +42,16 @@ def code(request):
                 cur_user = User.objects.create(username=f'user{last_user_pk+1}')
                 cur_user.save(update_fields=['username'])
             cur_user.profile.phone_is_confirmed = True
-            cur_user.profile.phone = request.session['phone']
+            cur_user.profile.phone = request.session.get('phone', 'No phone found!')
             cur_user.profile.save()
             request.session['phone_is_confirmed'] = True
             request.session.pop('confirmation_code')
             request.session.pop('code_is_sended')
             
-            print("Заношу данные в кукисы!")
-            response = redirect('users:good_code') 
-            response.set_cookie('amount_of_convertations', request.session['amount_of_convertations'])
-            response.set_cookie('phone', request.session['phone']) 
-            response.set_cookie('convert_already', request.session['convert_already']) 
+            response = redirect('users:good_code')
+            print("Заношу телефон в кукисы!") 
+            response.set_cookie('phone', request.session.get('phone', 'No phone found!')) 
             print('Cookies = ', response.cookies)
-            print('Все кукисы =',request.COOKIES.keys())
             return response
         else:
             context['message'] = _('The code doesn`t match.Try again.') 
@@ -64,7 +59,7 @@ def code(request):
     elif request.method == 'GET':
         if not request.session['code_is_sended']: # если код еще не отправлялся
             request.session['code_is_sended'] = True
-            request.session['confirmation_code'] = send_confiramtion_code(request.session['phone'] ) # оправляет код смс на телефон
+            request.session['confirmation_code'] = send_confiramtion_code(request.session.get('phone', 'No phone found!')) # оправляет код смс на телефон
             print(f'Код подтверждения: {request.session["confirmation_code"]}')
             return render(request, 'users/code.html')
         else: # если код уже отправлялся
@@ -79,14 +74,20 @@ def good_code(request):
 
 def need_to_pay(request):
     """ Страница с "Вы уже конвертировали у нас на сайте... Нужно оплатить" """
+    context = {
+        "euro_price": get_object_or_404(ProductionSettings, slug='EURO_PRICE').value,
+        "ruble_price": get_object_or_404(ProductionSettings, slug='RUBLE_PRICE').value,
+        "dollar_price": get_object_or_404(ProductionSettings, slug='DOLLAR_PRICE').value,
+    }
+    
     if not request.session.get('phone_is_confirmed', None):
         return redirect('users:register')
-    return render(request, "users/need_to_pay.html")
+    return render(request, "users/need_to_pay.html", context)
 
 def clear(request):
     request.session.clear()
     response = HttpResponse("<h1>Сессия и кукисы очищены!</h1>")
     response.delete_cookie('phone')
-    response.delete_cookie('convert_already')
-    response.delete_cookie('amount_of_converts')
+    print('Cookies = ', response.cookies)
+    print('Session = ', response.session.items())
     return response

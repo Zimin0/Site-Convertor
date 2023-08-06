@@ -4,7 +4,8 @@ from .models import Profile
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
 
-
+class ProfileAdmin(admin.ModelAdmin):
+    list_display = ('phone', 'user', 'phone_is_confirmed', 'amount_of_converts')
 
 class ProfileInline(admin.StackedInline):
     model = Profile
@@ -20,7 +21,7 @@ class CustomUserAdmin(UserAdmin):
             return list()
         return super(CustomUserAdmin, self).get_inline_instances(request, obj)
 
-
+admin.site.register(Profile, ProfileAdmin)
 admin.site.unregister(User)
 admin.site.register(User, CustomUserAdmin) 
 
