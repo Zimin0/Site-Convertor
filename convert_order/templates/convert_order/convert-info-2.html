@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <title>SAP XML - Generator Converter</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/media.css">
+</head>
+
+<body>
+    <header class="header">
+
+        <div class="container wrapper">
+            <a href="./index.html" class="logo">
+                <img src="./img/converter-logo.jpg" alt="">
+                <span>SAP XML Converter</span>
+            </a>
+
+            <div class="button-container">
+                <a href="./sign-up.html" class="sign_in-btn">Вход</a>
+                <a href="./sign-in.html" class="sign_in-btn">Регистрация</a>
+                <button class="lang-btn">RU</button>
+            </div>
+        </div>
+
+    </header>
+
+    <section class="convert-info">
+        <div class="info-content container">
+            <a href="./index.html" class="return-btn">Назад</a>
+
+            <p class="convert-info-text">Как получить XML файл «новой» структуры. <br>
+                1. Получить XSD-схему нового формата отчета (скачать с сайта NALOG.RU или другого органа,
+                определяющего стандарт отчетности). <br>
+                2. Определить в SAP-системе иерархию новой версии отчета (транзакция «J3RTAXREP - Иерархия
+                системы отчетов», Меню «Новая запись») <br>
+                3. Войти в новую иерархию отчета и импортировать файл с XSD-схемой (Меню «Импорт», затем
+                «Сохранить») <br>
+                4. Меню «Иерархии -> Экспорт SAPXML -> Сохранит файл» на локальном компьютере. Файл готов.
+                Перетащите файл в соответствующую область сайта SAPXMLConverterUp.ru</p>
+
+            <video src="./videos/button2_rus.mp4" controls class="info-video"></video>
+        </div>
+
+
+        <div class="info-block container wrapper">
+            <div class="info">
+                <p>
+                    ООО "Рога и Копыта" <br>
+                    <phone>+7-931-311-13-52</phone>
+                </p>
+            </div>
+            <div class="info">
+                <p>
+                    Мы помогаем Вам сделать жизнь чуточку проще!
+                </p>
+
+                <div class="sup-btn-conteiner">
+                    <a href="./support.html" class="support-btn">Поддержка</a>
+
+                    <a href="./about.html" class="support-btn">О конвертере</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p class="footer-copyright">© Copyright 2023. Все права защищены</p>
+    </footer>
+
+</html>
