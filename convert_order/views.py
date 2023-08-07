@@ -7,6 +7,7 @@ from convert_order.models import ConvertOrder
 from files.models import File as My_File
 from users.models import Profile
 from .main_convertation_script import convert_2_files_into_new_structure
+from django.core.files.uploadedfile import InMemoryUploadedFile
 
 def clear_main(request):
     """ Отображает страницу для загрузки файлов. """
@@ -29,6 +30,7 @@ def clear_main(request):
             return render(request, 'convert_order/index.html', context)
         file1 = request.FILES['file1']
         file2 = request.FILES['file2']
+        print(f'file type = {type(file2)}')
         print(f'Загружены файлы {file1} и {file2}.')
         context['message'] = _('Files {} and {} were uploaded!').format(file1.name, file2.name) # можно удалить, т к не отображается на странице
 
@@ -41,10 +43,13 @@ def clear_main(request):
         file2_dj.save()
         #### Только для тестирования ####
         file3_path = convert_2_files_into_new_structure(file1_dj.file.path, file2_dj.file.path) # получаем путь нового файла
-        file3_open = open(file3_path, encoding="utf-16")
-        file3 = File(file3_open)
+        file3_open = open(file3_path, encoding="utf-8")
+        #print(file3_open.read()) # выводит текст полностью, с нормальной кодировкой 
+        file4 = InMemoryUploadedFile(file=file3_open, field_name='FileField', name='resultxml.xml', content_type='application/xml', size=2625, charset=None)
+        file3 = File(file3_open) # кусок говна, ломает кодировку !!!!!!
+        print( 'encoding =', file3.encoding) # encoding = utf-8
         My_File.objects.create(order=order, file=file3, file_type='3').save()
-        file3_open.close()
+        # file3_open.close()
         ##############################################################
         encrypted_id = ConvertOrder.crypt_id(order.id)
         return redirect('convert_order:files_main', order_id=encrypted_id)

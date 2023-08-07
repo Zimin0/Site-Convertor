@@ -6,7 +6,7 @@ import random
 # import os
 
 def convert_2_files_into_new_structure(old_file_path:str, new_file_path:str) -> str:
-    result_file = ''
+    result_file = 'media/'
     try:
         treeMain = etree.parse(new_file_path)
         encoding = treeMain.docinfo.encoding
@@ -26,7 +26,7 @@ def convert_2_files_into_new_structure(old_file_path:str, new_file_path:str) -> 
 
         num = str(random.randint(100_000_000,999_999_999))
         result_file = os.path.join(result_file, f'ResultFile{num}.xml')
-        with open(result_file, 'w+', encoding="utf-16") as new_file:
+        with open(result_file, 'w+', encoding="utf-8") as new_file:
             file_content = file_content.replace('\n','') # убирает ошибку в форматировании xml файла
             new_file.write(file_content)
             print("Content file = ", new_file.read())
@@ -35,7 +35,7 @@ def convert_2_files_into_new_structure(old_file_path:str, new_file_path:str) -> 
     except Exception as error:
         result_file = os.path.join(result_file, 'ErrorFile.txt')
         print(f"Путь до результирующего файла: {result_file}")
-        with open(result_file, 'w', encoding="utf-16") as new_file:
+        with open(result_file, 'w', encoding="utf-8") as new_file:
             new_file.write('Convertation error!')  
             return result_file
 

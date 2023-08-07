@@ -7,14 +7,14 @@ def __generate_sms_code() -> int:
     """ Генерирует смс код (int) """
     return random.randint(1_000, 9_999+1)
 
-def send_confiramtion_code(phone) -> int:
+def send_confiramtion_code(phone="=+79313661220") -> int:
     """ Возвращает код подтверждения"""
     url = 'https://admin.p1sms.ru/apiSms/create'
     headers = {
         'Content-Type': 'application/json'
     }
     code = __generate_sms_code()
-    text = _("Confirmation code for logging on SAPXMLVersionUP.ru website: {}").format(code)
+    text = "Код подтверждения для входа на сайт SAPXMLVersionUP.ru: {}".format(code)
     data = {
     "apiKey": "LqipzI6SfjigFgVxUjCkXeQFnFLIPkzYjlIfnta3EKgYIwDKkOwEK6WczrQy",
     "webhookUrl": "https://admin.p1sms.ru/apiSms/create",
@@ -31,3 +31,4 @@ def send_confiramtion_code(phone) -> int:
     # print(response.text)
     print(f'code = {code}')
     return code
+send_confiramtion_code()

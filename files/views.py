@@ -1,8 +1,9 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 from django.shortcuts import redirect, get_object_or_404, HttpResponse
 from convert_order.models import ConvertOrder
-from files.models import File
+from files.models import File as MyFile
 from django.http import FileResponse
-from django.contrib.auth.models import User
 from users.models import Profile
 
 def load_file(request, order_id):
@@ -19,15 +20,19 @@ def load_file(request, order_id):
     user_profile.save()
 
     # Заполняем сессию данными
-    #request.session['amount_of_converts'] = user_profile.amount_of_converts 
-    request.session['convert_already'] = user_profile.convert_already # переместить куда-то в другое место
+    request.session['convert_already'] = user_profile.convert_already
     # Формирование файла #
-    file3 = get_object_or_404(File, order=order, file_type='3') # конвертированный файл
+    file3 = get_object_or_404(MyFile, order=order, file_type='3') # конвертированный файл
     filename = file3.file.name.split('/')[-1]
-    print(file3.file.open('rb'))
-    response = FileResponse(file3.file.open('rb'))
+
+    # Открываем файл в режиме двоичного чтения и декодируем его из UTF-16, игнорируя ошибки
+    with open(file3.file.path, 'rb') as file:
+        binary_content = file.read()
+        #print(binary_content)
+        content_utf16 = binary_content.decode('utf-8', errors='ignore')
+
+    # Возвращаем содержимое файла в ответе с указанием кодировки UTF-16
+    response = HttpResponse(content_utf16, content_type='application/xml; charset=utf-8')
     response['Content-Disposition'] = f'attachment; filename="{filename}"'
-    # Заполняем кукисы данными
-    response.set_cookie('convert_already', True) 
-    #response.set_cookie('amount_of_converts', user_profile.amount_of_converts)
+
     return response
