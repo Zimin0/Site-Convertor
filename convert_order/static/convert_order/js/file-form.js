@@ -11,15 +11,15 @@ function unHighlightDropZone(event) {
 }
 
 function addFile1(name) {
-    console.log("addFile1 is running!")
     const addLogo_1 = document.getElementById('add-file-1');
     const addTitle_1 = document.getElementById('add-file-title-1');
-    console.log(addTitle_1);  // Должно вывести HTML элемент, а не null
 
     addLogo_1.style.display = 'none';
     addTitle_1.innerText = name;
 
     isFile1 = true;
+
+    showUpArrow();
 
     if(isFile1 && isFile2){
         converterBtn.removeAttribute('disabled');
@@ -35,6 +35,8 @@ function addFile2(name) {
 
     isFile2 = true;
 
+    showDownArrow();
+
     if(isFile1 && isFile2){
         converterBtn.removeAttribute('disabled');
     }
@@ -42,7 +44,52 @@ function addFile2(name) {
 
 function enableDownload() {
     downloadBtn.removeAttribute('disabled');
+
+    showRightArrow();
 }
+
+function showPopup1() {
+    popup1.style.display = 'block';
+}
+
+function hidePopup1() {
+    popup1.style.display = 'none';
+}
+
+function showPopup2() {
+    popup2.style.display = 'block';
+}
+
+function hidePopup2() {
+    popup2.style.display = 'none';
+}
+
+function showUpArrow() {
+    const upArrow = document.getElementById('up-arrow');
+    upArrow.style.transition = 'opacity 0.5s ease-in';
+    upArrow.style.opacity = 1;
+}
+
+function showDownArrow() {
+    const downArrow = document.getElementById('down-arrow');
+    downArrow.style.transition = 'opacity 0.5s ease-in';
+    downArrow.style.opacity = 1;
+}
+
+function showRightArrow() {
+    const rightArrow = document.getElementById('right-arrow');
+    rightArrow.style.transition = 'opacity 0.5s ease-in';
+    rightArrow.style.opacity = 1;
+}
+
+function closeCookies() {
+    cookiePopup.style.display = 'none';
+}
+
+const popup1 = document.getElementById('popup-info-1');
+const popup2 = document.getElementById('popup-info-2');
+
+const cookiePopup = document.getElementById('cookie-popup');
 
 var isFile1 = false;
 var isFile2 = false;
@@ -51,11 +98,10 @@ const converterBtn = document.getElementById('converter-btn');
 const downloadBtn = document.getElementById('download-btn');
 converterBtn.setAttribute('disabled', "");
 converterBtn.addEventListener('click', enableDownload);
-
+downloadBtn.setAttribute('disabled', "");
 
 const dropFile_1 = document.getElementById('file-field-1');
 const dropFile_2 = document.getElementById('file-field-2');
-
 
 if (dropFile_1) {
     const fileInput_1 = document.getElementById('file_1');

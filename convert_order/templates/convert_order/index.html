@@ -8,82 +8,108 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-    <title>SAP XML - Конвертор xml файлов</title>
+    <title>{% trans 'SAP XML - Generator Converter' %}</title>
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'convert_order/img/icon.png' %}"/> 
     <link rel="stylesheet" href="{% static 'convert_order/css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'convert_order/css/media.css' %}"> 
+</head>
 </head>
 
 <body>
     <header class="header">
         <div class="container wrapper">
             <a href="{% url 'convert_order:clear_main' %}" class="logo">
-                <img src="{% static 'convert_order/img/converter-logo.jpg' %}" alt=""> 
-                <span>SAP XML</span>
+                <img src="{% static 'convert_order/img/converter-logo.jpg' %}" alt="">
+                <span>SAP XML Converter</span>
             </a>
             <div class="button-container">
-                <a href="{% url 'users:register' %}" class="sign_in-btn close">Регистрация</a>
+                <a href="./sign-up.html" class="sign_in-btn">Вход</a> <!--  !!!!!!!!!!!!!  -->
+                <a href="{% url 'users:register' %}" class="sign_in-btn">Регистрация</a>
                 <button class="lang-btn">RU</button>
             </div>
         </div>
     </header>
 
     <section class="converter">
-        <div class="container"> 
-            <h1 class="converter-title"> {% trans 'File convertor' %}</h1> 
-            <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
-                <input name="next" type="hidden" value="{{ redirect_to }}">
-                <select name="language">
-                    {% get_current_language as LANGUAGE_CODE %}
-                    {% get_available_languages as LANGUAGES %}
-                    {% get_language_info_list for LANGUAGES as languages %}
-                    {% for language in languages %}
-                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
-                            {{ language.name_local }} ({{ language.code }})
-                        </option>
-                    {% endfor %}
-                </select>
-                <input type="submit" value="Go">
-            </form>
 
-            <p class="subtitle">{{ message|default:"Загрузите 2 файла, либо перетащите их в соответствующие окна!" }}</p>
+        <div class="container">
+            <div class="wrapper title-info">
+                <p class="subtitle">
+                    Этот сервис помогает перенести настройки Ваших отчетов, настроенных SAP XML-Generator, в
+                    отчеты новых версий, в случае когда появляются новые форматы отчетов (в виде схем XSD). В результате
+                    Вы получите XML-файл «нового» формата с перенесенными в него настройками.
+                </p>
+                <p class="subtitle">
+                    {{ message|default:"Для переноса настроек из старого формата в новый формат Вам необходимо загрузить на сервис:  1.XML-файл «старой» структуры с настроенными правилами формирования тегов (FILE_IN1).  2.XML-Файл «новой» структуры, в который необходимо перенести настойки (FILE_IN2)." }}
+                </p>
+            </div>
 
             <form method="POST" id="file-form" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="dropfile-area">
-                    <!---------------- Поле ФАЙЛ1 --------------->
                     <label class="file-field" id="file-field-1">
                         <input type="file" name="file1" id="file_1">
-                        <div id="file1">
+                        <div id="file1"> <!--  !!!!!!!!!!!!!  -->
+                            <a href="./convert-info-1.html"><img id="cloud_quest-1" src="{% static 'convert_order/img/cloud_question_icon.svg' %}" 
+                                    alt="?" onmouseenter="showPopup1()" onmouseleave="hidePopup1()"></a>
+
                             <img id="add-file-1" src="{% static 'convert_order/img/icons8-плюс.svg' %}" alt="Add file">
-                            <p id="add-file-title-1">Добавить файл</p>
+                            <p id="add-file-title-1">XML-файл «старой» структуры</p>
                         </div>
                     </label>
-                    <!------------------------------------------->
-                    <!---------------- Поле ФАЙЛ1 --------------->
+
                     <label class="file-field" id="file-field-2">
                         <input type="file" name="file2" id="file_2">
-                        <div id="file2">
+                        <div id="file2">  <!--  !!!!!!!!!!!!!  -->
+                            <a href="./convert-info-2.html"><img id="cloud_quest-2" src="{% static 'convert_order/img/cloud_question_icon.svg' %}" 
+                                    alt="?" onmouseenter="showPopup2()" onmouseleave="hidePopup2()"></a>
+
                             <img id="add-file-2" src="{% static 'convert_order/img/icons8-плюс.svg' %}" alt="Add file">
-                            <p id="add-file-title-2">Добавить файл</p>
+                            <p id="add-file-title-2">XML-Файл «новой» структуры</p>
                         </div>
                     </label>
-                    <!------------------------------------------->
                 </div>
-                <!---------- Кнопка КОНВЕРТИРОВАТЬ ---------->
+
                 <div class="converter-container">
                     <img id="up-arrow" src="{% static 'convert_order/img/converter-arrow.svg' %}" alt="">
+
+                    <!-- <script>
+                        const upArrow = document.getElementById('up-arrow');
+                        upArrow.style.transition = 'opacity 0.5s ease-in';
+                        upArrow.style.opacity = 1;
+                    </script> -->
+
+                    <div id="popup-info-1">
+                        Как получить XML-файл «старой» структуры: <br>
+                        1.Зайти в иерархию «старой» структуры в SAP XML-Генератор <br>
+                        2. Экспортировать в XML-файл.
+                    </div>
+
                     <input type="submit" id="converter-btn" value="Конвертировать">
+                    
+                    {% if files_uploaded %}
+                    <script> // Выключаем кнопку
+                        const converterBtn1 = document.getElementById('converter-btn');
+                        converterBtn1.setAttribute('disabled', '');
+                    </script>
+                    {% endif %}
+
                     <img id="down-arrow" src="{% static 'convert_order/img/converter-arrow.svg' %}" alt="">
+
+                    <!-- <script>
+                        const downArrow = document.getElementById('down-arrow');
+                        downArrow.style.transition = 'opacity 0.5s ease-in';
+                        downArrow.style.opacity = 1;
+                    </script> -->
+
+                    <div id="popup-info-2">
+                        Как получить XML файл «новой» структуры: <br>
+                        1. Получить XSD-схему нового формата <br>
+                        2. Импортировать XSD-схему в SAP XML-Generator <br>
+                        3. Экспортировать в XML-файл.
+                    </div>
                 </div>
-                {% if files_uploaded %}
-                <script> // Выключаем кнопку
-                    const converterBtn1 = document.getElementById('converter-btn');
-                    converterBtn1.setAttribute('disabled', '');
-                </script>
-                {% endif %}
-                <!------------------------------------------->
-                <!-------------- Кнопка СКАЧАТЬ ------------->
+
                 <div class="download-container">
                     <img id="right-arrow" src="{% static 'convert_order/img/download-arrow.svg' %}" alt="">
                     {% if files_uploaded %} 
@@ -99,26 +125,55 @@
                     {% else %}
                         <input type="submit" id="download-btn" value="Скачать" disabled>
                     {% endif %}
+                    <!-- <script>
+                        const rightArrow = document.getElementById('right-arrow');
+                        rightArrow.style.transition = 'opacity 0.5s ease-in';
+                        rightArrow.style.opacity = 1;
+                    </script> -->
+
+                    
                 </div>
-                <!------------------------------------------->
             </form>
         </div>
-        <div class="container wrapper">
+
+        <div class="info-block container wrapper">
             <div class="info">
                 <p>
                     ООО "Название компании" <br>
-                    <phone>+7-931-311-13-52</phone>
+                    <phone>+7-917-578-67-06</phone>
                 </p>
             </div>
             <div class="info">
-                Мы помогаем Вам сделать жизнь чуточку проще!
+                <p>
+                    Мы помогаем Вам сделать жизнь чуточку проще!
+                </p>
+
+                <div class="sup-btn-conteiner">
+                    <a href="./support.html" class="support-btn">Поддержка</a>
+
+                    <a href="./about.html" class="support-btn">О конвертере</a>
+                </div>
+
             </div>
         </div>
+
+        <div id="cookie-popup">
+            <div class="wrapper">
+                <p class="cookie-text">Этот сайт использует файлы cookies! Продолжая использовать наш сайт, Вы
+                    автоматически
+                    соглашаетесь с их использованием</p>
+                <img src="{% static 'convert_order/img/cookie-icon.svg' %}" alt="" id="cookie-icon"> 
+            </div>
+            <button class="confirm-btn" id="cookie-confirm" onclick="closeCookies()">Согласиться</button>
+        </div>
+
     </section>
 
     <footer class="footer">
         <p class="footer-copyright">© Copyright 2023. Все права защищены</p>
     </footer>
-    <script src="{% static 'convert_order/js/file-form.js' %}"></script> 
+
+    <script src="{% static 'convert_order/js/file-form.js' %}"></script>
 </body>
+
 </html>
