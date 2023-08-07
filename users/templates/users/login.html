@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-    <title>Регистрация</title>
+    <title>Вход</title>
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'convert_order/img/icon.png' %}"/> 
     <link rel="stylesheet" href="{% static 'convert_order/css/styles.css' %}"> 
     <link rel="stylesheet" href="{% static 'convert_order/css/media.css' %}"> 
@@ -22,17 +22,12 @@
         </div>
     </header>
 
-    <section id="sign_in-form">
-        <h1 class="form-title">Регистрация</h1>
-        <form method="POST" id="sign-in-field"
-            {% csrf_token %}>
-            <p class="subtitle" id="phone_subs">Укажите номер телефона и почту для регистрации</p>
-            <label for="phone">Номер телефона: <span class="red">*обязательно</span></label>
+    <section id="sign_up-form">
+        <h1 class="form-title">Вход</h1>
+        <form method="POST" id="phone-field">
+            {% csrf_token %}
+            <p class="subtitle" id="phone_subs">Введите номер телефона, указанный при регистрации</p>
             <input type="phone" name="phone" id="phone" placeholder="Номер телефона">
-            <label for="name">Имя:</label>
-            <input type="text" name="name" id="name" placeholder="Имя">
-            <label for="mail">Электронная почта:</label>
-            <input type="mail" name="mail" id="mail" placeholder="Электронная почта">
             <input type="submit" class="form-btn" id="send-code" value="Отправить код" disabled>
         </form>
     </section>

@@ -1,9 +1,9 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <title>Оплата</title>
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'convert_order/img/icon.png' %}"/> 
@@ -16,8 +16,8 @@
 
         <div class="container wrapper">
             <a href="{% url 'convert_order:clear_main' %}" class="logo">
-                <img src="{% static 'convert_order/img/converter-logo.jpg' %}" alt=""> 
-                <span>SAP XML</span>
+                <img src="{% static 'convert_order/img/converter-logo.jpg' %}" alt="">
+                <span>SAP XML Converter</span>
             </a>
             <a href="{% url 'convert_order:clear_main' %}" class="sign_in-btn close">Закрыть</a>
         </div>
@@ -26,7 +26,7 @@
 
     <section id="sign_in-form">
         <div id="pay-block">
-            <p class="subtitle">Вторая и след. конвертации требуют оплаты: {{ ruble_price }}р или ${{ dollar_price }} или {{ euro_price }}€</p>
+            <p class="subtitle">Cледующие конвертации требуют оплаты: {{ ruble_price }}р или ${{ dollar_price }} или {{ euro_price }}€</p>
             <a class="confirm-btn" id="pay-btn">Оплатить</a>
         </div>
     </section>
