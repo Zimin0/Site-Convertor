@@ -121,13 +121,14 @@
 }
 
 @media (max-width: 570px) {
-    .sign_in-btn {
-        font-size: 18px;
+
+    /* New Styles Lang Btn */
+    .sign_in-btn,
+    .lang-btn {
+        font-size: 16px;
     }
 
-    .lang-btn {
-        padding: 3px 10px;
-    }
+    /* End New Styles Lang Btn */
 
     .dropfile-area {
         flex-direction: column;

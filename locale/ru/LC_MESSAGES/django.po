@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-06 16:20+0300\n"
+"POT-Creation-Date: 2023-08-08 21:55+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,33 +18,226 @@ msgstr ""
 "10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%"
 "100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\convert_order\templates\convert_order\index.html:33
-msgid "File convertor"
-msgstr "Конвертор файлов"
+#: .\convert_order\templates\convert_order\index.html:10
+#: .\convert_order\templates\convert_order\info.html:10
+#: .\convert_order\templates\convert_order\video1.html:10
+#: .\convert_order\templates\convert_order\video2.html:10
+msgid "SAP XML - Generator Converter"
+msgstr "Конвертер SAP XML - Generator"
 
-#: .\convert_order\templates\convert_order\index.html:35
-msgid "Choose language"
-msgstr "Выберите язык"
+#: .\convert_order\templates\convert_order\index.html:21
+#: .\convert_order\templates\convert_order\info.html:22
+#: .\convert_order\templates\convert_order\video1.html:20
+msgid "SAP XML Converter"
+msgstr "Конвертер SAP XML"
 
-#: .\convert_order\templates\convert_order\index.html:38
-msgid "Engligh"
-msgstr "Английский"
+#: .\convert_order\templates\convert_order\index.html:25
+msgid "Free Downloads:"
+msgstr "Беспл. скачивания:"
 
-#: .\convert_order\templates\convert_order\index.html:39
-msgid "Russian"
-msgstr "Русский"
+#: .\convert_order\templates\convert_order\index.html:27
+#: .\convert_order\templates\convert_order\info.html:26
+#: .\convert_order\templates\convert_order\video1.html:23
+msgid "Authorization"
+msgstr "Войти"
 
-#: .\convert_order\views.py:27
+#: .\convert_order\templates\convert_order\index.html:28
+#: .\convert_order\templates\convert_order\info.html:27
+#: .\convert_order\templates\convert_order\video1.html:24
+msgid "Sign up"
+msgstr "Регистрация"
+
+#: .\convert_order\templates\convert_order\index.html:64
+msgid ""
+"This service helps to transfer the settings of your reports customized by "
+"SAP XML-Generator to the reports of new versions when new format of report "
+"appear (in the form of XSD schemas). As a result, you will receive an XML "
+"file of a \"new\" format with the settings transferred to it."
+msgstr ""
+"Этот сервис помогает перенести настройки Ваших отчетов, настроенных SAP XML-"
+"Generator,  в отчеты новых версий, в случае когда появляются новые форматы "
+"отчетов (в виде схем XSD).  В результате Вы получите XML-файл «нового» "
+"формата с перенесенными в него настройками. "
+
+#: .\convert_order\templates\convert_order\index.html:67
+msgid ""
+"To transfer settings from the old format to the new format, you need to "
+"upload to the service:"
+msgstr ""
+"Для переноса настроек из старого формата в новый формат Вам необходимо "
+"загрузить на сервис: "
+
+#: .\convert_order\templates\convert_order\index.html:68
+msgid ""
+"1. XML file of the \"old\" structure with configured tag generation rules "
+"(FILE_IN1)."
+msgstr ""
+"1. XML-файл «старой» структуры с настроенными правилами формирования тегов "
+"(FILE_IN1). "
+
+#: .\convert_order\templates\convert_order\index.html:69
+msgid ""
+"2. XML file of the \"new\" structure where settings need to be transferred "
+"(FILE_IN2)."
+msgstr ""
+"2. XML-Файл «новой» структуры, в который необходимо перенести настойки "
+"(FILE_IN2)."
+
+#: .\convert_order\templates\convert_order\index.html:82
+#: .\convert_order\templates\convert_order\index.html:93
+msgid "Add file"
+msgstr "Добавить файл"
+
+#: .\convert_order\templates\convert_order\index.html:83
+msgid "XML file of \"old\" structure"
+msgstr "XML-файл «старой» структуры"
+
+#: .\convert_order\templates\convert_order\index.html:94
+msgid "XML file of \"new\" structure"
+msgstr "XML-Файл «новой» структуры"
+
+#: .\convert_order\templates\convert_order\index.html:103
+msgid "How to get an XML-file of the \"old\" structure:"
+msgstr "Как получить XML-файл «старой» структуры"
+
+#: .\convert_order\templates\convert_order\index.html:104
+msgid "Open the hierarchy of the Â«oldÂ» structure in SAP XML-Generator "
+msgstr "Зайти в иерархию «старой» структуры в SAP XML-Генератор"
+
+#: .\convert_order\templates\convert_order\index.html:105
+#: .\convert_order\templates\convert_order\index.html:123
+msgid "Export to XML-file."
+msgstr "Экспортировать в XML-файл."
+
+#: .\convert_order\templates\convert_order\index.html:108
+msgid "Convert"
+msgstr "Конвертировать"
+
+#: .\convert_order\templates\convert_order\index.html:120
+msgid "How to get XML-file of \"  new\" structure:"
+msgstr "Как получить XML файл «новой» структуры"
+
+#: .\convert_order\templates\convert_order\index.html:121
+msgid "Get a file of XSD-scheme. "
+msgstr "Получить XSD-схему нового формата "
+
+#: .\convert_order\templates\convert_order\index.html:122
+msgid "Import the file of XSD-scheme in SAP XML-Generator."
+msgstr "Импортировать XSD-схему в SAP XML-Generator"
+
+#: .\convert_order\templates\convert_order\index.html:132
+#: .\convert_order\templates\convert_order\index.html:134
+#: .\convert_order\templates\convert_order\index.html:137
+#: .\convert_order\templates\convert_order\index.html:140
+msgid "Download"
+msgstr "Скачать"
+
+#: .\convert_order\templates\convert_order\index.html:163
+#: .\convert_order\templates\convert_order\video1.html:72
+#: .\convert_order\templates\convert_order\video2.html:76
+msgid "Company Name LLC"
+msgstr "ООО Название компании"
+
+#: .\convert_order\templates\convert_order\index.html:169
+#: .\convert_order\templates\convert_order\video1.html:78
+#: .\convert_order\templates\convert_order\video2.html:82
+msgid "We help make your life a bit easier!"
+msgstr "Мы помогаем Вам сделать жизнь чуточку проще!"
+
+#: .\convert_order\templates\convert_order\index.html:173
+#: .\convert_order\templates\convert_order\video1.html:82
+#: .\convert_order\templates\convert_order\video2.html:86
+msgid "Support request"
+msgstr "Поддержка"
+
+#: .\convert_order\templates\convert_order\index.html:174
+#: .\convert_order\templates\convert_order\video1.html:83
+#: .\convert_order\templates\convert_order\video2.html:87
+msgid "About Converter"
+msgstr "О конвертере"
+
+#: .\convert_order\templates\convert_order\index.html:181
+msgid ""
+"This website uses cookies! By continuing to use our site, you automatically "
+"agree to their use"
+msgstr ""
+"Этот сайт использует файлы cookies! Продолжая использовать наш сайт, Вы "
+"автоматически соглашаетесь с их использованием"
+
+#: .\convert_order\templates\convert_order\index.html:184
+msgid "Agree"
+msgstr "Согласиться"
+
+#: .\convert_order\templates\convert_order\index.html:189
+#: .\convert_order\templates\convert_order\info.html:68
+#: .\convert_order\templates\convert_order\video1.html:90
+#: .\convert_order\templates\convert_order\video2.html:94
+msgid "Â© Copyright 2023. All rights reserved"
+msgstr "© Copyright 2023. Все права защищены"
+
+#: .\convert_order\templates\convert_order\info.html:59
+msgid "About Converter Work"
+msgstr "О конвертере"
+
+#: .\convert_order\templates\convert_order\info.html:61
+msgid ""
+"1. Settings are transferred by matching the nodes (folders, attributes, "
+"criteria) of the old and new structure. Thus, all settings for the \"old\" "
+"nodes with their characteristics will be transferred to the new structure."
+msgstr ""
+"1.\tПеренос настроек производится по совпадению узлов(папок, атрибутов, "
+"критериев) старой и новой структуры. Т.е. в новую структуру будут перенесены "
+"все настройки по «старым» узлам с их признаками."
+
+#: .\convert_order\templates\convert_order\info.html:62
+#, fuzzy
+msgid ""
+"2. If a node (folder, attribute, criterion) exists only in the old "
+"structure, then only nodes that have the \"Technical\" indicator in the X "
+"state are subject to transfer."
+msgstr ""
+"2.\tЕсли узел (папка, атрибут, критерий) существует только в старой "
+"структуре, то переносу подлежат только узлы, которые имеют индикатор "
+"«Технический» в состоянии X."
+
+#: .\convert_order\templates\convert_order\info.html:64
+msgid "Back"
+msgstr "Назад"
+
+#: .\convert_order\templates\convert_order\video1.html:55
+msgid "ÐÐ°Ð·Ð°Ð´"
+msgstr ""
+
+#: .\convert_order\templates\convert_order\video1.html:58
+#, fuzzy
+msgid ""
+"How to get an XML file of the \"old\" structure with configured rules for "
+"generating tags."
+msgstr ""
+"1. XML-файл «старой» структуры с настроенными правилами формирования тегов "
+"(FILE_IN1). "
+
+#: .\convert_order\templates\convert_order\video1.html:60
+msgid ""
+"Enter transaction \"J3RTAXREP\" in SAP system. Open the corresponding "
+"hierarchy of the \"old\" structure. It must contain the settings that you "
+"want to transfer to the hierarchy of the \"new\" structure."
+msgstr ""
+
+#: .\convert_order\templates\convert_order\video1.html:62
+msgid ""
+"Menu \"Hierarchies -> SAPXML Export -> Save File\" on the local computer. "
+"The file is ready. Drag and drop the resulting file into the appropriate "
+"area of the SAPXMLVersionUp.com site"
+msgstr ""
+
+#: .\convert_order\views.py:37
 msgid "Upload 2 files!"
-msgstr "Загрузите оба файла!"
+msgstr "Загрузите 2 файла!"
 
-#: .\convert_order\views.py:32
+#: .\convert_order\views.py:43
 msgid "Files {} and {} were uploaded!"
 msgstr "Файлы {} и {} были загружены!"
-
-#: .\payment\sms_sender.py:17
-msgid "Confirmation code for logging on SAPXMLVersionUP.ru website: {}"
-msgstr "Код подтверждения для входа на сайт SAPXMLVersionUP.ru: {}"
 
 #: .\users\templates\users\code.html:9
 msgid "Confirmation"
@@ -55,22 +247,42 @@ msgstr "Подтверждение"
 msgid "Close"
 msgstr "Закрыть"
 
-#: .\users\templates\users\code.html:31 .\users\views.py:30
+#: .\users\templates\users\code.html:31 .\users\views.py:53
 msgid "Code has been sent!"
-msgstr "Код уже отправлен!"
+msgstr "Код был отправлен!"
 
 #: .\users\templates\users\code.html:39
 msgid "Â© Copyright 2023. All rights reserved."
-msgstr "Â© Copyright 2023. Все права защищены."
+msgstr "© Copyright 2023. Все права защищены."
 
 #: .\users\templates\users\good_code.html:30
 msgid "Phone is confirmed!"
 msgstr "Телефон подтвержден!"
 
-#: .\users\views.py:57
+#: .\users\views.py:81
 msgid "The code doesn`t match.Try again."
 msgstr "Код не совпадает. Попробуйте еще раз."
 
-#: .\users\views.py:66
+#: .\users\views.py:90
 msgid "Code already have sent!"
-msgstr "Код уже отправлен!"
+msgstr "Код уже был отправлен!"
+
+#~ msgid ""
+#~ "To transfer settings from the old format to the new format, you need to "
+#~ "upload to the service:  1. XML file of the \"old\" structure with "
+#~ "configured tag generation rules (FILE_IN1).  2. XML file of the \"new\" "
+#~ "structure where settings need to be transferred (FILE_IN2)."
+#~ msgstr ""
+#~ "Для переноса настроек из старого формата в новый формат Вам необходимо "
+#~ "загрузить на сервис:  1. XML-файл «старой» структуры с настроенными "
+#~ "правилами формирования тегов (FILE_IN1).  2. XML-Файл «новой» структуры, "
+#~ "в который необходимо перенести настойки (FILE_IN2)."
+
+#~ msgid "Obtain XSD schema of the new format"
+#~ msgstr "Получить XSD-схему нового формата"
+
+#~ msgid "Log In"
+#~ msgstr "Войти"
+
+#~ msgid "Register"
+#~ msgstr "Регистрация"

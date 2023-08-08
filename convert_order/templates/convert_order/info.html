@@ -1,6 +1,5 @@
 {% load static %}
 {% load i18n %}
-
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -8,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-    <title>SAP XML - Generator Converter</title>
+    <title>{% trans 'SAP XML - Generator Converter' %}</title>
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'convert_order/img/icon.png' %}"/> 
     <link rel="stylesheet" href="{% static 'convert_order/css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'convert_order/css/media.css' %}"> 
@@ -20,31 +19,53 @@
         <div class="container wrapper">
             <a href="{% url 'convert_order:clear_main' %}" class="logo">
                 <img src="{% static 'convert_order/img/converter-logo.jpg' %}" alt="">
-                <span>SAP XML Converter</span>
+                <span>{% trans 'SAP XML Converter' %}</span>
             </a>
 
             <div class="button-container">
-                <a href="./sign-up.html" class="sign_in-btn">Вход</a> <!--  !!!!!!!!!!!!!  -->
-                <a href="{% url 'users:register' %}" class="sign_in-btn">Регистрация</a>
-                <button class="lang-btn">RU</button>
+                <a href="./sign-up.html" class="sign_in-btn">{% trans 'Authorization' %}</a>
+                <a href="{% url 'users:register' %}" class="sign_in-btn">{% trans 'Sign up' %}</a>
+                <form id="language-form" action="{% url 'set_language' %}" method="post">
+                    {% csrf_token %}
+                    <input name="next" type="hidden" value="{{ redirect_to }}">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    <select id="language-select" name="language" class="lang-btn">
+                        {% for language in languages %}
+                            <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
+                                {{ language.code }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </form>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const languageForm = document.getElementById('language-form');
+                        const languageSelect = document.getElementById('language-select');
+                        
+                        // Add event handler for select change
+                        languageSelect.addEventListener('change', function () {
+                            languageForm.submit(); // Submit the form on value change
+                        });
+                    });
+                </script>
             </div>
         </div>
 
     </header>
 
     <section class="about">
-        <h1 class="form-title">О работе конвертера</h1>
-        <p class="about-text">1. Перенос настроек производится по совпадению узлов(папок, атрибутов, критериев)
-            старой и новой структуры.
-            Т.е. в новую структуру будут перенесены все настройки по «старым» узлам с их признаками. <br> <br>
-            2. Если узел(папка, атрибут, критерий) существует только в старой структуре, то переносу подлежат только
-            узлы, которые имеют индикатор «Технический» в состоянии X.
+        <h1 class="form-title">{% trans 'About Converter Work' %}</h1>
+        <p class="about-text">
+            {% trans '1. Settings are transferred by matching the nodes (folders, attributes, criteria) of the old and new structure. Thus, all settings for the "old" nodes with their characteristics will be transferred to the new structure.' %} <br> <br>
+            {% trans '2. If a node (folder, attribute, criterion) exists only in the old structure, then only nodes that have the "Technical" indicator in the X state are subject to transfer.' %}
         </p>
-        <a href="{% url 'convert_order:clear_main' %}" class="return-btn">Назад</a>
+        <a href="{% url 'convert_order:clear_main' %}" class="return-btn">{% trans 'Back' %}</a>
     </section>
 
     <footer class="footer">
-        <p class="footer-copyright">© Copyright 2023. Все права защищены</p>
+        <p class="footer-copyright">{% trans '© Copyright 2023. All rights reserved' %}</p>
     </footer>
 
 </html>

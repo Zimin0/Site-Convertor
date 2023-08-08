@@ -40,7 +40,8 @@ LOCALE_PATHS = (
 )
 ##########################
 
-ALLOWED_HOSTS = ['*',]
+ALLOWED_HOSTS = ['*', '.app']
+CSRF_TRUSTED_ORIGINS = ['https://42cb-91-238-229-3.ngrok-free.app']
 
 INSTALLED_APPS = [
     'django.contrib.admin',

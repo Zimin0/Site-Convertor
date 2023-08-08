@@ -17,26 +17,50 @@
         <div class="container wrapper">
             <a href="{% url 'convert_order:clear_main' %}" class="logo">
                 <img src="{% static 'convert_order/img/converter-logo.jpg' %}" alt="">
-                <span>SAP XML Converter</span>
+                <span>{% trans 'SAP XML Converter' %}</span>
             </a>
             <div class="button-container">
-                <a href="{% url 'users:login' %}" class="sign_in-btn">Вход</a> <!--  !!!!!!!!!!!!!  -->
-                <a href="{% url 'users:register' %}" class="sign_in-btn">Регистрация</a>
-                <button class="lang-btn">RU</button>
+                <a href="{% url 'users:login' %}" class="sign_in-btn">{% trans 'Authorization' %}</a>
+                <a href="{% url 'users:register' %}" class="sign_in-btn">{% trans 'Sign up' %}</a>
+                <form id="language-form" action="{% url 'set_language' %}" method="post">
+                    {% csrf_token %}
+                    <input name="next" type="hidden" value="{{ redirect_to }}">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    <select id="language-select" name="language" class="lang-btn">
+                        {% for language in languages %}
+                            <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
+                                {{ language.code }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </form>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const languageForm = document.getElementById('language-form');
+                        const languageSelect = document.getElementById('language-select');
+                        
+                        // Add event handler for select change
+                        languageSelect.addEventListener('change', function () {
+                            languageForm.submit(); // Submit the form on value change
+                        });
+                    });
+                </script>
             </div>
         </div>
     </header>
     <section class="convert-info">
         <div class="info-content container">
-            <a href="{% url 'convert_order:clear_main' %}" class="return-btn">Назад</a>
+            <a href="{% url 'convert_order:clear_main' %}" class="return-btn">{% trans 'Назад' %}</a>
 
-            <p class="convert-info-text">Как получить XML-файл «старой» структуры с настроенными правилами формирования
-                тегов. <br>
-                1. Открыть в SAP системе соответствующую иерархию отчета «старой» структуры (транзакция
-                «J3RTAXREP - Иерархия системы отчетов»). В ней должны существовать настройки, которые Вы хотите
-                перенести в новый формат иерархии отчета. <br>
-                2. Меню «Иерархии -> Экспорт SAPXML -> Сохранить файл» на локальном компьютере. Файл готов.
-                Перетащите файл в соответствующую область сайта SAPXMLConverterUp.ru</p>
+            <p class="convert-info-text">
+                {% trans 'How to get an XML file of the "old" structure with configured rules for generating tags.' %}
+                <br>
+                1. {% trans 'Enter transaction "J3RTAXREP" in SAP system. Open the corresponding hierarchy of the "old" structure. It must contain the settings that you want to transfer to the hierarchy of the "new" structure.' %}
+                <br>
+                2. {% trans 'Menu "Hierarchies -> SAPXML Export -> Save File" on the local computer. The file is ready. Drag and drop the resulting file into the appropriate area of the SAPXMLVersionUp.com site' %}
+            </p>
 
             <video src="{% static 'convert_order/videos/button1_rus.mp4' %}" controls class="info-video"></video>
         </div> 
@@ -45,25 +69,25 @@
         <div class="info-block container wrapper">
             <div class="info">
                 <p>
-                    ООО "Рога и Копыта" <br>
-                    <phone>+7-931-311-13-52</phone>
+                    {% trans 'Company Name LLC' %} <br>
+                    <phone>+7-917-578-67-06</phone>
                 </p>
             </div>
             <div class="info">
                 <p>
-                    Мы помогаем Вам сделать жизнь чуточку проще!
+                    {% trans 'We help make your life a bit easier!' %}
                 </p>
 
                 <div class="sup-btn-conteiner">
-                    <a href="{% url 'support:support' %}" class="support-btn">Поддержка</a> 
-                    <a href="{% url 'convert_order:info' %}" class="support-btn">О конвертере</a> 
+                    <a href="{% url 'support:support' %}" class="support-btn">{% trans 'Support request' %}</a> 
+                    <a href="{% url 'convert_order:info' %}" class="support-btn">{% trans 'About Converter' %}</a> 
                 </div>
             </div>
         </div>
     </section>
 
     <footer class="footer">
-        <p class="footer-copyright">© Copyright 2023. Все права защищены</p>
+        <p class="footer-copyright">{% trans '© Copyright 2023. All rights reserved' %}</p>
     </footer>
 
 </html>

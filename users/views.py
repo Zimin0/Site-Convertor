@@ -113,5 +113,5 @@ def clear(request):
     response = HttpResponse("<h1>Сессия и кукисы очищены!</h1>")
     response.delete_cookie('phone')
     print('Cookies = ', response.cookies)
-    print('Session = ', request.session.items())
+    print('Session = ', request.session.items()) # localStorage.clear();
     return response

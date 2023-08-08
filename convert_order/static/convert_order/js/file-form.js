@@ -1,3 +1,27 @@
+//////////////// 
+document.addEventListener('DOMContentLoaded', function () {
+    const cookiePopup = document.getElementById('cookie-popup');
+    const cookieConfirmButton = document.getElementById('cookie-confirm');
+
+    // Проверяем, была ли сохранена метка в локальном хранилище
+    const isCookieConfirmed = localStorage.getItem('cookieConfirmed');
+
+    if (isCookieConfirmed) {
+        // Если метка есть, скрываем форму
+        cookiePopup.style.display = 'none';
+    } else {
+        // Добавляем обработчик события нажатия на кнопку "Согласиться"
+        cookieConfirmButton.addEventListener('click', function () {
+            // Деактивируем форму
+            cookiePopup.style.display = 'none';
+            // Сохраняем метку в локальное хранилище
+            localStorage.setItem('cookieConfirmed', true);
+        });
+    }
+});
+
+
+
 // File form
 
 function highlightDropZone(event) {
@@ -144,3 +168,7 @@ if (dropFile_2) {
         addFile2(file_2[0].name);
     })
 }
+
+
+
+
