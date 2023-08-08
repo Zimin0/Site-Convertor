@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <title>{% trans 'SAP XML - Generator Converter' %}</title>
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'convert_order/img/icon.png' %}"/> 
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'convert_order/img/icon.jpg' %}"/> 
     <link rel="stylesheet" href="{% static 'convert_order/css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'convert_order/css/media.css' %}"> 
 </head>
@@ -23,9 +23,18 @@
                 <span>SAP XML Converter</span>
             </a>
             <div class="button-container">
-                <a href="./sign-up.html" class="sign_in-btn">Вход</a> <!--  !!!!!!!!!!!!!  -->
-                <a href="{% url 'users:register' %}" class="sign_in-btn">Регистрация</a>
-                <button class="lang-btn">RU</button>
+                {% if phone_is_confirmed %}
+                    <a class="sign_in-btn">Беспл. скачиваний: {{ amount_of_convertations }}</a> 
+                {% else %}
+                    <a href="{% url 'users:login' %}" class="sign_in-btn">Вход</a>
+                    <a href="{% url 'users:register' %}" class="sign_in-btn">Регистрация</a>
+                {% endif %}
+                <!-- Lang Btn -->
+                <select class="lang-btn">
+                    <option value="RU">RU</option>
+                    <option value="ENG">ENG</option>
+                </select>
+                <!-- End Lang Btn -->
             </div>
         </div>
     </header>
@@ -49,8 +58,8 @@
                 <div class="dropfile-area">
                     <label class="file-field" id="file-field-1">
                         <input type="file" name="file1" id="file_1">
-                        <div id="file1"> <!--  !!!!!!!!!!!!!  -->
-                            <a href="./convert-info-1.html"><img id="cloud_quest-1" src="{% static 'convert_order/img/cloud_question_icon.svg' %}" 
+                        <div id="file1"> <!--  !!!!!!!!!!!!!  -->  
+                            <a href="{% url 'convert_order:video' 1 %}" ><img id="cloud_quest-1" src="{% static 'convert_order/img/cloud_question_icon.svg' %}" 
                                     alt="?" onmouseenter="showPopup1()" onmouseleave="hidePopup1()"></a>
 
                             <img id="add-file-1" src="{% static 'convert_order/img/icons8-плюс.svg' %}" alt="Add file">
@@ -60,8 +69,8 @@
 
                     <label class="file-field" id="file-field-2">
                         <input type="file" name="file2" id="file_2">
-                        <div id="file2">  <!--  !!!!!!!!!!!!!  -->
-                            <a href="./convert-info-2.html"><img id="cloud_quest-2" src="{% static 'convert_order/img/cloud_question_icon.svg' %}" 
+                        <div id="file2">  <!--  !!!!!!!!!!!!!  --> 
+                            <a href="{% url 'convert_order:video' 2 %}" ><img id="cloud_quest-2" src="{% static 'convert_order/img/cloud_question_icon.svg' %}" 
                                     alt="?" onmouseenter="showPopup2()" onmouseleave="hidePopup2()"></a>
 
                             <img id="add-file-2" src="{% static 'convert_order/img/icons8-плюс.svg' %}" alt="Add file">
@@ -72,12 +81,6 @@
 
                 <div class="converter-container">
                     <img id="up-arrow" src="{% static 'convert_order/img/converter-arrow.svg' %}" alt="">
-
-                    <!-- <script>
-                        const upArrow = document.getElementById('up-arrow');
-                        upArrow.style.transition = 'opacity 0.5s ease-in';
-                        upArrow.style.opacity = 1;
-                    </script> -->
 
                     <div id="popup-info-1">
                         Как получить XML-файл «старой» структуры: <br>
@@ -96,12 +99,6 @@
 
                     <img id="down-arrow" src="{% static 'convert_order/img/converter-arrow.svg' %}" alt="">
 
-                    <!-- <script>
-                        const downArrow = document.getElementById('down-arrow');
-                        downArrow.style.transition = 'opacity 0.5s ease-in';
-                        downArrow.style.opacity = 1;
-                    </script> -->
-
                     <div id="popup-info-2">
                         Как получить XML файл «новой» структуры: <br>
                         1. Получить XSD-схему нового формата <br>
@@ -111,7 +108,7 @@
                 </div>
 
                 <div class="download-container">
-                    <img id="right-arrow" src="{% static 'convert_order/img/download-arrow.svg' %}" alt="">
+                    <img id="right-arrow" src="{% static 'convert_order/img/download-arrow.png' %}" alt="">
                     {% if files_uploaded %} 
                         {% if phone_is_confirmed %}
                             {% if amount_of_convertations < 1 %}
@@ -125,13 +122,21 @@
                     {% else %}
                         <input type="submit" id="download-btn" value="Скачать" disabled>
                     {% endif %}
-                    <!-- <script>
-                        const rightArrow = document.getElementById('right-arrow');
-                        rightArrow.style.transition = 'opacity 0.5s ease-in';
-                        rightArrow.style.opacity = 1;
-                    </script> -->
 
-                    
+                    {% if files_uploaded %}
+                     <script>
+                        const upArrow = document.getElementById('up-arrow');
+                        upArrow.style.transition = 'opacity 10s ease-in';
+                        upArrow.style.opacity = 1;
+                        const downArrow = document.getElementById('down-arrow');
+                        downArrow.style.transition = 'opacity 10s ease-in';
+                        downArrow.style.opacity = 1;
+                        const rightArrow = document.getElementById('right-arrow');
+                        rightArrow.style.transition = 'opacity 10s ease-in';
+                        rightArrow.style.opacity = 1;
+                    </script> 
+                    {% endif %}
+                        
                 </div>
             </form>
         </div>
@@ -149,14 +154,14 @@
                 </p>
 
                 <div class="sup-btn-conteiner">
-                    <a href="./support.html" class="support-btn">Поддержка</a>
-
-                    <a href="./about.html" class="support-btn">О конвертере</a>
+                    <a href="{% url 'support:support' %}" class="support-btn">Поддержка</a> 
+                    <a href="{% url 'convert_order:info' %}" class="support-btn">О конвертере</a> 
                 </div>
 
             </div>
         </div>
 
+        {% if not cookies_is_confirmed %}
         <div id="cookie-popup">
             <div class="wrapper">
                 <p class="cookie-text">Этот сайт использует файлы cookies! Продолжая использовать наш сайт, Вы
@@ -166,6 +171,7 @@
             </div>
             <button class="confirm-btn" id="cookie-confirm" onclick="closeCookies()">Согласиться</button>
         </div>
+        {% endif %}
 
     </section>
 

@@ -8,7 +8,7 @@ window.onload = function() {
     
     codeField.addEventListener('keyup', function() {
         // Регулярное выражение для проверки на 6 цифр
-        const regex = /^\d{6}$/;
+        const regex = /^\d{4}$/;
         const isCodeValid = regex.test(codeField.value);
         
         if (isCodeValid) {
@@ -17,7 +17,7 @@ window.onload = function() {
 
             confirmCodeButton.removeAttribute('disabled');
         } else {
-            errorMessage.innerText = 'Код должен содержать ровно 6 цифр!';
+            errorMessage.innerText = 'Код должен содержать ровно 4 цифры!';
             errorMessage.style.color = 'red';
 
             confirmCodeButton.setAttribute('disabled', '');

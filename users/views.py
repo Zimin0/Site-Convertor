@@ -6,25 +6,48 @@ from payment.sms_sender import send_confiramtion_code
 from django.utils.translation import gettext as _
 from django.utils.translation import activate 
 
-def register(request):
+def login(request):
     """ Страница с полем ввода номера телефона. """
     if request.session.get('phone_is_confirmed', None):
         return redirect('users:good_code')
     if request.method == 'POST':
+        phone = request.POST['phone'] # подтягиваем введенный телефон
+        request.session['phone'] = phone
+        user_is_found = Profile.objects.filter(phone=phone).exists()
+        if user_is_found: # если в базе данных уже есть такой телефон
+            request.session['code_is_sended'] = False
+            print(f"Введен телефон: {phone}")
+            return redirect('users:code')
+        else: # иначе перенаправляем с сохранением введенного телефона
+            return redirect('users:register', phone)
+    return render(request, 'users/login.html')
+
+def register(request, phone=None):
+    """ Страница с формой регистрации. """
+    context = {}
+    if request.session.get('phone_is_confirmed', None):
+        return redirect('users:good_code')
+    if request.method == 'POST':
+        ### Подтягиваем введенный данные ###
+        request.session['name'] = request.POST['name']
+        request.session['mail'] = request.POST['mail']
         request.session['phone'] = request.POST['phone']
-        request.session['code_is_sended'] = False
+        request.session['code_is_sended'] = False # ????????
         print(f"Введен телефон: {request.session['phone']}")
         return redirect('users:code')
-    return render(request, 'users/register.html')
+    elif request.method == 'GET':
+        if phone is not None: # если был переход со страницы входа и такого номера не зарегестрировано - заносим его в поле
+            context['phone'] = phone
+            return render(request, 'users/register.html', context)
+    return render(request, 'users/register.html', context)
 
 def code(request):
-    # activate('en')
     """ Страница с полем смс кода. """
     if request.session.get('phone_is_confirmed', None):
         return redirect('users:good_code')
     if not request.session.get('phone', None): # если в сессии нет номера телефона
         return redirect('users:register')
-    print("Сессия:" ,request.session.items())
+    print("Сессия:", request.session.items())
     print(request.session.get('confirmation_code', None))
     context = {}
     context['message'] = _('Code has been sent!')
@@ -43,6 +66,8 @@ def code(request):
                 cur_user.save(update_fields=['username'])
             cur_user.profile.phone_is_confirmed = True
             cur_user.profile.phone = request.session.get('phone', 'No phone found!')
+            cur_user.first_name = request.session.get('name', 'No name found!')
+            cur_user.email = request.session.get('mail', 'No mail found!')
             cur_user.profile.save()
             request.session['phone_is_confirmed'] = True
             request.session.pop('confirmation_code')
@@ -51,7 +76,6 @@ def code(request):
             response = redirect('users:good_code')
             print("Заношу телефон в кукисы!") 
             response.set_cookie('phone', request.session.get('phone', 'No phone found!')) 
-            print('Cookies = ', response.cookies)
             return response
         else:
             context['message'] = _('The code doesn`t match.Try again.') 

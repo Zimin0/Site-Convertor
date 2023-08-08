@@ -12,7 +12,10 @@ from django.core.files.uploadedfile import InMemoryUploadedFile
 def clear_main(request):
     """ Отображает страницу для загрузки файлов. """
     context = {}
+    request.session['cookies_is_confirmed'] = True
+    context['cookies_is_confirmed'] = request.session['cookies_is_confirmed'] 
     context['files_uploaded'] = False 
+    context['phone_is_confirmed'] = request.session.get('phone_is_confirmed', False) 
     if not request.session.get('phone_is_confirmed', None): # если None или False
         print("Заполняю сессию пустыми данными!")
         request.session['phone_is_confirmed'] = False 
@@ -24,6 +27,11 @@ def clear_main(request):
     else:
         print("Телефона в кукисах нет!")
     print("Сессия:",request.session.items())
+
+    if request.session.get('phone_is_confirmed', False): # сделать красивее 
+        user_profile = get_object_or_404(Profile, phone=request.session['phone'])
+        context['amount_of_convertations'] = user_profile.amount_of_converts
+
     if request.method == 'POST':
         if len(request.FILES) < 2: # если загружено меньше, чем 2 файла
             context['message'] = _('Upload 2 files!') 
@@ -53,7 +61,7 @@ def clear_main(request):
         ##############################################################
         encrypted_id = ConvertOrder.crypt_id(order.id)
         return redirect('convert_order:files_main', order_id=encrypted_id)
-    
+    print(" request.session.get('phone_is_confirmed', False) = ",  request.session.get('phone_is_confirmed', False))
     return render(request, 'convert_order/index.html', context)
 
 def files_main(request, order_id):
@@ -88,3 +96,9 @@ def files_main(request, order_id):
 def info(request):
     """ Страница с описанием работы конвертора. """
     return render(request, 'convert_order/info.html')
+
+def video(request, video_id):
+    if video_id == 1:
+        return render(request, 'convert_order/video1.html')
+    elif video_id == 2:
+        return render(request, 'convert_order/video2.html')

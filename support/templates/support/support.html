@@ -1,3 +1,5 @@
+{% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -26,7 +28,7 @@
 
     <section id="support-form">
         <h1 class="form-title">Поддержка</h1>
-        <form action="POST" id="support-field" >
+        <form method="POST" id="support-field" >
             {% csrf_token %}
             <div class="priority">
                 <label for="priority">Приоритет:</label>
@@ -38,14 +40,14 @@
             </div>
             <div class="support-message">
                 <label for="sup-message">Сообщение:</label>
-                <textarea name="sup-message" id="sup-message" rows="3"></textarea>
+                <textarea name="message" id="sup-message" rows="3"></textarea>
             </div>
             <div class="support-mail">
                 <label for="sup-mail">Ваша почта:</label>
-                <input type="text" id="sup-mail">
+                <input name="email" type="text" id="sup-mail">
             </div>
 
-            <input type="submit" class="support-btn" value="Отправить" id="sup-but" disabled>
+            <input type="submit" class="support-btn" value="Отправить" id="sup-but">
         </form>
     </section>
 

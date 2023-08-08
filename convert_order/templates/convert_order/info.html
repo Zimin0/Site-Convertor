@@ -1,1 +1,50 @@
-<h1> Информация о конверторе. </h1>
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <title>SAP XML - Generator Converter</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'convert_order/img/icon.png' %}"/> 
+    <link rel="stylesheet" href="{% static 'convert_order/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'convert_order/css/media.css' %}"> 
+</head>
+
+<body>
+    <header class="header">
+
+        <div class="container wrapper">
+            <a href="{% url 'convert_order:clear_main' %}" class="logo">
+                <img src="{% static 'convert_order/img/converter-logo.jpg' %}" alt="">
+                <span>SAP XML Converter</span>
+            </a>
+
+            <div class="button-container">
+                <a href="./sign-up.html" class="sign_in-btn">Вход</a> <!--  !!!!!!!!!!!!!  -->
+                <a href="{% url 'users:register' %}" class="sign_in-btn">Регистрация</a>
+                <button class="lang-btn">RU</button>
+            </div>
+        </div>
+
+    </header>
+
+    <section class="about">
+        <h1 class="form-title">О работе конвертера</h1>
+        <p class="about-text">1. Перенос настроек производится по совпадению узлов(папок, атрибутов, критериев)
+            старой и новой структуры.
+            Т.е. в новую структуру будут перенесены все настройки по «старым» узлам с их признаками. <br> <br>
+            2. Если узел(папка, атрибут, критерий) существует только в старой структуре, то переносу подлежат только
+            узлы, которые имеют индикатор «Технический» в состоянии X.
+        </p>
+        <a href="{% url 'convert_order:clear_main' %}" class="return-btn">Назад</a>
+    </section>
+
+    <footer class="footer">
+        <p class="footer-copyright">© Copyright 2023. Все права защищены</p>
+    </footer>
+
+</html>

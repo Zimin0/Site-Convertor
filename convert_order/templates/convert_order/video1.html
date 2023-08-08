@@ -1,3 +1,5 @@
+{% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -5,32 +7,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-    <title>SAP XML - Generator Converter</title>
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/media.css">
+    <title>{% trans 'SAP XML - Generator Converter' %}</title>
+    <link rel="stylesheet" href="{% static 'convert_order/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'convert_order/css/media.css' %}"> 
 </head>
 
 <body>
     <header class="header">
-
         <div class="container wrapper">
-            <a href="./index.html" class="logo">
-                <img src="./img/converter-logo.jpg" alt="">
+            <a href="{% url 'convert_order:clear_main' %}" class="logo">
+                <img src="{% static 'convert_order/img/converter-logo.jpg' %}" alt="">
                 <span>SAP XML Converter</span>
             </a>
-
             <div class="button-container">
-                <a href="./sign-up.html" class="sign_in-btn">Вход</a>
-                <a href="./sign-in.html" class="sign_in-btn">Регистрация</a>
+                <a href="{% url 'users:login' %}" class="sign_in-btn">Вход</a> <!--  !!!!!!!!!!!!!  -->
+                <a href="{% url 'users:register' %}" class="sign_in-btn">Регистрация</a>
                 <button class="lang-btn">RU</button>
             </div>
         </div>
-
     </header>
-
     <section class="convert-info">
         <div class="info-content container">
-            <a href="./index.html" class="return-btn">Назад</a>
+            <a href="{% url 'convert_order:clear_main' %}" class="return-btn">Назад</a>
 
             <p class="convert-info-text">Как получить XML-файл «старой» структуры с настроенными правилами формирования
                 тегов. <br>
@@ -40,8 +38,8 @@
                 2. Меню «Иерархии -> Экспорт SAPXML -> Сохранить файл» на локальном компьютере. Файл готов.
                 Перетащите файл в соответствующую область сайта SAPXMLConverterUp.ru</p>
 
-            <video src="./videos/button1_rus.mp4" controls class="info-video"></video>
-        </div>
+            <video src="{% static 'convert_order/videos/button1_rus.mp4' %}" controls class="info-video"></video>
+        </div> 
 
 
         <div class="info-block container wrapper">
@@ -57,9 +55,8 @@
                 </p>
 
                 <div class="sup-btn-conteiner">
-                    <a href="./support.html" class="support-btn">Поддержка</a>
-
-                    <a href="./about.html" class="support-btn">О конвертере</a>
+                    <a href="{% url 'support:support' %}" class="support-btn">Поддержка</a> 
+                    <a href="{% url 'convert_order:info' %}" class="support-btn">О конвертере</a> 
                 </div>
             </div>
         </div>

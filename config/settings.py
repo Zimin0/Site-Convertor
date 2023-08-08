@@ -16,6 +16,14 @@ MEDIA_URL = '/media/'
 STATIC_URL = 'static/'
 STATIC_ROOT = 'static/'
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'zimi3056@gmail.com' 
+EMAIL_HOST_PASSWORD = '43g3g3365WdG3'
+
 # https://solotony.com/tips/item/oshibka-pri-vypolnenii-makemessages
 
 LANGUAGE_CODE = 'ru' # по умолчанию 

@@ -11,7 +11,6 @@ def get_convertation_amount():
     return amount_settings.value
 
 class Profile(models.Model):
-
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     phone = models.CharField(max_length=12, verbose_name='Номер телефона', null=True, blank=True, unique=True, help_text='Номер телефона в формате +79112345678')
     phone_is_confirmed = models.BooleanField(verbose_name="Телефон подтвержден", default=False)

@@ -1,3 +1,5 @@
+{% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -24,11 +26,11 @@
 
     <section id="sign_in-form">
         <h1 class="form-title">Регистрация</h1>
-        <form method="POST" id="sign-in-field"
-            {% csrf_token %}>
+        <form method="POST" id="sign-in-field">
+            {% csrf_token %}
             <p class="subtitle" id="phone_subs">Укажите номер телефона и почту для регистрации</p>
             <label for="phone">Номер телефона: <span class="red">*обязательно</span></label>
-            <input type="phone" name="phone" id="phone" placeholder="Номер телефона">
+            <input type="phone" name="phone" id="phone" placeholder="Номер телефона" value="{{ phone|default:'+' }}">
             <label for="name">Имя:</label>
             <input type="text" name="name" id="name" placeholder="Имя">
             <label for="mail">Электронная почта:</label>
