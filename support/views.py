@@ -9,6 +9,8 @@ from production_settings.models import ProductionSettings
 
 def support(request):
     """ Форма техподдрежки по кнопке на главной странице."""
+    if not request.session.get('phone_is_confirmed', None):
+        return redirect('users:login')
     if request.method == 'POST':
         if request.session.get('phone', False):
             phone = request.session['phone']
@@ -25,20 +27,14 @@ def support(request):
                 message=message
             )
             tech_mail = get_object_or_404(ProductionSettings, slug='TECH_EMAIL') # почта тех. поддержки
-            formatted_message = f""" От {phone}. \nПочта: {email} \nПриоритет: {priority} \nСообщение:\n{message} """
-            
-            msg = EmailMultiAlternatives(subject='Техподдержка', to=['nikzim2004@gmail.com'])
-            msg.send()
-            # send_mail(
-            #     'Техподдержка сайта SAP XML Converter',
-            #     formatted_message,
-            #     'zimi3056@gmail.com',
-            #     [email],
-            #     fail_silently=False,
-            # )
+            formatted_message = f""" От {phone} \nПочта: {email} \nПриоритет: {priority} \nСообщение:\n{message} """
+            # Отправляем письмо на почту техподдержки #
+            msg = EmailMultiAlternatives(subject='Техподдержка', from_email=tech_mail, to=[email], body=formatted_message)
+            status = msg.send()
+            print(f"Статус отправки эл. письма на почту {email}: {status}")
             return redirect('convert_order:clear_main')
         else:
-            return redirect('user:login')
+            return redirect('users:login')
 
     return render(request, 'support/support.html')
 

@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-    <title>Вход</title>
+    <title>{% trans 'Authorization' %}</title>
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'convert_order/img/icon.png' %}"/> 
     <link rel="stylesheet" href="{% static 'convert_order/css/styles.css' %}"> 
     <link rel="stylesheet" href="{% static 'convert_order/css/media.css' %}"> 
@@ -18,24 +18,25 @@
         <div class="container wrapper">
             <a href="{% url 'convert_order:clear_main' %}" class="logo">
                 <img src="{% static 'convert_order/img/converter-logo.jpg' %}" alt="">
-                <span>SAP XML Converter</span>
+                <span>{% trans 'SAP XML Converter' %}</span>
             </a>
-            <a href="{% url 'convert_order:clear_main' %}" class="sign_in-btn close">Закрыть</a>
+            <a href="{% url 'convert_order:clear_main' %}" class="sign_in-btn close">{% trans 'Close' %}</a>
         </div>
     </header>
 
     <section id="sign_up-form">
-        <h1 class="form-title">Вход</h1>
+        <h1 class="form-title">{% trans 'Authorization' %}</h1>
         <form method="POST" id="phone-field">
             {% csrf_token %}
-            <p class="subtitle" id="phone_subs">Введите номер телефона, указанный при регистрации</p>
-            <input type="phone" name="phone" id="phone" placeholder="Номер телефона">
-            <input type="submit" class="form-btn" id="send-code" value="Отправить код" disabled>
+            <p class="subtitle" id="phone_subs">{% trans 'Enter the phone number provided during registration' %}</p>
+            <input type="phone" name="phone" id="phone" placeholder="{% trans 'Phone number' %}">
+            <input type="submit" class="form-btn" id="send-code" value="{% trans 'Send code' %}" disabled>
         </form>
     </section>
 
     <footer class="footer">
-        <p class="footer-copyright">© Copyright 2023. Все права защищены</p>
+        <p class="footer-copyright">{% trans '© Copyright 2023. All rights reserved' %}
+        </p>
     </footer>
 
     <script src="{% static 'convert_order/js/sign-in-form.js' %}"></script> 

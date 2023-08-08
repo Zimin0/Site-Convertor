@@ -14,7 +14,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     phone = models.CharField(max_length=12, verbose_name='Номер телефона', null=True, blank=True, unique=True, help_text='Номер телефона в формате +79112345678')
     phone_is_confirmed = models.BooleanField(verbose_name="Телефон подтвержден", default=False)
-    amount_of_converts = models.IntegerField(verbose_name="Кол-во конвертаций", default=10, validators=[MinValueValidator(0)])
+    amount_of_converts = models.IntegerField(verbose_name="Кол-во конвертаций", default=get_convertation_amount, validators=[MinValueValidator(0)])
     
     def __str__(self): # Надо поменять 
         return f'Профиль пользователя {self.user}' 

@@ -57,13 +57,13 @@
             <a href="{% url 'convert_order:clear_main' %}" class="return-btn">{% trans 'Back' %}</a>
 
             <p class="convert-info-text">
-                {% trans 'How to get XML-file of «new» structure:' %}
+                {% trans 'How to get XML-file of "new" structure:' %}
                 <br>
                 1. {% trans 'Obtain an XSD schema of the new report format (download from the website of government or website of another provider that defines the reporting standard)' %}
                 <br>
-                2. {% trans 'Define the hierarchy of the new report version in the SAP system (transaction \"J3RTAXREP\", Menu \"New Entry\")' %}
+                2. {% trans 'Define the hierarchy of the new report version in the SAP system (transaction "J3RTAXREP", Menu "New Entry")' %}
                 <br>
-                3. {% trans 'Enter the new report hierarchy and import the file of XSD-schema(Menu \"Import\", then \"Save\")' %}
+                3. {% trans 'Enter the new report hierarchy and import the file of XSD-schema(Menu "Import", then "Save")' %}
                 <br>
                 4. {% trans 'Menu "Hierarchies -> SAPXML Export -> Save File" on the local computer. The file is ready. Drag the file to the appropriate area of the SAPXMLVersionUp.com site' %}
             </p>

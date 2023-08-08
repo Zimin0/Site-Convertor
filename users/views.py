@@ -87,13 +87,13 @@ def code(request):
             print(f'Код подтверждения: {request.session["confirmation_code"]}')
             return render(request, 'users/code.html')
         else: # если код уже отправлялся
-            context['message'] = _('Code already have sent!') # Код уже отправлен!
+            context['message'] = _('The code has already been sent!') # Код уже отправлен!
             return render(request, 'users/code.html', context)
 
 def good_code(request):
     """ Страница с "код подтврежден" и кнопкой закрыть."""
     if not request.session.get('phone_is_confirmed', None):
-        return redirect('users:register')
+        return redirect('users:login')
     return render(request, 'users/good_code.html')
 
 def need_to_pay(request):
@@ -105,7 +105,7 @@ def need_to_pay(request):
     }
     
     if not request.session.get('phone_is_confirmed', None):
-        return redirect('users:register')
+        return redirect('users:login')
     return render(request, "users/need_to_pay.html", context)
 
 def clear(request):
