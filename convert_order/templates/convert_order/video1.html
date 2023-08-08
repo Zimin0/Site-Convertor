@@ -55,7 +55,7 @@
         <div class="info-content container">
             <a href="{% url 'convert_order:clear_main' %}" class="return-btn">{% trans 'Back' %}</a>
 
-            <p class="convert-info-text">
+            <p class="convert-info-text"> 
                 {% trans 'How to get an XML file of the "old" structure with configured rules for generating tags.' %}
                 <br>
                 1. {% trans 'Enter transaction "J3RTAXREP" in SAP system. Open the corresponding hierarchy of the "old" structure. It must contain the settings that you want to transfer to the hierarchy of the "new" structure.' %}
@@ -63,7 +63,7 @@
                 2. {% trans 'Menu "Hierarchies -> SAPXML Export -> Save File" on the local computer. The file is ready. Drag and drop the resulting file into the appropriate area of the SAPXMLVersionUp.com site' %}
             </p>
 
-            <video src="{% static 'convert_order/videos/button1_rus.mp4' %}" controls class="info-video"></video>
+            <video src="{% static 'convert_order/videos/' %}{{ video_name }}" controls class="info-video"></video>
         </div> 
 
 

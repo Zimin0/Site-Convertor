@@ -41,10 +41,8 @@
                     document.addEventListener('DOMContentLoaded', function () {
                         const languageForm = document.getElementById('language-form');
                         const languageSelect = document.getElementById('language-select');
-                        
-                        // Add event handler for select change
                         languageSelect.addEventListener('change', function () {
-                            languageForm.submit(); // Submit the form on value change
+                            languageForm.submit(); 
                         });
                     });
                 </script>
@@ -68,7 +66,7 @@
                 4. {% trans 'Menu "Hierarchies -> SAPXML Export -> Save File" on the local computer. The file is ready. Drag the file to the appropriate area of the SAPXMLVersionUp.com site' %}
             </p>
 
-            <video src="{% static 'convert_order/videos/button2_rus.mp4' %}" controls class="info-video"></video>
+            <video src="{% static 'convert_order/videos/' %}{{ video_name }}" controls class="info-video"></video>
         </div>
 
         <div class="info-block container wrapper">

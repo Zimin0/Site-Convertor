@@ -15,6 +15,8 @@
 text:           "Swear me that you will not take \"this\" thing"
 translation :   "Пообещай мне, что ты не будешь брать \"это\" "
 
+* How to add translated videos - they must be named as [button<№1-2>_<lang-code>] - f. e. - button2_en
+
 ## Before changing email in admin django - make sure:
 * that your mail is by Google (contains "gmail" part)
 - you are using app key, generated in Google account settings - not your password

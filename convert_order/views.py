@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.http import HttpResponseNotFound
 from django.utils.translation import gettext as _
 from django.utils.translation import activate # activate('en')
 from django.core.files import File
@@ -95,8 +96,15 @@ def info(request):
     """ Страница с описанием работы конвертора. """
     return render(request, 'convert_order/info.html')
 
+from django.utils.translation import get_language
 def video(request, video_id):
-    if video_id == 1:
-        return render(request, 'convert_order/video1.html')
-    elif video_id == 2:
-        return render(request, 'convert_order/video2.html')
+    context = {}
+    curr_language = get_language()
+    context['curr_language'] = curr_language
+    print("Текущий язык на странице с видео:", curr_language)
+    template_name = f'convert_order/video{video_id}.html'
+    context['video_name'] = f'button1_{curr_language}.mp4'
+    if video_id in (1, 2):
+        return render(request, template_name, context)
+    return render('convert_order/404.html')
+
