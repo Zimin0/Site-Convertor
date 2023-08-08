@@ -18,11 +18,11 @@
         <div class="container wrapper">
             <a href="{% url 'convert_order:clear_main' %}" class="logo">
                 <img src="{% static 'convert_order/img/converter-logo.jpg' %}" alt="">
-                <span>SAP XML Converter</span>
+                <span>{% trans 'SAP XML Converter' %}</span>
             </a>
             <div class="button-container">
-                <a href="{% url 'users:login' %}" class="sign_in-btn">Вход</a> <!--  !!!!!!!!!!!!!  -->
-                <a href="{% url 'users:register' %}" class="sign_in-btn">Регистрация</a>
+                <a href="{% url 'users:login' %}" class="sign_in-btn">{% trans 'Authorization' %}</a>
+                <a href="{% url 'users:register' %}" class="sign_in-btn">{% trans 'Sign up' %}</a>
                 <form id="language-form" action="{% url 'set_language' %}" method="post">
                     {% csrf_token %}
                     <input name="next" type="hidden" value="{{ redirect_to }}">
@@ -50,22 +50,23 @@
                 </script>
             </div>
         </div>
-
     </header>
 
     <section class="convert-info">
         <div class="info-content container">
-            <a href="{% url 'convert_order:clear_main' %}" class="return-btn">Назад</a>
+            <a href="{% url 'convert_order:clear_main' %}" class="return-btn">{% trans 'Back' %}</a>
 
-            <p class="convert-info-text">Как получить XML файл «новой» структуры. <br>
-                1. Получить XSD-схему нового формата отчета (скачать с сайта NALOG.RU или другого органа,
-                определяющего стандарт отчетности). <br>
-                2. Определить в SAP-системе иерархию новой версии отчета (транзакция «J3RTAXREP - Иерархия
-                системы отчетов», Меню «Новая запись») <br>
-                3. Войти в новую иерархию отчета и импортировать файл с XSD-схемой (Меню «Импорт», затем
-                «Сохранить») <br>
-                4. Меню «Иерархии -> Экспорт SAPXML -> Сохранит файл» на локальном компьютере. Файл готов.
-                Перетащите файл в соответствующую область сайта SAPXMLConverterUp.ru</p>
+            <p class="convert-info-text">
+                {% trans 'How to get XML-file of «new» structure:' %}
+                <br>
+                1. {% trans 'Obtain an XSD schema of the new report format (download from the website of government or website of another provider that defines the reporting standard)' %}
+                <br>
+                2. {% trans 'Define the hierarchy of the new report version in the SAP system (transaction \"J3RTAXREP\", Menu \"New Entry\")' %}
+                <br>
+                3. {% trans 'Enter the new report hierarchy and import the file of XSD-schema(Menu \"Import\", then \"Save\")' %}
+                <br>
+                4. {% trans 'Menu "Hierarchies -> SAPXML Export -> Save File" on the local computer. The file is ready. Drag the file to the appropriate area of the SAPXMLVersionUp.com site' %}
+            </p>
 
             <video src="{% static 'convert_order/videos/button2_rus.mp4' %}" controls class="info-video"></video>
         </div>
@@ -91,7 +92,8 @@
     </section>
 
     <footer class="footer">
-        <p class="footer-copyright">{% trans '© Copyright 2023. All rights reserved' %}</p>
+        <p class="footer-copyright">{% trans '© Copyright 2023. All rights reserved' %}
+        </p>
     </footer>
 
 </html>

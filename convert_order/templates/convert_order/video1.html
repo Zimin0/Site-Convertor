@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <title>{% trans 'SAP XML - Generator Converter' %}</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'convert_order/img/icon.jpg' %}"/> 
     <link rel="stylesheet" href="{% static 'convert_order/css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'convert_order/css/media.css' %}"> 
 </head>
@@ -52,7 +53,7 @@
     </header>
     <section class="convert-info">
         <div class="info-content container">
-            <a href="{% url 'convert_order:clear_main' %}" class="return-btn">{% trans 'Назад' %}</a>
+            <a href="{% url 'convert_order:clear_main' %}" class="return-btn">{% trans 'Back' %}</a>
 
             <p class="convert-info-text">
                 {% trans 'How to get an XML file of the "old" structure with configured rules for generating tags.' %}

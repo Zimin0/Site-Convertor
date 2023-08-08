@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-08 21:55+0300\n"
+"POT-Creation-Date: 2023-08-08 22:13+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,7 +27,8 @@ msgstr "Конвертер SAP XML - Generator"
 
 #: .\convert_order\templates\convert_order\index.html:21
 #: .\convert_order\templates\convert_order\info.html:22
-#: .\convert_order\templates\convert_order\video1.html:20
+#: .\convert_order\templates\convert_order\video1.html:21
+#: .\convert_order\templates\convert_order\video2.html:21
 msgid "SAP XML Converter"
 msgstr "Конвертер SAP XML"
 
@@ -37,13 +38,15 @@ msgstr "Беспл. скачивания:"
 
 #: .\convert_order\templates\convert_order\index.html:27
 #: .\convert_order\templates\convert_order\info.html:26
-#: .\convert_order\templates\convert_order\video1.html:23
+#: .\convert_order\templates\convert_order\video1.html:24
+#: .\convert_order\templates\convert_order\video2.html:24
 msgid "Authorization"
 msgstr "Войти"
 
 #: .\convert_order\templates\convert_order\index.html:28
 #: .\convert_order\templates\convert_order\info.html:27
-#: .\convert_order\templates\convert_order\video1.html:24
+#: .\convert_order\templates\convert_order\video1.html:25
+#: .\convert_order\templates\convert_order\video2.html:25
 msgid "Sign up"
 msgstr "Регистрация"
 
@@ -133,26 +136,26 @@ msgid "Download"
 msgstr "Скачать"
 
 #: .\convert_order\templates\convert_order\index.html:163
-#: .\convert_order\templates\convert_order\video1.html:72
-#: .\convert_order\templates\convert_order\video2.html:76
+#: .\convert_order\templates\convert_order\video1.html:73
+#: .\convert_order\templates\convert_order\video2.html:77
 msgid "Company Name LLC"
 msgstr "ООО Название компании"
 
 #: .\convert_order\templates\convert_order\index.html:169
-#: .\convert_order\templates\convert_order\video1.html:78
-#: .\convert_order\templates\convert_order\video2.html:82
+#: .\convert_order\templates\convert_order\video1.html:79
+#: .\convert_order\templates\convert_order\video2.html:83
 msgid "We help make your life a bit easier!"
 msgstr "Мы помогаем Вам сделать жизнь чуточку проще!"
 
 #: .\convert_order\templates\convert_order\index.html:173
-#: .\convert_order\templates\convert_order\video1.html:82
-#: .\convert_order\templates\convert_order\video2.html:86
+#: .\convert_order\templates\convert_order\video1.html:83
+#: .\convert_order\templates\convert_order\video2.html:87
 msgid "Support request"
 msgstr "Поддержка"
 
 #: .\convert_order\templates\convert_order\index.html:174
-#: .\convert_order\templates\convert_order\video1.html:83
-#: .\convert_order\templates\convert_order\video2.html:87
+#: .\convert_order\templates\convert_order\video1.html:84
+#: .\convert_order\templates\convert_order\video2.html:88
 msgid "About Converter"
 msgstr "О конвертере"
 
@@ -170,8 +173,8 @@ msgstr "Согласиться"
 
 #: .\convert_order\templates\convert_order\index.html:189
 #: .\convert_order\templates\convert_order\info.html:68
-#: .\convert_order\templates\convert_order\video1.html:90
-#: .\convert_order\templates\convert_order\video2.html:94
+#: .\convert_order\templates\convert_order\video1.html:91
+#: .\convert_order\templates\convert_order\video2.html:95
 msgid "Â© Copyright 2023. All rights reserved"
 msgstr "© Copyright 2023. Все права защищены"
 
@@ -190,7 +193,6 @@ msgstr ""
 "все настройки по «старым» узлам с их признаками."
 
 #: .\convert_order\templates\convert_order\info.html:62
-#, fuzzy
 msgid ""
 "2. If a node (folder, attribute, criterion) exists only in the old "
 "structure, then only nodes that have the \"Technical\" indicator in the X "
@@ -201,15 +203,12 @@ msgstr ""
 "«Технический» в состоянии X."
 
 #: .\convert_order\templates\convert_order\info.html:64
+#: .\convert_order\templates\convert_order\video1.html:56
+#: .\convert_order\templates\convert_order\video2.html:57
 msgid "Back"
 msgstr "Назад"
 
-#: .\convert_order\templates\convert_order\video1.html:55
-msgid "ÐÐ°Ð·Ð°Ð´"
-msgstr ""
-
-#: .\convert_order\templates\convert_order\video1.html:58
-#, fuzzy
+#: .\convert_order\templates\convert_order\video1.html:59
 msgid ""
 "How to get an XML file of the \"old\" structure with configured rules for "
 "generating tags."
@@ -217,19 +216,62 @@ msgstr ""
 "1. XML-файл «старой» структуры с настроенными правилами формирования тегов "
 "(FILE_IN1). "
 
-#: .\convert_order\templates\convert_order\video1.html:60
+#: .\convert_order\templates\convert_order\video1.html:61
 msgid ""
 "Enter transaction \"J3RTAXREP\" in SAP system. Open the corresponding "
 "hierarchy of the \"old\" structure. It must contain the settings that you "
 "want to transfer to the hierarchy of the \"new\" structure."
 msgstr ""
+"Enter transaction \"J3RTAXREP\" in SAP system. Open the corresponding "
+"hierarchy of the \"old\" structure. It must contain the settings that you "
+"want to transfer to the hierarchy of the \"new\" structure."
 
-#: .\convert_order\templates\convert_order\video1.html:62
+#: .\convert_order\templates\convert_order\video1.html:63
 msgid ""
 "Menu \"Hierarchies -> SAPXML Export -> Save File\" on the local computer. "
 "The file is ready. Drag and drop the resulting file into the appropriate "
 "area of the SAPXMLVersionUp.com site"
 msgstr ""
+"Menu \"Hierarchies -> SAPXML Export -> Save File\" on the local computer. "
+"The file is ready. Drag and drop the resulting file into the appropriate "
+"area of the SAPXMLVersionUp.com site"
+
+#: .\convert_order\templates\convert_order\video2.html:60
+msgid "How to get XML-file of Â«newÂ» structure:"
+msgstr "Как получить XML файл «новой» структуры"
+
+#: .\convert_order\templates\convert_order\video2.html:62
+msgid ""
+"Obtain an XSD schema of the new report format (download from the website of "
+"government or website of another provider that defines the reporting "
+"standard)"
+msgstr ""
+"Получить XSD-схему нового формата отчета (скачать с сайта NALOG.RU или "
+"другого органа, определяющего стандарт отчетности). "
+
+#: .\convert_order\templates\convert_order\video2.html:64
+msgid ""
+"Define the hierarchy of the new report version in the SAP system "
+"(transaction \\\"J3RTAXREP\\\", Menu \\\"New Entry\\\")"
+msgstr ""
+"Определить в SAP-системе иерархию новой версии отчета (транзакция «J3RTAXREP "
+"- Иерархия системы отчетов», Меню «Новая запись») "
+
+#: .\convert_order\templates\convert_order\video2.html:66
+msgid ""
+"Enter the new report hierarchy and import the file of XSD-schema(Menu \\"
+"\"Import\\\", then \\\"Save\\\")"
+msgstr ""
+"Войти в новую иерархию отчета и импортировать файл с XSD-схемой (Меню "
+"«Импорт», затем «Сохранить») "
+
+#: .\convert_order\templates\convert_order\video2.html:68
+msgid ""
+"Menu \"Hierarchies -> SAPXML Export -> Save File\" on the local computer."
+"The file is ready. Drag the file to the appropriate area of the "
+"SAPXMLVersionUp.com site"
+msgstr ""
+"Меню «Иерархии -> Экспорт SAPXML -> Сохранит файл» на локальном компьютере. Файл готов. Перетащите файл в соответствующую область сайта SAPXMLVersionUp.ru"
 
 #: .\convert_order\views.py:37
 msgid "Upload 2 files!"
