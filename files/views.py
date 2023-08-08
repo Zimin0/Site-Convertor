@@ -26,6 +26,7 @@ def load_file(request, order_id):
     filename = file3.file.name.split('/')[-1]
 
     # Открываем файл в режиме двоичного чтения и декодируем его из UTF-16, игнорируя ошибки
+    print('path to result file =', file3.file.path)
     with open(file3.file.path, 'rb') as file:
         binary_content = file.read()
         #print(binary_content)

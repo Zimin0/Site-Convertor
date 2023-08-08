@@ -122,7 +122,6 @@ const converterBtn = document.getElementById('converter-btn');
 const downloadBtn = document.getElementById('download-btn');
 converterBtn.setAttribute('disabled', "");
 converterBtn.addEventListener('click', enableDownload);
-downloadBtn.setAttribute('disabled', "");
 
 const dropFile_1 = document.getElementById('file-field-1');
 const dropFile_2 = document.getElementById('file-field-2');

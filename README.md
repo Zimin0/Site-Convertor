@@ -18,3 +18,7 @@ translation :   "Пообещай мне, что ты не будешь брат
 ## Before changing email in admin django - make sure:
 * that your mail is by Google (contains "gmail" part)
 - you are using app key, generated in Google account settings - not your password
+
+## Proger notes
+Something is going wrong with FileFields - unfixable issue with convertation. 
+Is it more reliably to store filepath in CharField ? FileField do the same. 

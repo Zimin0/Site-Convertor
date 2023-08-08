@@ -27,10 +27,11 @@ def support(request):
                 message=message
             )
             tech_mail = get_object_or_404(ProductionSettings, slug='TECH_EMAIL') # почта тех. поддержки
+            
             formatted_message = f""" От {phone} \nПочта: {email} \nПриоритет: {priority} \nСообщение:\n{message} """
             # Отправляем письмо на почту техподдержки #
             msg = EmailMultiAlternatives(subject='Техподдержка', from_email=tech_mail, to=[email], body=formatted_message)
-            status = msg.send()
+            status = msg.send() # GMAIL_APP_KEY
             print(f"Статус отправки эл. письма на почту {email}: {status}")
             return redirect('convert_order:clear_main')
         else:

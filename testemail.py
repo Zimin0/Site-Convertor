@@ -1,6 +1,3 @@
-
-
-
 def send_email(to_email:str, message:str):
     """ Отправляет письмо на почту to_email с текстом message. """
     import smtplib

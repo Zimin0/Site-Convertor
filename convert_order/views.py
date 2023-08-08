@@ -34,13 +34,11 @@ def clear_main(request):
 
     if request.method == 'POST':
         if len(request.FILES) < 2: # если загружено меньше, чем 2 файла
-            context['message'] = _('Upload 2 files!') 
             return render(request, 'convert_order/index.html', context)
         file1 = request.FILES['file1']
         file2 = request.FILES['file2']
         print(f'file type = {type(file2)}')
         print(f'Загружены файлы {file1} и {file2}.')
-        context['message'] = _('Files {} and {} were uploaded!').format(file1.name, file2.name) # можно удалить, т к не отображается на странице
 
         #### Создаем новый заказ на конвертацию и добавляем файлы ####
         order = ConvertOrder() 

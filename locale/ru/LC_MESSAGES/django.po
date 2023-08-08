@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-08 23:47+0300\n"
+"POT-Creation-Date: 2023-08-09 00:56+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -227,7 +227,10 @@ msgid ""
 "hierarchy of the \"old\" structure. It must contain the settings that you "
 "want to transfer to the hierarchy of the \"new\" structure."
 msgstr ""
-"Отрыть в SAP системе соответствующую иерархию отчета \"старой\" структуры (транзакция \"J3RTAXREP - Иерархия системы отчетов\"). В ней должны существовать настройки, которые Вы хотите перенести в новый формат иерархии отчета. "
+"Отрыть в SAP системе соответствующую иерархию отчета \"старой\" структуры "
+"(транзакция \"J3RTAXREP - Иерархия системы отчетов\"). В ней должны "
+"существовать настройки, которые Вы хотите перенести в новый формат иерархии "
+"отчета. "
 
 #: .\convert_order\templates\convert_order\video1.html:63
 msgid ""
@@ -235,7 +238,9 @@ msgid ""
 "The file is ready. Drag and drop the resulting file into the appropriate "
 "area of the SAPXMLVersionUp.com site"
 msgstr ""
-"Меню \"Иерархии -> Экспорт SAPXML -> Сохранит файл\" на локальном компьютере. Файл готов. Перетащите файл в соответствующую область сайта SAPXMLVersionUp.ru"
+"Меню \"Иерархии -> Экспорт SAPXML -> Сохранит файл\" на локальном "
+"компьютере. Файл готов. Перетащите файл в соответствующую область сайта "
+"SAPXMLVersionUp.ru"
 
 #: .\convert_order\templates\convert_order\video2.html:62
 msgid ""
@@ -271,14 +276,6 @@ msgstr ""
 "Меню \"Иерархии -> Экспорт SAPXML -> Сохранит файл\" на локальном "
 "компьютере. Файл готов. Перетащите файл в соответствующую область сайта "
 "SAPXMLVersionUp.ru"
-
-#: .\convert_order\views.py:37
-msgid "Upload 2 files!"
-msgstr "Загрузите 2 файла!"
-
-#: .\convert_order\views.py:43
-msgid "Files {} and {} were uploaded!"
-msgstr "Файлы {} и {} были загружены!"
 
 #: .\users\templates\users\code.html:9
 #: .\users\templates\users\good_code.html:9
@@ -340,6 +337,3 @@ msgstr "Код не совпадает. Попробуйте еще раз."
 #: .\users\views.py:90
 msgid "The code has already been sent!"
 msgstr "Код был отправлен!"
-
-#~ msgid "How to get XML-file of Â«newÂ» structure:"
-#~ msgstr "Как получить XML файл \"новой\" структуры"
