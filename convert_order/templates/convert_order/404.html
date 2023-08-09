@@ -1,3 +1,5 @@
+{% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -5,40 +7,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-    <title>Not Found - 404</title>
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/media.css">
+    <title>{% trans 'Not Found - 404' %}</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'convert_order/img/icon.jpg' %}"/> 
+    <link rel="stylesheet" href="{% static 'convert_order/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'convert_order/css/media.css' %}"> 
 </head>
 
 <body>
     <header class="header">
-
         <div class="container wrapper">
-            <a href="./index.html" class="logo">
-                <img src="./img/converter-logo.jpg" alt="">
-                <span>SAP XML Converter</span>
+            <a href="{% url 'convert_order:clear_main' %}" class="logo">
+                <img src="{% static 'convert_order/img/converter-logo.jpg' %}" alt="">
+                <span>{% trans 'SAP XML Converter' %}</span>
             </a>
 
             <div class="button-container">
-                <a href="./sign-up.html" class="sign_in-btn">Вход</a>
-                <a href="./sign-in.html" class="sign_in-btn">Регистрация</a>
-                <button class="lang-btn">RU</button>
+                <a href="{% url 'users:login' %}" class="sign_in-btn">{% trans 'Authorization' %}</a>
+                <a href="{% url 'users:register' %}" class="sign_in-btn">{% trans 'Sign up' %}</a>
+                <form id="language-form" action="{% url 'set_language' %}" method="post">
+                    {% csrf_token %}
+                    <input name="next" type="hidden" value="{{ redirect_to }}">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    <select id="language-select" name="language" class="lang-btn">
+                        {% for language in languages %}
+                            <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
+                                {{ language.code }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </form>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const languageForm = document.getElementById('language-form');
+                        const languageSelect = document.getElementById('language-select');
+                        
+                        // Add event handler for select change
+                        languageSelect.addEventListener('change', function () {
+                            languageForm.submit(); // Submit the form on value change
+                        });
+                    });
+                </script>
             </div>
         </div>
-
     </header>
 
     <section class="about">
-        <h1 class="form-title">Ошибка 404 - Страница не найдена!</h1>
+        <h1 class="form-title">{% trans 'Error 404. Page not found!' %}</h1>
         <p class="error-text">
-            Кажется что-то пошло не так! Страница, которую Вы запрашиваете, не существует. Возможно она устарела, была
-            удалена, или был введён неверный адрес в адресной строке.
+            {% trans 'Something seems to have gone wrong! The page you are requesting does not exist. Perhaps it is out of date, has been removed, or an incorrect address has been entered in the address bar.' %}
         </p>
-        <a href="./index.html" class="return-btn">Назад</a>
+        <a href="{% url 'convert_order:clear_main' %}" class="return-btn">{% trans 'Back' %}</a>
     </section>
 
     <footer class="footer">
-        <p class="footer-copyright">© Copyright 2023. Все права защищены</p>
+        <p class="footer-copyright">{% trans '© Copyright 2023. All rights reserved' %}</p>
     </footer>
 
 </html>

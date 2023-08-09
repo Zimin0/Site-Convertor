@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-    <title>{% trans 'Payment' %}</title>
+    <title>{% trans 'Sign up' %}</title>
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'convert_order/img/icon.png' %}"/> 
     <link rel="stylesheet" href="{% static 'convert_order/css/styles.css' %}"> 
     <link rel="stylesheet" href="{% static 'convert_order/css/media.css' %}"> 
@@ -20,21 +20,60 @@
                 <img src="{% static 'convert_order/img/converter-logo.jpg' %}" alt="">
                 <span>{% trans 'SAP XML Converter' %}</span>
             </a>
-            <a href="{% url 'convert_order:clear_main' %}" class="sign_in-btn close">{% trans 'Close' %}</a>
+            
+            
+            <div class="button-container">
+                <form id="language-form" action="{% url 'set_language' %}" method="post">
+                    {% csrf_token %}
+                    <input name="next" type="hidden" value="{{ redirect_to }}">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    <select id="language-select" name="language" class="lang-btn">
+                        {% for language in languages %}
+                            <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
+                                {{ language.code }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </form>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const languageForm = document.getElementById('language-form');
+                        const languageSelect = document.getElementById('language-select');
+                        
+                        // Add event handler for select change
+                        languageSelect.addEventListener('change', function () {
+                            languageForm.submit(); // Submit the form on value change
+                        });
+                    });
+                </script>
+                <a href="{% url 'convert_order:clear_main' %}" class="sign_in-btn close">{% trans 'Close' %}</a>
+            </div>
         </div>
     </header>
 
     <section id="sign_in-form">
-        <div id="pay-block">
-            <p class="subtitle">{% trans 'The following conversions require payment!' %}: {{ ruble_price }}р {% trans 'or' %} ${{ dollar_price }} {% trans 'or' %} {{ euro_price }}€</p>
-            <a class="confirm-btn" id="pay-btn">{% trans 'Go to payment' %}</a>
-        </div>
+        <h1 class="form-title">{% trans 'Sign up' %}</h1>
+        <form method="POST" id="sign-in-field">
+            {% csrf_token %}
+            <p class="subtitle" id="phone_subs">{% trans 'Enter your phone number and email to register' %}</p>
+            <label for="phone">{% trans 'Phone number:' %} <span class="red">{% trans '*necessarily' %}</span></label>
+            <input type="phone" name="phone" id="phone" placeholder="{% trans 'Phone number:' %}">
+            <label for="name">{% trans 'Name:' %}</label>
+            <input type="text" name="name" id="name" placeholder="{% trans 'Name:' %}">
+            <label for="mail">{% trans 'Email:' %}</label>
+            <input type="mail" name="mail" id="mail" placeholder="{% trans 'Email:' %}">
+            <input type="submit" class="form-btn" id="send-code" value="{% trans 'Send code' %}" disabled>
+        </form>
     </section>
 
     <footer class="footer">
-        <p class="footer-copyright">{% trans '© Copyright 2023. All rights reserved' %}
+        <p class="footer-copyright">{% trans '© Copyright 2023. All rights reserved' %}</p>
         </p>
     </footer>
+
+    <script src="{% static 'convert_order/js/sign-in-form.js' %}"></script> 
 </body>
 
 </html>

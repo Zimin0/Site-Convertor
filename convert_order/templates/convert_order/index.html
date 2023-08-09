@@ -107,13 +107,6 @@
 
                     <input type="submit" id="converter-btn" value="{% trans 'Convert' %}">
                     
-                    {% if files_uploaded %}
-                    <script>
-                        const converterBtn1 = document.getElementById('converter-btn');
-                        converterBtn1.setAttribute('disabled', '');
-                    </script>
-                    {% endif %}
-
                     <img id="down-arrow" src="{% static 'convert_order/img/converter-arrow.svg' %}" alt="">
 
                     <div id="popup-info-2">
@@ -131,10 +124,10 @@
                             {% if amount_of_convertations < 1 %}
                                 <input type="button" id="download-btn" value="{% trans 'Download' %}" onclick="location.href='{% url 'users:need_to_pay' %}';">
                             {% else %}
-                                <input type="button" id="download-btn" value="{% trans 'Download' %}" onclick="location.href='{% url 'files:load_file' order_id %}'; setTimeout(function(){window.location.href='/';}, 500);">
+                                <input type="button" id="download-btn" value="{% trans 'Download' %}" onclick="location.href='{% url 'files:load_file' order_id %}'; setTimeout(function(){window.location.href='/';}, 1000);">
                             {% endif %}
                         {% else %}
-                            <input type="button" id="download-btn" value="{% trans 'Download' %}" onclick="location.href='{% url 'users:register' %}';">
+                            <input type="button" id="download-btn" value="{% trans 'Download' %}" onclick="location.href='{% url 'users:login' %}';">
                         {% endif %}
                     {% else %}
                         <input type="submit" id="download-btn" value="{% trans 'Download' %}" disabled>
@@ -143,14 +136,17 @@
                     {% if files_uploaded %}
                      <script>
                         const upArrow = document.getElementById('up-arrow');
-                        upArrow.style.transition = 'opacity 10s ease-in';
+                        upArrow.style.transition = 'opacity 1s ease-in';
                         upArrow.style.opacity = 1;
                         const downArrow = document.getElementById('down-arrow');
-                        downArrow.style.transition = 'opacity 10s ease-in';
+                        downArrow.style.transition = 'opacity 1s ease-in';
                         downArrow.style.opacity = 1;
                         const rightArrow = document.getElementById('right-arrow');
-                        rightArrow.style.transition = 'opacity 10s ease-in';
+                        rightArrow.style.transition = 'opacity 1s ease-in';
                         rightArrow.style.opacity = 1;
+
+                        // const converterBtn1 = document.getElementById('converter-btn');
+                        // converterBtn1.setAttribute('disabled', '');
                     </script> 
                     {% endif %}
                 </div>
