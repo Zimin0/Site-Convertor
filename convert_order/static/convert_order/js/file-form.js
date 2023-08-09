@@ -65,8 +65,8 @@ function addFile2(name) {
 }
 
 function enableDownload() {
-    downloadBtn.removeAttribute('disabled');
-    showRightArrow();
+    // downloadBtn.removeAttribute('disabled');
+    // showRightArrow();
 }
 
 function showPopup1() {
