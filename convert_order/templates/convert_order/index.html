@@ -28,6 +28,8 @@
                         <a href="{% url 'users:login_back_to' order_id %}" class="sign_in-btn">{% trans 'Authorization' %}</a>
                         <a href="{% url 'users:register_back_to' order_id %}" class="sign_in-btn">{% trans 'Sign up' %}</a>
                     {% else %}
+                        <a href="{% url 'users:login' %}" class="sign_in-btn">{% trans 'Authorization' %}</a>
+                        <a href="{% url 'users:register' %}" class="sign_in-btn">{% trans 'Sign up' %}</a>
                     {% endif %}
                 {% endif %}
 

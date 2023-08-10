@@ -1,5 +1,6 @@
 {% load static %}
 {% load i18n %}
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -7,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-    <title>Оплата</title>
+    <title>{% trans 'Payment' %}</title>
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'convert_order/img/icon.png' %}"/> 
     <link rel="stylesheet" href="{% static 'convert_order/css/styles.css' %}"> 
     <link rel="stylesheet" href="{% static 'convert_order/css/media.css' %}"> 
@@ -15,30 +16,28 @@
 
 <body>
     <header class="header">
-
         <div class="container wrapper">
             <a href="{% url 'convert_order:clear_main' %}" class="logo">
                 <img src="{% static 'convert_order/img/converter-logo.jpg' %}" alt="">
-                <span>SAP XML Converter</span>
+                <span>{% trans 'SAP XML Converter' %}</span>
             </a>
             {% if need_to_back %}
-                <a href="{% url 'convert_order:files_main' order_id %}" class="sign_in-btn close">Закрыть</a>
+                <a href="{% url 'convert_order:files_main' order_id %}" class="sign_in-btn close">{% trans 'Close' %}</a>
             {% else %}
-                <a href="{% url 'convert_order:clear_main' %}" class="sign_in-btn close">Закрыть</a>
+                <a href="{% url 'convert_order:clear_main' %}" class="sign_in-btn close">{% trans 'Close' %}</a>
             {% endif %}
         </div>
-
     </header>
 
     <section id="sign_in-form">
         <div id="pay-block">
-            <p class="subtitle">Cледующие конвертации требуют оплаты: {{ ruble_price }}р или ${{ dollar_price }} или {{ euro_price }}€</p>
-            <a class="confirm-btn" id="pay-btn">Оплатить</a>
+            <p class="subtitle">{% trans 'The following conversions require payment:' %} {{ ruble_price }}р {% trans 'or' %} ${{ dollar_price }} {% trans 'or' %} {{ euro_price }}€</p>
+            <a class="confirm-btn" id="pay-btn">{% trans 'Payment' %}</a>
         </div>
     </section>
 
     <footer class="footer">
-        <p class="footer-copyright">© Copyright 2023. Все права защищены</p>
+        <p class="footer-copyright">{% trans '© Copyright 2023. All rights reserved' %}</p>
     </footer>
 </body>
 

@@ -12,12 +12,12 @@ window.onload = function() {
         const isCodeValid = regex.test(codeField.value);
         
         if (isCodeValid) {
-            errorMessage.innerText = 'Код валиден!';
+            errorMessage.innerText = gettext('The code is valid!');
             errorMessage.style.color = 'green';
 
             confirmCodeButton.removeAttribute('disabled');
         } else {
-            errorMessage.innerText = 'Код должен содержать ровно 4 цифры!';
+            errorMessage.innerText = gettext('The code must contain exactly 4 digits!');
             errorMessage.style.color = 'red';
 
             confirmCodeButton.setAttribute('disabled', '');

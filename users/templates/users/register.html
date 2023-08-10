@@ -20,8 +20,6 @@
                 <img src="{% static 'convert_order/img/converter-logo.jpg' %}" alt="">
                 <span>{% trans 'SAP XML Converter' %}</span>
             </a>
-            
-            
             <div class="button-container">
                 <form id="language-form" action="{% url 'set_language' %}" method="post">
                     {% csrf_token %}

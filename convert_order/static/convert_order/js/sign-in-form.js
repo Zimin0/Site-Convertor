@@ -15,7 +15,7 @@ function validatePhoneNumber(phoneValue) {
 
 function updateValidationState(phoneValue) {
     if (!validatePhoneNumber(phoneValue)) {
-        phone_subs.textContent = "Номер телефона должен содержать 12-16 символов и начинаться с '+'";
+        phone_subs.textContent = gettext("Phone number must contain 12-16 characters and start with '+'");
         sendCodeButton.setAttribute('disabled', '');       
     } else {    
         phone_subs.textContent = phone_subs_text;

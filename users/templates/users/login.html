@@ -16,15 +16,44 @@
 <body>
     <header class="header">
         <div class="container wrapper">
+            
             <a href="{% url 'convert_order:clear_main' %}" class="logo">
                 <img src="{% static 'convert_order/img/converter-logo.jpg' %}" alt="">
                 <span>{% trans 'SAP XML Converter' %}</span>
             </a>
-            {% if need_to_back %}
-                <a href="{% url 'convert_order:files_main' order_id %}" class="sign_in-btn close">{% trans 'Close' %}</a>
-            {% else %}
-                <a href="{% url 'convert_order:clear_main' %}" class="sign_in-btn close">{% trans 'Close' %}</a>
-            {% endif %}
+            <div class="button-container">
+                <form id="language-form" action="{% url 'set_language' %}" method="post">
+                    {% csrf_token %}
+                    <input name="next" type="hidden" value="{{ redirect_to }}">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    <select id="language-select" name="language" class="lang-btn">
+                        {% for language in languages %}
+                            <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
+                                {{ language.code }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </form>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const languageForm = document.getElementById('language-form');
+                        const languageSelect = document.getElementById('language-select');
+                        
+                        // Add event handler for select change
+                        languageSelect.addEventListener('change', function () {
+                            languageForm.submit(); // Submit the form on value change
+                        });
+                    });
+                </script>
+                {% if need_to_back %}
+                    <a href="{% url 'convert_order:files_main' order_id %}" class="sign_in-btn close">{% trans 'Close' %}</a>
+                {% else %}
+                    <a href="{% url 'convert_order:clear_main' %}" class="sign_in-btn close">{% trans 'Close' %}</a>
+                {% endif %}
+            
+            </div>
         </div>
     </header>
 
@@ -42,7 +71,7 @@
         <p class="footer-copyright">{% trans '© Copyright 2023. All rights reserved' %}
         </p>
     </footer>
-
+    <script src="{% url 'javascript-catalog' %}"></script>
     <script src="{% static 'convert_order/js/sign-in-form.js' %}"></script> 
 </body>
 

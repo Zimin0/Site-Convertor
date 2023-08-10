@@ -7,16 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-10 12:36+0300\n"
+"POT-Creation-Date: 2023-08-10 20:02+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%"
-"100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: .\convert_order\templates\convert_order\404.html:10
 msgid "Not Found - 404"
@@ -31,28 +32,31 @@ msgstr "Не найдено - 404"
 #: .\support\templates\support\support.html:22
 #: .\users\templates\users\good_code.html:21
 #: .\users\templates\users\login.html:21
+#: .\users\templates\users\need_to_pay.html:22
 #: .\users\templates\users\register.html:21
 msgid "SAP XML Converter"
 msgstr "SAP XML Конвертер"
 
 #: .\convert_order\templates\convert_order\404.html:25
 #: .\convert_order\templates\convert_order\500.html:25
-#: .\convert_order\templates\convert_order\index.html:27
+#: .\convert_order\templates\convert_order\index.html:28
+#: .\convert_order\templates\convert_order\index.html:31
 #: .\convert_order\templates\convert_order\info.html:26
 #: .\convert_order\templates\convert_order\video1.html:24
 #: .\convert_order\templates\convert_order\video2.html:24
-#: .\users\templates\users\login.html:10 .\users\templates\users\login.html:28
+#: .\users\templates\users\login.html:10 .\users\templates\users\login.html:32
 msgid "Authorization"
 msgstr "Войти"
 
 #: .\convert_order\templates\convert_order\404.html:26
 #: .\convert_order\templates\convert_order\500.html:26
-#: .\convert_order\templates\convert_order\index.html:28
+#: .\convert_order\templates\convert_order\index.html:29
+#: .\convert_order\templates\convert_order\index.html:32
 #: .\convert_order\templates\convert_order\info.html:27
 #: .\convert_order\templates\convert_order\video1.html:25
 #: .\convert_order\templates\convert_order\video2.html:25
 #: .\users\templates\users\register.html:10
-#: .\users\templates\users\register.html:57
+#: .\users\templates\users\register.html:61
 msgid "Sign up"
 msgstr "Регистрация"
 
@@ -80,15 +84,17 @@ msgstr "Назад"
 
 #: .\convert_order\templates\convert_order\404.html:65
 #: .\convert_order\templates\convert_order\500.html:65
-#: .\convert_order\templates\convert_order\index.html:197
+#: .\convert_order\templates\convert_order\index.html:202
 #: .\convert_order\templates\convert_order\info.html:68
 #: .\convert_order\templates\convert_order\video1.html:91
 #: .\convert_order\templates\convert_order\video2.html:93
 #: .\support\templates\support\support.html:55
-#: .\users\templates\users\good_code.html:36
-#: .\users\templates\users\login.html:38
-#: .\users\templates\users\register.html:72
-msgid "Â© Copyright 2023. All rights reserved"
+#: .\users\templates\users\code.html:43
+#: .\users\templates\users\good_code.html:44
+#: .\users\templates\users\login.html:42
+#: .\users\templates\users\need_to_pay.html:40
+#: .\users\templates\users\register.html:76
+msgid "© Copyright 2023. All rights reserved"
 msgstr "© Copyright 2023. Все права защищены"
 
 #: .\convert_order\templates\convert_order\500.html:10
@@ -115,7 +121,7 @@ msgstr "SAP XML - Генератор-Конвертер"
 msgid "Free Downloads:"
 msgstr "Беспл. скачивания:"
 
-#: .\convert_order\templates\convert_order\index.html:64
+#: .\convert_order\templates\convert_order\index.html:69
 msgid ""
 "This service helps to transfer the settings of your reports customized by "
 "SAP XML-Generator to the reports of new versions when new format of report "
@@ -127,7 +133,7 @@ msgstr ""
 "отчетов (в виде схем XSD).  В результате Вы получите XML-файл \"нового\" "
 "формата с перенесенными в него настройками. "
 
-#: .\convert_order\templates\convert_order\index.html:67
+#: .\convert_order\templates\convert_order\index.html:72
 msgid ""
 "To transfer settings from the old format to the new format, you need to "
 "upload to the service:"
@@ -135,7 +141,7 @@ msgstr ""
 "Для переноса настроек из старого формата в новый формат Вам необходимо "
 "загрузить на сервис: "
 
-#: .\convert_order\templates\convert_order\index.html:68
+#: .\convert_order\templates\convert_order\index.html:73
 msgid ""
 "1. XML file of the \"old\" structure with configured tag generation rules "
 "(FILE_IN1)."
@@ -143,7 +149,7 @@ msgstr ""
 "1. XML-файл \"старой\" структуры с настроенными правилами формирования тегов "
 "(FILE_IN1). "
 
-#: .\convert_order\templates\convert_order\index.html:69
+#: .\convert_order\templates\convert_order\index.html:74
 msgid ""
 "2. XML file of the \"new\" structure where settings need to be transferred "
 "(FILE_IN2)."
@@ -151,82 +157,82 @@ msgstr ""
 "2. XML-Файл \"новой\" структуры, в который необходимо перенести настойки "
 "(FILE_IN2)."
 
-#: .\convert_order\templates\convert_order\index.html:82
-#: .\convert_order\templates\convert_order\index.html:93
+#: .\convert_order\templates\convert_order\index.html:87
+#: .\convert_order\templates\convert_order\index.html:98
 msgid "Add file"
 msgstr "Добавить файл"
 
-#: .\convert_order\templates\convert_order\index.html:83
+#: .\convert_order\templates\convert_order\index.html:88
 msgid "XML file of \"old\" structure"
 msgstr "XML-файл \"старой\" структуры"
 
-#: .\convert_order\templates\convert_order\index.html:94
+#: .\convert_order\templates\convert_order\index.html:99
 msgid "XML file of \"new\" structure"
 msgstr "XML-Файл \"новой\" структуры"
 
-#: .\convert_order\templates\convert_order\index.html:103
+#: .\convert_order\templates\convert_order\index.html:108
 msgid "How to get an XML-file of the \"old\" structure:"
 msgstr "Как получить XML-файл \"старой\" структуры"
 
-#: .\convert_order\templates\convert_order\index.html:104
+#: .\convert_order\templates\convert_order\index.html:109
 msgid "Open the hierarchy of the \"old\" structure in SAP XML-Generator "
 msgstr "Зайти в иерархию \"старой\" структуры в SAP XML-Генератор"
 
-#: .\convert_order\templates\convert_order\index.html:105
-#: .\convert_order\templates\convert_order\index.html:116
+#: .\convert_order\templates\convert_order\index.html:110
+#: .\convert_order\templates\convert_order\index.html:121
 msgid "Export to XML-file."
 msgstr "Экспортировать в XML-файл."
 
-#: .\convert_order\templates\convert_order\index.html:108
+#: .\convert_order\templates\convert_order\index.html:113
 msgid "Convert"
 msgstr "Конвертировать"
 
-#: .\convert_order\templates\convert_order\index.html:113
+#: .\convert_order\templates\convert_order\index.html:118
 #: .\convert_order\templates\convert_order\video2.html:58
 msgid "How to get XML-file of \"new\" structure:"
 msgstr "Как получить XML файл \"новой\" структуры"
 
-#: .\convert_order\templates\convert_order\index.html:114
+#: .\convert_order\templates\convert_order\index.html:119
 msgid "Get a file of XSD-scheme. "
 msgstr "Получить XSD-схему нового формата "
 
-#: .\convert_order\templates\convert_order\index.html:115
+#: .\convert_order\templates\convert_order\index.html:120
 msgid "Import the file of XSD-scheme in SAP XML-Generator."
 msgstr "Импортировать XSD-схему в SAP XML-Generator"
 
-#: .\convert_order\templates\convert_order\index.html:125
-#: .\convert_order\templates\convert_order\index.html:127
 #: .\convert_order\templates\convert_order\index.html:130
-#: .\convert_order\templates\convert_order\index.html:133
+#: .\convert_order\templates\convert_order\index.html:132
+#: .\convert_order\templates\convert_order\index.html:135
+#: .\convert_order\templates\convert_order\index.html:138
 msgid "Download"
 msgstr "Скачать"
 
-#: .\convert_order\templates\convert_order\index.html:171
+#: .\convert_order\templates\convert_order\index.html:176
 #: .\convert_order\templates\convert_order\video1.html:73
 #: .\convert_order\templates\convert_order\video2.html:75
 msgid "Company Name LLC"
 msgstr "ООО Название компании"
 
-#: .\convert_order\templates\convert_order\index.html:177
+#: .\convert_order\templates\convert_order\index.html:182
 #: .\convert_order\templates\convert_order\video1.html:79
 #: .\convert_order\templates\convert_order\video2.html:81
 msgid "We help make your life a bit easier!"
 msgstr "Мы помогаем Вам сделать жизнь чуточку проще!"
 
-#: .\convert_order\templates\convert_order\index.html:181
+#: .\convert_order\templates\convert_order\index.html:186
 #: .\convert_order\templates\convert_order\video1.html:83
 #: .\convert_order\templates\convert_order\video2.html:85
 msgid "Support request"
 msgstr "Поддержка"
 
-#: .\convert_order\templates\convert_order\index.html:182
+#: .\convert_order\templates\convert_order\index.html:187
 #: .\convert_order\templates\convert_order\info.html:59
 #: .\convert_order\templates\convert_order\video1.html:84
 #: .\convert_order\templates\convert_order\video2.html:86
 msgid "About Converter"
 msgstr "О конвертере"
 
-#: .\convert_order\templates\convert_order\index.html:189
+#: .\convert_order\templates\convert_order\index.html:194
 msgid ""
 "This website uses cookies! By continuing to use our site, you automatically "
 "agree to their use"
@@ -234,7 +240,7 @@ msgstr ""
 "Этот сайт использует файлы cookies! Продолжая использовать наш сайт, Вы "
 "автоматически соглашаетесь с их использованием"
 
-#: .\convert_order\templates\convert_order\index.html:192
+#: .\convert_order\templates\convert_order\index.html:197
 msgid "Clear"
 msgstr "Ясно"
 
@@ -328,11 +334,16 @@ msgid "Support"
 msgstr "Поддержка"
 
 #: .\support\templates\support\support.html:24
-#: .\users\templates\users\code.html:23
-#: .\users\templates\users\good_code.html:23
-#: .\users\templates\users\good_code.html:31
-#: .\users\templates\users\login.html:23
-#: .\users\templates\users\register.html:51
+#: .\users\templates\users\code.html:24 .\users\templates\users\code.html:26
+#: .\users\templates\users\good_code.html:24
+#: .\users\templates\users\good_code.html:26
+#: .\users\templates\users\good_code.html:36
+#: .\users\templates\users\good_code.html:38
+#: .\users\templates\users\login.html:24 .\users\templates\users\login.html:26
+#: .\users\templates\users\need_to_pay.html:25
+#: .\users\templates\users\need_to_pay.html:27
+#: .\users\templates\users\register.html:52
+#: .\users\templates\users\register.html:54
 msgid "Close"
 msgstr "Закрыть"
 
@@ -364,82 +375,74 @@ msgstr "Электронная почта:"
 msgid "Send"
 msgstr "Отправить код"
 
-#: .\users\templates\users\code.html:9
-#: .\users\templates\users\good_code.html:9
+#: .\users\templates\users\code.html:9 .\users\templates\users\good_code.html:9
 msgid "Confirmation"
 msgstr "Подтверждение"
 
-#: .\users\templates\users\code.html:31 .\users\views.py:53
+#: .\users\templates\users\code.html:35 .\users\views.py:79
 msgid "Code has been sent!"
 msgstr "Код был отправлен!"
 
-#: .\users\templates\users\code.html:39
-msgid "Â© Copyright 2023. All rights reserved."
-msgstr "© Copyright 2023. Все права защищены."
-
-#: .\users\templates\users\good_code.html:30
+#: .\users\templates\users\good_code.html:34
 msgid "Phone is confirmed!"
 msgstr "Телефон подтвержден!"
 
-#: .\users\templates\users\login.html:31
+#: .\users\templates\users\login.html:35
 msgid "Enter the phone number provided during registration"
 msgstr "Введите номер телефона, указанный при регистрации "
 
-#: .\users\templates\users\login.html:32
+#: .\users\templates\users\login.html:36
 msgid "Phone number"
 msgstr "Номер телефона"
 
-#: .\users\templates\users\login.html:33
-#: .\users\templates\users\register.html:67
+#: .\users\templates\users\login.html:37
+#: .\users\templates\users\register.html:71
 msgid "Send code"
 msgstr "Отправить код"
 
-#: .\users\templates\users\register.html:60
+#: .\users\templates\users\need_to_pay.html:11
+#: .\users\templates\users\need_to_pay.html:35
+msgid "Payment"
+msgstr "Оплата"
+
+#: .\users\templates\users\need_to_pay.html:34
+msgid "The following conversions require payment:"
+msgstr "Cледующие конвертации требуют оплаты:"
+
+#: .\users\templates\users\need_to_pay.html:34
+msgid "or"
+msgstr "или"
+
+#: .\users\templates\users\register.html:64
 msgid "Enter your phone number and email to register"
 msgstr "Введите номер телефона, указанный при регистрации"
 
-#: .\users\templates\users\register.html:61
-#: .\users\templates\users\register.html:62
+#: .\users\templates\users\register.html:65
+#: .\users\templates\users\register.html:66
 msgid "Phone number:"
 msgstr "Номер телефона"
 
-#: .\users\templates\users\register.html:61
+#: .\users\templates\users\register.html:65
 msgid "*necessarily"
 msgstr "*обязательно"
 
-#: .\users\templates\users\register.html:63
-#: .\users\templates\users\register.html:64
+#: .\users\templates\users\register.html:67
+#: .\users\templates\users\register.html:68
 msgid "Name:"
 msgstr "Имя:"
 
-#: .\users\templates\users\register.html:65
-#: .\users\templates\users\register.html:66
+#: .\users\templates\users\register.html:69
+#: .\users\templates\users\register.html:70
 msgid "Email:"
 msgstr "Электронная почта:"
 
-#: .\users\views.py:81
+#: .\users\views.py:107
 msgid "The code doesn`t match.Try again."
 msgstr "Код не совпадает. Попробуйте еще раз."
 
-#: .\users\views.py:90
+#: .\users\views.py:116
 msgid "The code has already been sent!"
 msgstr "Код был отправлен!"
 
-#~ msgid "Agree"
-#~ msgstr "Согласиться"
-
-#, fuzzy
-#~ msgid "Your Email"
-#~ msgstr "Электронная почта:"
-
-#~ msgid "Payment"
-#~ msgstr "Оплата"
-
-#~ msgid "The following conversions require payment!"
-#~ msgstr "Следующие конвертации требуют оплаты."
-
-#~ msgid "or"
-#~ msgstr "или"
-
-#~ msgid "Go to payment"
-#~ msgstr "Перейти к оплате"
+#~ msgid "© Copyright 2023. All rights reserved."
+#~ msgstr "© Copyright 2023. Все права защищены."

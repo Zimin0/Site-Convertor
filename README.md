@@ -17,7 +17,8 @@ text:           "Swear me that you will not take \"this\" thing"
 translation :   "Пообещай мне, что ты не будешь брать \"это\" "
 
 * Also: delete lines, that contain fuzzy tag. Otherwise, they will be ignored in translation! 
-
+* If you need add text in JS - use command: django-admin makemessages -d djangojs -a
+* In templates russian language can be used instead of english phrases
 * How to add translated videos - they must be named as [button<№1-2>_<lang-code>] - f. e. - button2_en
 
 ## Before changing email in admin django - make sure:
