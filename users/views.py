@@ -8,8 +8,12 @@ from django.utils.translation import activate
 
 def login(request):
     """ Страница с полем ввода номера телефона. """
+    context = {}
     if request.session.get('phone_is_confirmed', None):
         return redirect('users:good_code')
+    if request.session.get('back_to', None):
+        context['need_to_back'] = True
+        context['order_id'] = request.session['back_to'] # достаем order_id
     if request.method == 'POST':
         phone = request.POST['phone'] # подтягиваем введенный телефон
         request.session['phone'] = phone
@@ -20,11 +24,30 @@ def login(request):
             return redirect('users:code')
         else: # иначе перенаправляем с сохранением введенного телефона
             return redirect('users:register', phone)
-    return render(request, 'users/login.html')
+    return render(request, 'users/login.html', context)
 
-def register(request, phone=None):
+def register_back_to(request, order_id):
+    print('Вижу order_id в регистре ')
+    request.session['back_to'] = order_id # вернуться на страницу конвертации этого заказа
+    return redirect('users:register')
+
+def login_back_to(request, order_id):
+    print('Вижу order_id в логине ')
+    request.session['back_to'] = order_id # вернуться на страницу конвертации этого заказа
+    return redirect('users:login')
+
+def need_to_pay_back_to(request, order_id):
+    print('Вижу order_id в регистре ')
+    request.session['back_to'] = order_id # вернуться на страницу конвертации этого заказа
+    return redirect('users:need_to_pay')
+
+
+def register(request, phone=None, order_id=None):
     """ Страница с формой регистрации. """
     context = {}
+    if request.session.get('back_to', None):
+        context['need_to_back'] = True
+        context['order_id'] = request.session['back_to'] # достаем order_id
     if request.session.get('phone_is_confirmed', None):
         return redirect('users:good_code')
     if request.method == 'POST':
@@ -50,6 +73,9 @@ def code(request):
     print("Сессия:", request.session.items())
     print(request.session.get('confirmation_code', None))
     context = {}
+    if request.session.get('back_to', None):
+        context['need_to_back'] = True
+        context['order_id'] = request.session['back_to'] # достаем order_id
     context['message'] = _('Code has been sent!')
     if request.method == 'POST':
         code_is_sended = request.session.get('code_is_sended', None)
@@ -85,16 +111,20 @@ def code(request):
             request.session['code_is_sended'] = True
             request.session['confirmation_code'] = send_confiramtion_code(request.session.get('phone', 'No phone found!')) # оправляет код смс на телефон
             print(f'Код подтверждения: {request.session["confirmation_code"]}')
-            return render(request, 'users/code.html')
+            return render(request, 'users/code.html', context)
         else: # если код уже отправлялся
             context['message'] = _('The code has already been sent!') # Код уже отправлен!
             return render(request, 'users/code.html', context)
 
 def good_code(request):
     """ Страница с "код подтврежден" и кнопкой закрыть."""
+    context = {}
     if not request.session.get('phone_is_confirmed', None):
         return redirect('users:login')
-    return render(request, 'users/good_code.html')
+    if request.session.get('back_to', None):
+        context['need_to_back'] = True
+        context['order_id'] = request.session['back_to'] # достаем order_id
+    return render(request, 'users/good_code.html', context)
 
 def need_to_pay(request):
     """ Страница с "Вы уже конвертировали у нас на сайте... Нужно оплатить" """
@@ -103,6 +133,9 @@ def need_to_pay(request):
         "ruble_price": get_object_or_404(ProductionSettings, slug='RUBLE_PRICE').value,
         "dollar_price": get_object_or_404(ProductionSettings, slug='DOLLAR_PRICE').value,
     }
+    if request.session.get('back_to', None): # функционал возврата на страницу загрузки
+        context['need_to_back'] = True
+        context['order_id'] = request.session['back_to'] # достаем order_id
     
     if not request.session.get('phone_is_confirmed', None):
         return redirect('users:login')

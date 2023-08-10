@@ -21,7 +21,11 @@
                 <img src="{% static 'convert_order/img/converter-logo.jpg' %}" alt="">
                 <span>SAP XML Converter</span>
             </a>
-            <a href="{% url 'convert_order:clear_main' %}" class="sign_in-btn close">Закрыть</a>
+            {% if need_to_back %}
+                <a href="{% url 'convert_order:files_main' order_id %}" class="sign_in-btn close">Закрыть</a>
+            {% else %}
+                <a href="{% url 'convert_order:clear_main' %}" class="sign_in-btn close">Закрыть</a>
+            {% endif %}
         </div>
 
     </header>

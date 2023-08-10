@@ -69,6 +69,9 @@ def files_main(request, order_id):
     print(request.session.items())
     print(f'order_id = {order_id}')
 
+    if request.session.get('back_to', None):
+        request.session.pop('back_to')
+
     context = {}
     phone_is_confirmed = request.session.get('phone_is_confirmed', False)
     context['phone_is_confirmed'] = phone_is_confirmed

@@ -24,8 +24,11 @@
                 {% if phone_is_confirmed %}
                     <a class="sign_in-btn">{% trans 'Free Downloads:' %} {{ amount_of_convertations }}</a> 
                 {% else %}
-                    <a href="{% url 'users:login' %}" class="sign_in-btn">{% trans 'Authorization' %}</a>
-                    <a href="{% url 'users:register' %}" class="sign_in-btn">{% trans 'Sign up' %}</a>
+                    {% if files_uploaded %} 
+                        <a href="{% url 'users:login_back_to' order_id %}" class="sign_in-btn">{% trans 'Authorization' %}</a>
+                        <a href="{% url 'users:register_back_to' order_id %}" class="sign_in-btn">{% trans 'Sign up' %}</a>
+                    {% else %}
+                    {% endif %}
                 {% endif %}
 
                 <form id="language-form" action="{% url 'set_language' %}" method="post">
@@ -122,12 +125,12 @@
                     {% if files_uploaded %} 
                         {% if phone_is_confirmed %}
                             {% if amount_of_convertations < 1 %}
-                                <input type="button" id="download-btn" value="{% trans 'Download' %}" onclick="location.href='{% url 'users:need_to_pay' %}';">
+                                <input type="button" id="download-btn" value="{% trans 'Download' %}" onclick="location.href='{% url 'users:need_to_pay_back_to' order_id %}';">
                             {% else %}
                                 <input type="button" id="download-btn" value="{% trans 'Download' %}" onclick="location.href='{% url 'files:load_file' order_id %}'; setTimeout(function(){window.location.href='/';}, 1000);">
                             {% endif %}
                         {% else %}
-                            <input type="button" id="download-btn" value="{% trans 'Download' %}" onclick="location.href='{% url 'users:login' %}';">
+                            <input type="button" id="download-btn" value="{% trans 'Download' %}" onclick="location.href='{% url 'users:login_back_to' order_id %}';">
                         {% endif %}
                     {% else %}
                         <input type="submit" id="download-btn" value="{% trans 'Download' %}" disabled>
