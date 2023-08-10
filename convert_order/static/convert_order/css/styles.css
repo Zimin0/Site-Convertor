@@ -125,7 +125,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    min-height: calc(100vh - 70px - 40px);
+    min-height: calc(100vh - 70px - 100px);
     width: 100%;
     padding: 7vh 0 17vh;
 
@@ -290,7 +290,7 @@ body {
 .convert-info,
 .about {
     padding: 35px 0 15px;
-    min-height: calc(100vh - 70px - 40px);
+    min-height: calc(100vh - 70px - 100px);
 
     display: flex;
     flex-direction: column;
@@ -310,7 +310,7 @@ body {
 .about-text,
 .error-text {
     display: block;
-    width: 40%;
+    width: 60%;
 
     font-size: 17px;
     text-align: center;
@@ -349,9 +349,7 @@ body {
 .return-btn {
     display: block !important;
     max-width: 100px;
-    width: 80%;
     height: 32px;
-    text-align: center;
 
     padding: 3px 20px;
     font-size: 19px;
@@ -551,18 +549,12 @@ body {
     margin-top: 20px;
     padding-top: 10px;
 
-    align-items: start;
-}
-
-.info {
     box-sizing: border-box;
-    width: 35%;
-}
 
-.info:last-child {
     display: flex;
     flex-direction: column;
     text-align: center;
+    align-items: center;
 }
 
 .sup-btn-conteiner {
@@ -594,41 +586,78 @@ body {
 }
 
 #cookie-popup {
-    width: 500px;
+    width: 100%;
     height: auto;
     margin: 0 auto;
     padding: 10px 15px 5px;
+    box-sizing: border-box;
 
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     position: sticky;
     z-index: 100;
-    bottom: 20px;
+    bottom: 0;
     left: calc(50% - 250px);
 
     background-color: #fff;
-    border: 1px solid black;
-    border-radius: 10px;
+    border-top: 1px solid #cdcdcd;
+
+    font-size: 17px;
+}
+
+#cookie-popup .container {
+    max-width: 100%;
+    margin: 0 40px;
+}
+
+.cookie-text {
+    width: 80%;
 }
 
 #cookie-icon {
+    display: block;
     height: 48px;
+    margin-right: 20px;
 }
 
 #cookie-confirm {
-    margin: 10px auto;
+    margin: 10px 0;
 }
 
 /* Footer */
 
 .footer {
-    height: 40px;
+    height: auto;
     width: 100%;
+    box-sizing: border-box;
+    padding: 10px 0;
 
     background-color: #6495ed;
 }
 
+.footer-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    row-gap: 20px;
+
+    padding: 0 70px;
+
+    color: #fff;
+}
+
+.footer-docs {
+    text-align: end;
+}
+
+.footer-info a {
+    color: #fff;
+    text-decoration: underline;
+}
+
 .footer-copyright {
     color: #fff;
-    padding-top: 10px;
     text-align: center;
 }

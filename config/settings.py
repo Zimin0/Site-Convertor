@@ -21,7 +21,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_PORT = 587
-# EMAIL_HOST_USER = 'nikzim2004@gmail.com' # Настройка почты находится в базе данных
+EMAIL_HOST_USER = 'nikzim2004@gmail.com' # Настройка почты находится в базе данных
 EMAIL_HOST_PASSWORD = 'amikqiygmwhztgir'
 
 # https://solotony.com/tips/item/oshibka-pri-vypolnenii-makemessages

@@ -12,6 +12,19 @@
     .error-text {
         width: 45%;
     }
+
+    .footer-info {
+        padding: 0 50px;
+    }
+
+    .cookie-text {
+        width: 60%;
+    }
+
+    #cookie-popup .container {
+        margin: 0 20px;
+        padding: 0 15px;
+    }
 }
 
 @media (max-width: 930px) {
@@ -20,10 +33,6 @@
     #download-btn {
         height: 40px;
         padding: 5px 20px;
-    }
-
-    .info .support-btn {
-        padding: 3px 10px;
     }
 
     .info-content {
@@ -40,10 +49,6 @@
     .sup-btn-conteiner {
         flex-direction: column;
         align-items: center;
-    }
-
-    .info .support-btn {
-        margin-bottom: 5px;
     }
 }
 
@@ -62,6 +67,10 @@
 
     .dropfile-area div {
         width: 250px;
+    }
+
+    .footer-info {
+        padding: 0 30px;
     }
 }
 
@@ -96,12 +105,17 @@
         width: 100%;
     }
 
-    .info {
-        width: 30%;
-    }
-
     .error-text {
         width: 55%;
+    }
+
+    .footer-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-info p {
+        text-align: center;
     }
 }
 
@@ -117,6 +131,15 @@
 
     .dropfile-area div {
         width: 200px;
+    }
+
+    .cookie-text {
+        width: 100%;
+        text-align: center;
+    }
+
+    #cookie-popup .container {
+        flex-direction: column;
     }
 }
 
@@ -146,10 +169,6 @@
 
     .convert-info-text {
         font-size: 14px;
-    }
-
-    #cookie-popup {
-        width: 400px;
     }
 }
 
@@ -183,16 +202,8 @@
         margin-left: 30%;
     }
 
-    .info {
-        width: 40%;
-    }
-
     .about {
         padding-top: 50px;
-    }
-
-    #cookie-popup {
-        width: 320px;
     }
 }
 
@@ -257,10 +268,6 @@
 
     #priority {
         margin-left: 6%;
-    }
-
-    .info {
-        width: 45%;
     }
 }
 

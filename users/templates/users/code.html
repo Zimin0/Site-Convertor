@@ -40,9 +40,39 @@
     </section>
 
     <footer class="footer">
-        <p class="footer-copyright">{% trans '© Copyright 2023. All rights reserved' %}</p>
-    </footer> 
+        <div class="footer-info">
+            <p>
+                ИП Корзников Олег Леонидович <br>
+                ОГРИП 312590531200123, ИНН 590578138109 <br>
+                Телефон <phone>+7 (917) 578-67-06</phone> <br>
+                <mail>Torro7001@rambler.ru</mail>
+            </p>
+            <p class="footer-copyright">
+                {% trans '© Copyright 2023. All rights reserved' %}
+            </p>
+            <p class="footer-docs"> 
+                <a href="{% static 'convert_order/pdf/Contract.pdf' %}">{% trans 'Contract offer' %}</a> <br> 
+                <a href="{% static 'convert_order/pdf/Procedure-of-payment-by-bank-cards.pdf' %}">{% trans 'Procedure for making payments and returns' %}</a> <br>
+                <a href="{% static 'convert_order/pdf/Prices-for-provision-of-services.pdf' %}">{% trans 'Prices and description of services' %}</a>
+            </p>
+        </div>
+    </footer>
+    <div id="cookie-popup">
+        <div class="container wrapper">
+            <p class="cookie-text">{% trans 'This website uses cookies! By continuing to use our site, you automatically agree to their use' %}</p>
+            <div class="wrapper">
+                <img src="{% static 'convert_order/img/cookie-icon.svg' %}" alt="" id="cookie-icon">
+                <button class="confirm-btn" id="cookie-confirm" onclick="closeCookies()">Согласиться</button>
+            </div>
+        </div>
+    </div>
 
+    <script> 
+            function closeCookies() {
+            cookiePopup.style.display = 'none';
+        }
+    </script>
+    <script src="{% url 'javascript-catalog' %}"></script>
     <script src="{% static 'convert_order/js/code-confirm.js' %}"></script> 
 </body>
 
