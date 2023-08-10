@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.mail import send_mail
 from django.core.mail import EmailMultiAlternatives
+from django.contrib.auth.models import User
 
 from support.models import SupportRequest
 from users.models import Profile
@@ -26,6 +27,11 @@ def support(request):
                 priority_rate = priority,
                 message=message
             )
+            ## Заносим в БД почту, введенную в окне поддержки ##
+            profile = get_object_or_404(Profile, phone=phone)
+            profile.user.email = email 
+            profile.user.save(update_fields=['email',])
+            ## Подтягиваем настройку почты тех.поддержки из админки ##
             tech_mail = get_object_or_404(ProductionSettings, slug='TECH_EMAIL') # почта тех. поддержки
             
             formatted_message = f""" От {phone} \nПочта: {email} \nПриоритет: {priority} \nСообщение:\n{message} """

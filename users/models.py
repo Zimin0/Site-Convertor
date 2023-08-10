@@ -1,10 +1,12 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.validators import MinValueValidator
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from django.core.validators import MinValueValidator
-from production_settings.models import ProductionSettings
 from django.shortcuts import get_object_or_404
+from django.contrib import admin
+
+from production_settings.models import ProductionSettings
 
 def get_convertation_amount():
     amount_settings = get_object_or_404(ProductionSettings, slug='CONVERT_AMOUNT')
@@ -27,8 +29,19 @@ class Profile(models.Model):
     @receiver(post_save, sender=User)
     def save_user_profile(sender, instance, **kwargs):
         instance.profile.save()
-
+    
+    @admin.display(description="Почта")
+    def get_email(self):
+        return self.user.email
+    
+    @admin.display(description="Имя")
+    def get_first_name(self):
+        return self.user.first_name
+    
+    @admin.display(description="Фамилия")
+    def get_last_name(self):
+        return self.user.last_name
+    
     class Meta:
         verbose_name = 'Профиль'
         verbose_name_plural = 'Профили'
-    
