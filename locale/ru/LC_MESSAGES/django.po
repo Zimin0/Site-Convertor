@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-10 12:26+0300\n"
+"POT-Creation-Date: 2023-08-10 12:36+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -235,8 +235,8 @@ msgstr ""
 "автоматически соглашаетесь с их использованием"
 
 #: .\convert_order\templates\convert_order\index.html:192
-msgid "Agree"
-msgstr "Согласиться"
+msgid "Clear"
+msgstr "Ясно"
 
 #: .\convert_order\templates\convert_order\info.html:61
 msgid ""
@@ -424,6 +424,9 @@ msgstr "Код не совпадает. Попробуйте еще раз."
 #: .\users\views.py:90
 msgid "The code has already been sent!"
 msgstr "Код был отправлен!"
+
+#~ msgid "Agree"
+#~ msgstr "Согласиться"
 
 #, fuzzy
 #~ msgid "Your Email"
