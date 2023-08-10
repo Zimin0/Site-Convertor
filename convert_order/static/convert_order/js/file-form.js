@@ -1,4 +1,3 @@
-//////////////// 
 document.addEventListener('DOMContentLoaded', function () {
     const cookiePopup = document.getElementById('cookie-popup');
     const cookieConfirmButton = document.getElementById('cookie-confirm');
@@ -64,11 +63,6 @@ function addFile2(name) {
     }
 }
 
-function enableDownload() {
-    // downloadBtn.removeAttribute('disabled');
-    // showRightArrow();
-}
-
 function showPopup1() {
     popup1.style.display = 'block';
 }
@@ -112,8 +106,8 @@ const popup2 = document.getElementById('popup-info-2');
 
 const cookiePopup = document.getElementById('cookie-popup');
 
-var isFile1 = false;
-var isFile2 = false;
+let isFile1 = false;
+let isFile2 = false;
 
 const converterBtn = document.getElementById('converter-btn');
 const downloadBtn = document.getElementById('download-btn');
