@@ -1,5 +1,6 @@
 from django.db import models
 from convert_order.models import ConvertOrder
+import datetime
 
 class File(models.Model):
     """ Файлы для конвертации """
@@ -13,6 +14,12 @@ class File(models.Model):
         ('2','Исходный №2'),
         ('3','Конвертированный'),
     )
+
+    def generate_result_name(self):
+        """ Возварщает имя файла в формате Result{год}{месяц}{день}{часы}{минуты}{секунды}"""
+        current_datetime = datetime.datetime.now()
+        result_string = f"Result{current_datetime.year}{current_datetime.month:02d}{current_datetime.day:02d}{current_datetime.hour:02d}{current_datetime.minute:02d}{current_datetime.second:02d}"
+        return result_string
 
     def __str__(self) -> str:
         return f'{self.file}'
