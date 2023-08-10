@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-    <title>Поддержка</title>
+    <title>{% trans "Support" %}</title>
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'convert_order/img/icon.png' %}"/> 
     <link rel="stylesheet" href="{% static 'convert_order/css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'convert_order/css/media.css' %}"> 
@@ -19,40 +19,40 @@
         <div class="container wrapper">
             <a href="{% url 'convert_order:clear_main' %}" class="logo">
                 <img src="{% static 'convert_order/img/converter-logo.jpg' %}" alt="">
-                <span>SAP XML Converter</span>
+                <span>{% trans "SAP XML Converter" %}</span>
             </a>
-            <a href="{% url 'convert_order:clear_main' %}" class="sign_in-btn close">Закрыть</a>
+            <a href="{% url 'convert_order:clear_main' %}" class="sign_in-btn close">{% trans "Close" %}</a>
         </div>
 
     </header>
 
     <section id="support-form">
-        <h1 class="form-title">Поддержка</h1>
+        <h1 class="form-title">{% trans "Support" %}</h1>
         <form method="POST" id="support-field" >
             {% csrf_token %}
             <div class="priority">
-                <label for="priority">Приоритет:</label>
+                <label for="priority">{% trans "Priority" %}:</label>
                 <select name="priority" id="priority">
-                    <option value="low">Низкий</option>
-                    <option value="medium">Средний</option>
-                    <option value="high">Высокий</option>
+                    <option value="low">{% trans "Low" %}</option>
+                    <option value="medium">{% trans "Medium" %}</option>
+                    <option value="high">{% trans "High" %}</option>
                 </select>
             </div>
             <div class="support-message">
-                <label for="sup-message">Сообщение:</label>
+                <label for="sup-message">{% trans "Message" %}:</label>
                 <textarea name="message" id="sup-message" rows="3"></textarea>
             </div>
             <div class="support-mail">
-                <label for="sup-mail">Ваша почта:</label>
+                <label for="sup-mail">{% trans "Email" %}:</label>
                 <input name="email" type="text" id="sup-mail">
             </div>
 
-            <input type="submit" class="support-btn" value="Отправить" id="sup-but">
+            <input type="submit" class="support-btn" value="{% trans 'Send' %}" id="sup-but">
         </form>
     </section>
 
     <footer class="footer">
-        <p class="footer-copyright">© Copyright 2023. Все права защищены</p>
+        <p class="footer-copyright">{% trans '© Copyright 2023. All rights reserved' %}</p>
     </footer>
 </body>
 
