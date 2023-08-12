@@ -36,12 +36,7 @@ def clear_main(request):
             user_profile = Profile.objects.get(phone=request.session['phone'])
             context['amount_of_convertations'] = user_profile.amount_of_converts
         except Profile.DoesNotExist:
-            request.session['phone_is_confirmed'] = False  
-            request.session.pop('phone_is_confirmed')
-            request.session.pop('phone')    
-            request.session.pop('name')
-            request.session.pop('mail')
-            request.session.pop('cookies_is_confirmed')
+            request.session.clear()
             response = render(request, 'convert_order/index.html', context)
             response.delete_cookie('phone')
             print('Cookies = ', response.cookies)
