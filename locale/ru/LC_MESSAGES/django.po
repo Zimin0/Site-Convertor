@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-10 20:02+0300\n"
+"POT-Creation-Date: 2023-08-11 19:05+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,7 +31,7 @@ msgstr "Не найдено - 404"
 #: .\convert_order\templates\convert_order\video2.html:21
 #: .\support\templates\support\support.html:22
 #: .\users\templates\users\good_code.html:21
-#: .\users\templates\users\login.html:21
+#: .\users\templates\users\login.html:22
 #: .\users\templates\users\need_to_pay.html:22
 #: .\users\templates\users\register.html:21
 msgid "SAP XML Converter"
@@ -44,7 +44,7 @@ msgstr "SAP XML Конвертер"
 #: .\convert_order\templates\convert_order\info.html:26
 #: .\convert_order\templates\convert_order\video1.html:24
 #: .\convert_order\templates\convert_order\video2.html:24
-#: .\users\templates\users\login.html:10 .\users\templates\users\login.html:32
+#: .\users\templates\users\login.html:10 .\users\templates\users\login.html:61
 msgid "Authorization"
 msgstr "Войти"
 
@@ -56,7 +56,7 @@ msgstr "Войти"
 #: .\convert_order\templates\convert_order\video1.html:25
 #: .\convert_order\templates\convert_order\video2.html:25
 #: .\users\templates\users\register.html:10
-#: .\users\templates\users\register.html:61
+#: .\users\templates\users\register.html:59
 msgid "Sign up"
 msgstr "Регистрация"
 
@@ -82,20 +82,105 @@ msgstr ""
 msgid "Back"
 msgstr "Назад"
 
-#: .\convert_order\templates\convert_order\404.html:65
-#: .\convert_order\templates\convert_order\500.html:65
-#: .\convert_order\templates\convert_order\index.html:202
-#: .\convert_order\templates\convert_order\info.html:68
-#: .\convert_order\templates\convert_order\video1.html:91
-#: .\convert_order\templates\convert_order\video2.html:93
-#: .\support\templates\support\support.html:55
-#: .\users\templates\users\code.html:43
-#: .\users\templates\users\good_code.html:44
-#: .\users\templates\users\login.html:42
-#: .\users\templates\users\need_to_pay.html:40
-#: .\users\templates\users\register.html:76
+#: .\convert_order\templates\convert_order\404.html:73
+#: .\convert_order\templates\convert_order\500.html:73
+#: .\convert_order\templates\convert_order\index.html:195
+#: .\convert_order\templates\convert_order\info.html:76
+#: .\convert_order\templates\convert_order\video1.html:99
+#: .\convert_order\templates\convert_order\video2.html:101
+#: .\payment\templates\payment\payment_form.html:44
+#: .\support\templates\support\support.html:63
+#: .\users\templates\users\code.html:51
+#: .\users\templates\users\good_code.html:52
+#: .\users\templates\users\login.html:79
+#: .\users\templates\users\need_to_pay.html:48
+#: .\users\templates\users\register.html:82
 msgid "© Copyright 2023. All rights reserved"
 msgstr "© Copyright 2023. Все права защищены"
+
+#: .\convert_order\templates\convert_order\404.html:76
+#: .\convert_order\templates\convert_order\500.html:76
+#: .\convert_order\templates\convert_order\index.html:198
+#: .\convert_order\templates\convert_order\info.html:79
+#: .\convert_order\templates\convert_order\video1.html:102
+#: .\convert_order\templates\convert_order\video2.html:104
+#: .\payment\templates\payment\payment_form.html:47
+#: .\support\templates\support\support.html:66
+#: .\users\templates\users\code.html:54
+#: .\users\templates\users\good_code.html:55
+#: .\users\templates\users\login.html:82
+#: .\users\templates\users\need_to_pay.html:51
+#: .\users\templates\users\register.html:85
+msgid "Contract offer"
+msgstr ""
+
+#: .\convert_order\templates\convert_order\404.html:77
+#: .\convert_order\templates\convert_order\500.html:77
+#: .\convert_order\templates\convert_order\index.html:199
+#: .\convert_order\templates\convert_order\info.html:80
+#: .\convert_order\templates\convert_order\video1.html:103
+#: .\convert_order\templates\convert_order\video2.html:105
+#: .\payment\templates\payment\payment_form.html:48
+#: .\support\templates\support\support.html:67
+#: .\users\templates\users\code.html:55
+#: .\users\templates\users\good_code.html:56
+#: .\users\templates\users\login.html:83
+#: .\users\templates\users\need_to_pay.html:52
+#: .\users\templates\users\register.html:86
+msgid "Procedure for making payments and returns"
+msgstr ""
+
+#: .\convert_order\templates\convert_order\404.html:78
+#: .\convert_order\templates\convert_order\500.html:78
+#: .\convert_order\templates\convert_order\index.html:200
+#: .\convert_order\templates\convert_order\info.html:81
+#: .\convert_order\templates\convert_order\video1.html:104
+#: .\convert_order\templates\convert_order\video2.html:106
+#: .\payment\templates\payment\payment_form.html:49
+#: .\support\templates\support\support.html:68
+#: .\users\templates\users\code.html:56
+#: .\users\templates\users\good_code.html:57
+#: .\users\templates\users\login.html:84
+#: .\users\templates\users\need_to_pay.html:53
+#: .\users\templates\users\register.html:87
+msgid "Prices and description of services"
+msgstr ""
+
+#: .\convert_order\templates\convert_order\404.html:84
+#: .\convert_order\templates\convert_order\500.html:84
+#: .\convert_order\templates\convert_order\index.html:206
+#: .\convert_order\templates\convert_order\info.html:87
+#: .\convert_order\templates\convert_order\video1.html:110
+#: .\convert_order\templates\convert_order\video2.html:112
+#: .\payment\templates\payment\payment_form.html:55
+#: .\support\templates\support\support.html:74
+#: .\users\templates\users\code.html:62
+#: .\users\templates\users\good_code.html:63
+#: .\users\templates\users\login.html:90
+#: .\users\templates\users\need_to_pay.html:59
+#: .\users\templates\users\register.html:93
+msgid ""
+"This website uses cookies! By continuing to use our site, you automatically "
+"agree to their use"
+msgstr ""
+"Этот сайт использует файлы cookies! Продолжая использовать наш сайт, Вы "
+"автоматически соглашаетесь с их использованием"
+
+#: .\convert_order\templates\convert_order\404.html:87
+#: .\convert_order\templates\convert_order\500.html:87
+#: .\convert_order\templates\convert_order\index.html:209
+#: .\convert_order\templates\convert_order\info.html:90
+#: .\convert_order\templates\convert_order\video1.html:113
+#: .\convert_order\templates\convert_order\video2.html:115
+#: .\payment\templates\payment\payment_form.html:58
+#: .\support\templates\support\support.html:77
+#: .\users\templates\users\code.html:65
+#: .\users\templates\users\good_code.html:66
+#: .\users\templates\users\login.html:93
+#: .\users\templates\users\need_to_pay.html:62
+#: .\users\templates\users\register.html:96
+msgid "Clear"
+msgstr "Ясно"
 
 #: .\convert_order\templates\convert_order\500.html:10
 #: .\convert_order\templates\convert_order\500.html:57
@@ -208,41 +293,23 @@ msgid "Download"
 msgstr "Скачать"
 
 #: .\convert_order\templates\convert_order\index.html:176
-#: .\convert_order\templates\convert_order\video1.html:73
-#: .\convert_order\templates\convert_order\video2.html:75
-msgid "Company Name LLC"
-msgstr "ООО Название компании"
-
-#: .\convert_order\templates\convert_order\index.html:182
 #: .\convert_order\templates\convert_order\video1.html:79
 #: .\convert_order\templates\convert_order\video2.html:81
 msgid "We help make your life a bit easier!"
 msgstr "Мы помогаем Вам сделать жизнь чуточку проще!"
 
-#: .\convert_order\templates\convert_order\index.html:186
+#: .\convert_order\templates\convert_order\index.html:179
 #: .\convert_order\templates\convert_order\video1.html:83
 #: .\convert_order\templates\convert_order\video2.html:85
 msgid "Support request"
 msgstr "Поддержка"
 
-#: .\convert_order\templates\convert_order\index.html:187
+#: .\convert_order\templates\convert_order\index.html:180
 #: .\convert_order\templates\convert_order\info.html:59
 #: .\convert_order\templates\convert_order\video1.html:84
 #: .\convert_order\templates\convert_order\video2.html:86
 msgid "About Converter"
 msgstr "О конвертере"
-
-#: .\convert_order\templates\convert_order\index.html:194
-msgid ""
-"This website uses cookies! By continuing to use our site, you automatically "
-"agree to their use"
-msgstr ""
-"Этот сайт использует файлы cookies! Продолжая использовать наш сайт, Вы "
-"автоматически соглашаетесь с их использованием"
-
-#: .\convert_order\templates\convert_order\index.html:197
-msgid "Clear"
-msgstr "Ясно"
 
 #: .\convert_order\templates\convert_order\info.html:61
 msgid ""
@@ -293,6 +360,11 @@ msgstr ""
 "компьютере. Файл готов. Перетащите файл в соответствующую область сайта "
 "SAPXMLVersionUp.ru"
 
+#: .\convert_order\templates\convert_order\video1.html:73
+#: .\convert_order\templates\convert_order\video2.html:75
+msgid "Company Name LLC"
+msgstr "ООО Название компании"
+
 #: .\convert_order\templates\convert_order\video2.html:60
 msgid ""
 "Obtain an XSD schema of the new report format (download from the website of "
@@ -339,11 +411,11 @@ msgstr "Поддержка"
 #: .\users\templates\users\good_code.html:26
 #: .\users\templates\users\good_code.html:36
 #: .\users\templates\users\good_code.html:38
-#: .\users\templates\users\login.html:24 .\users\templates\users\login.html:26
+#: .\users\templates\users\login.html:51 .\users\templates\users\login.html:53
 #: .\users\templates\users\need_to_pay.html:25
 #: .\users\templates\users\need_to_pay.html:27
+#: .\users\templates\users\register.html:50
 #: .\users\templates\users\register.html:52
-#: .\users\templates\users\register.html:54
 msgid "Close"
 msgstr "Закрыть"
 
@@ -387,16 +459,16 @@ msgstr "Код был отправлен!"
 msgid "Phone is confirmed!"
 msgstr "Телефон подтвержден!"
 
-#: .\users\templates\users\login.html:35
+#: .\users\templates\users\login.html:64
 msgid "Enter the phone number provided during registration"
 msgstr "Введите номер телефона, указанный при регистрации "
 
-#: .\users\templates\users\login.html:36
+#: .\users\templates\users\login.html:65
 msgid "Phone number"
 msgstr "Номер телефона"
 
-#: .\users\templates\users\login.html:37
-#: .\users\templates\users\register.html:71
+#: .\users\templates\users\login.html:66
+#: .\users\templates\users\register.html:69
 msgid "Send code"
 msgstr "Отправить код"
 
@@ -413,26 +485,26 @@ msgstr "Cледующие конвертации требуют оплаты:"
 msgid "or"
 msgstr "или"
 
-#: .\users\templates\users\register.html:64
+#: .\users\templates\users\register.html:62
 msgid "Enter your phone number and email to register"
 msgstr "Введите номер телефона, указанный при регистрации"
 
-#: .\users\templates\users\register.html:65
-#: .\users\templates\users\register.html:66
+#: .\users\templates\users\register.html:63
+#: .\users\templates\users\register.html:64
 msgid "Phone number:"
 msgstr "Номер телефона"
 
-#: .\users\templates\users\register.html:65
+#: .\users\templates\users\register.html:63
 msgid "*necessarily"
 msgstr "*обязательно"
 
-#: .\users\templates\users\register.html:67
-#: .\users\templates\users\register.html:68
+#: .\users\templates\users\register.html:65
+#: .\users\templates\users\register.html:66
 msgid "Name:"
 msgstr "Имя:"
 
-#: .\users\templates\users\register.html:69
-#: .\users\templates\users\register.html:70
+#: .\users\templates\users\register.html:67
+#: .\users\templates\users\register.html:68
 msgid "Email:"
 msgstr "Электронная почта:"
 
@@ -443,6 +515,3 @@ msgstr "Код не совпадает. Попробуйте еще раз."
 #: .\users\views.py:116
 msgid "The code has already been sent!"
 msgstr "Код был отправлен!"
-
-#~ msgid "© Copyright 2023. All rights reserved."
-#~ msgstr "© Copyright 2023. Все права защищены."

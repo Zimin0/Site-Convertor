@@ -23,7 +23,7 @@ urlpatterns += i18n_patterns(
     path('jsi18n/', JavaScriptCatalog.as_view(), name='javascript-catalog'),
     path('payment/', include('payment.urls')),
     path('file/', include('files.urls')),
-    path('users/', include('users.urls')), 
+    path('', include('users.urls')), 
     path('support/', include('support.urls')), 
 )
 

@@ -45,6 +45,8 @@ def need_to_pay_back_to(request, order_id):
 def register(request, phone=None, order_id=None):
     """ Страница с формой регистрации. """
     context = {}
+    context['phone'] = ''
+    print("На странице register получен номер телефона ", phone)
     if request.session.get('back_to', None):
         context['need_to_back'] = True
         context['order_id'] = request.session['back_to'] # достаем order_id
@@ -143,8 +145,8 @@ def need_to_pay(request):
 
 def clear(request):
     request.session.clear()
-    response = HttpResponse("<h1>Сессия и кукисы очищены!</h1>")
+    response = HttpResponse("<h1>Сессия и кукисы очищены!</h1> <script>localStorage.clear();</script>")
     response.delete_cookie('phone')
     print('Cookies = ', response.cookies)
-    print('Session = ', request.session.items()) # localStorage.clear();
+    print('Session = ', request.session.items()) 
     return response

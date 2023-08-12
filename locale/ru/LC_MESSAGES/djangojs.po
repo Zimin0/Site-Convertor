@@ -25,8 +25,8 @@ msgstr "Код валиден!"
 
 #: .\convert_order\static\convert_order\js\code-confirm.js:20
 msgid "The code must contain exactly 4 digits!"
-msgstr "Номер телефона должен содержать 12-16 символов и начинаться с '+'"
+msgstr "Код должен содержать ровно 4 цифры!" 
 
 #: .\convert_order\static\convert_order\js\sign-in-form.js:18
 msgid "Phone number must contain 12-16 characters and start with '+'"
-msgstr "Код должен содержать ровно 4 цифры!"
+msgstr "Номер телефона должен содержать 12-16 символов и начинаться с '+'"

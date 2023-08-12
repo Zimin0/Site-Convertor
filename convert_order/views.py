@@ -3,6 +3,7 @@ from django.http import HttpResponseNotFound
 from django.utils.translation import gettext as _
 from django.utils.translation import activate # activate('en')
 from django.core.files import File
+from django.utils.translation import get_language
 
 from convert_order.models import ConvertOrder
 from files.models import File as My_File
@@ -31,8 +32,23 @@ def clear_main(request):
     print("Сессия:",request.session.items())
 
     if request.session.get('phone_is_confirmed', False): # сделать красивее 
-        user_profile = get_object_or_404(Profile, phone=request.session['phone'])
-        context['amount_of_convertations'] = user_profile.amount_of_converts
+        try:
+            user_profile = Profile.objects.get(phone=request.session['phone'])
+            context['amount_of_convertations'] = user_profile.amount_of_converts
+        except Profile.DoesNotExist:
+            request.session['phone_is_confirmed'] = False  
+            request.session.pop('phone_is_confirmed')
+            request.session.pop('phone')    
+            request.session.pop('name')
+            request.session.pop('mail')
+            request.session.pop('cookies_is_confirmed')
+            response = render(request, 'convert_order/index.html', context)
+            response.delete_cookie('phone')
+            print('Cookies = ', response.cookies)
+            print('Session = ', request.session.items()) 
+            return response
+            # request.COOKIES['dataflair']
+            # request.COOKIES.get('visits'):            
 
     if request.method == 'POST':
         if len(request.FILES) < 2: # если загружено меньше, чем 2 файла
@@ -102,7 +118,7 @@ def info(request):
     """ Страница с описанием работы конвертора. """
     return render(request, 'convert_order/info.html')
 
-from django.utils.translation import get_language
+
 def video(request, video_id):
     context = {}
     curr_language = get_language()

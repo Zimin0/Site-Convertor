@@ -21,6 +21,11 @@ class Profile(models.Model):
     def __str__(self): # Надо поменять 
         return f'Профиль пользователя {self.user}' 
     
+    def delete(self, *args, **kwargs):
+        """ При удалении профиля - удаляет самого юзерв. """
+        self.user.delete() 
+        super(Profile, self).delete(*args, **kwargs)
+    
     @receiver(post_save, sender=User)
     def create_user_profile(sender, instance, created, **kwargs):
         if created:

@@ -90,11 +90,10 @@
             <p class="cookie-text">{% trans 'This website uses cookies! By continuing to use our site, you automatically agree to their use' %}</p>
             <div class="wrapper">
                 <img src="{% static 'convert_order/img/cookie-icon.svg' %}" alt="" id="cookie-icon">
-                <button class="confirm-btn" id="cookie-confirm" onclick="closeCookies()">Согласиться</button>
+                <button class="confirm-btn" id="cookie-confirm" onclick="closeCookies()">{% trans 'Clear' %}</button>            </div>
             </div>
         </div>
     </div>
-
     <script> 
             function closeCookies() {
             cookiePopup.style.display = 'none';
