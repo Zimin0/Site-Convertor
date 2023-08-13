@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404, HttpResponse
 from django.contrib.auth.models import User
 from users.models import Profile
+from convert_order.models import ConvertOrder
 from production_settings.models import ProductionSettings
 from payment.sms_sender import send_confiramtion_code
 from django.utils.translation import gettext as _
@@ -40,7 +41,6 @@ def need_to_pay_back_to(request, order_id):
     print('Вижу order_id в регистре ')
     request.session['back_to'] = order_id # вернуться на страницу конвертации этого заказа
     return redirect('users:need_to_pay')
-
 
 def register(request, phone=None, order_id=None):
     """ Страница с формой регистрации. """
@@ -97,6 +97,13 @@ def code(request):
             cur_user.first_name = request.session.get('name', 'No name found!')
             cur_user.email = request.session.get('mail', 'No mail found!')
             cur_user.profile.save()
+            print(request.session.keys())
+            order_id = request.session.get('back_to', False)
+            if order_id:
+                decrypted_id = ConvertOrder.decrypt_id(order_id)
+                order = get_object_or_404(ConvertOrder, id=decrypted_id)
+                order.phone = request.session['phone']
+                order.save()
             request.session['phone_is_confirmed'] = True
             request.session.pop('confirmation_code')
             request.session.pop('code_is_sended')
@@ -126,6 +133,7 @@ def good_code(request):
     if request.session.get('back_to', None):
         context['need_to_back'] = True
         context['order_id'] = request.session['back_to'] # достаем order_id
+    print('context in good_code', context)
     return render(request, 'users/good_code.html', context)
 
 def need_to_pay(request):
