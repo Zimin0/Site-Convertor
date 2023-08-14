@@ -95,10 +95,12 @@
         </div>
     </div>
     <script> 
-            function closeCookies() {
-            cookiePopup.style.display = 'none';
-        }
+        function closeCookies() {
+        const cookiePopup = document.getElementById('cookie-popup');
+        cookiePopup.style.display = 'none';
+    }
     </script>
+
     <script src="{% url 'javascript-catalog' %}"></script>
     <script src="{% static 'convert_order/js/sign-in-form.js' %}"></script> 
 </body>

@@ -177,3 +177,75 @@ order_id = lzgeu1q6i0
 ------clear_main------
 Подтягиваю телефон - +79313661220 - и данные из cookies!
 Сессия: dict_items([('cookies_is_confirmed', True), ('phone_is_confirmed', True), ('phone', '+79313661220'), ('convert_already', True), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca')])
+Watching for file changes with StatReloader
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('cookies_is_confirmed', True), ('phone_is_confirmed', True), ('phone', '+79313661220'), ('convert_already', True), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca')])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+Загружены файлы ErrorFile_bi3Rk5X.txt и ErrorFile_bi3Rk5X.txt.
+Имя нового сконвертированного файла = ErrorFile.txt
+------files_main------
+request.POST: <QueryDict: {}>
+request.session: dict_items([('phone_is_confirmed', False)])
+order_id = szac1pz6f1
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False), ('back_to', 'szac1pz6f1')])
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader

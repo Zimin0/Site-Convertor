@@ -12,11 +12,7 @@ from users.models import Profile
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from .main_convertation_script import convert_2_files_into_new_structure
 
-
 logger = logging.getLogger(__name__)
-
-# request.COOKIES['dataflair']
-# request.COOKIES.get('visits')
           
 def clear_main(request):
     """ Отображает страницу для загрузки файлов. """
@@ -72,44 +68,41 @@ def files_main(request, order_id):
     logger.info(f"request.session: {request.session.items()}")
     logger.info(f'order_id = {order_id}')
 
-    if request.session.get('back_to', None):
-        request.session.pop('back_to')
-
     context = {}
     phone_is_confirmed = request.session.get('phone_is_confirmed', False)
     context['phone_is_confirmed'] = phone_is_confirmed
     context['files_uploaded'] = True
     context['order_id'] = order_id 
+
+    if request.session.get('back_to', None):
+        request.session.pop('back_to')
+
     if phone_is_confirmed:
         decrypted_id = ConvertOrder.decrypt_id(order_id)
-        try:
-            int(decrypted_id) # плавающий баг
-        except Exception:
-            raise ValueError
-        print(f"order_id={order_id}; decrypted_id={decrypted_id}") 
+        logger.info(f"order_id={order_id}; decrypted_id={decrypted_id}")
         order = get_object_or_404(ConvertOrder, id=decrypted_id)
         user_profile = get_object_or_404(Profile, phone=request.session['phone'])
         order.phone = request.session['phone']
         order.save()
-        # достаем кол-во оставшихся бесплатных скачиваний
         context['amount_of_convertations'] = user_profile.amount_of_converts
     else:
         context['amount_of_convertations'] = None
-    print(f'context={context}')
+    logger.info(f'context={context}')
     return render(request, 'convert_order/index.html', context) 
 
 def info(request):
     """ Страница с описанием работы конвертора. """
+    logger.info('------info------')
     return render(request, 'convert_order/info.html')
 
-
 def video(request, video_id):
+    logger.info('------video------')
     context = {}
-    curr_language = get_language()
+    curr_language = get_language() # получаем текущий выбраный язык
     context['curr_language'] = curr_language
-    print("Текущий язык на странице с видео:", curr_language)
-    template_name = f'convert_order/video{video_id}.html'
-    context['video_name'] = f'button1_{curr_language}.mp4'
+    logger.info(f"Текущий язык на странице с видео: {curr_language}")
+    template_name = f'convert_order/video{video_id}.html' # имя шаблона с одним из 2ч видео
+    context['video_name'] = f'button1_{curr_language}.mp4' # имя видео файла с одним из 2ч видео 
     if video_id in (1, 2):
         return render(request, template_name, context)
     return render('convert_order/404.html')
