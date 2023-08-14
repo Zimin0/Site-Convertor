@@ -38,6 +38,23 @@ USE_L10N = True
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
 )
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'secure_file': {
+            'class': 'logging.FileHandler',
+            'filename': 'logs.txt',
+            'mode': 'a',
+        },
+    },
+    'root': {
+        'handlers': ['secure_file'],
+        'level': 'INFO',
+        'encoding':'utf8', # this fixes UnicodeEncodeError
+    },
+}
 ##########################
 
 ALLOWED_HOSTS = ['*', '.app']

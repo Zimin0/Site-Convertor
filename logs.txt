@@ -1,0 +1,179 @@
+Watching for file changes with StatReloader
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('cookies_is_confirmed', True), ('phone_is_confirmed', True), ('back_to', 'vmkkoi1t55'), ('phone', '+79313661220'), ('convert_already', True)])
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('cookies_is_confirmed', True), ('phone_is_confirmed', True), ('back_to', 'vmkkoi1t55'), ('phone', '+79313661220'), ('convert_already', True)])
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('cookies_is_confirmed', True), ('phone_is_confirmed', True), ('back_to', 'vmkkoi1t55'), ('phone', '+79313661220'), ('convert_already', True), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca')])
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('cookies_is_confirmed', True), ('phone_is_confirmed', True), ('back_to', 'vmkkoi1t55'), ('phone', '+79313661220'), ('convert_already', True), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca')])
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('cookies_is_confirmed', True), ('phone_is_confirmed', True), ('back_to', 'vmkkoi1t55'), ('phone', '+79313661220'), ('convert_already', True), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca')])
+Загружены файлы Contract.pdf и Contract.pdf.
+Internal Server Error: /en/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\JOB\freelance10\converter\convert_order\views.py", line 49, in clear_main
+    file1_dj = My_File.objects.create(order=order , file=file1, file_type='1')
+  File "D:\python38\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\python38\lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\python38\lib\site-packages\django\db\models\base.py", line 778, in save
+    self._prepare_related_fields_for_save(operation_name="save")
+  File "D:\python38\lib\site-packages\django\db\models\base.py", line 1093, in _prepare_related_fields_for_save
+    raise ValueError(
+ValueError: save() prohibited to prevent data loss due to unsaved related object 'order'.
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('cookies_is_confirmed', True), ('phone_is_confirmed', True), ('back_to', 'vmkkoi1t55'), ('phone', '+79313661220'), ('convert_already', True), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca')])
+Загружены файлы Contract.pdf и Contract.pdf.
+Имя нового сконвертированного файла = ErrorFile.txt
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('cookies_is_confirmed', True), ('phone_is_confirmed', True), ('phone', '+79313661220'), ('convert_already', True), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca')])
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('cookies_is_confirmed', True), ('phone_is_confirmed', True), ('phone', '+79313661220'), ('convert_already', True), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca')])
+Загружены файлы Prices-for-provision-of-services.pdf и Prices-for-provision-of-services.pdf.
+Имя нового сконвертированного файла = ErrorFile.txt
+------files_main------
+request.POST: <QueryDict: {}>
+request.session: dict_items([('cookies_is_confirmed', True), ('phone_is_confirmed', True), ('phone', '+79313661220'), ('convert_already', True), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca')])
+order_id = lzgeu1q6i0
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('cookies_is_confirmed', True), ('phone_is_confirmed', True), ('phone', '+79313661220'), ('convert_already', True), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca')])
