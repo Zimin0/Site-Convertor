@@ -249,3 +249,25 @@ D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
 Watching for file changes with StatReloader
 D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False), ('back_to', 'szac1pz6f1')])
+Watching for file changes with StatReloader
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False), ('back_to', 'szac1pz6f1')])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])

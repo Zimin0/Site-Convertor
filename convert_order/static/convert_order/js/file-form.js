@@ -97,10 +97,6 @@ function showRightArrow() {
     rightArrow.style.opacity = 1;
 }
 
-function closeCookies() {
-    cookiePopup.style.display = 'none';
-}
-
 const popup1 = document.getElementById('popup-info-1');
 const popup2 = document.getElementById('popup-info-2');
 
