@@ -57,7 +57,7 @@ LOGGING = {
 }
 ##########################
 
-ALLOWED_HOSTS = ['*', '.app']
+ALLOWED_HOSTS = ['*', '.app'] 
 CSRF_TRUSTED_ORIGINS = ['https://85c6-185-211-159-37.ngrok-free.app']
 
 INSTALLED_APPS = [

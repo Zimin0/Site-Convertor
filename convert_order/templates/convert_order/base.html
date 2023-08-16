@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-    <title>{% trans 'SAP XML - Generator Converter' %}</title>
+    <title> {% block title %} {% trans 'SAP XML - Generator Converter' %} {% endblock title %}</title>
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'convert_order/img/icon.jpg' %}" />
     <link rel="stylesheet" href="{% static 'convert_order/css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'convert_order/css/media.css' %}">
@@ -56,19 +56,7 @@
         </div>
     </header>
 
-    <section class="converter">
-        <div class="info-block container wrapper">
-            <div class="info">
-                <p>
-                    {% trans 'We help make your life a bit easier!' %}
-                </p>
-                <div class="sup-btn-conteiner">
-                    <a href="{% url 'support:support' %}" class="support-btn">{% trans 'Support request' %}</a>
-                    <a href="{% url 'convert_order:info' %}" class="support-btn">{% trans 'About Converter' %}</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    {% block mainblock %}{% endblock mainblock %}
 
     <footer class="footer">
         <div class="footer-info">

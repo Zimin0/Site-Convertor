@@ -271,3 +271,314 @@ Watching for file changes with StatReloader
 В сессии телефона нет! phone_is_confirmed = False
 Телефона в cookies нет!
 Сессия: dict_items([('phone_is_confirmed', False)])
+Watching for file changes with StatReloader
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+Not Found: /en/1212
+Not Found: /en/1212
+D:\JOB\freelance10\converter\config\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /en/1212
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+Not Found: /en/1212
+D:\JOB\freelance10\converter\config\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /en/1212
+Not Found: /static/convert_order/js/base.js
+Not Found: /en/1212
+Not Found: /static/convert_order/js/base.js
+Not Found: /en/1212
+Not Found: /static/convert_order/js/base.js
+Not Found: /en/1212
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+Not Found: /en/1212
+Not Found: /en/1212
+Not Found: /en/1212
+Not Found: /en/1212
+Not Found: /en/1212
+Not Found: /en/1212
+Not Found: /en/1212
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+Not Found: /en/1212
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+Not Found: /en/1212
+Not Found: /en/1212
+Not Found: /static/convert_order/js/sign-in-form.js
+Not Found: /static/convert_order/img/icon.png
+Not Found: /en/1212
+Not Found: /en/1212
+Not Found: /en/1212
+Not Found: /en/1212
+Not Found: /en/1212
+Not Found: /static/convert_order/js/base.js
+Not Found: /en/1212
+Not Found: /static/convert_order/js/base.js
+Not Found: /en/1212
+Not Found: /static/convert_order/js/base.js
+Not Found: /en/1212
+Not Found: /static/convert_order/js/base.js
+Not Found: /static/convert_order/js/base.js
+Not Found: /static/convert_order/js/base.js
+Not Found: /en/1212
+Not Found: /static/convert_order/css/styles.css
+Not Found: /static/convert_order/css/media.css
+Not Found: /static/convert_order/js/base.js
+Not Found: /static/convert_order/img/converter-logo.jpg
+Not Found: /static/convert_order/img/cookie-icon.svg
+Not Found: /static/convert_order/img/icon.jpg
+Not Found: /en/1212
+Not Found: /static/convert_order/css/styles.css
+Not Found: /static/convert_order/css/media.css
+Not Found: /static/convert_order/js/base.js
+Not Found: /static/convert_order/img/converter-logo.jpg
+Not Found: /static/convert_order/img/cookie-icon.svg
+D:\JOB\freelance10\converter\config\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /en/1212
+Not Found: /en/1212
+Not Found: /en/1212
+Not Found: /en/1212
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+------info------
+Internal Server Error: /ru/info/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'trans'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\JOB\freelance10\converter\convert_order\views.py", line 96, in info
+    return render(request, 'convert_order/info.html')
+  File "D:\python38\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\python38\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\python38\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\python38\lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\python38\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\python38\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\python38\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\python38\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "D:\python38\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\python38\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "D:\python38\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "D:\python38\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\python38\lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "D:\python38\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "D:\python38\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\python38\lib\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\python38\lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "D:\python38\lib\site-packages\django\template\base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 5: 'trans', expected 'endblock'. Did you forget to register or load this tag?
+------info------
+------info------
+------info------
+Internal Server Error: /ru/info/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\JOB\freelance10\converter\convert_order\views.py", line 96, in info
+    return render(request, 'convert_order/info.html')
+  File "D:\python38\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\python38\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\python38\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\python38\lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\python38\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\python38\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\python38\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\python38\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "D:\python38\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\python38\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "D:\python38\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "D:\python38\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\python38\lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "D:\python38\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "D:\python38\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\python38\lib\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\python38\lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "D:\python38\lib\site-packages\django\template\base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 11: 'static', expected 'endblock'. Did you forget to register or load this tag?
+------info------
+------info------
+------info------
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+------info------
+------info------
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+------info------
+------video------
+Текущий язык на странице с видео: ru
+------video------
+Текущий язык на странице с видео: ru
+------video------
+Текущий язык на странице с видео: ru
+------video------
+Текущий язык на странице с видео: ru
+------video------
+Текущий язык на странице с видео: ru
+------video------
+Текущий язык на странице с видео: ru
+------video------
+Текущий язык на странице с видео: ru
+------video------
+Текущий язык на странице с видео: ru
+------video------
+Текущий язык на странице с видео: ru
+------video------
+Текущий язык на странице с видео: ru
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+------video------
+Текущий язык на странице с видео: ru
+------video------
+Текущий язык на странице с видео: ru
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\config\settings.py changed, reloading.
+Watching for file changes with StatReloader
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])

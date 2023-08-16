@@ -1,217 +1,126 @@
-{% load static %}
+{% extends 'convert_order/base.html' %}
 {% load i18n %}
-<!DOCTYPE html>
-<html lang="ru">
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-    <title>{% trans 'SAP XML - Generator Converter' %}</title>
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'convert_order/img/icon.jpg' %}"/> 
-    <link rel="stylesheet" href="{% static 'convert_order/css/styles.css' %}">
-    <link rel="stylesheet" href="{% static 'convert_order/css/media.css' %}"> 
-</head>
-
-<body>
-    <header class="header">
-        <div class="container wrapper">
-            <a href="{% url 'convert_order:clear_main' %}" class="logo">
-                <img src="{% static 'convert_order/img/converter-logo.jpg' %}" alt="">
-                <span>{% trans 'SAP XML Converter' %}</span>
-            </a>
-            <div class="button-container">
-                {% if phone_is_confirmed %}
-                    <a class="sign_in-btn">{% trans 'Free Downloads:' %} {{ amount_of_convertations }}</a> 
-                {% else %}
-                    {% if files_uploaded %} 
-                        <a href="{% url 'users:login_back_to' order_id %}" class="sign_in-btn">{% trans 'Authorization' %}</a>
-                        <a href="{% url 'users:register_back_to' order_id %}" class="sign_in-btn">{% trans 'Sign up' %}</a>
-                    {% else %}
-                        <a href="{% url 'users:login' %}" class="sign_in-btn">{% trans 'Authorization' %}</a>
-                        <a href="{% url 'users:register' %}" class="sign_in-btn">{% trans 'Sign up' %}</a>
-                    {% endif %}
-                {% endif %}
-
-                <form id="language-form" action="{% url 'set_language' %}" method="post">
-                    {% csrf_token %}
-                    <input name="next" type="hidden" value="{{ redirect_to }}">
-                    {% get_current_language as LANGUAGE_CODE %}
-                    {% get_available_languages as LANGUAGES %}
-                    {% get_language_info_list for LANGUAGES as languages %}
-                    <select id="language-select" name="language" class="lang-btn">
-                        {% for language in languages %}
-                            <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
-                                {{ language.code }}
-                            </option>
-                        {% endfor %}
-                    </select>
-                </form>
-                <script>
-                    document.addEventListener('DOMContentLoaded', function () {
-                        const languageForm = document.getElementById('language-form');
-                        const languageSelect = document.getElementById('language-select');
-                        
-                        // Add event handler for select change
-                        languageSelect.addEventListener('change', function () {
-                            languageForm.submit(); // Submit the form on value change
-                        });
-                    });
-                </script>
-            </div>
+{% block mainblock %}
+<section class="converter">
+    <div class="container">
+        <div class="wrapper title-info">
+            <p class="subtitle">  <!-- Личный перевод -->
+                {% blocktrans %}This service helps to transfer the settings of your reports customized by SAP XML-Generator to the reports of new versions when new format of report appear (in the form of XSD schemas). As a result, you will receive an XML file of a "new" format with the settings transferred to it.{% endblocktrans %}
+            </p>
+            <p class="subtitle">
+                {% trans 'To transfer settings from the old format to the new format, you need to upload to the service:' %}  <br>
+                {% trans '1. XML file of the "old" structure with configured tag generation rules (FILE_IN1).' %}  <br>
+                {% trans '2. XML file of the "new" structure where settings need to be transferred (FILE_IN2).' %} <br>
+            </p>
         </div>
-    </header>
 
-    <section class="converter">
-        <div class="container">
-            <div class="wrapper title-info">
-                <p class="subtitle">  <!-- Личный перевод -->
-                    {% blocktrans %}This service helps to transfer the settings of your reports customized by SAP XML-Generator to the reports of new versions when new format of report appear (in the form of XSD schemas). As a result, you will receive an XML file of a "new" format with the settings transferred to it.{% endblocktrans %}
-                </p>
-                <p class="subtitle">
-                    {% trans 'To transfer settings from the old format to the new format, you need to upload to the service:' %}  <br>
-                    {% trans '1. XML file of the "old" structure with configured tag generation rules (FILE_IN1).' %}  <br>
-                    {% trans '2. XML file of the "new" structure where settings need to be transferred (FILE_IN2).' %} <br>
-                </p>
+        <form method="POST" id="file-form" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="dropfile-area">
+                <label class="file-field" id="file-field-1">
+                    <input type="file" name="file1" id="file_1">
+                    <div id="file1">
+                        <a href="{% url 'convert_order:video' 1 %}" ><img id="cloud_quest-1" src="{% static 'convert_order/img/cloud_question_icon.svg' %}" 
+                                alt="?" onmouseenter="showPopup1()" onmouseleave="hidePopup1()"></a>
+
+                        <img id="add-file-1" src="{% static 'convert_order/img/icons8-плюс.svg' %}" alt="{% trans 'Add file' %}">
+                        <p id="add-file-title-1">{% trans 'XML file of "old" structure' %}</p>
+                    </div>
+                </label>
+
+                <label class="file-field" id="file-field-2">
+                    <input type="file" name="file2" id="file_2">
+                    <div id="file2">
+                        <a href="{% url 'convert_order:video' 2 %}" ><img id="cloud_quest-2" src="{% static 'convert_order/img/cloud_question_icon.svg' %}" 
+                                alt="?" onmouseenter="showPopup2()" onmouseleave="hidePopup2()"></a>
+
+                        <img id="add-file-2" src="{% static 'convert_order/img/icons8-плюс.svg' %}" alt="{% trans 'Add file' %}">
+                        <p id="add-file-title-2">{% trans 'XML file of "new" structure' %}</p>
+                    </div>
+                </label>
             </div>
 
-            <form method="POST" id="file-form" enctype="multipart/form-data">
-                {% csrf_token %}
-                <div class="dropfile-area">
-                    <label class="file-field" id="file-field-1">
-                        <input type="file" name="file1" id="file_1">
-                        <div id="file1">
-                            <a href="{% url 'convert_order:video' 1 %}" ><img id="cloud_quest-1" src="{% static 'convert_order/img/cloud_question_icon.svg' %}" 
-                                    alt="?" onmouseenter="showPopup1()" onmouseleave="hidePopup1()"></a>
+            <div class="converter-container">
+                <img id="up-arrow" src="{% static 'convert_order/img/converter-arrow.svg' %}" alt="">
 
-                            <img id="add-file-1" src="{% static 'convert_order/img/icons8-плюс.svg' %}" alt="{% trans 'Add file' %}">
-                            <p id="add-file-title-1">{% trans 'XML file of "old" structure' %}</p>
-                        </div>
-                    </label>
-
-                    <label class="file-field" id="file-field-2">
-                        <input type="file" name="file2" id="file_2">
-                        <div id="file2">
-                            <a href="{% url 'convert_order:video' 2 %}" ><img id="cloud_quest-2" src="{% static 'convert_order/img/cloud_question_icon.svg' %}" 
-                                    alt="?" onmouseenter="showPopup2()" onmouseleave="hidePopup2()"></a>
-
-                            <img id="add-file-2" src="{% static 'convert_order/img/icons8-плюс.svg' %}" alt="{% trans 'Add file' %}">
-                            <p id="add-file-title-2">{% trans 'XML file of "new" structure' %}</p>
-                        </div>
-                    </label>
+                <div id="popup-info-1">
+                    {% trans 'How to get an XML-file of the "old" structure:' %}: <br>
+                    1. {% trans 'Open the hierarchy of the "old" structure in SAP XML-Generator ' %} <br>
+                    2. {% trans 'Export to XML-file.' %}
                 </div>
 
-                <div class="converter-container">
-                    <img id="up-arrow" src="{% static 'convert_order/img/converter-arrow.svg' %}" alt="">
+                <input type="submit" id="converter-btn" value="{% trans 'Convert' %}">
+                
+                <img id="down-arrow" src="{% static 'convert_order/img/converter-arrow.svg' %}" alt="">
 
-                    <div id="popup-info-1">
-                        {% trans 'How to get an XML-file of the "old" structure:' %}: <br>
-                        1. {% trans 'Open the hierarchy of the "old" structure in SAP XML-Generator ' %} <br>
-                        2. {% trans 'Export to XML-file.' %}
-                    </div>
-
-                    <input type="submit" id="converter-btn" value="{% trans 'Convert' %}">
-                    
-                    <img id="down-arrow" src="{% static 'convert_order/img/converter-arrow.svg' %}" alt="">
-
-                    <div id="popup-info-2">
-                        {% trans 'How to get XML-file of "new" structure:' %}: <br>
-                        1. {% trans 'Get a file of XSD-scheme. ' %} <br>
-                        2. {% trans 'Import the file of XSD-scheme in SAP XML-Generator.' %} <br>
-                        3. {% trans 'Export to XML-file.' %}
-                    </div>
+                <div id="popup-info-2">
+                    {% trans 'How to get XML-file of "new" structure:' %}: <br>
+                    1. {% trans 'Get a file of XSD-scheme. ' %} <br>
+                    2. {% trans 'Import the file of XSD-scheme in SAP XML-Generator.' %} <br>
+                    3. {% trans 'Export to XML-file.' %}
                 </div>
+            </div>
 
-                <div class="download-container">
-                    <img id="right-arrow" src="{% static 'convert_order/img/download-arrow.png' %}" alt="">
-                    {% if files_uploaded %} 
-                        {% if phone_is_confirmed %}
-                            {% if amount_of_convertations < 1 %}
-                                <input type="button" id="download-btn" value="{% trans 'Download' %}" onclick="location.href='{% url 'users:need_to_pay_back_to' order_id %}';">
-                            {% else %}
-                                <input type="button" id="download-btn" value="{% trans 'Download' %}" onclick="location.href='{% url 'files:load_file' order_id %}'; setTimeout(function(){window.location.href='/';}, 1000);">
-                            {% endif %}
+            <div class="download-container">
+                <img id="right-arrow" src="{% static 'convert_order/img/download-arrow.png' %}" alt="">
+                {% if files_uploaded %} 
+                    {% if phone_is_confirmed %}
+                        {% if amount_of_convertations < 1 %}
+                            <input type="button" id="download-btn" value="{% trans 'Download' %}" onclick="location.href='{% url 'users:need_to_pay_back_to' order_id %}';">
                         {% else %}
-                            <input type="button" id="download-btn" value="{% trans 'Download' %}" onclick="location.href='{% url 'users:login_back_to' order_id %}';">
+                            <input type="button" id="download-btn" value="{% trans 'Download' %}" onclick="location.href='{% url 'files:load_file' order_id %}'; setTimeout(function(){window.location.href='/';}, 1000);">
                         {% endif %}
                     {% else %}
-                        <input type="submit" id="download-btn" value="{% trans 'Download' %}" disabled>
+                        <input type="button" id="download-btn" value="{% trans 'Download' %}" onclick="location.href='{% url 'users:login_back_to' order_id %}';">
                     {% endif %}
+                {% else %}
+                    <input type="submit" id="download-btn" value="{% trans 'Download' %}" disabled>
+                {% endif %}
 
-                    {% if files_uploaded %}
-                    <script>
-                            document.addEventListener('DOMContentLoaded', function () {
-                            const converterBtn = document.getElementById('converter-btn');
-                            
-                            converterBtn.addEventListener('click', function () {
-                                // converterBtn.disabled = true; // Disable the button
-                                converterBtn.setAttribute('disabled', "");
-                            });
-                        });
+                {% if files_uploaded %}
+                <script>
                         document.addEventListener('DOMContentLoaded', function () {
-                            const downloadBtn1 = document.getElementById('download-btn');
-                            downloadBtn1.removeAttribute('disabled');
-                    
-                            const upArrow = document.getElementById('up-arrow');
-                            upArrow.style.transition = 'opacity 0s ease-in';
-                            upArrow.style.opacity = 1;
-                    
-                            const downArrow = document.getElementById('down-arrow');
-                            downArrow.style.transition = 'opacity 0s ease-in';
-                            downArrow.style.opacity = 1;
-                    
-                            const rightArrow = document.getElementById('right-arrow');
-                            rightArrow.style.transition = 'opacity 1.5s ease-in';
-                            rightArrow.style.opacity = 1;
+                        const converterBtn = document.getElementById('converter-btn');
+                        
+                        converterBtn.addEventListener('click', function () {
+                            // converterBtn.disabled = true; // Disable the button
+                            converterBtn.setAttribute('disabled', "");
                         });
-                    </script>
-                    {% endif %}
-                </div>
-            </form>
-        </div>
-
-        <div class="info-block container wrapper">
-            <div class="info">
-                <p>
-                    {% trans 'We help make your life a bit easier!' %}
-                </p>
-                <div class="sup-btn-conteiner">
-                    <a href="{% url 'support:support' %}" class="support-btn">{% trans 'Support request' %}</a> 
-                    <a href="{% url 'convert_order:info' %}" class="support-btn">{% trans 'About Converter' %}</a> 
-                </div>
+                    });
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const downloadBtn1 = document.getElementById('download-btn');
+                        downloadBtn1.removeAttribute('disabled');
+                
+                        const upArrow = document.getElementById('up-arrow');
+                        upArrow.style.transition = 'opacity 0s ease-in';
+                        upArrow.style.opacity = 1;
+                
+                        const downArrow = document.getElementById('down-arrow');
+                        downArrow.style.transition = 'opacity 0s ease-in';
+                        downArrow.style.opacity = 1;
+                
+                        const rightArrow = document.getElementById('right-arrow');
+                        rightArrow.style.transition = 'opacity 1.5s ease-in';
+                        rightArrow.style.opacity = 1;
+                    });
+                </script>
+                {% endif %}
             </div>
-        </div>
-    </section>
+        </form>
+    </div>
 
-    <footer class="footer">
-        <div class="footer-info">
+    <div class="info-block container wrapper">
+        <div class="info">
             <p>
-                ИП Корзников Олег Леонидович <br>
-                ОГРИП 312590531200123, ИНН 590578138109 <br>
-                Телефон <phone>+7 (917) 578-67-06</phone> <br>
-                <mail>Torro7001@rambler.ru</mail>
+                {% trans 'We help make your life a bit easier!' %}
             </p>
-            <p class="footer-copyright">
-                {% trans '© Copyright 2023. All rights reserved' %}
-            </p>
-            <p class="footer-docs"> 
-                <a href="{% static 'convert_order/pdf/Contract.pdf' %}">{% trans 'Contract offer' %}</a> <br> 
-                <a href="{% static 'convert_order/pdf/Procedure-of-payment-by-bank-cards.pdf' %}">{% trans 'Procedure for making payments and returns' %}</a> <br>
-                <a href="{% static 'convert_order/pdf/Prices-for-provision-of-services.pdf' %}">{% trans 'Prices and description of services' %}</a>
-            </p>
-        </div>
-    </footer>
-    <div id="cookie-popup">
-        <div class="container wrapper">
-            <p class="cookie-text">{% trans 'This website uses cookies! By continuing to use our site, you automatically agree to their use' %}</p>
-            <div class="wrapper">
-                <img src="{% static 'convert_order/img/cookie-icon.svg' %}" alt="" id="cookie-icon">
-                <button class="confirm-btn" id="cookie-confirm">{% trans 'Clear' %}</button>
+            <div class="sup-btn-conteiner">
+                <a href="{% url 'support:support' %}" class="support-btn">{% trans 'Support request' %}</a> 
+                <a href="{% url 'convert_order:info' %}" class="support-btn">{% trans 'About Converter' %}</a> 
             </div>
         </div>
     </div>
-    <script src="{% url 'javascript-catalog' %}"></script>
-    <script src="{% static 'convert_order/js/file-form.js' %}"></script>
-</body>
-
-</html>
+</section>
+{% endblock mainblock %}

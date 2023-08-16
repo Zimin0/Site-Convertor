@@ -8,6 +8,9 @@ from django.views.i18n import JavaScriptCatalog
 
 admin.autodiscover()
 
+handler404 = 'convert_order.views.handler404'
+handler500 = 'convert_order.views.handler500'
+
 i18n_urls  = (
 
 )

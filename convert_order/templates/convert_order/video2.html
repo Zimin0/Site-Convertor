@@ -1,125 +1,44 @@
-{% load static %}
+{% extends 'convert_order/base.html' %}
 {% load i18n %}
-<!DOCTYPE html>
-<html lang="ru">
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-    <title>{% trans 'SAP XML - Generator Converter' %}</title>
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'convert_order/img/icon.jpg' %}"/> 
-    <link rel="stylesheet" href="{% static 'convert_order/css/styles.css' %}">
-    <link rel="stylesheet" href="{% static 'convert_order/css/media.css' %}"> 
-</head>
+{% block mainblock %}
+<section class="convert-info">
+    <div class="info-content container">
+        <a href="{% url 'convert_order:clear_main' %}" class="return-btn">{% trans 'Back' %}</a>
 
-<body>
-    <header class="header">
-        <div class="container wrapper">
-            <a href="{% url 'convert_order:clear_main' %}" class="logo">
-                <img src="{% static 'convert_order/img/converter-logo.jpg' %}" alt="">
-                <span>{% trans 'SAP XML Converter' %}</span>
-            </a>
-            <div class="button-container">
-                <a href="{% url 'users:login' %}" class="sign_in-btn">{% trans 'Authorization' %}</a>
-                <a href="{% url 'users:register' %}" class="sign_in-btn">{% trans 'Sign up' %}</a>
-                <form id="language-form" action="{% url 'set_language' %}" method="post">
-                    {% csrf_token %}
-                    <input name="next" type="hidden" value="{{ redirect_to }}">
-                    {% get_current_language as LANGUAGE_CODE %}
-                    {% get_available_languages as LANGUAGES %}
-                    {% get_language_info_list for LANGUAGES as languages %}
-                    <select id="language-select" name="language" class="lang-btn">
-                        {% for language in languages %}
-                            <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
-                                {{ language.code }}
-                            </option>
-                        {% endfor %}
-                    </select>
-                </form>
-                <script>
-                    document.addEventListener('DOMContentLoaded', function () {
-                        const languageForm = document.getElementById('language-form');
-                        const languageSelect = document.getElementById('language-select');
-                        languageSelect.addEventListener('change', function () {
-                            languageForm.submit(); 
-                        });
-                    });
-                </script>
-            </div>
-        </div>
-    </header>
+        <p class="convert-info-text">
+            {% trans 'How to get XML-file of "new" structure:' %}
+            <br>
+            1. {% trans 'Obtain an XSD schema of the new report format (download from the website of government or website of another provider that defines the reporting standard)' %}
+            <br>
+            2. {% trans 'Define the hierarchy of the new report version in the SAP system (transaction "J3RTAXREP", Menu "New Entry")' %}
+            <br>
+            3. {% trans 'Enter the new report hierarchy and import the file of XSD-schema(Menu "Import", then "Save")' %}
+            <br>
+            4. {% trans 'Menu "Hierarchies -> SAPXML Export -> Save File" on the local computer. The file is ready. Drag the file to the appropriate area of the SAPXMLVersionUp.com site' %}
+        </p>
 
-    <section class="convert-info">
-        <div class="info-content container">
-            <a href="{% url 'convert_order:clear_main' %}" class="return-btn">{% trans 'Back' %}</a>
-
-            <p class="convert-info-text">
-                {% trans 'How to get XML-file of "new" structure:' %}
-                <br>
-                1. {% trans 'Obtain an XSD schema of the new report format (download from the website of government or website of another provider that defines the reporting standard)' %}
-                <br>
-                2. {% trans 'Define the hierarchy of the new report version in the SAP system (transaction "J3RTAXREP", Menu "New Entry")' %}
-                <br>
-                3. {% trans 'Enter the new report hierarchy and import the file of XSD-schema(Menu "Import", then "Save")' %}
-                <br>
-                4. {% trans 'Menu "Hierarchies -> SAPXML Export -> Save File" on the local computer. The file is ready. Drag the file to the appropriate area of the SAPXMLVersionUp.com site' %}
-            </p>
-
-            <video src="{% static 'convert_order/videos/' %}{{ video_name }}" controls class="info-video"></video>
-        </div>
-
-        <div class="info-block container wrapper">
-            <div class="info">
-                <p>
-                    {% trans 'Company Name LLC' %} <br>
-                    <phone>+7-917-578-67-06</phone>
-                </p>
-            </div>
-            <div class="info">
-                <p>
-                    {% trans 'We help make your life a bit easier!' %}
-                </p>
-
-                <div class="sup-btn-conteiner">
-                    <a href="{% url 'support:support' %}" class="support-btn">{% trans 'Support request' %}</a> 
-                    <a href="{% url 'convert_order:info' %}" class="support-btn">{% trans 'About Converter' %}</a> 
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="footer-info">
-            <p>
-                ИП Корзников Олег Леонидович <br>
-                ОГРИП 312590531200123, ИНН 590578138109 <br>
-                Телефон <phone>+7 (917) 578-67-06</phone> <br>
-                <mail>Torro7001@rambler.ru</mail>
-            </p>
-            <p class="footer-copyright">
-                {% trans '© Copyright 2023. All rights reserved' %}
-            </p>
-            <p class="footer-docs"> 
-                <a href="{% static 'convert_order/pdf/Contract.pdf' %}">{% trans 'Contract offer' %}</a> <br> 
-                <a href="{% static 'convert_order/pdf/Procedure-of-payment-by-bank-cards.pdf' %}">{% trans 'Procedure for making payments and returns' %}</a> <br>
-                <a href="{% static 'convert_order/pdf/Prices-for-provision-of-services.pdf' %}">{% trans 'Prices and description of services' %}</a>
-            </p>
-        </div>
-    </footer>
-    <div id="cookie-popup">
-        <div class="container wrapper">
-            <p class="cookie-text">{% trans 'This website uses cookies! By continuing to use our site, you automatically agree to their use' %}</p>
-            <div class="wrapper">
-                <img src="{% static 'convert_order/img/cookie-icon.svg' %}" alt="" id="cookie-icon">
-                <button class="confirm-btn" id="cookie-confirm" onclick="closeCookies()">{% trans 'Clear' %}</button>            </div>
-        </div>
+        <video src="{% static 'convert_order/videos/' %}{{ video_name }}" controls class="info-video"></video>
     </div>
 
-    <script> 
-            function closeCookies() {
-            cookiePopup.style.display = 'none';
-        }
-    </script>
+    <div class="info-block container wrapper">
+        <div class="info">
+            <p>
+                {% trans 'Company Name LLC' %} <br>
+                <phone>+7-917-578-67-06</phone>
+            </p>
+        </div>
+        <div class="info">
+            <p>
+                {% trans 'We help make your life a bit easier!' %}
+            </p>
 
-</html>
+            <div class="sup-btn-conteiner">
+                <a href="{% url 'support:support' %}" class="support-btn">{% trans 'Support request' %}</a> 
+                <a href="{% url 'convert_order:info' %}" class="support-btn">{% trans 'About Converter' %}</a> 
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock mainblock %}
