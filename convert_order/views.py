@@ -35,6 +35,10 @@ def clear_main(request):
     if request.session.get('phone_is_confirmed', False): 
         user_profile = Profile.objects.get(phone=request.session['phone'])
         context['amount_of_convertations'] = user_profile.amount_of_converts
+    
+    if request.method == 'GET':
+        if request.session.get('created_order_slug', False):
+            request.session.pop('created_order_slug') # удаляем id созданной конвертации
 
     if request.method == 'POST':
         file1 = request.FILES['file1']
@@ -57,9 +61,9 @@ def clear_main(request):
         # file4 = InMemoryUploadedFile(file=file3_open, field_name='FileField', name=filename, content_type='application/xml', size=2625, charset=None)
         #print(file3_open.read()) # выводит текст полностью, с нормальной кодировкой 
         # file3_open.close()
+        request.session['created_order_slug'] = order.slug # id конвертации в сессии
         ##############################################################
-        encrypted_id = ConvertOrder.crypt_id(order.id)
-        return redirect('convert_order:files_main', order_id=encrypted_id)
+        return redirect('convert_order:files_main', order_id=order.slug)
     return render(request, 'convert_order/index.html', context)
 
 def files_main(request, order_id):
@@ -75,9 +79,7 @@ def files_main(request, order_id):
     context['files_uploaded'] = True
     context['order_id'] = order_id 
 
-
-
-    if request.session.get('back_to', None):
+    if request.session.get('back_to', False):
         request.session.pop('back_to')
 
     if phone_is_confirmed:

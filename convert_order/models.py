@@ -22,21 +22,25 @@ class ConvertOrder(models.Model):
 
     phone = models.CharField(max_length=100, verbose_name="Номер телефона пользователя", null=True, blank=True)
     creation_date = models.DateTimeField(auto_now_add=True, verbose_name="Создан")
-    slug = models.CharField(max_length=100, verbose_name="Слаг для url", default='0')
+    slug = models.CharField(max_length=100, verbose_name="Слаг для url", unique=True, null=True, blank=True)
+    modulbank_transaction_id = models.CharField(max_length=200, verbose_name="ID в модульбанке", blank=True, null=True)
     current_status = models.CharField(max_length=2, choices=STATUS, verbose_name='Статус', default='OC')
     need_to_pay = models.BooleanField(verbose_name="Нужно ли оплатить", default=False)
     paid = models.BooleanField(verbose_name="Оплачено", default=False)
 
     def save(self, *args, **kwargs):
-        self.slug = self.crypt_id(self.id)
-        super(ConvertOrder, self).save(*args, **kwargs)
+        if not self.id:
+            super(ConvertOrder, self).save(*args, **kwargs)
+            self.slug = self.__crypt_id(self.id)
+        super(ConvertOrder, self).save(*args, **kwargs) ### ПЕРЕГРУЖАЕТ СИСТЕМУ !!!!
+        
 
     def get_formatted_creation_date(self):
         """ Возвращает отформатированную дату создания в виде: 13_07_13_15:53 """
         return datetime.strftime(self.creation_date, "%d_%m_%Y_%H:%M")
     
     @staticmethod
-    def crypt_id(id):
+    def __crypt_id(id):
         """ Переводит id заказа в строку для url ("шифрует").\n
         Что-то типо хэша, но только можно расшифровать обратно."""
         id_new_str = str(id)

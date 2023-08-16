@@ -6,7 +6,7 @@
 <section class="converter">
     <div class="container">
         <div class="wrapper title-info">
-            <p class="subtitle">  <!-- Личный перевод -->
+            <p class="subtitle">  
                 {% blocktrans %}This service helps to transfer the settings of your reports customized by SAP XML-Generator to the reports of new versions when new format of report appear (in the form of XSD schemas). As a result, you will receive an XML file of a "new" format with the settings transferred to it.{% endblocktrans %}
             </p>
             <p class="subtitle">
@@ -69,6 +69,7 @@
                     {% if phone_is_confirmed %}
                         {% if amount_of_convertations < 1 %}
                             {% if is_paid %}
+                                <input type="button" id="download-btn" value="{% trans 'Download' %}" onclick="location.href='{% url 'files:load_file' order_id %}'; setTimeout(function(){window.location.href='/';}, 1000);">
                             {% else %}
                                 <input type="button" id="download-btn" value="{% trans 'Download' %}" onclick="location.href='{% url 'users:need_to_pay_back_to' order_id %}';">
                             {% endif %}
@@ -108,7 +109,6 @@
                         rightArrow.style.opacity = 1;
                     });
                 </script>
-                
                 {% endif %}
             </div>
         </form>

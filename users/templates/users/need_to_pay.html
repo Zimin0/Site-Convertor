@@ -32,7 +32,7 @@
     <section id="sign_in-form">
         <div id="pay-block">
             <p class="subtitle">{% trans 'The following conversions require payment:' %} {{ ruble_price }}р {% trans 'or' %} ${{ dollar_price }} {% trans 'or' %} {{ euro_price }}€</p>
-            <a class="confirm-btn" id="pay-btn">{% trans 'Payment' %}</a>
+            <a class="confirm-btn" href="{{ payment_url }}" id="pay-btn">{% trans 'Payment' %}</a>
         </div>
     </section>
 

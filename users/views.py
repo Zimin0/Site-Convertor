@@ -7,6 +7,8 @@ from payment.sms_sender import send_confiramtion_code
 from django.utils.translation import gettext as _
 from django.utils.translation import activate 
 
+from test_modulbank2 import create_test_modulbank_order 
+
 def login(request):
     """ Страница с полем ввода номера телефона. """
     context = {}
@@ -143,9 +145,14 @@ def need_to_pay(request):
         "ruble_price": get_object_or_404(ProductionSettings, slug='RUBLE_PRICE').value,
         "dollar_price": get_object_or_404(ProductionSettings, slug='DOLLAR_PRICE').value,
     }
-    # Создаем заказ модульбанка
-    # Генерируем ссылку
-    # context['link'] = "url"
+    print(request.session.items())
+    order_id = request.session.get('back_to', None)
+    print(f'order_id={order_id}')
+    order_id = ConvertOrder.decrypt_id(order_id)
+    order = ConvertOrder.objects.get(id=order_id)
+    data = create_test_modulbank_order(order.slug)
+    context['payment_url'] = data['url']
+    
     if request.session.get('back_to', None): # функционал возврата на страницу загрузки
         context['need_to_back'] = True
         context['order_id'] = request.session['back_to'] # достаем order_id

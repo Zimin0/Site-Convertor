@@ -5,8 +5,9 @@ import json
 import base64
 import string
 import random
+import ast
 
-def create_test_modulbank_order():
+def create_test_modulbank_order(custom_order_id):
     def get_raw_signature(params):
         chunks = []
         for key in sorted(params.keys()):
@@ -44,7 +45,7 @@ def create_test_modulbank_order():
         return salt
 
     receipt_items = [
-        {"name": "Convertation", "price": "100.00", "quantity": 1, "sno": "osn", "payment_object": "service", 'payment_method': 'full_prepayment', 'vat':'none', }
+        {"name": "Convertation", "price": "100.00", "quantity": "1", "sno": "osn", "payment_object": "service", 'payment_method': 'full_prepayment', 'vat':'none', }
     ]
     merchant = "d94a5235-7a7f-4524-a160-9f4af4bd15c8"
     success_url = "https://pay.modulbank.ru/success"
@@ -54,8 +55,8 @@ def create_test_modulbank_order():
         "amount": get_amount(receipt_items), 
         "description": "Конвертация на сайте SAP-XML-Generator-Converter",
         "unix_timestamp": int(time.time()),
-        "callback_url": "https://85c6-185-211-159-37.ngrok-free.app/payment/catch-payment/",
-        "success_url": "https://85c6-185-211-159-37.ngrok-free.app", 
+        "callback_url": "https://85c6-185-211-159-37.ngrok-free.app/ru/payment/catch-payment/",
+        "success_url": "https://85c6-185-211-159-37.ngrok-free.app/ru/payment/load/", 
         "salt": generate_salt(),
         "reusable": 0,
         "lifetime": 20*60, # Срок актуальности счета в секундах. По истечению счет будет недоступен к оплате # __Необязательное__ 
@@ -64,10 +65,10 @@ def create_test_modulbank_order():
         # Динамические (Брать из БД) 
         "merchant": merchant, # настройки admin 
         "testing": 1,# настройки settings
-        "custom_order_id": "custom_order_id", # брать из таблицы ConvertOrder # __Необязательное__
+        "custom_order_id": custom_order_id, # брать из таблицы ConvertOrder # __Необязательное__
         "client_name": "Test Test", # Брать из базы данных # __Необязательное__
-        "client_email": "nik.zimenkov.00@inbox.ru", # Если указано это поле и передано "send_letter"=1, то клиенту будет отправлено письмо с уведомлением о выставлении счета # __Необязательное__
-        "receipt_contact": "nik.zimenkov.00@inbox.ru", # Еmail получателя чека # __Необязательное__
+        #"client_email": "nik.zimenkov.00@inbox.ru", # Если указано это поле и передано "send_letter"=1, то клиенту будет отправлено письмо с уведомлением о выставлении счета # __Необязательное__
+        #"receipt_contact": "nik.zimenkov.00@inbox.ru", # Еmail получателя чека # __Необязательное__
     }
 
     data['receipt_items'] = json.dumps(receipt_items)
@@ -82,7 +83,18 @@ def create_test_modulbank_order():
         print(response.json())
     else:
         print(f"Ошибка: {response.status_code}")
-    print(response.text)
+    string_data = response.text # ['bill']['url']
+    string_data = string_data.replace("'", '"')  # Заменяем одинарные кавычки на двойные
+
+    data_js =  json.loads(string_data)
+    data = {
+        'url': data_js['bill']['url'], 
+        'id': custom_order_id, # !!!!!!!!!!!!!!!!!!!!!!! meta: {"bill_id": "JhA7sewdkjoaysjR0O1Im1"}
+    }
+    return data
+
+
+# create_test_modulbank_order() # sOJVYBMm6geOXMyb4wVm0H
 
 class ModulBankPayment:
     url = "https://pay.modulbank.ru/api/v1/bill/"
@@ -98,4 +110,3 @@ class ModulBankPayment:
         status = True
         return status
 
-create_test_modulbank_order()

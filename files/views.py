@@ -16,7 +16,8 @@ def load_file(request, order_id):
     if user_profile.amount_of_converts > 0:
         user_profile.amount_of_converts -= 1
     else:
-        raise ValueError()
+        if order.paid:
+            user_profile.amount_of_converts = 0
     user_profile.save()
 
     # Заполняем сессию данными
