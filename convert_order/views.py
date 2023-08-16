@@ -19,6 +19,7 @@ def clear_main(request):
     logger.info('------clear_main------')
     context = {}
     context['files_uploaded'] = False 
+    context["is_paid"] = False
     context['phone_is_confirmed'] = request.session.get('phone_is_confirmed', False) 
     if not request.session.get('phone_is_confirmed', False): 
         logger.info("В сессии телефона нет! phone_is_confirmed = False")
@@ -74,6 +75,8 @@ def files_main(request, order_id):
     context['files_uploaded'] = True
     context['order_id'] = order_id 
 
+
+
     if request.session.get('back_to', None):
         request.session.pop('back_to')
 
@@ -83,6 +86,7 @@ def files_main(request, order_id):
         order = get_object_or_404(ConvertOrder, id=decrypted_id)
         user_profile = get_object_or_404(Profile, phone=request.session['phone'])
         order.phone = request.session['phone']
+        context["is_paid"] = order.paid
         order.save()
         context['amount_of_convertations'] = user_profile.amount_of_converts
     else:

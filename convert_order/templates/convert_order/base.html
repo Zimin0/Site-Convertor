@@ -91,6 +91,8 @@
     <!--------------- Scripts --------------->
     <script src="{% url 'javascript-catalog' %}"></script>
     <script src="{% static 'convert_order/js/base.js' %}"></script>
+    {% block scripts %}
+    {% endblock scripts %}
     <!--------------------------------------->
 </body>
 </html>

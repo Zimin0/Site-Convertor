@@ -582,3 +582,137 @@ Watching for file changes with StatReloader
 В сессии телефона нет! phone_is_confirmed = False
 Телефона в cookies нет!
 Сессия: dict_items([('phone_is_confirmed', False)])
+Watching for file changes with StatReloader
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+------clear_main------
+Подтягиваю телефон - +79313661777 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661777'), ('name', 'Масло машинное'), ('mail', 'nikzim2004@gmail.com')])
+------clear_main------
+Подтягиваю телефон - +79313661777 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661777'), ('name', 'Масло машинное'), ('mail', 'nikzim2004@gmail.com'), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca')])
+------clear_main------
+Подтягиваю телефон - +79313661777 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661777'), ('name', 'Масло машинное'), ('mail', 'nikzim2004@gmail.com'), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca')])
+------clear_main------
+Подтягиваю телефон - +79313661777 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661777'), ('name', 'Масло машинное'), ('mail', 'nikzim2004@gmail.com'), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca')])
+------clear_main------
+Подтягиваю телефон - +79313661777 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661777'), ('name', 'Масло машинное'), ('mail', 'nikzim2004@gmail.com'), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca')])
+Загружены файлы modulbank-payment-gate-api-1.0 (1).pdf и modulbank-payment-gate-api-1.0 (1).pdf.
+Имя нового сконвертированного файла = ErrorFile.txt
+------files_main------
+request.POST: <QueryDict: {}>
+request.session: dict_items([('phone_is_confirmed', True), ('phone', '+79313661777'), ('name', 'Масло машинное'), ('mail', 'nikzim2004@gmail.com'), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca')])
+order_id = ezpr1gus62
+order_id=ezpr1gus62; decrypted_id=162
+context={'phone_is_confirmed': True, 'files_uploaded': True, 'order_id': 'ezpr1gus62', 'is_paid': False, 'amount_of_convertations': 0}
+------files_main------
+request.POST: <QueryDict: {}>
+request.session: dict_items([('phone_is_confirmed', True), ('phone', '+79313661777'), ('name', 'Масло машинное'), ('mail', 'nikzim2004@gmail.com'), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca')])
+order_id = ezpr1gus62
+order_id=ezpr1gus62; decrypted_id=162
+context={'phone_is_confirmed': True, 'files_uploaded': True, 'order_id': 'ezpr1gus62', 'is_paid': False, 'amount_of_convertations': 0}
+------files_main------
+request.POST: <QueryDict: {}>
+request.session: dict_items([('phone_is_confirmed', True), ('phone', '+79313661777'), ('name', 'Масло машинное'), ('mail', 'nikzim2004@gmail.com'), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca')])
+order_id = ezpr1gus62
+order_id=ezpr1gus62; decrypted_id=162
+context={'phone_is_confirmed': True, 'files_uploaded': True, 'order_id': 'ezpr1gus62', 'is_paid': False, 'amount_of_convertations': 0}
+------files_main------
+request.POST: <QueryDict: {}>
+request.session: dict_items([('phone_is_confirmed', True), ('phone', '+79313661777'), ('name', 'Масло машинное'), ('mail', 'nikzim2004@gmail.com'), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca')])
+order_id = ezpr1gus62
+order_id=ezpr1gus62; decrypted_id=162
+context={'phone_is_confirmed': True, 'files_uploaded': True, 'order_id': 'ezpr1gus62', 'is_paid': False, 'amount_of_convertations': 0}
+------clear_main------
+Подтягиваю телефон - +79313661777 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661777'), ('name', 'Масло машинное'), ('mail', 'nikzim2004@gmail.com'), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca')])
+------files_main------
+request.POST: <QueryDict: {}>
+request.session: dict_items([('phone_is_confirmed', True), ('phone', '+79313661777'), ('name', 'Масло машинное'), ('mail', 'nikzim2004@gmail.com'), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca')])
+order_id = ezpr1gus62
+order_id=ezpr1gus62; decrypted_id=162
+context={'phone_is_confirmed': True, 'files_uploaded': True, 'order_id': 'ezpr1gus62', 'is_paid': False, 'amount_of_convertations': 0}
+------clear_main------
+Подтягиваю телефон - +79313661777 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661777'), ('name', 'Масло машинное'), ('mail', 'nikzim2004@gmail.com'), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca')])
+------clear_main------
+Подтягиваю телефон - +79313661777 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661777'), ('name', 'Масло машинное'), ('mail', 'nikzim2004@gmail.com'), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca')])
+------clear_main------
+Подтягиваю телефон - +79313661777 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661777'), ('name', 'Масло машинное'), ('mail', 'nikzim2004@gmail.com'), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca')])
+------clear_main------
+Подтягиваю телефон - +79313661777 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661777'), ('name', 'Масло машинное'), ('mail', 'nikzim2004@gmail.com'), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca')])
+Watching for file changes with StatReloader
+------clear_main------
+Подтягиваю телефон - +79313661777 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661777'), ('name', 'Масло машинное'), ('mail', 'nikzim2004@gmail.com'), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca')])
+------clear_main------
+Подтягиваю телефон - +79313661777 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661777'), ('name', 'Масло машинное'), ('mail', 'nikzim2004@gmail.com'), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca')])
+------clear_main------
+Подтягиваю телефон - +79313661777 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661777'), ('name', 'Масло машинное'), ('mail', 'nikzim2004@gmail.com'), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca')])
+Watching for file changes with StatReloader
+------clear_main------
+Подтягиваю телефон - +79313661777 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661777'), ('name', 'Масло машинное'), ('mail', 'nikzim2004@gmail.com'), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca')])
+------clear_main------
+Подтягиваю телефон - +79313661777 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661777'), ('name', 'Масло машинное'), ('mail', 'nikzim2004@gmail.com'), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca')])
+------clear_main------
+Подтягиваю телефон - +79313661777 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661777'), ('name', 'Масло машинное'), ('mail', 'nikzim2004@gmail.com'), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca')])
+------clear_main------
+Подтягиваю телефон - +79313661777 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661777'), ('name', 'Масло машинное'), ('mail', 'nikzim2004@gmail.com'), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca')])
+Загружены файлы modulbank-payment-gate-api-1.0 (1).pdf и Техническое задание.docx.
+Имя нового сконвертированного файла = ErrorFile.txt
+------files_main------
+request.POST: <QueryDict: {}>
+request.session: dict_items([('phone_is_confirmed', True), ('phone', '+79313661777'), ('name', 'Масло машинное'), ('mail', 'nikzim2004@gmail.com'), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca')])
+order_id = w1rm6qasg3
+order_id=w1rm6qasg3; decrypted_id=163
+context={'phone_is_confirmed': True, 'files_uploaded': True, 'order_id': 'w1rm6qasg3', 'is_paid': False, 'amount_of_convertations': 0}

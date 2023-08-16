@@ -68,7 +68,10 @@
                 {% if files_uploaded %} 
                     {% if phone_is_confirmed %}
                         {% if amount_of_convertations < 1 %}
-                            <input type="button" id="download-btn" value="{% trans 'Download' %}" onclick="location.href='{% url 'users:need_to_pay_back_to' order_id %}';">
+                            {% if is_paid %}
+                            {% else %}
+                                <input type="button" id="download-btn" value="{% trans 'Download' %}" onclick="location.href='{% url 'users:need_to_pay_back_to' order_id %}';">
+                            {% endif %}
                         {% else %}
                             <input type="button" id="download-btn" value="{% trans 'Download' %}" onclick="location.href='{% url 'files:load_file' order_id %}'; setTimeout(function(){window.location.href='/';}, 1000);">
                         {% endif %}
@@ -85,7 +88,6 @@
                         const converterBtn = document.getElementById('converter-btn');
                         
                         converterBtn.addEventListener('click', function () {
-                            // converterBtn.disabled = true; // Disable the button
                             converterBtn.setAttribute('disabled', "");
                         });
                     });
@@ -106,6 +108,7 @@
                         rightArrow.style.opacity = 1;
                     });
                 </script>
+                
                 {% endif %}
             </div>
         </form>
@@ -124,3 +127,6 @@
     </div>
 </section>
 {% endblock mainblock %}
+{% block scripts %}
+<script src="{% static 'convert_order/js/file-form.js' %}"></script>
+{% endblock scripts %}

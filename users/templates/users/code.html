@@ -34,7 +34,7 @@
             {% csrf_token %}
             {% trans "Code has been sent!" as def_code %}
             <p class="subtitle">{{ message|default:def_code }}</p>
-            <input type="text" id="code" name="sms_code" placeholder="Код из смс">
+            <input type="text" id="code" name="sms_code" placeholder="{% trans 'SMS code' %}"> <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
             <input type="submit" class="confirm-btn" id="conf-code-but" value="Подтверждение">
         </form>
     </section>

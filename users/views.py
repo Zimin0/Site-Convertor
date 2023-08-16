@@ -38,7 +38,7 @@ def login_back_to(request, order_id):
     return redirect('users:login')
 
 def need_to_pay_back_to(request, order_id):
-    print('Вижу order_id в регистре ')
+    print('Вижу order_id в оплате')
     request.session['back_to'] = order_id # вернуться на страницу конвертации этого заказа
     return redirect('users:need_to_pay')
 
@@ -143,6 +143,9 @@ def need_to_pay(request):
         "ruble_price": get_object_or_404(ProductionSettings, slug='RUBLE_PRICE').value,
         "dollar_price": get_object_or_404(ProductionSettings, slug='DOLLAR_PRICE').value,
     }
+    # Создаем заказ модульбанка
+    # Генерируем ссылку
+    # context['link'] = "url"
     if request.session.get('back_to', None): # функционал возврата на страницу загрузки
         context['need_to_back'] = True
         context['order_id'] = request.session['back_to'] # достаем order_id

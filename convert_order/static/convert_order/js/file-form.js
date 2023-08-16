@@ -1,23 +1,23 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const cookiePopup = document.getElementById('cookie-popup');
-    const cookieConfirmButton = document.getElementById('cookie-confirm');
+// document.addEventListener('DOMContentLoaded', function () {
+//     const cookiePopup = document.getElementById('cookie-popup');
+//     const cookieConfirmButton = document.getElementById('cookie-confirm');
 
-    // Проверяем, была ли сохранена метка в локальном хранилище
-    const isCookieConfirmed = localStorage.getItem('cookieConfirmed');
+//     // Проверяем, была ли сохранена метка в локальном хранилище
+//     const isCookieConfirmed = localStorage.getItem('cookieConfirmed');
 
-    if (isCookieConfirmed) {
-        // Если метка есть, скрываем форму
-        cookiePopup.style.display = 'none';
-    } else {
-        // Добавляем обработчик события нажатия на кнопку "Согласиться"
-        cookieConfirmButton.addEventListener('click', function () {
-            // Деактивируем форму
-            cookiePopup.style.display = 'none';
-            // Сохраняем метку в локальное хранилище
-            localStorage.setItem('cookieConfirmed', true);
-        });
-    }
-});
+//     if (isCookieConfirmed) {
+//         // Если метка есть, скрываем форму
+//         cookiePopup.style.display = 'none';
+//     } else {
+//         // Добавляем обработчик события нажатия на кнопку "Согласиться"
+//         cookieConfirmButton.addEventListener('click', function () {
+//             // Деактивируем форму
+//             cookiePopup.style.display = 'none';
+//             // Сохраняем метку в локальное хранилище
+//             localStorage.setItem('cookieConfirmed', true);
+//         });
+//     }
+// });
 
 // File form
 
@@ -100,7 +100,7 @@ function showRightArrow() {
 const popup1 = document.getElementById('popup-info-1');
 const popup2 = document.getElementById('popup-info-2');
 
-const cookiePopup = document.getElementById('cookie-popup');
+// const cookiePopup = document.getElementById('cookie-popup');
 
 let isFile1 = false;
 let isFile2 = false;
