@@ -2,6 +2,10 @@
 {% load i18n %}
 {% load static %}
 
+{% block preloadJs %}
+<script src="{% static 'convert_order/js/preload.js' %}"></script> 
+{% endblock preloadJs %}
+
 {% block TopRightButtons %}
 {% if need_to_back %}
     <a href="{% url 'convert_order:files_main' order_id %}" class="sign_in-btn close">{% trans 'Close' %}</a>
@@ -15,7 +19,7 @@
     <div id="return-block">
         <p class="subtitle">{% trans "Phone is confirmed!" %}</p> 
         {% if need_to_back %}
-            <a href="{% url 'files:load_file' order_id %}" onclick="setTimeout(function(){window.location.href='/';}, 1000);" class="confirm-btn" id="return-back">{% trans 'Close' %}</a>
+            <a href="{% url 'files:load_file' order_id %}" onclick="redirectAfterSec(1)" class="confirm-btn" id="return-back">{% trans 'Close' %}</a>
         {% else %}
             <a href="{% url 'convert_order:clear_main' %}" class="confirm-btn" id="return-back">{% trans 'Close' %}</a>
         {% endif %}

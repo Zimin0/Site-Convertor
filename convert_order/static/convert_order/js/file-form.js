@@ -1,25 +1,5 @@
-// document.addEventListener('DOMContentLoaded', function () {
-//     const cookiePopup = document.getElementById('cookie-popup');
-//     const cookieConfirmButton = document.getElementById('cookie-confirm');
 
-//     // Проверяем, была ли сохранена метка в локальном хранилище
-//     const isCookieConfirmed = localStorage.getItem('cookieConfirmed');
 
-//     if (isCookieConfirmed) {
-//         // Если метка есть, скрываем форму
-//         cookiePopup.style.display = 'none';
-//     } else {
-//         // Добавляем обработчик события нажатия на кнопку "Согласиться"
-//         cookieConfirmButton.addEventListener('click', function () {
-//             // Деактивируем форму
-//             cookiePopup.style.display = 'none';
-//             // Сохраняем метку в локальное хранилище
-//             localStorage.setItem('cookieConfirmed', true);
-//         });
-//     }
-// });
-
-// File form
 
 function highlightDropZone(event) {
     event.preventDefault();
@@ -79,23 +59,23 @@ function hidePopup2() {
     popup2.style.display = 'none';
 }
 
-function showUpArrow() {
-    const upArrow = document.getElementById('up-arrow');
-    upArrow.style.transition = 'opacity 0.5s ease-in';
-    upArrow.style.opacity = 1;
-}
+// function showUpArrow() {
+//     const upArrow = document.getElementById('up-arrow');
+//     upArrow.style.transition = 'opacity 0.5s ease-in';
+//     upArrow.style.opacity = 1;
+// }
 
-function showDownArrow() {
-    const downArrow = document.getElementById('down-arrow');
-    downArrow.style.transition = 'opacity 0.5s ease-in';
-    downArrow.style.opacity = 1;
-}
+// function showDownArrow() {
+//     const downArrow = document.getElementById('down-arrow');
+//     downArrow.style.transition = 'opacity 0.5s ease-in';
+//     downArrow.style.opacity = 1;
+// }
 
-function showRightArrow() {
-    const rightArrow = document.getElementById('right-arrow');
-    rightArrow.style.transition = 'opacity 0.5s ease-in';
-    rightArrow.style.opacity = 1;
-}
+// function showRightArrow() {
+//     const rightArrow = document.getElementById('right-arrow');
+//     rightArrow.style.transition = 'opacity 0.5s ease-in';
+//     rightArrow.style.opacity = 1;
+// }
 
 const popup1 = document.getElementById('popup-info-1');
 const popup2 = document.getElementById('popup-info-2');

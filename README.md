@@ -27,3 +27,7 @@ translation :   "Пообещай мне, что ты не будешь брат
 ## Proger notes
 Something is going wrong with FileFields - unfixable issue with convertation. 
 Is it more reliably to store filepath in CharField ? FileField do the same. 
+
+
+
+tag preload used for preloading js function in order to use them in django-html tags 

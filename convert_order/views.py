@@ -1,8 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.utils.translation import activate, gettext as _
+from django.utils.translation import gettext as _
 from django.utils.translation import get_language
 from django.core.files import File
-from django.http import HttpResponseNotFound
 
 import os
 import logging
@@ -11,9 +10,11 @@ from files.models import File as My_File
 from users.models import Profile
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from .main_convertation_script import convert_2_files_into_new_structure
+from users.decorators import log_veriables
 
 logger = logging.getLogger(__name__)
-          
+
+@log_veriables
 def clear_main(request):
     """ Отображает страницу для загрузки файлов. """
     logger.info('------clear_main------')

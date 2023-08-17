@@ -3480,3 +3480,365 @@ Traceback (most recent call last):
   File "D:\python38\lib\socket.py", line 796, in create_connection
     sock.connect(sa)
 TimeoutError: [WinError 10060] Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\support\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\support\views.py changed, reloading.
+Watching for file changes with StatReloader
+------clear_main------
+Подтягиваю телефон - +79313661777 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661777'), ('name', 'Масло машинное'), ('mail', 'nikzim2004@gmail.com'), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca'), ('created_order_slug', 'ctmc2b1zh1'), ('back_to', 'ctmc2b1zh1')])
+Not Found: /clr
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+D:\JOB\freelance10\converter\support\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\support\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\support\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+Загружены файлы ErrorFile_kN2NfI2.txt и ErrorFile_oVFzLao (1).txt.
+Имя нового сконвертированного файла = ErrorFile.txt
+------files_main------
+request.POST: <QueryDict: {}>
+request.session: dict_items([('phone_is_confirmed', False), ('created_order_slug', 'or2cvqa1b4')])
+order_id = or2cvqa1b4
+context={'phone_is_confirmed': False, 'files_uploaded': True, 'order_id': 'or2cvqa1b4', 'amount_of_convertations': None}
+------files_main------
+request.POST: <QueryDict: {}>
+request.session: dict_items([('phone_is_confirmed', False), ('created_order_slug', 'or2cvqa1b4')])
+order_id = or2cvqa1b4
+context={'phone_is_confirmed': False, 'files_uploaded': True, 'order_id': 'or2cvqa1b4', 'amount_of_convertations': None}
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False), ('created_order_slug', 'or2cvqa1b4')])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+Загружены файлы ErrorFile_kN2NfI2.txt и ErrorFile_oVFzLao (1).txt.
+Имя нового сконвертированного файла = ErrorFile.txt
+------files_main------
+request.POST: <QueryDict: {}>
+request.session: dict_items([('phone_is_confirmed', False), ('created_order_slug', '2db1wnyas5')])
+order_id = 2db1wnyas5
+context={'phone_is_confirmed': False, 'files_uploaded': True, 'order_id': '2db1wnyas5', 'amount_of_convertations': None}
+D:\JOB\freelance10\converter\payment\sms_sender.py changed, reloading.
+Watching for file changes with StatReloader
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('created_order_slug', '2db1wnyas5'), ('back_to', '2db1wnyas5'), ('phone', '+79313661220'), ('convert_already', True)])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220')])
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220')])
+Загружены файлы ErrorFile_oVFzLao.txt и ErrorFile_kN2NfI2.txt.
+Имя нового сконвертированного файла = ErrorFile.txt
+------files_main------
+request.POST: <QueryDict: {}>
+request.session: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220'), ('created_order_slug', 'qsbtk2zt16')])
+order_id = qsbtk2zt16
+order_id=qsbtk2zt16; decrypted_id=216
+context={'phone_is_confirmed': True, 'files_uploaded': True, 'order_id': 'qsbtk2zt16', 'is_paid': False, 'amount_of_convertations': 552}
+------files_main------
+request.POST: <QueryDict: {}>
+request.session: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220'), ('created_order_slug', 'qsbtk2zt16')])
+order_id = qsbtk2zt16
+order_id=qsbtk2zt16; decrypted_id=216
+context={'phone_is_confirmed': True, 'files_uploaded': True, 'order_id': 'qsbtk2zt16', 'is_paid': False, 'amount_of_convertations': 552}
+------files_main------
+request.POST: <QueryDict: {}>
+request.session: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220'), ('created_order_slug', 'qsbtk2zt16')])
+order_id = qsbtk2zt16
+order_id=qsbtk2zt16; decrypted_id=216
+context={'phone_is_confirmed': True, 'files_uploaded': True, 'order_id': 'qsbtk2zt16', 'is_paid': False, 'amount_of_convertations': 552}
+------files_main------
+request.POST: <QueryDict: {}>
+request.session: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220'), ('created_order_slug', 'qsbtk2zt16')])
+order_id = qsbtk2zt16
+order_id=qsbtk2zt16; decrypted_id=216
+context={'phone_is_confirmed': True, 'files_uploaded': True, 'order_id': 'qsbtk2zt16', 'is_paid': False, 'amount_of_convertations': 552}
+------files_main------
+request.POST: <QueryDict: {}>
+request.session: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220'), ('created_order_slug', 'qsbtk2zt16')])
+order_id = qsbtk2zt16
+order_id=qsbtk2zt16; decrypted_id=216
+context={'phone_is_confirmed': True, 'files_uploaded': True, 'order_id': 'qsbtk2zt16', 'is_paid': False, 'amount_of_convertations': 552}
+------files_main------
+request.POST: <QueryDict: {}>
+request.session: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220'), ('created_order_slug', 'qsbtk2zt16')])
+order_id = qsbtk2zt16
+order_id=qsbtk2zt16; decrypted_id=216
+context={'phone_is_confirmed': True, 'files_uploaded': True, 'order_id': 'qsbtk2zt16', 'is_paid': False, 'amount_of_convertations': 552}
+------files_main------
+request.POST: <QueryDict: {}>
+request.session: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220'), ('created_order_slug', 'qsbtk2zt16')])
+order_id = qsbtk2zt16
+order_id=qsbtk2zt16; decrypted_id=216
+context={'phone_is_confirmed': True, 'files_uploaded': True, 'order_id': 'qsbtk2zt16', 'is_paid': False, 'amount_of_convertations': 552}
+------files_main------
+request.POST: <QueryDict: {}>
+request.session: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220'), ('created_order_slug', 'qsbtk2zt16')])
+order_id = qsbtk2zt16
+order_id=qsbtk2zt16; decrypted_id=216
+context={'phone_is_confirmed': True, 'files_uploaded': True, 'order_id': 'qsbtk2zt16', 'is_paid': False, 'amount_of_convertations': 552}
+------files_main------
+request.POST: <QueryDict: {}>
+request.session: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220'), ('created_order_slug', 'qsbtk2zt16')])
+order_id = qsbtk2zt16
+order_id=qsbtk2zt16; decrypted_id=216
+context={'phone_is_confirmed': True, 'files_uploaded': True, 'order_id': 'qsbtk2zt16', 'is_paid': False, 'amount_of_convertations': 552}
+------files_main------
+request.POST: <QueryDict: {}>
+request.session: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220'), ('created_order_slug', 'qsbtk2zt16')])
+order_id = qsbtk2zt16
+order_id=qsbtk2zt16; decrypted_id=216
+context={'phone_is_confirmed': True, 'files_uploaded': True, 'order_id': 'qsbtk2zt16', 'is_paid': False, 'amount_of_convertations': 552}
+------files_main------
+request.POST: <QueryDict: {}>
+request.session: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220'), ('created_order_slug', 'qsbtk2zt16')])
+order_id = qsbtk2zt16
+order_id=qsbtk2zt16; decrypted_id=216
+context={'phone_is_confirmed': True, 'files_uploaded': True, 'order_id': 'qsbtk2zt16', 'is_paid': False, 'amount_of_convertations': 552}
+------files_main------
+request.POST: <QueryDict: {}>
+request.session: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220'), ('created_order_slug', 'qsbtk2zt16')])
+order_id = qsbtk2zt16
+order_id=qsbtk2zt16; decrypted_id=216
+context={'phone_is_confirmed': True, 'files_uploaded': True, 'order_id': 'qsbtk2zt16', 'is_paid': False, 'amount_of_convertations': 552}
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /ru/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 27, in wrapper
+    session_string += f""" "{variable.key()}":{variable.value()}\n """
+AttributeError: 'tuple' object has no attribute 'key'
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220'), ('created_order_slug', 'qsbtk2zt16')])
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220')])
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220')])
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220')])
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220')])
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220')])
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220')])
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220')])
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220')])
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220')])
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220')])
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220')])
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220')])
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220')])
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220')])
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220')])
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220')])
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220')])
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220')])
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220')])
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220')])
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader

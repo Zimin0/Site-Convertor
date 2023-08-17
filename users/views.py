@@ -5,9 +5,9 @@ from convert_order.models import ConvertOrder
 from production_settings.models import ProductionSettings
 from payment.sms_sender import send_confiramtion_code
 from django.utils.translation import gettext as _
-from django.utils.translation import activate 
 
 from test_modulbank2 import create_test_modulbank_order 
+from users.decorators import need_custom_login, alredy_custom_logined
 
 def login(request):
     """ Страница с полем ввода номера телефона. """
@@ -44,7 +44,8 @@ def need_to_pay_back_to(request, order_id):
     request.session['back_to'] = order_id # вернуться на страницу конвертации этого заказа
     return redirect('users:need_to_pay')
 
-def register(request, phone=None, order_id=None):
+@alredy_custom_logined
+def register(request, phone=None):
     """ Страница с формой регистрации. """
     context = {}
     context['phone'] = ''
@@ -52,8 +53,6 @@ def register(request, phone=None, order_id=None):
     if request.session.get('back_to', None):
         context['need_to_back'] = True
         context['order_id'] = request.session['back_to'] # достаем order_id
-    if request.session.get('phone_is_confirmed', None):
-        return redirect('users:good_code')
     if request.method == 'POST':
         ### Подтягиваем введенный данные ###
         request.session['name'] = request.POST['name']
@@ -68,10 +67,9 @@ def register(request, phone=None, order_id=None):
             return render(request, 'users/register.html', context)
     return render(request, 'users/register.html', context)
 
+@alredy_custom_logined
 def code(request):
     """ Страница с полем смс кода. """
-    if request.session.get('phone_is_confirmed', None):
-        return redirect('users:good_code')
     if not request.session.get('phone', None): # если в сессии нет номера телефона
         return redirect('users:register')
     print("Сессия:", request.session.items())

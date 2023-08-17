@@ -6,12 +6,11 @@ from django.contrib.auth.models import User
 from support.models import SupportRequest
 from users.models import Profile
 from production_settings.models import ProductionSettings
+from users.decorators import need_custom_login
 
-
+@need_custom_login
 def support(request):
     """ Форма техподдрежки по кнопке на главной странице."""
-    if not request.session.get('phone_is_confirmed', None):
-        return redirect('users:login')
     if request.method == 'POST':
         if request.session.get('phone', False):
             phone = request.session['phone']
@@ -27,8 +26,7 @@ def support(request):
                 priority_rate = priority,
                 message=message
             )
-            ## Заносим в БД почту, введенную в окне поддержки ##
-            profile = get_object_or_404(Profile, phone=phone)
+            profile = get_object_or_404(Profile, phone=phone) ## Заносим в БД почту, введенную в окне поддержки ##
             profile.user.email = email 
             profile.user.save(update_fields=['email',])
             ## Подтягиваем настройку почты тех.поддержки из админки ##

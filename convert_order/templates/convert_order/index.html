@@ -2,6 +2,10 @@
 {% load i18n %}
 {% load static %}
 
+{% block preloadJs %}
+<script src="{% static 'convert_order/js/preload.js' %}"></script> 
+{% endblock preloadJs %}
+
 {% block mainblock %}
 <section class="converter">
     <div class="container">
@@ -82,34 +86,6 @@
                 {% else %}
                     <input type="submit" id="download-btn" value="{% trans 'Download' %}" disabled>
                 {% endif %}
-
-                {% if files_uploaded %}
-                <script>
-                        document.addEventListener('DOMContentLoaded', function () {
-                        const converterBtn = document.getElementById('converter-btn');
-                        
-                        converterBtn.addEventListener('click', function () {
-                            converterBtn.setAttribute('disabled', "");
-                        });
-                    });
-                    document.addEventListener('DOMContentLoaded', function () {
-                        const downloadBtn1 = document.getElementById('download-btn');
-                        downloadBtn1.removeAttribute('disabled');
-                
-                        const upArrow = document.getElementById('up-arrow');
-                        upArrow.style.transition = 'opacity 0s ease-in';
-                        upArrow.style.opacity = 1;
-                
-                        const downArrow = document.getElementById('down-arrow');
-                        downArrow.style.transition = 'opacity 0s ease-in';
-                        downArrow.style.opacity = 1;
-                
-                        const rightArrow = document.getElementById('right-arrow');
-                        rightArrow.style.transition = 'opacity 1.5s ease-in';
-                        rightArrow.style.opacity = 1;
-                    });
-                </script>
-                {% endif %}
             </div>
         </form>
     </div>
@@ -129,4 +105,7 @@
 {% endblock mainblock %}
 {% block scripts %}
 <script src="{% static 'convert_order/js/file-form.js' %}"></script>
+{% if files_uploaded %}
+    <script> loadFilePage(); </script>
+{% endif %}
 {% endblock scripts %}
