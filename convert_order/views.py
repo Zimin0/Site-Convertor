@@ -17,21 +17,24 @@ logger = logging.getLogger(__name__)
 @log_veriables
 def clear_main(request):
     """ Отображает страницу для загрузки файлов. """
-    logger.info('------clear_main------')
     context = {}
     context['files_uploaded'] = False 
     context["is_paid"] = False
     context['phone_is_confirmed'] = request.session.get('phone_is_confirmed', False) 
+
+    # убираем из сессии id сконвертированного заказа, т к страница с ним закрыта.
+    request.session.pop('created_order_slug', None) 
+
     if not request.session.get('phone_is_confirmed', False): 
-        logger.info("В сессии телефона нет! phone_is_confirmed = False")
+        print("В сессии телефона нет! phone_is_confirmed = False")
         request.session['phone_is_confirmed'] = False 
     if 'phone' in request.COOKIES:
-        logger.info(f"Подтягиваю телефон - {request.session['phone']} - и данные из cookies!")
+        print(f"Подтягиваю телефон - {request.session['phone']} - и данные из cookies!")
         request.session['phone'] = request.COOKIES['phone']
         request.session['phone_is_confirmed'] = True
     else:
-        logger.info("Телефона в cookies нет!")
-    logger.info(f"Сессия: {request.session.items()}")
+        print("Телефона в cookies нет!")
+    print(f"Сессия после: {request.session.items()}")
 
     if request.session.get('phone_is_confirmed', False): 
         user_profile = Profile.objects.get(phone=request.session['phone'])
@@ -44,7 +47,7 @@ def clear_main(request):
     if request.method == 'POST':
         file1 = request.FILES['file1']
         file2 = request.FILES['file2']
-        logger.info(f'Загружены файлы {file1} и {file2}.')
+        print(f'Загружены файлы {file1} и {file2}.')
         #### Создаем новый заказ на конвертацию и добавляем В него файлы ####
         order = ConvertOrder() 
         order.save() 
@@ -55,7 +58,7 @@ def clear_main(request):
         #### Только для тестирования ####
         file3_path = convert_2_files_into_new_structure(file1_dj.file.path, file2_dj.file.path) # получаем путь нового файла
         filename = os.path.basename(file3_path)
-        logger.info(f'Имя нового сконвертированного файла = {filename}')
+        print(f'Имя нового сконвертированного файла = {filename}')
         file3_open = open(file3_path, encoding="utf-8")
         file3 = File(file3_open) # кусок говна, ломает кодировку !!!!!!
         My_File.objects.create(order=order, file=file3, file_type='3').save()
@@ -67,12 +70,9 @@ def clear_main(request):
         return redirect('convert_order:files_main', order_id=order.slug)
     return render(request, 'convert_order/index.html', context)
 
+@log_veriables
 def files_main(request, order_id):
     """ Главная страница с загруженныии файлыми."""
-    logger.info('------files_main------')
-    logger.info(f"request.POST: {request.POST}")
-    logger.info(f"request.session: {request.session.items()}")
-    logger.info(f'order_id = {order_id}')
 
     context = {}
     phone_is_confirmed = request.session.get('phone_is_confirmed', False)
@@ -80,12 +80,11 @@ def files_main(request, order_id):
     context['files_uploaded'] = True
     context['order_id'] = order_id 
 
-    if request.session.get('back_to', False):
-        request.session.pop('back_to')
+    request.session.pop('back_to', None) # Удаляем флаг о том, что нужно вернуться на страницу
 
     if phone_is_confirmed:
         decrypted_id = ConvertOrder.decrypt_id(order_id)
-        logger.info(f"order_id={order_id}; decrypted_id={decrypted_id}")
+        print(f"order_id={order_id}; decrypted_id={decrypted_id}")
         order = get_object_or_404(ConvertOrder, id=decrypted_id)
         user_profile = get_object_or_404(Profile, phone=request.session['phone'])
         order.phone = request.session['phone']
@@ -94,20 +93,22 @@ def files_main(request, order_id):
         context['amount_of_convertations'] = user_profile.amount_of_converts
     else:
         context['amount_of_convertations'] = None
-    logger.info(f'context={context}')
+    print(f'context={context}')
     return render(request, 'convert_order/index.html', context) 
 
+@log_veriables
 def info(request):
     """ Страница с описанием работы конвертора. """
-    logger.info('------info------')
+    print('------info------')
     return render(request, 'convert_order/info.html')
 
+@log_veriables
 def video(request, video_id):
-    logger.info('------video------')
+    print('------video------')
     context = {}
     curr_language = get_language() # получаем текущий выбраный язык
     context['curr_language'] = curr_language
-    logger.info(f"Текущий язык на странице с видео: {curr_language}")
+    print(f"Текущий язык на странице с видео: {curr_language}")
     template_name = f'convert_order/video{video_id}.html' # имя шаблона с одним из 2ч видео
     context['video_name'] = f'button1_{curr_language}.mp4' # имя видео файла с одним из 2ч видео 
     if video_id in (1, 2):

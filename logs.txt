@@ -3842,3 +3842,646 @@ D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
 Watching for file changes with StatReloader
 D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /ru/upload/gi2mpws1q7/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view users.decorators.wrapper didn't return an HttpResponse object. It returned None instead.
+Internal Server Error: /ru/upload/gi2mpws1q7/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view users.decorators.wrapper didn't return an HttpResponse object. It returned None instead.
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /ru/code/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 54, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 16, in _wrapped_view
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\views.py", line 74, in code
+    print(var1)
+NameError: name 'var1' is not defined
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /ru/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\convert_order\views.py", line 26, in clear_main
+    request.session.pop('created_order_slug')
+  File "D:\python38\lib\site-packages\django\contrib\sessions\backends\base.py", line 73, in pop
+    return self._session.pop(key, *args)
+KeyError: 'created_order_slug'
+Internal Server Error: /ru/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\convert_order\views.py", line 26, in clear_main
+    request.session.pop('created_order_slug', None)
+  File "D:\python38\lib\site-packages\django\contrib\sessions\backends\base.py", line 73, in pop
+    return self._session.pop(key, *args)
+KeyError: 'created_order_slug'
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\convert_order\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /ru/login/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 57, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\views.py", line 21, in login
+    context['order_id'] = ConvertOrder.decrypt_id(request.session.get('created_order_slug', False))
+  File "D:\JOB\freelance10\converter\convert_order\models.py", line 59, in decrypt_id
+    for letter in crypted_id:
+TypeError: 'bool' object is not iterable
+Internal Server Error: /ru/login/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 57, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\views.py", line 21, in login
+    context['order_id'] = ConvertOrder.decrypt_id(request.session.get('created_order_slug', False))
+  File "D:\JOB\freelance10\converter\convert_order\models.py", line 59, in decrypt_id
+    for letter in crypted_id:
+TypeError: 'bool' object is not iterable
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /ru/file/228/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\JOB\freelance10\converter\files\views.py", line 14, in load_file
+    user_profile = get_object_or_404(Profile, phone=order.phone)
+  File "D:\python38\lib\site-packages\django\shortcuts.py", line 85, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+  File "D:\python38\lib\site-packages\django\db\models\query.py", line 640, in get
+    raise self.model.MultipleObjectsReturned(
+users.models.Profile.MultipleObjectsReturned: get() returned more than one Profile -- it returned 3!
+Internal Server Error: /ru/good_code/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 57, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\views.py", line 138, in good_code
+    context['order_id'] = ConvertOrder.decrypt_id(request.session.get('created_order_slug', False))
+  File "D:\JOB\freelance10\converter\convert_order\models.py", line 59, in decrypt_id
+    for letter in crypted_id:
+TypeError: 'bool' object is not iterable
+Internal Server Error: /ru/good_code/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 57, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\views.py", line 138, in good_code
+    context['order_id'] = ConvertOrder.decrypt_id(request.session.get('created_order_slug', False))
+  File "D:\JOB\freelance10\converter\convert_order\models.py", line 59, in decrypt_id
+    for letter in crypted_id:
+TypeError: 'bool' object is not iterable
+Internal Server Error: /ru/file/230/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\JOB\freelance10\converter\files\views.py", line 14, in load_file
+    user_profile = get_object_or_404(Profile, phone=order.phone)
+  File "D:\python38\lib\site-packages\django\shortcuts.py", line 85, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+  File "D:\python38\lib\site-packages\django\db\models\query.py", line 640, in get
+    raise self.model.MultipleObjectsReturned(
+users.models.Profile.MultipleObjectsReturned: get() returned more than one Profile -- it returned 3!
+Internal Server Error: /ru/good_code/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 57, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\views.py", line 138, in good_code
+    context['order_id'] = ConvertOrder.decrypt_id(request.session.get('created_order_slug', False))
+  File "D:\JOB\freelance10\converter\convert_order\models.py", line 59, in decrypt_id
+    for letter in crypted_id:
+TypeError: 'bool' object is not iterable
+Watching for file changes with StatReloader
+Internal Server Error: /ru/file/231/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\JOB\freelance10\converter\files\views.py", line 14, in load_file
+    user_profile = get_object_or_404(Profile, phone=order.phone)
+  File "D:\python38\lib\site-packages\django\shortcuts.py", line 85, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+  File "D:\python38\lib\site-packages\django\db\models\query.py", line 640, in get
+    raise self.model.MultipleObjectsReturned(
+users.models.Profile.MultipleObjectsReturned: get() returned more than one Profile -- it returned 3!
+Not Found: /ru/file/232/
+Not Found: /ru/file/233/
+Internal Server Error: /ru/good_code/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 57, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\views.py", line 138, in good_code
+    context['order_id'] = ConvertOrder.decrypt_id(request.session.get('created_order_slug', False))
+  File "D:\JOB\freelance10\converter\convert_order\models.py", line 59, in decrypt_id
+    for letter in crypted_id:
+TypeError: 'bool' object is not iterable
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /ru/file/e2z3kshty5/
+Internal Server Error: /ru/good_code/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 57, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\views.py", line 139, in good_code
+    context['order_id'] = ConvertOrder.decrypt_id(request.session.get('created_order_slug', False))
+  File "D:\JOB\freelance10\converter\convert_order\models.py", line 59, in decrypt_id
+    for letter in crypted_id:
+TypeError: 'bool' object is not iterable
+Watching for file changes with StatReloader
+Not Found: /ru/file/n2dxgyq3o6/
+Not Found: /ru/file/n2dxgyq3o6/
+Not Found: /ru/file/n2dxgyq3o6/
+Not Found: /ru/file/n2dxgyq3o6/
+Not Found: /ru/file/e2z3kshty5/
+Not Found: /ru/file/e2z3kshty5/
+Watching for file changes with StatReloader
+Not Found: /ru/file/e2z3kshty5/
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /ru/good_code/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 57, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\views.py", line 145, in good_code
+    return render(request, 'users/good_code.html', context)
+  File "D:\python38\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\python38\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\python38\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\python38\lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\python38\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\python38\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\python38\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\python38\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "D:\python38\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\python38\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "D:\python38\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "D:\python38\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\python38\lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "D:\python38\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "D:\python38\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\python38\lib\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\python38\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "D:\python38\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\python38\lib\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "D:\python38\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "D:\python38\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\python38\lib\site-packages\django\template\defaulttags.py", line 1372, in url
+    viewname = parser.compile_filter(bits[1])
+  File "D:\python38\lib\site-packages\django\template\base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "D:\python38\lib\site-packages\django\template\base.py", line 703, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '"files:load_file'' from '"files:load_file''
+Not Found: /ru/file/2zjaurhg40/ onclick=
+Internal Server Error: /ru/login/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 57, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\views.py", line 21, in login
+    context['order_id'] = ConvertOrder.decrypt_id(request.session.get('created_order_slug', False))
+  File "D:\JOB\freelance10\converter\convert_order\models.py", line 59, in decrypt_id
+    for letter in crypted_id:
+TypeError: 'bool' object is not iterable
+Internal Server Error: /ru/payment/catch-payment/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\JOB\freelance10\converter\payment\views.py", line 16, in catch_payment
+    print(f"request.session['created_order_slug'] = {request.session['created_order_slug']}")
+  File "D:\python38\lib\site-packages\django\contrib\sessions\backends\base.py", line 53, in __getitem__
+    return self._session[key]
+KeyError: 'created_order_slug'
+Internal Server Error: /ru/payment/catch-payment/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\JOB\freelance10\converter\payment\views.py", line 16, in catch_payment
+    print(f"request.session['created_order_slug'] = {request.session['created_order_slug']}")
+  File "D:\python38\lib\site-packages\django\contrib\sessions\backends\base.py", line 53, in __getitem__
+    return self._session[key]
+KeyError: 'created_order_slug'
+Watching for file changes with StatReloader
+Forbidden (CSRF token from POST incorrect.): /ru/
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /ru/need-to-pay/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 57, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\views.py", line 167, in need_to_pay
+    order_id = ConvertOrder.decrypt_id(order_id)
+UnboundLocalError: local variable 'order_id' referenced before assignment
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /ru/payment/catch-payment/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\JOB\freelance10\converter\payment\views.py", line 16, in catch_payment
+    print(f"request.session['created_order_slug'] = {request.session['created_order_slug']}")
+  File "D:\python38\lib\site-packages\django\contrib\sessions\backends\base.py", line 53, in __getitem__
+    return self._session[key]
+KeyError: 'created_order_slug'
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
