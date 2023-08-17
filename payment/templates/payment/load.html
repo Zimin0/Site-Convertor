@@ -1,131 +1,18 @@
-{% load static %}
+{% extends 'convert_order/base.html' %}
 {% load i18n %}
-<!DOCTYPE html>
-<html lang="ru">
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-    <title> {% block title %} {% trans 'SAP XML - Generator Converter' %} {% endblock title %}</title>
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'convert_order/img/icon.jpg' %}" />
-    <link rel="stylesheet" href="{% static 'convert_order/css/styles.css' %}">
-    <link rel="stylesheet" href="{% static 'convert_order/css/media.css' %}">
-</head>
-
-<body>
-    <header class="header">
-        <div class="container wrapper">
-            <!---------- Иконка и название ---------->
-            <a href="{% url 'convert_order:clear_main' %}" class="logo">
-                <img src="{% static 'convert_order/img/converter-logo.jpg' %}" alt="">
-                <span>{% trans 'SAP XML Converter' %}</span>
-            </a>
-            <!--------------------------------------->
-            <div class="button-container">
-                <!-- Кнопки регистрации и входа на сайт -->
-
-                <!---------------------------------------->
-                <!----- Форма для выбора языка сайта ----->
-                <form id="language-form" action="{% url 'set_language' %}" method="post">
-                    {% csrf_token %}
-                    <input name="next" type="hidden" value="{{ redirect_to }}">
-                    {% get_current_language as LANGUAGE_CODE %}
-                    {% get_available_languages as LANGUAGES %}
-                    {% get_language_info_list for LANGUAGES as languages %}
-                    <select id="language-select" name="language" class="lang-btn">
-                        {% for language in languages %}
-                        <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
-                            {{ language.code }}
-                        </option>
-                        {% endfor %}
-                    </select>
-                </form>
-                <!---------------------------------------->
-            </div>
-        </div>
-    </header>
-
-
-
-    <section class="converter">
+{% block mainblock %}
+<section class="converter">
         
-        <div class="loader-container">
-            <div class="loader"></div>
-        </div>
-        
-        <style>
-        .loader-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 20px; /* Отступы сверху и снизу */
-}
-
-.loader {
-    border: 16px solid #f3f3f3; /* Light grey */
-    border-top: 16px solid #3498db; /* Blue */
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-        
-        </style>
-    </section>
-
-
-
-    <footer class="footer">
-        <div class="footer-info">
-            <p>
-                ИП Корзников Олег Леонидович <br>
-                ОГРИП 312590531200123, ИНН 590578138109 <br>
-                Телефон <phone>+7 (917) 578-67-06</phone> <br>
-                <mail>Torro7001@rambler.ru</mail>
-            </p>
-            <p class="footer-copyright">
-                {% trans '© Copyright 2023. All rights reserved' %}
-            </p>
-            <p class="footer-docs">
-                <a href="{% static 'convert_order/pdf/Contract.pdf' %}">{% trans 'Contract offer' %}</a> <br>
-                <a href="{% static 'convert_order/pdf/Procedure-of-payment-by-bank-cards.pdf' %}">{% trans 'Procedure for making payments and returns' %}</a> <br>
-                <a href="{% static 'convert_order/pdf/Prices-for-provision-of-services.pdf' %}">{% trans 'Prices and description of services' %}</a>
-            </p>
-        </div>
-    </footer>
-
-    <!--------------- Cookies --------------->
-    <div id="cookie-popup">
-        <div class="container wrapper">
-            <p class="cookie-text">{% trans 'This website uses cookies! By continuing to use our site, you automatically agree to their use' %}</p>
-            <div class="wrapper">
-                <img src="{% static 'convert_order/img/cookie-icon.svg' %}" alt="" id="cookie-icon">
-                <button class="confirm-btn" id="cookie-confirm">{% trans 'Clear' %}</button>
-            </div>
-        </div>
+    <div class="loader-container">
+        <div class="loader"></div>
     </div>
-    <!--------------------------------------->
-    <!--------------- Scripts --------------->
-    <script src="{% url 'javascript-catalog' %}"></script>
-    <script src="{% static 'convert_order/js/base.js' %}"></script>
-    {% block scripts %}
-    <script>
-        setTimeout(function() { 
-        window.location.href = "{% url 'payment:catch_payment' %}"; }, 8000); 
-    </script>
-    {% endblock scripts %}
-    <!--------------------------------------->
-</body>
-</html>
+</section>
+{% endblock mainblock %}
+{% block scripts %}
+<script>
+    setTimeout(function() { 
+    window.location.href = "{% url 'payment:catch_payment' %}"; }, 8000); 
+</script>
+{% endblock scripts %}

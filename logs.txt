@@ -3275,3 +3275,208 @@ order_id=h2hqg1zlu0; decrypted_id=210
 context={'phone_is_confirmed': True, 'files_uploaded': True, 'order_id': 'h2hqg1zlu0', 'is_paid': False, 'amount_of_convertations': 0}
 D:\JOB\freelance10\converter\payment\views.py changed, reloading.
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+------clear_main------
+Подтягиваю телефон - +79313661777 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661777'), ('name', 'Масло машинное'), ('mail', 'nikzim2004@gmail.com'), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca'), ('back_to', '1hd7eohzl8')])
+------clear_main------
+Подтягиваю телефон - +79313661777 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661777'), ('name', 'Масло машинное'), ('mail', 'nikzim2004@gmail.com'), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca'), ('back_to', '1hd7eohzl8')])
+Загружены файлы ErrorFile_oVFzLao.txt и ErrorFile_L2HVR86.txt.
+Имя нового сконвертированного файла = ErrorFile.txt
+------files_main------
+request.POST: <QueryDict: {}>
+request.session: dict_items([('phone_is_confirmed', True), ('phone', '+79313661777'), ('name', 'Масло машинное'), ('mail', 'nikzim2004@gmail.com'), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca'), ('back_to', '1hd7eohzl8'), ('created_order_slug', 'ctmc2b1zh1')])
+order_id = ctmc2b1zh1
+order_id=ctmc2b1zh1; decrypted_id=211
+context={'phone_is_confirmed': True, 'files_uploaded': True, 'order_id': 'ctmc2b1zh1', 'is_paid': False, 'amount_of_convertations': 0}
+------clear_main------
+Подтягиваю телефон - +793136614545 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+793136614545'), ('name', 'Гвоздь четверка'), ('mail', 'nikzim2004@gmail.com'), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca'), ('transaction_id', 'Cmyh08FiH3XCEpGOyZQ7v2'), ('convert_already', True), ('created_order_slug', 'h2hqg1zlu0'), ('back_to', 'h2hqg1zlu0')])
+------clear_main------
+Подтягиваю телефон - +793136614545 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+793136614545'), ('name', 'Гвоздь четверка'), ('mail', 'nikzim2004@gmail.com'), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca'), ('transaction_id', 'Cmyh08FiH3XCEpGOyZQ7v2'), ('convert_already', True), ('back_to', 'h2hqg1zlu0')])
+------clear_main------
+Подтягиваю телефон - +793136614545 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+793136614545'), ('name', 'Гвоздь четверка'), ('mail', 'nikzim2004@gmail.com'), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca'), ('transaction_id', 'Cmyh08FiH3XCEpGOyZQ7v2'), ('convert_already', True), ('back_to', 'h2hqg1zlu0')])
+Загружены файлы ErrorFile_oVFzLao.txt и ErrorFile_oVFzLao.txt.
+Имя нового сконвертированного файла = ErrorFile.txt
+------files_main------
+request.POST: <QueryDict: {}>
+request.session: dict_items([('phone_is_confirmed', True), ('phone', '+793136614545'), ('name', 'Гвоздь четверка'), ('mail', 'nikzim2004@gmail.com'), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca'), ('transaction_id', 'Cmyh08FiH3XCEpGOyZQ7v2'), ('convert_already', True), ('back_to', 'h2hqg1zlu0'), ('created_order_slug', 'jon21kjrx2')])
+order_id = jon21kjrx2
+order_id=jon21kjrx2; decrypted_id=212
+context={'phone_is_confirmed': True, 'files_uploaded': True, 'order_id': 'jon21kjrx2', 'is_paid': False, 'amount_of_convertations': 0}
+------clear_main------
+Подтягиваю телефон - +793136614545 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+793136614545'), ('name', 'Гвоздь четверка'), ('mail', 'nikzim2004@gmail.com'), ('_auth_user_id', '1'), ('_auth_user_backend', 'django.contrib.auth.backends.ModelBackend'), ('_auth_user_hash', '98bc3f9b2180cec1e911e6795d8efee948b71ce5c2fd33789e249eb0cff7ceca'), ('transaction_id', 'Cmyh08FiH3XCEpGOyZQ7v2'), ('convert_already', True), ('created_order_slug', 'jon21kjrx2')])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+Watching for file changes with StatReloader
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False)])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False), ('phone', '+79313661220'), ('code_is_sended', True), ('confirmation_code', 2909)])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False), ('phone', '+79313661220'), ('code_is_sended', True), ('confirmation_code', 2909)])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False), ('phone', '+79313661220'), ('code_is_sended', True), ('confirmation_code', 2909)])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False), ('phone', '+79313661220'), ('code_is_sended', True), ('confirmation_code', 2909)])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False), ('phone', '+79313661220'), ('code_is_sended', True), ('confirmation_code', 2909)])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False), ('phone', '+79313661220'), ('code_is_sended', True), ('confirmation_code', 2909)])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False), ('phone', '+79313661220'), ('code_is_sended', True), ('confirmation_code', 2909)])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False), ('phone', '+79313661220'), ('code_is_sended', True), ('confirmation_code', 2909)])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False), ('phone', '+79313661220'), ('code_is_sended', True), ('confirmation_code', 2909)])
+Watching for file changes with StatReloader
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False), ('phone', '+79313661220'), ('code_is_sended', True), ('confirmation_code', 2909)])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False), ('phone', '+79313661220'), ('code_is_sended', True), ('confirmation_code', 2909)])
+------clear_main------
+В сессии телефона нет! phone_is_confirmed = False
+Телефона в cookies нет!
+Сессия: dict_items([('phone_is_confirmed', False), ('phone', '+79313661220'), ('code_is_sended', True), ('confirmation_code', 2909)])
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220')])
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220')])
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220')])
+------video------
+Текущий язык на странице с видео: en
+------info------
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220')])
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220')])
+Загружены файлы ErrorFile_oVFzLao (1).txt и ErrorFile_oVFzLao.txt.
+Имя нового сконвертированного файла = ErrorFile.txt
+------files_main------
+request.POST: <QueryDict: {}>
+request.session: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220'), ('created_order_slug', '2qj1rukqq3')])
+order_id = 2qj1rukqq3
+order_id=2qj1rukqq3; decrypted_id=213
+context={'phone_is_confirmed': True, 'files_uploaded': True, 'order_id': '2qj1rukqq3', 'is_paid': False, 'amount_of_convertations': 554}
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220'), ('created_order_slug', '2qj1rukqq3'), ('convert_already', True)])
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220'), ('convert_already', True)])
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220'), ('convert_already', True)])
+Internal Server Error: /en/support/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\JOB\freelance10\converter\support\views.py", line 40, in support
+    status = msg.send() # GMAIL_APP_KEY
+  File "D:\python38\lib\site-packages\django\core\mail\message.py", line 298, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "D:\python38\lib\site-packages\django\core\mail\backends\smtp.py", line 127, in send_messages
+    new_conn_created = self.open()
+  File "D:\python38\lib\site-packages\django\core\mail\backends\smtp.py", line 85, in open
+    self.connection = self.connection_class(
+  File "D:\python38\lib\smtplib.py", line 253, in __init__
+    (code, msg) = self.connect(host, port)
+  File "D:\python38\lib\smtplib.py", line 339, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "D:\python38\lib\smtplib.py", line 308, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "D:\python38\lib\socket.py", line 807, in create_connection
+    raise err
+  File "D:\python38\lib\socket.py", line 796, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера
+------clear_main------
+Подтягиваю телефон - +79313661220 - и данные из cookies!
+Сессия: dict_items([('phone_is_confirmed', True), ('phone', '+79313661220'), ('convert_already', True)])
+Internal Server Error: /en/support/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\JOB\freelance10\converter\support\views.py", line 40, in support
+    status = msg.send() # GMAIL_APP_KEY
+  File "D:\python38\lib\site-packages\django\core\mail\message.py", line 298, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "D:\python38\lib\site-packages\django\core\mail\backends\smtp.py", line 127, in send_messages
+    new_conn_created = self.open()
+  File "D:\python38\lib\site-packages\django\core\mail\backends\smtp.py", line 85, in open
+    self.connection = self.connection_class(
+  File "D:\python38\lib\smtplib.py", line 253, in __init__
+    (code, msg) = self.connect(host, port)
+  File "D:\python38\lib\smtplib.py", line 339, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "D:\python38\lib\smtplib.py", line 308, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "D:\python38\lib\socket.py", line 807, in create_connection
+    raise err
+  File "D:\python38\lib\socket.py", line 796, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера

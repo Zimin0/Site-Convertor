@@ -1,69 +1,12 @@
-{% load static %}
+{% extends 'convert_order/base.html' %}
 {% load i18n %}
-<!DOCTYPE html>
-<html lang="ru">
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-    <title>Оплата</title>
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'convert_order/img/icon.png' %}"/> 
-    <link rel="stylesheet" href="{% static 'convert_order/css/styles.css' %}"> 
-    <link rel="stylesheet" href="{% static 'convert_order/css/media.css' %}"> 
-</head>
-
-<body>
-    <header class="header">
-
-        <div class="container wrapper">
-            <a href="{% url 'convert_order:clear_main' %}" class="logo">
-                <img src="{% static 'convert_order/img/converter-logo.jpg' %}" alt=""> 
-                <span>SAP XML</span>
-            </a>
-            <a href="{% url 'convert_order:clear_main' %}" class="sign_in-btn close">Закрыть</a>
-        </div>
-
-    </header>
-
-    <section id="sign_in-form">
-        <div id="pay-block">
-            <p class="subtitle">Вторая и след. конвертации требуют оплаты: 100р.</p>
-            <a class="confirm-btn" id="pay-btn">Оплатить</a>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="footer-info">
-            <p>
-                ИП Корзников Олег Леонидович <br>
-                ОГРИП 312590531200123, ИНН 590578138109 <br>
-                Телефон <phone>+7 (917) 578-67-06</phone> <br>
-                <mail>Torro7001@rambler.ru</mail>
-            </p>
-            <p class="footer-copyright">
-                {% trans '© Copyright 2023. All rights reserved' %}
-            </p>
-            <p class="footer-docs"> 
-                <a href="{% static 'convert_order/pdf/Contract.pdf' %}">{% trans 'Contract offer' %}</a> <br> 
-                <a href="{% static 'convert_order/pdf/Procedure-of-payment-by-bank-cards.pdf' %}">{% trans 'Procedure for making payments and returns' %}</a> <br>
-                <a href="{% static 'convert_order/pdf/Prices-for-provision-of-services.pdf' %}">{% trans 'Prices and description of services' %}</a>
-            </p>
-        </div>
-    </footer>
-    <div id="cookie-popup">
-        <div class="container wrapper">
-            <p class="cookie-text">{% trans 'This website uses cookies! By continuing to use our site, you automatically agree to their use' %}</p>
-            <div class="wrapper">
-                <img src="{% static 'convert_order/img/cookie-icon.svg' %}" alt="" id="cookie-icon">
-                <button class="confirm-btn" id="cookie-confirm" onclick="closeCookies()">{% trans 'Clear' %}</button>            </div>
-        </div>
+{% block mainblock %}
+<section id="sign_in-form">
+    <div id="pay-block">
+        <p class="subtitle">Вторая и след. конвертации требуют оплаты: 100р.</p>
+        <a class="confirm-btn" id="pay-btn">Оплатить</a>
     </div>
-
-    <script> 
-            function closeCookies() {
-            cookiePopup.style.display = 'none';
-        }
-    </script>
-</body>
-
-</html>
+</section>
+{% endblock mainblock %}

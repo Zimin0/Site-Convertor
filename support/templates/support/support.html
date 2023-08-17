@@ -1,88 +1,34 @@
-{% load static %}
+{% extends 'convert_order/base.html' %}
 {% load i18n %}
-<!DOCTYPE html>
-<html lang="ru">
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-    <title>{% trans "Support" %}</title>
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'convert_order/img/icon.png' %}"/> 
-    <link rel="stylesheet" href="{% static 'convert_order/css/styles.css' %}">
-    <link rel="stylesheet" href="{% static 'convert_order/css/media.css' %}"> 
-</head>
+{% block TopRightButtons %}
+<a href="{% url 'convert_order:clear_main' %}" class="sign_in-btn close">{% trans "Close" %}</a>
+{% endblock TopRightButtons %}
 
-<body>
-    <header class="header">
-
-        <div class="container wrapper">
-            <a href="{% url 'convert_order:clear_main' %}" class="logo">
-                <img src="{% static 'convert_order/img/converter-logo.jpg' %}" alt="">
-                <span>{% trans "SAP XML Converter" %}</span>
-            </a>
-            <a href="{% url 'convert_order:clear_main' %}" class="sign_in-btn close">{% trans "Close" %}</a>
+{% block mainblock %}
+<section id="support-form">
+    <h1 class="form-title">{% trans "Support" %}</h1>
+    <form method="POST" id="support-field" >
+        {% csrf_token %}
+        <div class="priority">
+            <label for="priority">{% trans "Priority" %}:</label>
+            <select name="priority" id="priority">
+                <option value="low">{% trans "Low" %}</option>
+                <option value="medium">{% trans "Medium" %}</option>
+                <option value="high">{% trans "High" %}</option>
+            </select>
+        </div>
+        <div class="support-message">
+            <label for="sup-message">{% trans "Message" %}:</label>
+            <textarea name="message" id="sup-message" rows="3"></textarea>
+        </div>
+        <div class="support-mail">
+            <label for="sup-mail">{% trans "Email" %}:</label>
+            <input name="email" type="text" id="sup-mail">
         </div>
 
-    </header>
-
-    <section id="support-form">
-        <h1 class="form-title">{% trans "Support" %}</h1>
-        <form method="POST" id="support-field" >
-            {% csrf_token %}
-            <div class="priority">
-                <label for="priority">{% trans "Priority" %}:</label>
-                <select name="priority" id="priority">
-                    <option value="low">{% trans "Low" %}</option>
-                    <option value="medium">{% trans "Medium" %}</option>
-                    <option value="high">{% trans "High" %}</option>
-                </select>
-            </div>
-            <div class="support-message">
-                <label for="sup-message">{% trans "Message" %}:</label>
-                <textarea name="message" id="sup-message" rows="3"></textarea>
-            </div>
-            <div class="support-mail">
-                <label for="sup-mail">{% trans "Email" %}:</label>
-                <input name="email" type="text" id="sup-mail">
-            </div>
-
-            <input type="submit" class="support-btn" value="{% trans 'Send' %}" id="sup-but">
-        </form>
-    </section>
-
-    <footer class="footer">
-        <div class="footer-info">
-            <p>
-                ИП Корзников Олег Леонидович <br>
-                ОГРИП 312590531200123, ИНН 590578138109 <br>
-                Телефон <phone>+7 (917) 578-67-06</phone> <br>
-                <mail>Torro7001@rambler.ru</mail>
-            </p>
-            <p class="footer-copyright">
-                {% trans '© Copyright 2023. All rights reserved' %}
-            </p>
-            <p class="footer-docs"> 
-                <a href="{% static 'convert_order/pdf/Contract.pdf' %}">{% trans 'Contract offer' %}</a> <br> 
-                <a href="{% static 'convert_order/pdf/Procedure-of-payment-by-bank-cards.pdf' %}">{% trans 'Procedure for making payments and returns' %}</a> <br>
-                <a href="{% static 'convert_order/pdf/Prices-for-provision-of-services.pdf' %}">{% trans 'Prices and description of services' %}</a>
-            </p>
-        </div>
-    </footer>
-    <div id="cookie-popup">
-        <div class="container wrapper">
-            <p class="cookie-text">{% trans 'This website uses cookies! By continuing to use our site, you automatically agree to their use' %}</p>
-            <div class="wrapper">
-                <img src="{% static 'convert_order/img/cookie-icon.svg' %}" alt="" id="cookie-icon">
-                <button class="confirm-btn" id="cookie-confirm" onclick="closeCookies()">{% trans 'Clear' %}</button>            </div>
-        </div>
-    </div>
-
-    <script> 
-            function closeCookies() {
-            cookiePopup.style.display = 'none';
-        }
-    </script>
-</body>
-
-</html>
+        <input type="submit" class="support-btn" value="{% trans 'Send' %}" id="sup-but">
+    </form>
+</section>
+{% endblock mainblock %}

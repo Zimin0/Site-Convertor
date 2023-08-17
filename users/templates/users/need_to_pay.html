@@ -1,76 +1,24 @@
-{% load static %}
+{% extends 'convert_order/base.html' %}
 {% load i18n %}
+{% load static %}
 
-<!DOCTYPE html>
-<html lang="ru">
+{% block TopRightButtons %}
+{% if need_to_back %}
+    <a href="{% url 'convert_order:files_main' order_id %}" class="sign_in-btn close">{% trans 'Close' %}</a>
+{% else %}
+    <a href="{% url 'convert_order:clear_main' %}" class="sign_in-btn close">{% trans 'Close' %}</a>
+{% endif %}
+{% endblock TopRightButtons %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-    <title>{% trans 'Payment' %}</title>
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'convert_order/img/icon.png' %}"/> 
-    <link rel="stylesheet" href="{% static 'convert_order/css/styles.css' %}"> 
-    <link rel="stylesheet" href="{% static 'convert_order/css/media.css' %}"> 
-</head>
-
-<body>
-    <header class="header">
-        <div class="container wrapper">
-            <a href="{% url 'convert_order:clear_main' %}" class="logo">
-                <img src="{% static 'convert_order/img/converter-logo.jpg' %}" alt="">
-                <span>{% trans 'SAP XML Converter' %}</span>
-            </a>
-            {% if need_to_back %}
-                <a href="{% url 'convert_order:files_main' order_id %}" class="sign_in-btn close">{% trans 'Close' %}</a>
-            {% else %}
-                <a href="{% url 'convert_order:clear_main' %}" class="sign_in-btn close">{% trans 'Close' %}</a>
-            {% endif %}
-        </div>
-    </header>
-
-    <section id="sign_in-form">
-        <div id="pay-block">
-            <p class="subtitle">{% trans 'The following conversions require payment:' %} {{ ruble_price }}р {% trans 'or' %} ${{ dollar_price }} {% trans 'or' %} {{ euro_price }}€</p>
-            <a class="confirm-btn" href="{{ payment_url }}" id="pay-btn">{% trans 'Payment' %}</a>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="footer-info">
-            <p>
-                ИП Корзников Олег Леонидович <br>
-                ОГРИП 312590531200123, ИНН 590578138109 <br>
-                Телефон <phone>+7 (917) 578-67-06</phone> <br>
-                <mail>Torro7001@rambler.ru</mail>
-            </p>
-            <p class="footer-copyright">
-                {% trans '© Copyright 2023. All rights reserved' %}
-            </p>
-            <p class="footer-docs"> 
-                <a href="{% static 'convert_order/pdf/Contract.pdf' %}">{% trans 'Contract offer' %}</a> <br> 
-                <a href="{% static 'convert_order/pdf/Procedure-of-payment-by-bank-cards.pdf' %}">{% trans 'Procedure for making payments and returns' %}</a> <br>
-                <a href="{% static 'convert_order/pdf/Prices-for-provision-of-services.pdf' %}">{% trans 'Prices and description of services' %}</a>
-            </p>
-        </div>
-    </footer>
-    <div id="cookie-popup">
-        <div class="container wrapper">
-            <p class="cookie-text">{% trans 'This website uses cookies! By continuing to use our site, you automatically agree to their use' %}</p>
-            <div class="wrapper">
-                <img src="{% static 'convert_order/img/cookie-icon.svg' %}" alt="" id="cookie-icon">
-                <button class="confirm-btn" id="cookie-confirm" onclick="closeCookies()">{% trans 'Clear' %}</button>            </div>
-            </div>
-        </div>
+{% block mainblock %}
+<section id="sign_in-form">
+    <div id="pay-block">
+        <p class="subtitle">{% trans 'The following conversions require payment:' %} {{ ruble_price }}р {% trans 'or' %} ${{ dollar_price }} {% trans 'or' %} {{ euro_price }}€</p>
+        <a class="confirm-btn" href="{{ payment_url }}" id="pay-btn">{% trans 'Payment' %}</a>
     </div>
+</section>
+{% endblock mainblock %}
 
-    <script> 
-            function closeCookies() {
-            cookiePopup.style.display = 'none';
-        }
-    </script>
-    <script src="{% url 'javascript-catalog' %}"></script>
-    <script src="{% static 'convert_order/js/file-form.js' %}"></script>
-</body>
-
-</html>
+{% block scripts %}
+<script src="{% static 'convert_order/js/file-form.js' %}"></script>
+{% endblock scripts %}

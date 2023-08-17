@@ -23,6 +23,7 @@
             </a>
             <!--------------------------------------->
             <div class="button-container">
+                {% block TopRightButtons %}
                 <!-- Кнопки регистрации и входа на сайт -->
                 {% if phone_is_confirmed %}
                     <a class="sign_in-btn">{% trans 'Free Downloads:' %} {{ amount_of_convertations }}</a>
@@ -35,6 +36,7 @@
                         <a href="{% url 'users:register' %}" class="sign_in-btn">{% trans 'Sign up' %}</a>
                     {% endif %}
                 {% endif %}
+                {% endblock TopRightButtons %}
                 <!---------------------------------------->
                 <!----- Форма для выбора языка сайта ----->
                 <form id="language-form" action="{% url 'set_language' %}" method="post">

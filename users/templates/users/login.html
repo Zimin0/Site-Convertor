@@ -1,108 +1,27 @@
-{% load static %}
+{% extends 'convert_order/base.html' %}
 {% load i18n %}
-<!DOCTYPE html>
-<html lang="ru">
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-    <title>{% trans 'Authorization' %}</title>
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'convert_order/img/icon.png' %}"/> 
-    <link rel="stylesheet" href="{% static 'convert_order/css/styles.css' %}"> 
-    <link rel="stylesheet" href="{% static 'convert_order/css/media.css' %}"> 
-</head>
+{% block TopRightButtons %}
+{% if need_to_back %}
+    <a href="{% url 'convert_order:files_main' order_id %}" class="sign_in-btn close">{% trans 'Close' %}</a>
+{% else %}
+    <a href="{% url 'convert_order:clear_main' %}" class="sign_in-btn close">{% trans 'Close' %}</a>
+{% endif %}
+{% endblock TopRightButtons %}
 
-<body>
-    <header class="header">
-        <div class="container wrapper">
-            
-            <a href="{% url 'convert_order:clear_main' %}" class="logo">
-                <img src="{% static 'convert_order/img/converter-logo.jpg' %}" alt="">
-                <span>{% trans 'SAP XML Converter' %}</span>
-            </a>
-            <div class="button-container">
-                <form id="language-form" action="{% url 'set_language' %}" method="post">
-                    {% csrf_token %}
-                    <input name="next" type="hidden" value="{{ redirect_to }}">
-                    {% get_current_language as LANGUAGE_CODE %}
-                    {% get_available_languages as LANGUAGES %}
-                    {% get_language_info_list for LANGUAGES as languages %}
-                    <select id="language-select" name="language" class="lang-btn">
-                        {% for language in languages %}
-                            <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
-                                {{ language.code }}
-                            </option>
-                        {% endfor %}
-                    </select>
-                </form>
-                <script>
-                    document.addEventListener('DOMContentLoaded', function () {
-                        const languageForm = document.getElementById('language-form');
-                        const languageSelect = document.getElementById('language-select');
-                        
-                        // Add event handler for select change
-                        languageSelect.addEventListener('change', function () {
-                            languageForm.submit(); // Submit the form on value change
-                        });
-                    });
-                </script>
-                {% if need_to_back %}
-                    <a href="{% url 'convert_order:files_main' order_id %}" class="sign_in-btn close">{% trans 'Close' %}</a>
-                {% else %}
-                    <a href="{% url 'convert_order:clear_main' %}" class="sign_in-btn close">{% trans 'Close' %}</a>
-                {% endif %}
-            
-            </div>
-        </div>
-    </header>
+{% block mainblock %}
+<section id="sign_up-form">
+    <h1 class="form-title">{% trans 'Authorization' %}</h1>
+    <form method="POST" id="phone-field">
+        {% csrf_token %}
+        <p class="subtitle" id="phone_subs">{% trans 'Enter the phone number provided during registration' %}</p>
+        <input type="phone" name="phone" id="phone" placeholder="{% trans 'Phone number' %}">
+        <input type="submit" class="form-btn" id="send-code" value="{% trans 'Send code' %}" disabled>
+    </form>
+</section>
+{% endblock mainblock %}
 
-    <section id="sign_up-form">
-        <h1 class="form-title">{% trans 'Authorization' %}</h1>
-        <form method="POST" id="phone-field">
-            {% csrf_token %}
-            <p class="subtitle" id="phone_subs">{% trans 'Enter the phone number provided during registration' %}</p>
-            <input type="phone" name="phone" id="phone" placeholder="{% trans 'Phone number' %}">
-            <input type="submit" class="form-btn" id="send-code" value="{% trans 'Send code' %}" disabled>
-        </form>
-    </section>
-
-    <footer class="footer">
-        <div class="footer-info">
-            <p>
-                ИП Корзников Олег Леонидович <br>
-                ОГРИП 312590531200123, ИНН 590578138109 <br>
-                Телефон <phone>+7 (917) 578-67-06</phone> <br>
-                <mail>Torro7001@rambler.ru</mail>
-            </p>
-            <p class="footer-copyright">
-                {% trans '© Copyright 2023. All rights reserved' %}
-            </p>
-            <p class="footer-docs"> 
-                <a href="{% static 'convert_order/pdf/Contract.pdf' %}">{% trans 'Contract offer' %}</a> <br> 
-                <a href="{% static 'convert_order/pdf/Procedure-of-payment-by-bank-cards.pdf' %}">{% trans 'Procedure for making payments and returns' %}</a> <br>
-                <a href="{% static 'convert_order/pdf/Prices-for-provision-of-services.pdf' %}">{% trans 'Prices and description of services' %}</a>
-            </p>
-        </div>
-    </footer>
-    <div id="cookie-popup">
-        <div class="container wrapper">
-            <p class="cookie-text">{% trans 'This website uses cookies! By continuing to use our site, you automatically agree to their use' %}</p>
-            <div class="wrapper">
-                <img src="{% static 'convert_order/img/cookie-icon.svg' %}" alt="" id="cookie-icon">
-                <button class="confirm-btn" id="cookie-confirm" onclick="closeCookies()">{% trans 'Clear' %}</button>            </div>
-            </div>
-        </div>
-    </div>
-    <script> 
-        function closeCookies() {
-        const cookiePopup = document.getElementById('cookie-popup');
-        cookiePopup.style.display = 'none';
-    }
-    </script>
-
-    <script src="{% url 'javascript-catalog' %}"></script>
-    <script src="{% static 'convert_order/js/sign-in-form.js' %}"></script> 
-</body>
-
-</html>
+{% block scripts %}
+<script src="{% static 'convert_order/js/sign-in-form.js' %}"></script> 
+{% endblock scripts %}
