@@ -13,10 +13,15 @@
 {% block mainblock %}
 <section id="sign_in-form">
     <div id="pay-block">
-        <p class="subtitle">{% trans 'The following conversions require payment:' %} {{ ruble_price }}р {% trans 'or' %} ${{ dollar_price }} {% trans 'or' %} {{ euro_price }}€</p>
+        <p class="subtitle">{% trans 'The following conversions require payment:' %}</p>
+        <p class="price">{{ ruble_price }}₽</p>
         <a class="confirm-btn" href="{{ payment_url }}" id="pay-btn">{% trans 'Payment' %}</a>
     </div>
 </section>
+
+<style>
+
+</style>
 {% endblock mainblock %}
 
 {% block scripts %}

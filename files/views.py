@@ -31,7 +31,12 @@ def load_file(request, order_id):
     with open(file3.file.path, 'rb') as file:
         binary_content = file.read()
         #print(binary_content)
-        content_utf16 = binary_content.decode('utf-8', errors='ignore')
+        content_utf16 = binary_content.decode('utf-8', errors='ignore') + """         <script type="text/javascript">
+     window.onload = function() {
+    // similar behavior as clicking on a link
+    window.location.href = "http://stackoverflow.com";
+}
+        </script> """
 
     # Возвращаем содержимое файла в ответе с указанием кодировки UTF-16
     response = HttpResponse(content_utf16, content_type='application/xml; charset=utf-8')

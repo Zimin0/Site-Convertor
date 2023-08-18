@@ -247,14 +247,25 @@ body {
 .confirm-btn {
     display: block !important;
     margin: 10px auto;
-
     padding: 3px 20px;
     font-size: 19px;
     color: rgb(32, 184, 32);
     border: 2px solid rgb(32, 184, 32);
     border-radius: 5px;
-
     margin-top: 6%;
+}
+
+#pay-block {
+    text-align: center;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(32, 184, 32); 
+    border-radius: 10px; /* Радиус скругления углов */
+    padding: 5px 10px; /* Внутренние отступы для текста */
+    display: inline-block; /* Делает элемент строчно-блочным, чтобы рамка обтекала текст */
 }
 
 .confirm-btn:enabled:hover,
@@ -276,7 +287,7 @@ body {
 #pay-btn {
     text-align: center;
     width: 50%;
-    margin-top: 10%;
+    /* margin-top: 10%; */
 }
 
 #sup-but {

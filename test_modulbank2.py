@@ -56,7 +56,7 @@ def create_test_modulbank_order(custom_order_id):
         "description": "Конвертация на сайте SAP-XML-Generator-Converter",
         "unix_timestamp": int(time.time()),
         "callback_url": "https://85c6-185-211-159-37.ngrok-free.app/ru/payment/catch-payment/",
-        "success_url": "https://85c6-185-211-159-37.ngrok-free.app/ru/payment/load/", 
+        "success_url": "https://85c6-185-211-159-37.ngrok-free.app/ru/payment/catch-payment/", 
         "salt": generate_salt(),
         "reusable": 0,
         "lifetime": 20*60, # Срок актуальности счета в секундах. По истечению счет будет недоступен к оплате # __Необязательное__ 

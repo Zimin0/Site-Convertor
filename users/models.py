@@ -10,7 +10,7 @@ from production_settings.models import ProductionSettings
 
 def get_convertation_amount():
     amount_settings = get_object_or_404(ProductionSettings, slug='CONVERT_AMOUNT')
-    return amount_settings.value
+    return int(amount_settings.value)
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile', null=True, blank=True)

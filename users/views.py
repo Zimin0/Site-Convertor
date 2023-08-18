@@ -103,7 +103,7 @@ def code(request):
             if order_slug:
                 decrypted_id = ConvertOrder.decrypt_id(order_slug)
                 order = get_object_or_404(ConvertOrder, id=decrypted_id)
-                if cur_user.profile.amount_of_converts < 1:
+                if int(cur_user.profile.amount_of_converts) < 1: ### !!! удалить int 
                     order.need_to_pay = True
                 order.phone = request.session['phone']
                 order.save()
@@ -133,16 +133,18 @@ def code(request):
 def good_code(request):
     """ Страница с "код подтврежден" и кнопкой закрыть."""
     context = {}
-    
+    context['order_is_need_to_be_payed'] = False
     ######## Функционал возврата на страницу скачивания ########
     context["need_to_back"] = request.session.get('need_to_back_to_download', False)
     if context["need_to_back"]:
         context['order_slug'] = request.session.get('created_order_slug', False)
         context['order_id'] = ConvertOrder.decrypt_id(request.session.get('created_order_slug', False))
     ############################################################
+        order = ConvertOrder.objects.get(id = context['order_id'] )
+        context['order_is_need_to_be_payed'] = order.need_to_pay
+    ############################################################
 
-    order = ConvertOrder.objects.get(id = context['order_id'] )
-    context['order_is_need_to_be_payed'] = order.need_to_pay
+
     if not request.session.get('phone_is_confirmed', None):
         return redirect('users:login')
     print('context in good_code', context)
@@ -153,11 +155,8 @@ def good_code(request):
 def need_to_pay(request):
     """ Страница с "Вы уже конвертировали у нас на сайте... Нужно оплатить" """
     context = {
-        "euro_price": get_object_or_404(ProductionSettings, slug='EURO_PRICE').value,
         "ruble_price": get_object_or_404(ProductionSettings, slug='RUBLE_PRICE').value,
-        "dollar_price": get_object_or_404(ProductionSettings, slug='DOLLAR_PRICE').value,
     }
-
     ######## Функционал возврата на страницу скачивания ########
     context["need_to_back"] = request.session.get('need_to_back_to_download', False)
     if context["need_to_back"]:

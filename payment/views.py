@@ -9,22 +9,28 @@ def payment_form(request):
 def load(request):
     return render(request, 'payment/load.html')
 
-@log_veriables
 @csrf_exempt
+@log_veriables
 def catch_payment(request):
     if request.method == 'GET':
-        created_order_slug = request.session['created_order_slug']
+        print(f"request.session.get('created_order_slug', False) = ", request.session.get('created_order_slug', False) )
+        created_order_slug = request.session.get('created_order_slug', False)
+        print('created_order_slug =', created_order_slug)
         order = ConvertOrder.objects.get(slug=created_order_slug)
+        print(f"order.slug= ", order.slug)
         if order.paid:
-            return redirect('files:load_file', created_order_slug)
+            return render(request, 'payment/payment_success.html', {'order_id': order.slug})
         else:
-            return HttpResponse("Shit in Modulbank!")
+            # добавить счетчик 3 перезагрузок 
+            # return render(request, 'payment/payment_error.html')
+            return redirect("payment:load")
     
     if request.method == 'POST':
-        order = ConvertOrder.objects.get(slug=custom_order_id)
-        order.paid = True
-        #request.session['custom_order_id'] = request.POST['custom_order_id']
-        # order.modulbank_id = request.session['transaction_id']
-        order.save()
-        print(f"order.paid in POST = {order.paid}")
+        if request.POST['state'] == 'COMPLETE':
+            custom_order_id = request.POST['custom_order_id']
+            order = ConvertOrder.objects.get(slug=custom_order_id)
+            order.paid = True
+            order.save()
+        else:
+            print('Some error in modulbank appeared!')
         return HttpResponse('ok')

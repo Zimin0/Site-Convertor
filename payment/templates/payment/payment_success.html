@@ -1,0 +1,22 @@
+{% extends 'convert_order/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block preloadJs %}
+<script src="{% static 'convert_order/js/preload.js' %}"></script> 
+{% endblock preloadJs %}
+
+{% block TopRightButtons %}
+{% endblock TopRightButtons %}
+
+{% block mainblock %}
+<section id="sign_in-form">
+    <div id="return-block">
+        <p class="subtitle">{% trans "Payment was successful!" %}</p> 
+        <a href="{% url 'files:load_file' order_id %}" onclick="setTimeout(function(){window.location.href='/';}, 1000);" class="confirm-btn" id="return-back">{% trans 'Download file' %}</a>
+    </div>
+</section>
+{% endblock mainblock %}
+
+{% block scripts %}
+{% endblock scripts %}

@@ -4485,3 +4485,796 @@ D:\JOB\freelance10\converter\payment\views.py changed, reloading.
 Watching for file changes with StatReloader
 D:\JOB\freelance10\converter\payment\views.py changed, reloading.
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /ru/payment/catch-payment/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\JOB\freelance10\converter\payment\views.py", line 17, in catch_payment
+    created_order_slug = request.session['created_order_slug']
+  File "D:\python38\lib\site-packages\django\contrib\sessions\backends\base.py", line 53, in __getitem__
+    return self._session[key]
+KeyError: 'created_order_slug'
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+Forbidden (CSRF cookie not set.): /ru/payment/catch-payment/
+Forbidden (CSRF cookie not set.): /ru/payment/catch-payment/
+Forbidden (CSRF cookie not set.): /ru/payment/catch-payment/
+Forbidden (CSRF cookie not set.): /ru/payment/catch-payment/
+Forbidden (CSRF cookie not set.): /ru/payment/catch-payment/
+Internal Server Error: /ru/payment/catch-payment/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\JOB\freelance10\converter\payment\views.py", line 17, in catch_payment
+    created_order_slug = request.session['created_order_slug']
+  File "D:\python38\lib\site-packages\django\contrib\sessions\backends\base.py", line 53, in __getitem__
+    return self._session[key]
+KeyError: 'created_order_slug'
+Forbidden (CSRF cookie not set.): /ru/payment/catch-payment/
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /ru/payment/catch-payment/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\payment\views.py", line 24, in catch_payment
+    order = ConvertOrder.objects.get(slug=custom_order_id)
+NameError: name 'custom_order_id' is not defined
+Internal Server Error: /ru/payment/catch-payment/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\payment\views.py", line 24, in catch_payment
+    order = ConvertOrder.objects.get(slug=custom_order_id)
+NameError: name 'custom_order_id' is not defined
+Internal Server Error: /ru/payment/catch-payment/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\payment\views.py", line 24, in catch_payment
+    order = ConvertOrder.objects.get(slug=custom_order_id)
+NameError: name 'custom_order_id' is not defined
+Internal Server Error: /ru/payment/catch-payment/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\payment\views.py", line 24, in catch_payment
+    order = ConvertOrder.objects.get(slug=custom_order_id)
+NameError: name 'custom_order_id' is not defined
+Internal Server Error: /ru/payment/catch-payment/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\payment\views.py", line 24, in catch_payment
+    order = ConvertOrder.objects.get(slug=custom_order_id)
+NameError: name 'custom_order_id' is not defined
+Internal Server Error: /ru/payment/catch-payment/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\payment\views.py", line 24, in catch_payment
+    order = ConvertOrder.objects.get(slug=custom_order_id)
+NameError: name 'custom_order_id' is not defined
+Internal Server Error: /ru/payment/catch-payment/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\payment\views.py", line 24, in catch_payment
+    order = ConvertOrder.objects.get(slug=custom_order_id)
+NameError: name 'custom_order_id' is not defined
+Internal Server Error: /ru/payment/catch-payment/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\payment\views.py", line 24, in catch_payment
+    order = ConvertOrder.objects.get(slug=custom_order_id)
+NameError: name 'custom_order_id' is not defined
+Internal Server Error: /ru/payment/catch-payment/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\payment\views.py", line 16, in catch_payment
+    created_order_slug = request.session['created_order_slug']
+  File "D:\python38\lib\site-packages\django\contrib\sessions\backends\base.py", line 53, in __getitem__
+    return self._session[key]
+KeyError: 'created_order_slug'
+Internal Server Error: /ru/payment/catch-payment/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\payment\views.py", line 24, in catch_payment
+    order = ConvertOrder.objects.get(slug=custom_order_id)
+NameError: name 'custom_order_id' is not defined
+Internal Server Error: /ru/payment/catch-payment/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\payment\views.py", line 24, in catch_payment
+    order = ConvertOrder.objects.get(slug=custom_order_id)
+NameError: name 'custom_order_id' is not defined
+Internal Server Error: /ru/payment/catch-payment/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\payment\views.py", line 24, in catch_payment
+    order = ConvertOrder.objects.get(slug=custom_order_id)
+NameError: name 'custom_order_id' is not defined
+Internal Server Error: /ru/payment/catch-payment/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\payment\views.py", line 24, in catch_payment
+    order = ConvertOrder.objects.get(slug=custom_order_id)
+NameError: name 'custom_order_id' is not defined
+Internal Server Error: /ru/payment/catch-payment/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\payment\views.py", line 24, in catch_payment
+    order = ConvertOrder.objects.get(slug=custom_order_id)
+NameError: name 'custom_order_id' is not defined
+Internal Server Error: /ru/payment/catch-payment/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\payment\views.py", line 24, in catch_payment
+    order = ConvertOrder.objects.get(slug=custom_order_id)
+NameError: name 'custom_order_id' is not defined
+Internal Server Error: /ru/payment/catch-payment/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\payment\views.py", line 24, in catch_payment
+    order = ConvertOrder.objects.get(slug=custom_order_id)
+NameError: name 'custom_order_id' is not defined
+Internal Server Error: /ru/payment/catch-payment/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\payment\views.py", line 24, in catch_payment
+    order = ConvertOrder.objects.get(slug=custom_order_id)
+NameError: name 'custom_order_id' is not defined
+Internal Server Error: /ru/payment/catch-payment/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\payment\views.py", line 24, in catch_payment
+    order = ConvertOrder.objects.get(slug=custom_order_id)
+NameError: name 'custom_order_id' is not defined
+Internal Server Error: /ru/payment/catch-payment/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\payment\views.py", line 24, in catch_payment
+    order = ConvertOrder.objects.get(slug=custom_order_id)
+NameError: name 'custom_order_id' is not defined
+Internal Server Error: /ru/payment/catch-payment/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\payment\views.py", line 24, in catch_payment
+    order = ConvertOrder.objects.get(slug=custom_order_id)
+NameError: name 'custom_order_id' is not defined
+Internal Server Error: /ru/payment/catch-payment/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\payment\views.py", line 24, in catch_payment
+    order = ConvertOrder.objects.get(slug=custom_order_id)
+NameError: name 'custom_order_id' is not defined
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /ru/payment/catch-payment/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\payment\views.py", line 25, in catch_payment
+    order = ConvertOrder.objects.get(slug=custom_order_id)
+NameError: name 'custom_order_id' is not defined
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\test_modulbank2.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /en/good_code/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 57, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\views.py", line 144, in good_code
+    order = ConvertOrder.objects.get(id = context['order_id'] )
+KeyError: 'order_id'
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /ru/payment/catch-payment/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'custom_order_id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\payment\views.py", line 16, in catch_payment
+    custom_order_id = request.POST['custom_order_id']
+  File "D:\python38\lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'custom_order_id'
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /ru/payment/catch-payment/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'custom_order_id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\payment\views.py", line 17, in catch_payment
+    custom_order_id = request.POST['custom_order_id']
+  File "D:\python38\lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'custom_order_id'
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /ru/payment/catch-payment/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\payment\views.py", line 18, in catch_payment
+    if request.session['created_order_slug'] == request.session['modulbank_order_slug']: # присланный модульбанков слаг совпадает с тем, что в сессии
+  File "D:\python38\lib\site-packages\django\contrib\sessions\backends\base.py", line 53, in __getitem__
+    return self._session[key]
+KeyError: 'modulbank_order_slug'
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /ru/payment/catch-payment/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\payment\views.py", line 19, in catch_payment
+    if request.session['created_order_slug'] == request.session['modulbank_order_slug']: # присланный модульбанков слаг совпадает с тем, что в сессии
+  File "D:\python38\lib\site-packages\django\contrib\sessions\backends\base.py", line 53, in __getitem__
+    return self._session[key]
+KeyError: 'modulbank_order_slug'
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\files\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\files\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\files\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\files\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\files\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\files\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\files\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\files\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\files\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /en/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'file1'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\convert_order\views.py", line 48, in clear_main
+    file1 = request.FILES['file1']
+  File "D:\python38\lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'file1'
+D:\JOB\freelance10\converter\files\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\files\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\files\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /ru/payment/catch-payment/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\payment\views.py", line 22, in catch_payment
+    return render(request, 'payment:payment_success.html', {'order_id': order.slug})
+  File "D:\python38\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\python38\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\python38\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: payment:payment_success.html
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /ru/payment/catch-payment/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\payment\views.py", line 22, in catch_payment
+    return render(request, 'payment:payment_success.html', {'order_id': order.slug})
+  File "D:\python38\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\python38\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\python38\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: payment:payment_success.html
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /ru/payment/catch-payment/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\payment\views.py", line 22, in catch_payment
+    return render(request, 'payment/payment_success.html', {'order_id': order.slug})
+  File "D:\python38\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\python38\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\python38\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\python38\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "D:\python38\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\python38\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\python38\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\python38\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\python38\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "D:\python38\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\python38\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\python38\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\python38\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\python38\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "D:\python38\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\python38\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\python38\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\python38\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\python38\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\python38\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'load_file' with arguments '('',)' not found. 1 pattern(s) tried: ['ru/file/(?P<order_id>[^/]+)/\\Z']
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /ru/payment/catch-payment/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 46, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\payment\views.py", line 22, in catch_payment
+    return render(request, 'payment/payment_success.html', {'order.slug': order.slug})
+  File "D:\python38\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\python38\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\python38\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\python38\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "D:\python38\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\python38\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\python38\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\python38\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\python38\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "D:\python38\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\python38\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\python38\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\python38\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\python38\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "D:\python38\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\python38\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\python38\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\python38\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\python38\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\python38\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'load_file' with arguments '('',)' not found. 1 pattern(s) tried: ['ru/file/(?P<order_id>[^/]+)/\\Z']
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\payment\sms_sender.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /ru/code/
+Traceback (most recent call last):
+  File "D:\python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 57, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\decorators.py", line 17, in _wrapped_view
+    return func(request, *args, **kwargs)
+  File "D:\JOB\freelance10\converter\users\views.py", line 106, in code
+    if cur_user.profile.amount_of_converts < 1:
+TypeError: '<' not supported between instances of 'str' and 'int'
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\models.py changed, reloading.
+Watching for file changes with StatReloader
+D:\JOB\freelance10\converter\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
