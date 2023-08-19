@@ -38,7 +38,6 @@ def catch_payment(request):
     
     if request.method == 'POST':
         if request.POST['state'] == 'COMPLETE':
-            # POST_DATA = json.loads(request.POST)
             custom_order_id = request.POST['custom_order_id']
             order = ConvertOrder.objects.get(slug=custom_order_id)
             order.paid = True 

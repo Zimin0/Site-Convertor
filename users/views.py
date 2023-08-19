@@ -182,11 +182,11 @@ def need_to_pay(request):
         return redirect('users:login')
     return render(request, "users/need_to_pay.html", context)
 
-@log_veriables
-def clear(request):
-    request.session.clear()
-    response = HttpResponse("<h1>Сессия и кукисы очищены!</h1> <script>localStorage.clear();</script>")
-    response.delete_cookie('phone')
-    print('Cookies = ', response.cookies)
-    print('Session = ', request.session.items()) 
-    return response
+# @log_veriables
+# def clear(request):
+#     request.session.clear()
+#     response = HttpResponse("<h1>Сессия и кукисы очищены!</h1> <script>localStorage.clear();</script>")
+#     response.delete_cookie('phone')
+#     print('Cookies = ', response.cookies)
+#     print('Session = ', request.session.items()) 
+#     return response

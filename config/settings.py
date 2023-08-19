@@ -1,13 +1,10 @@
 from pathlib import Path
 import os
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-ux0)^@(+pa!suj0g^fi0r=c!!#&b92&g9-5uva@ly^cm%i%^e*'
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ##########################
@@ -17,16 +14,16 @@ STATIC_URL = 'static/'
 STATIC_ROOT = 'static/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp.gmail.com' # !!!!!!!!!!!!!!!
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'nikzim2004@gmail.com' # Настройка почты находится в базе данных
-EMAIL_HOST_PASSWORD = 'amikqiygmwhztgir'
+EMAIL_HOST_USER = '' # !!!!!!!!!!!!!!!
+EMAIL_HOST_PASSWORD = '' # !!!!!!!!!!!!!!!
 
 # https://solotony.com/tips/item/oshibka-pri-vypolnenii-makemessages
 
-LANGUAGE_CODE = 'ru' # по умолчанию 
+LANGUAGE_CODE = 'ru' 
 # список доступных языков
 LANGUAGES = (
     ('ru', 'Russian'),
@@ -39,26 +36,26 @@ LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
 )
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'secure_file': {
-            'class': 'logging.FileHandler',
-            'filename': 'logs.txt',
-            'mode': 'a',
-        },
-    },
-    'root': {
-        'handlers': ['secure_file'],
-        'level': 'INFO',
-        'encoding':'utf8', # this fixes UnicodeEncodeError
-    },
-}
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'handlers': {
+#         'secure_file': {
+#             'class': 'logging.FileHandler',
+#             'filename': 'logs.txt',
+#             'mode': 'a',
+#         },
+#     },
+#     'root': {
+#         'handlers': ['secure_file'],
+#         'level': 'INFO',
+#         'encoding':'utf8', # this fixes UnicodeEncodeError
+#     },
+# }
 ##########################
 
-ALLOWED_HOSTS = ['*', '.app'] 
-CSRF_TRUSTED_ORIGINS = ['https://938a-91-238-229-3.ngrok-free.app']
+ALLOWED_HOSTS = ['*', ] 
+CSRF_TRUSTED_ORIGINS = ['']
 
 INSTALLED_APPS = [
     'django.contrib.admin',

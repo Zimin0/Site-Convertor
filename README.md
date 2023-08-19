@@ -10,6 +10,7 @@
 
 
 ## To make a translation you need this commands:
+* Add a line into seetings, variable LANGUAGES like the rest.
 * python manage.py makemessages -l ru -v 3  // creating a new django.po file with translating pairs. Replace "ru" to needed one to choose language.
 * python manage.py makemessages -a          // adding changes in django.po if they were made.
 * django-admin compilemessages              // compiling django.po into django.mo - need to be done after any changes in django.po.
