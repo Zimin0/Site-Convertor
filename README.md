@@ -2,12 +2,15 @@
 
 ## request.session contains info:
 * "phone_is_confirmed" - [True/False:bool] - does the user`s phone number was confirmed by a sms sending.
-* "phone" - [+7xxxxxxxxxx:str] - contains user`s phone number to identify him later.
-* "confirmation_code" - [xxxxxx:str] - confirmation code for sms sending
-* "last_page" - contains 
+* "phone" - [{12-16}:str] - contains user`s phone number to identify him later.
+* "confirmation_code" - [{4}:str] - confirmation code for sms sending
+* "name" - [str] - if logged in
+* "mail" - [str] - if logged in
+* "error_in_payment" - if error appeared in ModulBank API
+
 
 ## To make a translation you need this commands:
-* python manage.py makemessages -l ru -v 3  // creating a new django.po file with translating pairs.
+* python manage.py makemessages -l ru -v 3  // creating a new django.po file with translating pairs. Replace "ru" to needed one to choose language.
 * python manage.py makemessages -a          // adding changes in django.po if they were made.
 * django-admin compilemessages              // compiling django.po into django.mo - need to be done after any changes in django.po.
 
@@ -30,4 +33,5 @@ Is it more reliably to store filepath in CharField ? FileField do the same.
 
 
 
-tag preload used for preloading js function in order to use them in django-html tags 
+- Tag preload used for preloading js function in order to use them in django-html tags 
+- Convertation script stored in main_convertation_script.py

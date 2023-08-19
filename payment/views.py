@@ -18,6 +18,7 @@ def catch_payment(request):
         created_order_slug = request.session.get('created_order_slug', False)
         order = ConvertOrder.objects.get(slug=created_order_slug)
         if order.paid:
+            request.session.pop('times_of_waiting', False) 
             return render(request, 'payment/payment_success.html', {'order_id': order.slug})
         else:
             times = request.session.get('times_of_waiting', False)
@@ -25,7 +26,7 @@ def catch_payment(request):
             if error_in_payment:
                 return render(request, 'payment/payment_error.html', {'order_id': order.slug})
             if times:
-                if times > -1:
+                if times > 2:
                     request.session.pop('times_of_waiting', False) 
                     request.session['error_in_payment'] = True
                     return render(request, 'payment/payment_error.html', {'order_id': order.slug})
@@ -33,7 +34,7 @@ def catch_payment(request):
             else:
                 request.session['times_of_waiting'] = 0
             
-            return redirect("payment:load")
+            return redirect('payment:load')
     
     if request.method == 'POST':
         if request.POST['state'] == 'COMPLETE':
