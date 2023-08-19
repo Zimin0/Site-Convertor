@@ -4,10 +4,9 @@ from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
 
 class ProfileAdmin(admin.ModelAdmin):
-    list_display = ('phone', 'get_first_name', 'get_last_name', 'get_email', 'user', 'phone_is_confirmed', 'amount_of_converts')
+    list_display = ('phone', 'get_first_name', 'get_email', 'user', 'phone_is_confirmed', 'amount_of_converts')
     list_filter = ('phone_is_confirmed', 'amount_of_converts')
     search_fields = ('phone', 'get_first_name', 'get_email', 'get_last_name', 'user', 'phone_is_confirmed', 'amount_of_converts')
-    # actions = ['delete_model']
     def delete_queryset(self, request, queryset):
         """ Вызывается при удалении в админке - выбор нескольких - удалить выбранные """
         print("Deleting queryset!")

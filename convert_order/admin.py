@@ -9,7 +9,7 @@ class ConvertOrderAdmin(admin.ModelAdmin):
     class Meta:
         model = ConvertOrder
 
-    list_display = ('get_pretty_str', 'phone', 'slug', 'current_status', 'need_to_pay', 'paid', 'creation_date')
+    list_display = ('get_pretty_str', 'phone', 'current_status', 'need_to_pay', 'paid', 'price', 'creation_date')
     list_filter = ['creation_date', 'current_status', 'need_to_pay', 'paid', 'phone']
     ordering = ['-creation_date',]
     search_fields = ['pk', 'creation_date', 'phone']

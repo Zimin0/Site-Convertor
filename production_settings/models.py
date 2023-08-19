@@ -6,6 +6,9 @@ class ProductionSettings(models.Model):
     slug = models.SlugField(max_length=20, verbose_name="Слаг", blank=False, help_text="краткий слаг для разработчиков!!!")
     value = models.CharField(max_length=300, verbose_name="Значение", blank=False)
 
+    def __str__(self) -> str:
+        return self.name
+
     class Meta:
         verbose_name = "Настройка"
         verbose_name_plural = "Настройки"

@@ -58,7 +58,7 @@ LOGGING = {
 ##########################
 
 ALLOWED_HOSTS = ['*', '.app'] 
-CSRF_TRUSTED_ORIGINS = ['https://85c6-185-211-159-37.ngrok-free.app']
+CSRF_TRUSTED_ORIGINS = ['https://938a-91-238-229-3.ngrok-free.app']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -75,6 +75,7 @@ INSTALLED_APPS = [
     'support',
 ]
 
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -84,7 +85,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
 ]
 
 ROOT_URLCONF = 'config.urls'

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-18 09:23+0300\n"
+"POT-Creation-Date: 2023-08-18 13:13+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -299,7 +299,7 @@ msgstr ""
 
 #: .\payment\templates\payment\payment_error.html:15
 msgid "Error appeared! Try again later."
-msgstr ""
+msgstr "Ошибка оплаты. Попробуйте позже."
 
 #: .\payment\templates\payment\payment_error.html:16
 msgid "Back to main"
@@ -358,7 +358,7 @@ msgstr "Электронная почта:"
 
 #: .\support\templates\support\support.html:31
 msgid "Send"
-msgstr "Отправить код"
+msgstr "Отправить сообщение"
 
 #: .\users\templates\users\code.html:17 .\users\views.py:82
 msgid "Code has been sent!"
@@ -420,10 +420,10 @@ msgstr "Имя:"
 msgid "Email:"
 msgstr "Электронная почта:"
 
-#: .\users\views.py:119
+#: .\users\views.py:121
 msgid "The code doesn`t match.Try again."
 msgstr "Код не совпадает. Попробуйте еще раз."
 
-#: .\users\views.py:128
+#: .\users\views.py:130
 msgid "The code has already been sent!"
 msgstr "Код был отправлен!"

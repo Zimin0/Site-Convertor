@@ -20,12 +20,13 @@ class ConvertOrder(models.Model):
         ('FD', 'Файл скачан'),
     )
 
-    phone = models.CharField(max_length=100, verbose_name="Номер телефона пользователя", null=True, blank=True)
+    phone = models.CharField(max_length=100, verbose_name="Номер телефона", null=True, blank=True)
     creation_date = models.DateTimeField(auto_now_add=True, verbose_name="Создан")
     slug = models.CharField(max_length=100, verbose_name="Слаг для url", unique=True, null=True, blank=True)
     modulbank_transaction_id = models.CharField(max_length=200, verbose_name="ID в модульбанке", blank=True, null=True)
     current_status = models.CharField(max_length=2, choices=STATUS, verbose_name='Статус', default='OC')
-    need_to_pay = models.BooleanField(verbose_name="Нужно ли оплатить", default=False)
+    need_to_pay = models.BooleanField(verbose_name="Платный", default=False)
+    price = models.IntegerField(verbose_name="Cумма", blank=True, null=True)
     paid = models.BooleanField(verbose_name="Оплачено", default=False)
 
     def save(self, *args, **kwargs):

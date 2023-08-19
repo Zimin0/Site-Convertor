@@ -13,7 +13,7 @@
 <section id="sign_in-form">
     <div id="return-block">
         <p class="subtitle">{% trans "Error appeared! Try again later." %}</p> 
-        <a href="{% url 'files:load_file' order_id %}" onclick="setTimeout(function(){window.location.href='/';}, 1000);" class="confirm-btn" id="return-back" style="color: red;">{% trans 'Back to main' %}</a>
+        <a href="{% url 'files:load_file' order_id %}" onclick="setTimeout(function(){window.location.href='/';}, 1000);" class="confirm-btn" id="return-back" style="color: red; border: 2px solid red;">{% trans 'Back to main' %}</a>
     </div>
 </section>
 {% endblock mainblock %}

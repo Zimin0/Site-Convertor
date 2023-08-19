@@ -6,7 +6,7 @@ from production_settings.models import ProductionSettings
 from payment.sms_sender import send_confiramtion_code
 from django.utils.translation import gettext as _
 
-from test_modulbank2 import create_test_modulbank_order 
+from payment.modulbank_pay import ModulBankPayment
 from users.decorators import log_veriables, alredy_custom_logined, can_back_to_download
 
 @can_back_to_download
@@ -23,9 +23,6 @@ def login(request):
 
     if request.session.get('phone_is_confirmed', None):
         return redirect('users:good_code')
-    # if request.session.get('back_to', None):
-    #     context['need_to_back'] = True
-    #     context['order_id'] = request.session['back_to'] # достаем order_id
     if request.method == 'POST':
         phone = request.POST['phone'] # подтягиваем введенный телефон
         request.session['phone'] = phone
@@ -92,7 +89,9 @@ def code(request):
             else: # если искомого юзера не существует - создаем нового 
                 last_user_pk = User.objects.order_by('pk').last().pk # нужен для пронумеровки следующего юзера
                 cur_user = User.objects.create(username=f'user{last_user_pk+1}')
-                cur_user.save(update_fields=['username'])
+                cur_user.first_name = request.session['name']
+                cur_user.email = request.session['mail']
+                cur_user.save(update_fields=['username', 'first_name', 'email'])
             cur_user.profile.phone_is_confirmed = True
             cur_user.profile.phone = request.session.get('phone', 'No phone found!')
             cur_user.first_name = request.session.get('name', 'No name found!')
@@ -103,7 +102,8 @@ def code(request):
             if order_slug:
                 decrypted_id = ConvertOrder.decrypt_id(order_slug)
                 order = get_object_or_404(ConvertOrder, id=decrypted_id)
-                if int(cur_user.profile.amount_of_converts) < 1: ### !!! удалить int 
+                if cur_user.profile.amount_of_converts < 1: ### !!! удалить int 
+                    print("След заказ требует оплаты.")
                     order.need_to_pay = True
                 order.phone = request.session['phone']
                 order.save()
@@ -140,10 +140,9 @@ def good_code(request):
         context['order_slug'] = request.session.get('created_order_slug', False)
         context['order_id'] = ConvertOrder.decrypt_id(request.session.get('created_order_slug', False))
     ############################################################
-        order = ConvertOrder.objects.get(id = context['order_id'] )
+        order = ConvertOrder.objects.get(id=context['order_id'])
         context['order_is_need_to_be_payed'] = order.need_to_pay
     ############################################################
-
 
     if not request.session.get('phone_is_confirmed', None):
         return redirect('users:login')
@@ -164,8 +163,20 @@ def need_to_pay(request):
     ############################################################
 
     order = ConvertOrder.objects.get(id=context['order_id'])
-    data = create_test_modulbank_order(order.slug)
-    context['payment_url'] = data['url']
+    curr_user_prof = Profile.objects.get(phone=order.phone)
+
+    mb_object = ModulBankPayment(
+        merchant="d94a5235-7a7f-4524-a160-9f4af4bd15c8",
+        secret_key="C287F0E42A45F9DC25678ACF5531C085",
+        test_mode=1,
+        success_url= "https://938a-91-238-229-3.ngrok-free.app/ru/payment/catch-payment/"
+    )
+    response = mb_object.create_payment_order(
+        custom_order_id=order.slug,
+        client_name=curr_user_prof.user.first_name
+        )
+    if response['payment_confirmed']:
+        context['payment_url'] = response['url']
     
     if not request.session.get('phone_is_confirmed', None):
         return redirect('users:login')

@@ -30,7 +30,7 @@ def support(request):
             profile.user.email = email 
             profile.user.save(update_fields=['email',])
             ## Подтягиваем настройку почты тех.поддержки из админки ##
-            tech_mail = get_object_or_404(ProductionSettings, slug='TECH_EMAIL') # почта тех. поддержки
+            tech_mail = get_object_or_404(ProductionSettings, slug='TECH_EMAIL_FROM') # почта тех. поддержки
             
             formatted_message = f""" От {phone} \nПочта: {email} \nПриоритет: {priority} \nСообщение:\n{message} """
             # Отправляем письмо на почту техподдержки #

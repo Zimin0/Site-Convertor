@@ -20,12 +20,11 @@ def clear_main(request):
     context = {}
     context['files_uploaded'] = False 
     context["is_paid"] = False
-    context['phone_is_confirmed'] = request.session.get('phone_is_confirmed', False) 
+    PHONE_IS_CONFIRMED = request.session.get('phone_is_confirmed', False)
+    context['phone_is_confirmed'] = PHONE_IS_CONFIRMED 
+    request.session.pop('created_order_slug', None) # убираем из сессии id сконвертированного заказа, т к страница с ним закрыта.
 
-    # убираем из сессии id сконвертированного заказа, т к страница с ним закрыта.
-    request.session.pop('created_order_slug', None) 
-
-    if not request.session.get('phone_is_confirmed', False): 
+    if not PHONE_IS_CONFIRMED: 
         print("В сессии телефона нет! phone_is_confirmed = False")
         request.session['phone_is_confirmed'] = False 
     if 'phone' in request.COOKIES:
@@ -36,18 +35,16 @@ def clear_main(request):
         print("Телефона в cookies нет!")
     print(f"Сессия после: {request.session.items()}")
 
-    if request.session.get('phone_is_confirmed', False): 
+    if PHONE_IS_CONFIRMED: 
         user_profile = Profile.objects.get(phone=request.session['phone'])
         context['amount_of_convertations'] = user_profile.amount_of_converts
     
     if request.method == 'GET':
-        if request.session.get('created_order_slug', False):
-            request.session.pop('created_order_slug') # удаляем id созданной конвертации
+        request.session.pop('created_order_slug', False) # удаляем id созданной конвертации
 
     if request.method == 'POST':
         file1 = request.FILES['file1']
         file2 = request.FILES['file2']
-        print(f'Загружены файлы {file1} и {file2}.')
         #### Создаем новый заказ на конвертацию и добавляем В него файлы ####
         order = ConvertOrder() 
         order.save() 
@@ -55,18 +52,19 @@ def clear_main(request):
         file2_dj = My_File.objects.create(order=order, file=file2, file_type='2')
         file1_dj.save()
         file2_dj.save()
-        #### Только для тестирования ####
+        #####################################################################
+        if PHONE_IS_CONFIRMED: 
+            user_profile = Profile.objects.get(phone=request.session['phone'])
+            order.need_to_pay = (user_profile.amount_of_converts < 1)
+            order.save(update_fields=['need_to_pay'])
+        #####################################################################
+        ################№№№###### Создаем новый файл ################№№######
         file3_path = convert_2_files_into_new_structure(file1_dj.file.path, file2_dj.file.path) # получаем путь нового файла
-        filename = os.path.basename(file3_path)
-        print(f'Имя нового сконвертированного файла = {filename}')
         file3_open = open(file3_path, encoding="utf-8")
-        file3 = File(file3_open) # кусок говна, ломает кодировку !!!!!!
+        file3 = File(file3_open) 
         My_File.objects.create(order=order, file=file3, file_type='3').save()
-        # file4 = InMemoryUploadedFile(file=file3_open, field_name='FileField', name=filename, content_type='application/xml', size=2625, charset=None)
-        #print(file3_open.read()) # выводит текст полностью, с нормальной кодировкой 
-        # file3_open.close()
-        request.session['created_order_slug'] = order.slug # id конвертации в сессии
-        ##############################################################
+        request.session['created_order_slug'] = order.slug # slug конвертации в сессии
+        ##############################################################№№№№№№№
         return redirect('convert_order:files_main', order_id=order.slug)
     return render(request, 'convert_order/index.html', context)
 
@@ -124,3 +122,10 @@ def handler500(request, *args, **kwargs):
     response = render(request, 'convert_order/500.html')
     response.status_code = 500
     return response
+
+
+
+#         filename = os.path.basename(file3_path)
+# file4 = InMemoryUploadedFile(file=file3_open, field_name='FileField', name=filename, content_type='application/xml', size=2625, charset=None)
+#print(file3_open.read()) # выводит текст полностью, с нормальной кодировкой 
+# file3_open.close()
