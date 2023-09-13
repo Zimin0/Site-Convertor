@@ -1,4 +1,7 @@
 # Site-Convertor
+# sapxmlversionup.ru
+# Screenshots
+
 
 ## request.session contains info:
 * "phone_is_confirmed" - [True/False:bool] - does the user`s phone number was confirmed by a sms sending.
